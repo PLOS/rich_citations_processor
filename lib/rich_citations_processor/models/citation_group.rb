@@ -18,10 +18,21 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'active_support/core_ext/module/delegation'
-require "rich_citations_processor/version"
-require "rich_citations_processor/models"
+class CitationGroup
+  attr_reader :id
+  attr_reader :section
+  attr_reader :word_position
 
-module RichCitationsProcessor
+  attr_reader :truncated_before
+  attr_reader :text_before
+  attr_reader :text
+  attr_reader :text_after
+  attr_reader :truncated_after
+
+  attr_reader :references
+
+  def initialize
+    @references = Collection.new(Reference)
+  end
 
 end

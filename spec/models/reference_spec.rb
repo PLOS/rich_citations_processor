@@ -18,10 +18,12 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'active_support/core_ext/module/delegation'
-require "rich_citations_processor/version"
-require "rich_citations_processor/models"
+require 'spec_helper'
 
-module RichCitationsProcessor
+describe Reference do
+
+  it "should create a Reference" do
+    expect(Reference.new).not_to be_nil
+  end
 
 end

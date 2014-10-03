@@ -18,10 +18,5 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'active_support/core_ext/module/delegation'
-require "rich_citations_processor/version"
-require "rich_citations_processor/models"
-
-module RichCitationsProcessor
-
-end
+require_relative 'models/paper'
+Dir[ File.join(File.dirname(__FILE__), 'models', '*.rb') ].each { |file| require file }

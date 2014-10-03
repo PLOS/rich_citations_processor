@@ -18,10 +18,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'active_support/core_ext/module/delegation'
-require "rich_citations_processor/version"
-require "rich_citations_processor/models"
+class Paper
+  attr_accessor :uri
+  attr_accessor :uri_source
 
-module RichCitationsProcessor
-
+  attr_accessor :bibliographic
 end

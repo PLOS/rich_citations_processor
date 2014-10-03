@@ -18,10 +18,23 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'active_support/core_ext/module/delegation'
-require "rich_citations_processor/version"
-require "rich_citations_processor/models"
+class Reference
+  attr_reader :id
+  attr_reader :number
+  attr_reader :original_citation
+  attr_reader :accessed_at
 
-module RichCitationsProcessor
+  attr_reader :cited_paper
+  attr_reader :citation_groups
+
+  delegate :uri,
+           :uri_source,
+           :bibliographic,
+       to: :cited_paper
+
+  def initialize
+    @cited_paper     = CitedPaper.new
+    @citation_groups = Collection.new(CitationGroup)
+  end
 
 end
