@@ -20,7 +20,7 @@
 
 require 'spec_helper'
 
-describe Collection do
+describe RichCitationsProcessor::Models::Collection do
 
   class TestItem
     attr_reader :attributes
@@ -29,11 +29,11 @@ describe Collection do
     def property; attributes.first; end
   end
 
-  let(:coll) { Collection.new(TestItem)}
+  let(:coll) { described_class.new(TestItem)}
   let(:filled_coll) { coll.add TestItem.new(1); coll.add TestItem.new(3); coll.add TestItem.new(2); coll }
 
   it "should create a Collection" do
-    expect(Collection.new(Object)).not_to be_nil
+    expect(described_class.new(Object)).not_to be_nil
   end
 
   describe "#add" do

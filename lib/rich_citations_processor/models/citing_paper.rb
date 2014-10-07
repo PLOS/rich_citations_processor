@@ -18,13 +18,19 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-class CitingPaper < Paper
-  attr_reader :references
-  attr_reader :citation_groups
+module RichCitationsProcessor
+  module Models
 
-  def initialize
-    @references      = Collection.new(Reference)
-    @citation_groups = Collection.new(CitationGroup)
+    class CitingPaper < Paper
+      attr_reader :references
+      attr_reader :citation_groups
+
+      def initialize
+        @references      = Collection.new(Reference)
+        @citation_groups = Collection.new(CitationGroup)
+      end
+
+    end
+
   end
-
 end

@@ -18,6 +18,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-class CitedPaper < Paper
+module RichCitationsProcessor
+  module Models
+    class CitedPaper < Paper
 
+    end
+  end
 end

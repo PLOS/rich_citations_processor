@@ -18,9 +18,15 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-class Paper
-  attr_accessor :uri
-  attr_accessor :uri_source
+module RichCitationsProcessor
+  module Models
 
-  attr_accessor :bibliographic
+    class Paper
+      attr_accessor :uri
+      attr_accessor :uri_source
+
+      attr_accessor :bibliographic
+    end
+
+  end
 end

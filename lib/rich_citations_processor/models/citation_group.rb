@@ -18,21 +18,25 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-class CitationGroup
-  attr_reader :id
-  attr_reader :section
-  attr_reader :word_position
+module RichCitationsProcessor
+  module Models
+    class CitationGroup
+      attr_reader :id
+      attr_reader :section
+      attr_reader :word_position
 
-  attr_reader :truncated_before
-  attr_reader :text_before
-  attr_reader :text
-  attr_reader :text_after
-  attr_reader :truncated_after
+      attr_reader :truncated_before
+      attr_reader :text_before
+      attr_reader :text
+      attr_reader :text_after
+      attr_reader :truncated_after
 
-  attr_reader :references
+      attr_reader :references
 
-  def initialize
-    @references = Collection.new(Reference)
+      def initialize
+        @references = Collection.new(Reference)
+      end
+
+    end
   end
-
 end

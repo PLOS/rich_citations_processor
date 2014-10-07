@@ -20,10 +20,10 @@
 
 require 'spec_helper'
 
-describe Reference do
+describe RichCitationsProcessor::Models::Reference do
 
   it "should create a Reference" do
-    expect(Reference.new).not_to be_nil
+    expect(described_class.new).not_to be_nil
   end
 
 end

@@ -20,10 +20,10 @@
 
 require 'spec_helper'
 
-describe CitedPaper do
+describe RichCitationsProcessor::Models::CitedPaper do
 
   it "should create a Citedpaper" do
-    expect(CitedPaper.new).not_to be_nil
+    expect(described_class.new).not_to be_nil
   end
 
 end

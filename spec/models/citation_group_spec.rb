@@ -20,10 +20,10 @@
 
 require 'spec_helper'
 
-describe CitationGroup do
+describe RichCitationsProcessor::Models::CitationGroup do
 
   it "should create a CitationGroup" do
-    expect(CitationGroup.new).not_to be_nil
+    expect(described_class.new).not_to be_nil
   end
 
 end
