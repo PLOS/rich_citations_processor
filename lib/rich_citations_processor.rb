@@ -18,10 +18,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+require 'active_support'
+require 'active_support/dependencies'
 require 'active_support/core_ext/module/delegation'
-require "rich_citations_processor/version"
-require "rich_citations_processor/models"
+require 'active_support/core_ext/object/blank'
 
-module RichCitationsProcessor
+ActiveSupport::Dependencies.autoload_paths += [ 'lib' ]
 
-end
+require 'rich_citations_processor/initialization'
+require 'rich_citations_processor/version'
+

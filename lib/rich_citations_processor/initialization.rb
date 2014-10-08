@@ -18,5 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require_relative 'models/paper'
-Dir[ File.join(File.dirname(__FILE__), 'models', '*.rb') ].each { |file| require file }
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.acronym('API')
+  inflect.acronym('APIs')
+  inflect.acronym('PLOS')
+end
