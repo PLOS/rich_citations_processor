@@ -20,6 +20,6 @@
 
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.acronym('API')
-  inflect.acronym('APIs')
   inflect.acronym('PLOS')
+  inflect.acronym('NLM')
 end
