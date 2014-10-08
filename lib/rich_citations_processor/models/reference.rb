@@ -35,11 +35,20 @@ module RichCitationsProcessor
                :bibliographic,
            to: :cited_paper
 
-      def initialize
+      def initialize(id:nil, number:nil, original_citation:nil)
         @cited_paper     = CitedPaper.new
         @citation_groups = Collection.new(CitationGroup)
-      end
-    end
 
+        @id = id
+        @number = number
+        @original_citation = original_citation
+      end
+
+      def indented_inspect(indent='')
+        "Reference: #{id.inspect} [#{number}] => #{cited_paper.inspect}"
+      end
+      alias :inspect :indented_inspect
+
+    end
   end
 end

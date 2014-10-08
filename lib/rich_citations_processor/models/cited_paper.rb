@@ -20,6 +20,7 @@
 
 module RichCitationsProcessor
   module Models
+
     class CitedPaper < Paper
 
     end

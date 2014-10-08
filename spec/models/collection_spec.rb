@@ -27,13 +27,18 @@ describe RichCitationsProcessor::Models::Collection do
     def initialize(*a); @attributes=a; end
     def ==(other); self.attributes == other.attributes; end
     def property; attributes.first; end
+    def indented_inspect(*); property; end
   end
 
   let(:coll) { described_class.new(TestItem)}
   let(:filled_coll) { coll.add TestItem.new(1); coll.add TestItem.new(3); coll.add TestItem.new(2); coll }
 
-  it "should create a Collection" do
-    expect(described_class.new(Object)).not_to be_nil
+  describe "::new" do
+
+    it "should create a Collection" do
+      expect(described_class.new(Object)).not_to be_nil
+    end
+
   end
 
   describe "#add" do
@@ -101,7 +106,7 @@ describe RichCitationsProcessor::Models::Collection do
 
   end
 
-  describe "operations" do
+  describe "Array like operations" do
 
     it "should handle basic operations" do
       expect(filled_coll.length).to eq(3)
@@ -117,6 +122,43 @@ describe RichCitationsProcessor::Models::Collection do
 
       results = filled_coll.map { |i| i.property }
       expect(results).to eq( [ 1, 3, 2 ] )
+
+      expect(filled_coll.first.property).to eq(1)
+      expect(filled_coll.second.property).to eq(3)
+      # expect(filled_coll.third.property).to eq(2)
+      expect(filled_coll.last.property).to eq(2)
+    end
+
+  end
+
+  describe "#inspect" do
+
+    it "should return an inspection string" do
+      expect(filled_coll.inspect).to eq("Test Items[3]:\n  1\n  3\n  2")
+      expect(filled_coll.inspect).to eq(filled_coll.indented_inspect)
+    end
+
+    it "should return an inspection string for an empty collection" do
+      expect(coll.inspect).to eq('Test Items[0]')
+      expect(coll.inspect).to eq(coll.indented_inspect)
+    end
+
+    it "should handle nested module names" do
+      module Nested
+        class WidgetFactory < TestItem; end
+      end
+      coll = described_class.new(Nested::WidgetFactory)
+      coll.add( Nested::WidgetFactory.new(1) )
+      expect(coll.inspect).to eq("Widget Factories[1]:\n  1")
+      expect(coll.inspect).to eq(coll.indented_inspect)
+    end
+
+    it "should add extra indentation" do
+      expect(filled_coll.indented_inspect('  ')).to eq("  Test Items[3]:\n    1\n    3\n    2")
+    end
+
+    it "should take a custom name" do
+      expect(filled_coll.indented_inspect('  ', 'Widgets')).to eq("  Widgets[3]:\n    1\n    3\n    2")
     end
 
   end

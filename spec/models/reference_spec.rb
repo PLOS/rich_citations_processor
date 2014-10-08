@@ -22,8 +22,30 @@ require 'spec_helper'
 
 describe RichCitationsProcessor::Models::Reference do
 
-  it "should create a Reference" do
-    expect(described_class.new).not_to be_nil
+  describe "::new" do
+
+    it "should create a Reference" do
+      expect(described_class.new).not_to be_nil
+    end
+
+    it "should create a Reference with values" do
+      instance = described_class.new(number:2, id:'ref-id-2', original_citation:'Citation')
+      expect(instance).to have_attributes(number:2, id:'ref-id-2', original_citation:'Citation')
+    end
+
+  end
+
+  describe "#inspect" do
+
+    it "should return an inspection string" do
+      instance = described_class.new(number:2, id:'ref-id-2', original_citation:'Citation')
+      expect(instance.inspect).to eq('Reference: "ref-id-2" [2] => Unresolved Paper')
+      expect(instance.inspect).to eq(instance.indented_inspect)
+    end
+
+    it "should return an inspection string with citation groups"
+    it "should return an inspection string with a cited paper"
+
   end
 
 end

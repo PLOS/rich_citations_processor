@@ -25,6 +25,7 @@ module RichCitationsProcessor
       include Enumerable
 
       delegate :each,
+               :[], :first, :second, :last,
                :length, :size, :count,
                :include?,
            to: :@items
@@ -67,7 +68,20 @@ module RichCitationsProcessor
         @items << object_or_attributes
         object_or_attributes
       end
-    end
 
+      def inspect
+        indented_inspect
+      end
+
+      def indented_inspect(indent='', name=@contained_class.to_s.demodulize.titleize.pluralize)
+        result = "#{indent}#{name}[#{count}]"
+        return result if (count == 0)
+
+        indent = indent + '  '
+        result << ":\n#{indent}"
+        result << map { |i| i.indented_inspect(indent) }.join("\n#{indent}")
+      end
+
+    end
   end
 end

@@ -25,12 +25,20 @@ module RichCitationsProcessor
       attr_reader :references
       attr_reader :citation_groups
 
-      def initialize
+      def initialize(**)
         @references      = Collection.new(Reference)
         @citation_groups = Collection.new(CitationGroup)
+
+        super
       end
 
-    end
+      def indented_inspect(indent='')
+        super + "\n" +
+          references.indented_inspect('  ') + "\n" +
+          citation_groups.indented_inspect('  ')
+      end
+      alias :inspect :indented_inspect
 
+    end
   end
 end

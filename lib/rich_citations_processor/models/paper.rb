@@ -26,7 +26,21 @@ module RichCitationsProcessor
       attr_accessor :uri_source
 
       attr_accessor :bibliographic
-    end
 
+      def initialize(uri:nil, uri_source:nil)
+        @uri        = uri
+        @uri_source = uri_source
+      end
+
+      def indented_inspect(indent='')
+        if uri.present?
+          "Paper: [#{uri_source}] #{uri}"
+        else
+          "Unresolved Paper"
+        end
+      end
+      alias :inspect :indented_inspect
+
+    end
   end
 end

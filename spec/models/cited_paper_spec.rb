@@ -22,8 +22,33 @@ require 'spec_helper'
 
 describe RichCitationsProcessor::Models::CitedPaper do
 
-  it "should create a Citedpaper" do
-    expect(described_class.new).not_to be_nil
+  describe "::new" do
+
+    it "should create a Cited paper" do
+      expect(described_class.new).not_to be_nil
+    end
+
+    it "should accept uri and uri_source parameters" do
+      instance = described_class.new(uri:'http://example.com/a', uri_source:'test')
+      expect(instance).to have_attributes(uri:'http://example.com/a', uri_source:'test')
+    end
+
+  end
+
+  describe '#inspect' do
+
+    it "should return a valid inspection" do
+      instance = described_class.new(uri:'http://example.com/a', uri_source:'test')
+      expect(instance.inspect).to eq('Paper: [test] http://example.com/a')
+      expect(instance.inspect).to eq(instance.indented_inspect)
+    end
+
+    it "should accept uri and uri_source parameters" do
+      instance = described_class.new
+      expect(instance.inspect).to eq('Unresolved Paper')
+      expect(instance.inspect).to eq(instance.indented_inspect)
+    end
+
   end
 
 end

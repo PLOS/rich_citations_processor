@@ -20,6 +20,7 @@
 
 module RichCitationsProcessor
   module Models
+
     class CitationGroup
       attr_reader :id
       attr_reader :section
@@ -33,9 +34,16 @@ module RichCitationsProcessor
 
       attr_reader :references
 
-      def initialize
+      def initialize(id:nil)
         @references = Collection.new(Reference)
+
+        @id = id
       end
+
+      def indented_inspect(indent='')
+        "Citation Group: #{id.inspect}"
+      end
+      alias :inspect :indented_inspect
 
     end
   end
