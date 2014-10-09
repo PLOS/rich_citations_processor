@@ -45,7 +45,9 @@ module RichCitationsProcessor
       end
 
       def indented_inspect(indent='')
-        "Reference: #{id.inspect} [#{number}] => #{cited_paper.inspect}"
+        groups = citation_groups.map { |group| group.id.inspect }
+        groups = 'Citation Groups:[' + groups.join(', ') + ']'
+        "Reference: #{id.inspect} [#{number}] #{groups} => #{cited_paper.inspect}"
       end
       alias :inspect :indented_inspect
 

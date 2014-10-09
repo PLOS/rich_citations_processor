@@ -24,10 +24,10 @@ module RichCitationsProcessor
     class Collection
       include Enumerable
 
-      delegate :each,
-               :[], :first, :second, :last,
+      delegate :each, :[],
+               :first, :second, :third, :fourth, :fifth, :last,
                :length, :size, :count,
-               :include?,
+               :include?, :==,
            to: :@items
 
       def initialize(contained_class)

@@ -39,11 +39,12 @@ describe RichCitationsProcessor::Models::CitationGroup do
 
     it "should return an inspection string" do
       instance = described_class.new(id:"2")
-      expect(instance.inspect).to eq('Citation Group: "2"')
+      instance.references.add(id:'r3')
+      instance.references.add(id:'r1')
+
+      expect(instance.inspect).to eq('Citation Group: "2" References:["r3", "r1"]')
       expect(instance.inspect).to eq(instance.indented_inspect)
     end
-
-    it "should return an inspection string with references"
 
   end
 

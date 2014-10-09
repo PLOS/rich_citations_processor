@@ -18,46 +18,42 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'nokogiri'
-
 module RichCitationsProcessor
   module Parsers
-
     class NLM
-      attr_reader :paper
-      attr_reader :document
+      class CitationGroupParser
 
-      def self.mime_types
-        [
-          'application/nlm+xml',
-          'application/vnd.nlm+xml'
-        ]
+        attr_reader :paper
+        attr_reader :document
+
+        def initialize(document:, paper:)
+          @document = document
+          @paper    = paper
+        end
+
+        def parse!
+          grouper = CitationGrouper.new(paper)
+
+          citation_nodes.each do |citation|
+            number = number_for_citation_node(citation)
+            grouper.add_citation(number, citation)
+          end
+        end
+
+        private
+
+        def citation_nodes
+          document.search('body xref[ref-type=bibr]')
+        end
+
+        def number_for_citation_node(xref_node)
+          refid = xref_node['rid']
+          ref   = paper.references.for(id:refid)
+          raise ParserError.new("Reference not found for id:#{refid}") unless ref
+          ref.number
+        end
+
       end
-
-      def initialize(document)
-        @document = document.is_a?(Nokogiri::XML::Node) ? document : Nokogiri::XML.parse(document)
-      end
-
-      def parse!
-        @paper    = Models::CitingPaper.new
-
-        parse_paper
-        ReferenceParser.new(document:document, paper:paper).parse!
-        CitationGroupParser.new(document:document, paper:paper).parse!
-
-        paper
-      end
-
-      private
-
-      def parse_paper
-        #@todo
-      end
-
-      def parse_citation_groups
-        #@todo
-      end
-
     end
   end
 end

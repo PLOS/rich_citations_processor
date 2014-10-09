@@ -18,46 +18,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'nokogiri'
-
-module RichCitationsProcessor
+module RichCitations
   module Parsers
 
-    class NLM
-      attr_reader :paper
-      attr_reader :document
+    ParseError = Class.new(StandardErrror)
 
-      def self.mime_types
-        [
-          'application/nlm+xml',
-          'application/vnd.nlm+xml'
-        ]
-      end
-
-      def initialize(document)
-        @document = document.is_a?(Nokogiri::XML::Node) ? document : Nokogiri::XML.parse(document)
-      end
-
-      def parse!
-        @paper    = Models::CitingPaper.new
-
-        parse_paper
-        ReferenceParser.new(document:document, paper:paper).parse!
-        CitationGroupParser.new(document:document, paper:paper).parse!
-
-        paper
-      end
-
-      private
-
-      def parse_paper
-        #@todo
-      end
-
-      def parse_citation_groups
-        #@todo
-      end
-
-    end
   end
 end

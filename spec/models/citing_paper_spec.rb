@@ -55,8 +55,8 @@ describe RichCitationsProcessor::Models::CitingPaper do
       instance.citation_groups.add(id:'group-1')
 
       expect(instance.inspect).to eq("Paper: [test] http://example.com/a\n" +
-                                     "  References[1]:\n    Reference: \"ref-1\" [1] => Unresolved Paper\n" +
-                                     "  Citation Groups[1]:\n    Citation Group: \"group-1\"")
+                                     "  References[1]:\n    Reference: \"ref-1\" [1] Citation Groups:[] => Unresolved Paper\n" +
+                                     "  Citation Groups[1]:\n    Citation Group: \"group-1\" References:[]")
       expect(instance.inspect).to eq(instance.indented_inspect)
 
     end

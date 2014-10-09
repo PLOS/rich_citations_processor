@@ -44,7 +44,7 @@ xml = r = RichCitationsProcessor::API::PLOS.get_document( doi )
 
 r = xml.css('ref-list')
 # r = xml.css('body')
-puts r.to_xml; exit
+# puts r.to_xml; exit
 
 # info = PaperParser.parse_xml(xml)
 
