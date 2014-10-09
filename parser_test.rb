@@ -49,7 +49,7 @@ puts r.to_xml; exit
 # info = PaperParser.parse_xml(xml)
 
 parser = RichCitationsProcessor::Parsers::NLM.new(xml)
-paper = parser.parse
+paper = parser.parse!
 
 if paper
   puts "==== inspect ====="

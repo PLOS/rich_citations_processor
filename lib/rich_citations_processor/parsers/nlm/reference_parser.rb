@@ -19,46 +19,51 @@
 # THE SOFTWARE.
 
 require 'loofah'
-require 'nokogiri'
 
 module RichCitationsProcessor
   module Parsers
-
     class NLM
-      attr_reader :paper
-      attr_reader :document
+      class ReferenceParser
 
-      def self.mime_types
-        [
-          'application/nlm+xml',
-          'application/vnd.nlm+xml'
-        ]
+        attr_reader :paper
+        attr_reader :document
+
+        def initialize(document:, paper:)
+          @document = document
+          @paper    = paper
+        end
+
+        def parse!
+          reference_nodes.each do |number, node|
+            id = node[:id]
+            original_citation = clean_citation(node).to_s.strip
+            paper.references.add(id: id, number:number, original_citation:original_citation)
+          end
+        end
+
+        private
+
+        def reference_nodes
+          @reference_nodes ||= begin
+            document.css('ref-list ref').map.with_index{ |node, index| [index+1, node] }.to_h
+          end
+        end
+
+        # Convert Citation from JATS to HTML and remove the label node
+        def clean_citation(xml_node)
+          label = xml_node.css('label')
+          label.remove if label.present?
+          jats_to_html(xml_node)
+        end
+
+        def jats_to_html(node)
+          return nil unless node.present?
+
+          doc = Loofah.xml_fragment(node.to_s)
+          doc.scrub!( JATSScrubber.new )
+        end
+
       end
-
-      def initialize(document)
-        @document = document.is_a?(Nokogiri::XML::Node) ? document : Nokogiri::XML.parse(document)
-      end
-
-      def parse!
-        @paper    = Models::CitingPaper.new
-
-        parse_paper
-        ReferenceParser.new(document:document, paper:paper).parse!
-        parse_citation_groups
-
-        paper
-      end
-
-      private
-
-      def parse_paper
-        #@todo
-      end
-
-      def parse_citation_groups
-        #@todo
-      end
-
     end
   end
 end
