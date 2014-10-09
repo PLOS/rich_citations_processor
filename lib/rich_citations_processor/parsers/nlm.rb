@@ -54,10 +54,6 @@ module RichCitationsProcessor
         #@todo
       end
 
-      def parse_citation_groups
-        #@todo
-      end
-
     end
   end
 end

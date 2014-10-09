@@ -28,7 +28,7 @@ module RichCitationsProcessor
 
       def self.get_document(doi)
         url = DOCUMENT_URL % [doi]
-        HttpUtilities.get(url, :xml)
+        HTTPUtilities.get(url, :xml)
 
       rescue Net::HTTPFatalError => ex
         raise unless ex.response.code == '500'

@@ -19,6 +19,9 @@
 # THE SOFTWARE.
 
 ActiveSupport::Inflector.inflections do |inflect|
+  inflect.acronym('HTTP')
+  inflect.acronym('XML')
+
   inflect.acronym('API')
   inflect.acronym('PLOS')
   inflect.acronym('NLM')

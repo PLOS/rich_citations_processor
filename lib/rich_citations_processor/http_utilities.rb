@@ -26,7 +26,7 @@ require 'nokogiri'
 
 module RichCitationsProcessor
 
-  module HttpUtilities
+  module HTTPUtilities
     extend self
 
     REDIRECT_LIMIT = 3

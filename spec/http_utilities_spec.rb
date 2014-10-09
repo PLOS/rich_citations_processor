@@ -20,7 +20,8 @@
 
 require 'spec_helper'
 
-describe RichCitationsProcessor::HttpUtilities do
+describe RichCitationsProcessor::HTTPUtilities do
+  HTTPUtilities = RichCitationsProcessor::HTTPUtilities
 
   shared_examples "all HTTP methods" do
 
@@ -97,10 +98,10 @@ describe RichCitationsProcessor::HttpUtilities do
     
       it "should retry 3 times" do
         stub_request(http_method, 'http://www.example.com/path').to_return(status:502).times(3)
-        expect(RichCitationsProcessor::HttpUtilities).to receive(:sleep).with( 5)
-        expect(RichCitationsProcessor::HttpUtilities).to receive(:sleep).with(10)
-        expect(RichCitationsProcessor::HttpUtilities).to receive(:sleep).with(15)
-        expect(RichCitationsProcessor::HttpUtilities).to_not receive(:sleep)
+        expect(HTTPUtilities).to receive(:sleep).with( 5)
+        expect(HTTPUtilities).to receive(:sleep).with(10)
+        expect(HTTPUtilities).to receive(:sleep).with(15)
+        expect(HTTPUtilities).to_not receive(:sleep)
 
         expect { action('http://www.example.com/path') }.to raise_exception(Net::HTTPFatalError)
       end
@@ -108,8 +109,8 @@ describe RichCitationsProcessor::HttpUtilities do
       it "should succeed during a retry" do
         stub_request(http_method, 'http://www.example.com/path').to_return(status:502).then.
                                                                  to_return(body:'Kalamazoo!')
-        expect(RichCitationsProcessor::HttpUtilities).to receive(:sleep).with( 5)
-        expect(RichCitationsProcessor::HttpUtilities).to_not receive(:sleep)
+        expect(HTTPUtilities).to receive(:sleep).with( 5)
+        expect(HTTPUtilities).to_not receive(:sleep)
 
         result = action('http://www.example.com/path')
         expect(result).to eq('Kalamazoo!')
@@ -160,7 +161,7 @@ describe RichCitationsProcessor::HttpUtilities do
   context "For a POST" do
 
     def action(url, headers={})
-      RichCitationsProcessor::HttpUtilities.post(url, 'some-content', headers)
+      HTTPUtilities.post(url, 'some-content', headers)
     end
 
     def http_method
@@ -179,7 +180,7 @@ describe RichCitationsProcessor::HttpUtilities do
   context "For a GET" do
 
     def action(url, headers={})
-      RichCitationsProcessor::HttpUtilities.get(url, headers)
+      HTTPUtilities.get(url, headers)
     end
 
     def http_method
