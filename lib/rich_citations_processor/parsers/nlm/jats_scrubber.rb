@@ -44,31 +44,30 @@ module RichCitationsProcessor
 
             when 'mixed-citation', 'element-citation'
               node.name = 'span'
-              publication_type = node['publication-type']
-              node.attribute_nodes.each(&:remove)
+              node['data-publicationtype'] = node['publication-type']
+              node.remove_attributes except:['data-publicationtype']
               node['class'] = 'citation'
-              node['data-publicationtype'] = publication_type
 
             when 'name'
               node.name = 'span'
-              node.attribute_nodes.each(&:remove)
+              node.remove_attributes
               node['class'] = 'author'
 
             when 'surname', 'given-names', 'article-title', 'person-group',
                  'source', 'volume', 'fpage', 'lpage', 'comment',
                  'year', 'month', 'day'
-              node.attribute_nodes.each(&:remove)
+              node.remove_attributes
               node['class'] = node.name
               node.name = 'span'
 
             # Convert some HTML tags
 
             when 'italic', 'i', 'em'
-              node.attribute_nodes.each(&:remove)
+              node.remove_attributes
               node.name = 'em'
 
             when 'bold', 'b', 'strong'
-              node.attribute_nodes.each(&:remove)
+              node.remove_attributes
               node.name = 'strong'
 
             # Keep some as is
@@ -78,8 +77,7 @@ module RichCitationsProcessor
 
             else
               # Otherwise delete this node
-              node.before(node.children)
-              node.remove
+              node.replace_with_children
               return
 
           end
