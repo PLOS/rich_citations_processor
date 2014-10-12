@@ -21,41 +21,36 @@
 module RichCitationsProcessor
   module Parsers
     class NLM
-      class CitationGroupParser
+      class CitationGroupParser < CitationGrouper
 
-        attr_reader :paper
         attr_reader :document
 
         def initialize(document:, paper:)
           @document = document
-          @paper    = paper
+          super(paper)
         end
 
         def parse!
-          grouper = CitationGrouper.new(self)
-
-          citation_nodes.each do |citation|
-            number = number_for_citation_node(citation)
-            grouper.add_citation(number, citation)
+          citation_nodes.each do |citation_node|
+            number = number_for_citation_node(citation_node)
+            add_citation(number, citation_node)
+            parse_text_separators(citation_node)
           end
-        end
 
-        # callbacks from citation grouper
-
-        def reference_for_number(number)
-          paper.references.for(number:number)
-        end
-
-        def new_citation_group(id:, context:)
-          group = paper.citation_groups.add(id:id)
-
-          group.section       = section_title_for_citation_node(context)
-          group.word_position = word_position_for_citation_node(context)
-
-          group
+          finished!
         end
 
         private
+
+        def start_new_group?(citation_node)
+          citation_node.previous_sibling != citation_contexts.last
+        end
+
+        def end_group!(citation_group)
+          first_node = citation_contexts.first
+          citation_group.section       = section_title_for_citation_node(first_node)
+          citation_group.word_position = word_position_for_citation_node(first_node)
+        end
 
         def body
           @body ||= document.at_css('body')
@@ -90,6 +85,17 @@ module RichCitationsProcessor
 
         def word_position_for_citation_node(node)
           XMLUtilities.text_before(body, node).word_count + 1
+        end
+
+        # This doesn't handle markup currently ( [a]<i>,</>[b])
+        def parse_text_separators(citation)
+          sibling = citation.next_sibling
+
+          while sibling && sibling.text? && is_separator?(sibling) do
+            add_citation_context(sibling)
+            check_for_hyphen!(sibling.text)
+            sibling = sibling.next_sibling
+          end
         end
 
       end

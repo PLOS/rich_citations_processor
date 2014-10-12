@@ -40,6 +40,12 @@ describe RichCitationsProcessor::Parsers::NLM do
       expect( first_group.references ).to eq( [ paper.references.second ] )
     end
 
+    it "should add no groups if there are no citations" do
+      body "some text without a reference."
+
+      expect( paper.citation_groups ).to be_empty
+    end
+
     it "should add multiple citation groups" do
       body "some text #{cite(2)} with a reference."
       body "more text #{cite(3)} with a reference."
