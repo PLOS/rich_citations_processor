@@ -21,7 +21,7 @@
 module RichCitations
   module Parsers
 
-    ParseError = Class.new(StandardErrror)
+    class ParseError < StandardErrror; end
 
   end
 end

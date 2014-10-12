@@ -45,14 +45,10 @@ describe RichCitationsProcessor::Parsers::NLM do
   def compare_html(input, expected)
     refs input
 
-    # We need to parse the document similarly to get rid of odd spacing
-    o = Nokogiri::HTML::DocumentFragment.parse(reference.original_citation).to_html
-    o.gsub!(/^\s+|\s+$/,'')
+    citation = Nokogiri::HTML::DocumentFragment.parse(reference.original_citation)
+    expected = Nokogiri::HTML::DocumentFragment.parse(expected)
 
-    e = Nokogiri::HTML::DocumentFragment.parse(expected).to_html
-    e.gsub!(/^\s+|\s+$/,'')
-
-    expect(o).to eq(e)
+    expect(citation).to be_equivalent_to(expected).respecting_element_order
   end
 
   it "should convert JATS markup to HTML (Example 1)" do
@@ -70,7 +66,7 @@ describe RichCitationsProcessor::Parsers::NLM do
             EOS
 
     expected = <<-EOS
-                 <span class='citation' data-publicationtype="other"">
+                 <span class='citation' data-publicationtype="other">
                     <span class='person-group'>
                       <span class='author'><span class='surname'>Maddison</span><span class='given-names'>DJ</span></span>
                     </span>

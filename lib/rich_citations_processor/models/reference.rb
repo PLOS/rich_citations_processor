@@ -22,10 +22,10 @@ module RichCitationsProcessor
   module Models
 
     class Reference
-      attr_reader :id
-      attr_reader :number
-      attr_reader :original_citation
-      attr_reader :accessed_at
+      attr_accessor :id
+      attr_accessor :number
+      attr_accessor :original_citation
+      attr_accessor :accessed_at
 
       attr_reader :cited_paper
       attr_reader :citation_groups

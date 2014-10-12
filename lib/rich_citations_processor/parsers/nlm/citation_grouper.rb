@@ -29,11 +29,11 @@ module RichCitationsProcessor
         HYPHEN_SEPARATORS = ["-", "\u2013", "\u2014"]
         ALL_SEPARATORS    = [',', ''] + HYPHEN_SEPARATORS
 
-        attr_reader :paper
+        attr_reader :parser
 
-        def initialize(paper)
+        def initialize(parser)
           @group_id  = 0
-          @paper     = paper
+          @parser    = parser
           @last_node = :none
         end
 
@@ -61,7 +61,7 @@ module RichCitationsProcessor
         end
 
         def add_number(number)
-          reference = paper.references.for(number:number)
+          reference = parser.reference_for_number(number)
           raise ParseError.new("Refererence not found for number:#{number}") unless reference
 
           @current_group.references.add(reference)
@@ -73,7 +73,7 @@ module RichCitationsProcessor
         end
 
         def start_group!(node)
-          @current_group =  paper.citation_groups.add( id: next_group_id )
+          @current_group =  parser.new_citation_group( id: next_group_id, context: node )
           @last_node     =  :none
         end
 

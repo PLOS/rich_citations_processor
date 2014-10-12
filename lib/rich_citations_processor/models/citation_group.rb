@@ -22,15 +22,15 @@ module RichCitationsProcessor
   module Models
 
     class CitationGroup
-      attr_reader :id
-      attr_reader :section
-      attr_reader :word_position
+      attr_accessor :id
+      attr_accessor :section
+      attr_accessor :word_position
 
-      attr_reader :truncated_before
-      attr_reader :text_before
-      attr_reader :text
-      attr_reader :text_after
-      attr_reader :truncated_after
+      attr_accessor :truncated_before
+      attr_accessor :text_before
+      attr_accessor :text
+      attr_accessor :text_after
+      attr_accessor :truncated_after
 
       attr_reader :references
 

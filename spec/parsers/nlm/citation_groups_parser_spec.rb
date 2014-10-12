@@ -24,66 +24,108 @@ require 'support/builders/nlm'
 describe RichCitationsProcessor::Parsers::NLM do
   include Spec::Builders::NLM
 
-  let (:parser) { RichCitationsProcessor::Parsers::NLM.new(xml) }
-  let (:paper)  { parser.parse! }
+  let (:parser)      { RichCitationsProcessor::Parsers::NLM.new(xml) }
+  let (:paper)       { parser.parse! }
+  let (:first_group) { paper.citation_groups.first }
 
-  before do
-    refs 'First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth', 'Seventh', 'Eighth', 'Ninth', 'Tenth', 'Eleventh', 'Twelfth'
+  context "Grouping" do
+
+    before do
+      refs 'First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth', 'Seventh', 'Eighth', 'Ninth', 'Tenth', 'Eleventh', 'Twelfth'
+    end
+
+    it "should add a citation group" do
+      body "some text #{cite(2)} with a reference."
+
+      expect( first_group.references ).to eq( [ paper.references.second ] )
+    end
+
+    it "should add multiple citation groups" do
+      body "some text #{cite(2)} with a reference."
+      body "more text #{cite(3)} with a reference."
+
+      expect( paper.citation_groups.first.references  ).to eq( [ paper.references.second ] )
+      expect( paper.citation_groups.second.references ).to eq( [ paper.references.third  ] )
+    end
+
+    it "should create a group for adjacent citations" do
+      body "some text #{cite(2)}#{cite(4)} with a reference."
+
+      expect( first_group.references  ).to eq( [ paper.references.second,
+                                                 paper.references.fourth ] )
+    end
+
+    it "should create a group for citations separated by a comma" do
+      body "some text #{cite(2)}, #{cite(4)} with a reference."
+
+      expect( first_group.references  ).to eq( [ paper.references.second,
+                                                 paper.references.fourth ] )
+    end
+
+    it "should create a group for a citation range" do
+      body "some text #{cite(2)} - #{cite(4)} with a reference."
+
+      expect( first_group.references  ).to eq( [ paper.references.second,
+                                                 paper.references.third,
+                                                 paper.references.fourth ] )
+    end
+
+    it "should create a cgroup for a citation followed by nothing but a hyphen" do
+      body "some text #{cite(2)} -"
+
+      expect( first_group.references  ).to eq( [ paper.references.second ] )
+    end
+
+    it "should create a group with combined citations" do
+      body "some text #{cite(1)}, #{cite(5)}-#{cite(7)}, #{cite(3)}, #{cite(9)}-#{cite(11)} with a reference."
+
+      expect( first_group.references  ).to eq( [ paper.references[0],
+                                                 paper.references[4],
+                                                 paper.references[5],
+                                                 paper.references[6],
+                                                 paper.references[2],
+                                                 paper.references[8],
+                                                 paper.references[9],
+                                                 paper.references[10] ] )
+    end
+
   end
 
-  it "should add a citation group" do
-    body "some text #{cite(2)} with a reference."
+  describe "Section" do
 
-    expect( paper.citation_groups.first.references ).to eq( [ paper.references.second ] )
-  end
+    before do
+      refs 'First'
+    end
 
-  it "should add multiple citation groups" do
-    body "some text #{cite(2)} with a reference."
-    body "more text #{cite(3)} with a reference."
+    it "should include the section title" do
+      body "<sec><title>Title 1</title>Some text #{cite(1)} More text<sec>"
+      expect(first_group.section).to eq('Title 1')
+    end
 
-    expect( paper.citation_groups.first.references  ).to eq( [ paper.references.second ] )
-    expect( paper.citation_groups.second.references ).to eq( [ paper.references.third  ] )
-  end
+    it "should include the outermost section title" do
+      body "<sec><title>Title 1</title>"
+      body "<sec><title>Title 2</title>Some text #{cite(1)} More text</sec>"
+      body "</sec>"
+      expect(first_group.section).to eq('Title 1')
+    end
 
-  it "should create a group for adjacent citations" do
-    body "some text #{cite(2)}#{cite(4)} with a reference."
+    it "should include the outermost section that has a title" do
+      body "<sec>"
+      body "<sec><title>Title 2</title>Some text #{cite(1)} More text</sec>"
+      body "</sec>"
+      expect(first_group.section).to eq('Title 2')
+    end
 
-    expect( paper.citation_groups.first.references  ).to eq( [ paper.references.second,
-                                                               paper.references.fourth ] )
-  end
+    it "should include nothing if there is no section" do
+      body "<p><title>Title 2</title>Some text #{cite(1)} More text</p>"
+      expect(first_group.section).to be_nil
+    end
 
-  it "should create a group for citations separated by a comma" do
-    body "some text #{cite(2)}, #{cite(4)} with a reference."
+    it "should include nothing if the section has no title" do
+      body "<sec>Some text #{cite(1)} More text</sec>"
+      expect(first_group.section).to be_nil
+    end
 
-    expect( paper.citation_groups.first.references  ).to eq( [ paper.references.second,
-                                                               paper.references.fourth ] )
-  end
-
-  it "should create a group for a citation range" do
-    body "some text #{cite(2)} - #{cite(4)} with a reference."
-
-    expect( paper.citation_groups.first.references  ).to eq( [ paper.references.second,
-                                                               paper.references.third,
-                                                               paper.references.fourth ] )
-  end
-
-  it "should create a cgroup for a citation followed by nothing but a hyphen" do
-    body "some text #{cite(2)} -"
-
-    expect( paper.citation_groups.first.references  ).to eq( [ paper.references.second ] )
-  end
-
-  it "should create a group with combined citations" do
-    body "some text #{cite(1)}, #{cite(5)}-#{cite(7)}, #{cite(3)}, #{cite(9)}-#{cite(11)} with a reference."
-
-    expect( paper.citation_groups.first.references  ).to eq( [ paper.references[0],
-                                                               paper.references[4],
-                                                               paper.references[5],
-                                                               paper.references[6],
-                                                               paper.references[2],
-                                                               paper.references[8],
-                                                               paper.references[9],
-                                                               paper.references[10] ] )
   end
 
 end
