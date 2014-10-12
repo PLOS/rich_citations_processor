@@ -28,7 +28,7 @@ module RichCitationsProcessor
 
       attr_accessor :truncated_before
       attr_accessor :text_before
-      attr_accessor :text
+      attr_accessor :citation
       attr_accessor :text_after
       attr_accessor :truncated_after
 

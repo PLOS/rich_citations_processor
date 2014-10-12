@@ -48,8 +48,9 @@ module RichCitationsProcessor
 
         def end_group!(citation_group)
           first_node = citation_contexts.first
-          citation_group.section       = section_title_for_citation_node(first_node)
-          citation_group.word_position = word_position_for_citation_node(first_node)
+          citation_group.section       = section_title_for(first_node)
+          citation_group.word_position = word_position_for(first_node)
+          add_context_info(citation_group, citation_contexts)
         end
 
         def body
@@ -68,7 +69,7 @@ module RichCitationsProcessor
         end
 
         # Get the outermost section title
-        def section_title_for_citation_node(node)
+        def section_title_for(node)
           title = nil
 
           while node && defined?(node.parent) && (node != body)
@@ -83,8 +84,27 @@ module RichCitationsProcessor
           title
         end
 
-        def word_position_for_citation_node(node)
+        def word_position_for(node)
           XMLUtilities.text_before(body, node).word_count + 1
+        end
+
+        def add_context_info(citation_group, citation_nodes)
+          context_node  = XMLUtilities.nearest(citation_nodes.first, ['p', 'sec', 'body']) || body
+          citation_text = XMLUtilities.text_between(citation_nodes.first, citation_nodes.last)
+
+          words_before = RichCitationsProcessor.config.citation_context.words_before
+          text_before  = XMLUtilities.text_before(context_node, citation_nodes.first)
+          text_before, truncated_before = text_before.word_truncate_beginning(words_before)
+
+          words_after = RichCitationsProcessor.config.citation_context.words_after
+          text_after  = XMLUtilities.text_after(context_node, citation_nodes.last)
+          text_after, truncated_after  = text_after.word_truncate_ending(words_after )
+
+          citation_group.truncated_before = truncated_before.presence
+          citation_group.text_before      = text_before.presence
+          citation_group.citation         = citation_text.presence
+          citation_group.text_after       = text_after.presence
+          citation_group.truncated_after  = truncated_after.presence
         end
 
         # This doesn't handle markup currently ( [a]<i>,</>[b])
