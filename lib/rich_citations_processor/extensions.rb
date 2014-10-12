@@ -18,14 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-ActiveSupport::Inflector.inflections do |inflect|
-  inflect.acronym('HTTP')
-  inflect.acronym('XML')
-
-  inflect.acronym('API')
-  inflect.acronym('ID')
-
-  inflect.acronym('PLOS')
-  inflect.acronym('NLM')
-  inflect.acronym('DOI')
+# Load custom extensions
+instance_eval do
+  path = File.join( File.dirname(__FILE__), 'extensions/**/*.rb')
+  Dir[path].each { |file| require file }
 end

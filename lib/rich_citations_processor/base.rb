@@ -18,14 +18,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-ActiveSupport::Inflector.inflections do |inflect|
-  inflect.acronym('HTTP')
-  inflect.acronym('XML')
+# Create the configurations object
+module RichCitationsProcessor
+  extend self
+  extend ActiveSupport::Configurable::ClassMethods
+  config.default_proc = ->(hash,key) { hash[key] = ActiveSupport::OrderedOptions.new(&hash.default_proc)}
 
-  inflect.acronym('API')
-  inflect.acronym('ID')
-
-  inflect.acronym('PLOS')
-  inflect.acronym('NLM')
-  inflect.acronym('DOI')
 end

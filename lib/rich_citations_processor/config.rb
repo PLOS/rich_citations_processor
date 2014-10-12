@@ -18,14 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-ActiveSupport::Inflector.inflections do |inflect|
-  inflect.acronym('HTTP')
-  inflect.acronym('XML')
-
-  inflect.acronym('API')
-  inflect.acronym('ID')
-
-  inflect.acronym('PLOS')
-  inflect.acronym('NLM')
-  inflect.acronym('DOI')
+RichCitationsProcessor.configure do |conf|
+  conf.citation_context.words_before = 20
+  conf.citation_context.words_after  = 10
 end

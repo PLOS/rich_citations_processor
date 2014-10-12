@@ -24,6 +24,9 @@ require 'active_support/core_ext'
 
 ActiveSupport::Dependencies.autoload_paths += [ 'lib' ]
 
-require 'rich_citations_processor/initialization'
+require 'rich_citations_processor/base'
 require 'rich_citations_processor/version'
+require 'rich_citations_processor/extensions'
+require 'rich_citations_processor/config'
+require 'rich_citations_processor/initialization'
 
