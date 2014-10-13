@@ -24,10 +24,12 @@ module RichCitationsProcessor
     class Paper < Base
       attr_accessor :uri
       attr_accessor :uri_source
-
       attr_accessor :bibliographic
 
+      attr_reader   :authors
+
       def initialize(**attributes)
+        @authors = Collection.new(Author)
         @bibliographic = {}
 
         super

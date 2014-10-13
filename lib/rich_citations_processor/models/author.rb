@@ -18,35 +18,45 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'nokogiri'
-
 module RichCitationsProcessor
-  module Parsers
+  module Models
 
-    class NLM
-      attr_reader :paper
-      attr_reader :document
+    class Author < Base
+      attr_accessor :given
+      attr_accessor :family
+      attr_accessor :literal
+      attr_accessor :email
+      attr_accessor :affiliation
 
-      def self.mime_types
-        [
-          'application/nlm+xml',
-          'application/vnd.nlm+xml'
-        ]
+      def given=(value)
+        @given   = value.presence
+        @literal = nil if value.present?
       end
 
-      def initialize(document)
-        @document = document.is_a?(Nokogiri::XML::Node) ? document : Nokogiri::XML.parse(document)
+      def family=(value)
+        @family   = value.presence
+        @literal = nil if value.present?
       end
 
-      def parse!
-        @paper    = Models::CitingPaper.new
-
-        AuthorParser.new(document:document, paper:paper).parse!
-        ReferenceParser.new(document:document, paper:paper).parse!
-        CitationGroupParser.new(document:document, paper:paper).parse!
-
-        paper
+      def literal=(value)
+        @literal   = value.presence
+        @given = @family = nil if value.present?
       end
+
+      def indented_inspect(indent='')
+        if literal
+          result = literal
+        elsif family.present? || given.present?
+          result = [family, given].compact.join(', ')
+        else
+          result = '<not provided>'
+        end
+        result = result + " (#{email})" if email.present?
+        result = result + " (#{affiliation})" if affiliation.present?
+
+        "Author: " + result
+      end
+      alias :inspect :indented_inspect
 
     end
   end
