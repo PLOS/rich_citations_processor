@@ -19,8 +19,6 @@
 # THE SOFTWARE.
 
 
-require 'loofah'
-
 module RichCitationsProcessor
   module Parsers
     class NLM

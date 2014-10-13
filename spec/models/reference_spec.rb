@@ -46,7 +46,13 @@ describe RichCitationsProcessor::Models::Reference do
       expect(instance.inspect).to eq(instance.indented_inspect)
     end
 
-    it "should return an inspection string with a cited paper"
+    it "should return an inspection string with a cited paper" do
+      instance = described_class.new(number:2, id:'ref-id-2', original_citation:'Citation')
+      instance.cited_paper.assign_attributes!(uri:'http://dx.doi.org/10.1234/4567', uri_source:'crossref')
+
+      expect(instance.inspect).to eq('Reference: "ref-id-2" [2] Citation Groups:[] => Paper: [crossref] http://dx.doi.org/10.1234/4567')
+      expect(instance.inspect).to eq(instance.indented_inspect)
+    end
 
   end
 
