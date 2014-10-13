@@ -24,14 +24,11 @@ module Spec
     module NLM
 
       def parts
-        @parts ||= {
-            id: '10.12345/12345',
-            id_type: :doi
-        }
+        @parts ||= {}
       end
 
       def article_id(id, type=:doi)
-        parts[:id] = id
+        parts[:id]      = id
         parts[:id_type] = type
       end
 
@@ -51,19 +48,30 @@ module Spec
         "<xref ref-type='bibr' rid='ref-#{number}'>[#{number}]</xref>"
       end
 
-      def ref_list
+      def ref_nodes
         if parts[:refs]
           parts[:refs].map.with_index{ |r,i| "<ref id='ref-#{i+1}'>#{r}</ref>" }.join
+        end
+      end
+
+      def article_id_node
+        if parts[:id] && parts[:id_type]
+          "<article-id pub-id-type='#{parts[:id_type]}'>#{parts[:id]}</article-id>"
         end
       end
 
       def xml
         xml = <<-EOS
           <root>
-            <article-id pub-id-type='#{parts[:id_type]}'>#{parts[:id]}</article-id>
-            <article-meta>#{parts[:meta]}</article-meta>
+            <front>
+              #{article_id_node}
+              <article-id pub-id-type='#{parts[:id_type]}'>#{parts[:id]}</article-id>
+              <article-meta>#{parts[:meta]}</article-meta>
+            </front>
             <body>#{parts[:body]}</body>
-            <ref-list>#{ref_list}</ref-list>
+            <back>
+              <ref-list>#{ref_nodes}</ref-list>
+            </back>
           </root>
         EOS
 

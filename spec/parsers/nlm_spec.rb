@@ -43,6 +43,24 @@ describe RichCitationsProcessor::Parsers::NLM do
 
   end
 
+  describe "Identifier parsing" do
+
+    it "Should parse out the identifier" do
+      article_id '10.12345/1234.12345', :doi
+      expect(paper).to have_attributes(uri_source:'document', uri:'http://dx.doi.org/10.12345/1234.12345')
+    end
+
+    it "Should do nothing if there is no valid identifier" do
+      article_id '10.12345/1234.12345', :unknown
+      expect(paper).to have_attributes(uri_source:nil, uri:nil)
+    end
+
+    it "Should do nothing if there is no identifier to parse" do
+      expect(paper).to have_attributes(uri_source:nil, uri:nil)
+    end
+
+  end
+
   describe "Parsing of metadata (excluding authors, references and ccitation groups)" do
 
     it "should include the word count" do

@@ -41,20 +41,52 @@ module RichCitationsProcessor
       def parse!
         @paper    = Models::CitingPaper.new
 
+        parse_document_identifier
         parse_metadata
-        AuthorParser.new(document:document, paper:paper).parse!
-        ReferenceParser.new(document:document, paper:paper).parse!
-        CitationGroupParser.new(document:document, paper:paper).parse!
+        parse_authors
+        parse_references
+        parse_citation_groups
 
         paper
       end
 
       private
 
+      def parse_document_identifier
+        identifier_nodes = document.css('front article-id')
+
+        #@todo this code needs some refactoring
+        id = identifier_nodes.each do |node|
+
+          type  = node['pub-id-type']
+          ident = node.text.strip
+          id    = ID::Registry.lookup(type, ident)
+
+          if id
+            paper.uri_source = 'document'
+            paper.uri        = id.full_uri(ident)
+            break
+          end
+
+        end
+      end
+
       def parse_metadata
         # paper.bibliographic[:title] = document.at_css('article-meta article-title').try(:content).try(:strip)
 
         paper.word_count = word_count
+      end
+
+      def parse_authors
+        AuthorParser.new(document:document, paper:paper).parse!
+      end
+
+      def parse_references
+        ReferenceParser.new(document:document, paper:paper).parse!
+      end
+
+      def parse_citation_groups
+        CitationGroupParser.new(document:document, paper:paper).parse!
       end
 
       def word_count
