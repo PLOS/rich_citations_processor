@@ -43,4 +43,13 @@ describe RichCitationsProcessor::Parsers::NLM do
 
   end
 
+  describe "Parsing of metadata (excluding authors, references and ccitation groups)" do
+
+    it "should include the word count" do
+      body 'here is <b>some</b> text'
+      expect(paper.word_count).to eq(4)
+    end
+
+  end
+
 end

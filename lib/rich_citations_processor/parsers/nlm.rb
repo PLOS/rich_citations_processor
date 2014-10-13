@@ -41,11 +41,28 @@ module RichCitationsProcessor
       def parse!
         @paper    = Models::CitingPaper.new
 
+        parse_metadata
         AuthorParser.new(document:document, paper:paper).parse!
         ReferenceParser.new(document:document, paper:paper).parse!
         CitationGroupParser.new(document:document, paper:paper).parse!
 
         paper
+      end
+
+      private
+
+      def parse_metadata
+        # paper.bibliographic[:title] = document.at_css('article-meta article-title').try(:content).try(:strip)
+
+        paper.word_count = word_count
+      end
+
+      def word_count
+        XMLUtilities.text(body).word_count
+      end
+
+      def body
+        @body ||= document.at_css('body')
       end
 
     end

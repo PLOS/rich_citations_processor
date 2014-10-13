@@ -22,6 +22,8 @@ module RichCitationsProcessor
   module Models
 
     class CitingPaper < Paper
+      attr_accessor :word_count
+
       attr_reader :references
       attr_reader :citation_groups
 
