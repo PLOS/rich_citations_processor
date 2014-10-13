@@ -21,7 +21,7 @@
 module RichCitationsProcessor
   module Models
 
-    class CitationGroup
+    class CitationGroup < Base
       attr_accessor :id
       attr_accessor :section
       attr_accessor :word_position
@@ -34,10 +34,10 @@ module RichCitationsProcessor
 
       attr_reader :references
 
-      def initialize(id:nil)
+      def initialize(**attributes)
         @references = Collection.new(Reference)
 
-        @id = id
+        super
       end
 
       def indented_inspect(indent='')

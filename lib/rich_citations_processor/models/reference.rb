@@ -21,7 +21,7 @@
 module RichCitationsProcessor
   module Models
 
-    class Reference
+    class Reference < Base
       attr_accessor :id
       attr_accessor :number
       attr_accessor :original_citation
@@ -35,13 +35,11 @@ module RichCitationsProcessor
                :bibliographic,
            to: :cited_paper
 
-      def initialize(id:nil, number:nil, original_citation:nil)
+      def initialize(**attributes)
         @cited_paper     = CitedPaper.new
         @citation_groups = Collection.new(CitationGroup)
 
-        @id = id
-        @number = number
-        @original_citation = original_citation
+        super
       end
 
       def indented_inspect(indent='')

@@ -1,5 +1,5 @@
 # Copyright (c) 2014 Public Library of Science
-#
+
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -19,28 +19,28 @@
 # THE SOFTWARE.
 
 module RichCitationsProcessor
-  module Models
+  module ID
 
-    class Paper < Base
-      attr_accessor :uri
-      attr_accessor :uri_source
+    class Base
 
-      attr_accessor :bibliographic
-
-      def initialize(**attributes)
-        @bibliographic = {}
-
-        super
+      def self.types
+        not_implemented
       end
 
-      def indented_inspect(indent='')
-        if uri.present?
-          "Paper: [#{uri_source}] #{uri}"
-        else
-          "Unresolved Paper"
-        end
+      def self.full_uri(base)
+        not_implemented
       end
-      alias :inspect :indented_inspect
+
+      private
+
+      def self.not_implemented
+        method_name = caller_locations(1,1).first.label
+        raise NotImplementedError.new("#{method_name} not implemented for #{name}")
+      end
+
+      def self.inherited(subclass)
+        Registry.add(subclass)
+      end
 
     end
   end

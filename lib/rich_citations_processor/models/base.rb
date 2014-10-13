@@ -21,24 +21,37 @@
 module RichCitationsProcessor
   module Models
 
-    class Paper < Base
-      attr_accessor :uri
-      attr_accessor :uri_source
-
-      attr_accessor :bibliographic
+    class Base
 
       def initialize(**attributes)
-        @bibliographic = {}
+        assign_attributes!(**attributes)
+      end
 
-        super
+      def assign_attributes!(**attributes)
+        attributes.each do |name, value|
+          setter = "#{name}="
+          "testing setter #{setter.inspect}"
+          raise ArgumentError.new("Parameter #{name} not supported") unless respond_to?(setter)
+          send(setter, value)
+        end
       end
 
       def indented_inspect(indent='')
-        if uri.present?
-          "Paper: [#{uri_source}] #{uri}"
-        else
-          "Unresolved Paper"
+        # Get all the values that have both setters and getters
+        values = []
+        public_methods.each do |name|
+          match = name.to_s.match(/\A(\w+)=\z/)
+          next unless match
+          getter = match[1]
+          next unless respond_to?(getter)
+          value = send(getter)
+          next unless value.present?
+
+          values << "#{getter.titleize}: #{value.inspect}"
         end
+
+        object_name = self.class.to_s.demodulize.titleize
+        object_name + ": " + values.join(', ')
       end
       alias :inspect :indented_inspect
 
