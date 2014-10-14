@@ -70,6 +70,12 @@ module RichCitationsProcessor
         object_or_attributes
       end
 
+      def <<(items)
+        raise ArgumentError.new("items is not enumerable") unless items.respond_to?(:each)
+
+        items.each { |item| add( item ) }
+      end
+
       def inspect
         indented_inspect
       end

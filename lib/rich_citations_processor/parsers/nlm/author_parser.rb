@@ -24,17 +24,15 @@ module RichCitationsProcessor
     class NLM
       class AuthorParser
 
-        attr_reader :paper
         attr_reader :document
 
-        def initialize(document:, paper:)
+        def initialize(document:)
           @document = document
-          @paper    = paper
         end
 
         def parse!
           author_nodes.map do |node|
-            paper.authors.add(
+            Models::Author.new(
                 given:       author_given_name(node),
                 family:      author_family_name(node),
                 literal:     author_literal_name(node),

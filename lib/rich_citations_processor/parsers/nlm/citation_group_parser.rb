@@ -25,9 +25,9 @@ module RichCitationsProcessor
 
         attr_reader :document
 
-        def initialize(document:, paper:)
+        def initialize(document:, references:)
           @document = document
-          super(paper)
+          super(references)
         end
 
         def parse!
@@ -37,7 +37,7 @@ module RichCitationsProcessor
             parse_text_separators(citation_node)
           end
 
-          finished!
+          citation_groups
         end
 
         private
@@ -63,7 +63,7 @@ module RichCitationsProcessor
 
         def number_for_citation_node(xref_node)
           refid = xref_node['rid']
-          ref   = paper.references.for(id:refid)
+          ref   = references.for(id:refid)
           raise ParserError.new("Reference not found for id:#{refid}") unless ref
           ref.number
         end

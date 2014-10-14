@@ -26,19 +26,17 @@ module RichCitationsProcessor
     class NLM
       class ReferenceParser
 
-        attr_reader :paper
         attr_reader :document
 
-        def initialize(document:, paper:)
+        def initialize(document:)
           @document = document
-          @paper    = paper
         end
 
         def parse!
-          reference_nodes.each do |number, node|
+          reference_nodes.map do |number, node|
             id = node[:id]
             original_citation = clean_citation(node).to_s.strip
-            paper.references.add(id: id, number:number, original_citation:original_citation)
+            Models::Reference.new(id: id, number:number, original_citation:original_citation)
           end
         end
 

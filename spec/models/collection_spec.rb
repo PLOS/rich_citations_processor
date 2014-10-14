@@ -87,6 +87,52 @@ describe RichCitationsProcessor::Models::Collection do
 
   end
 
+  describe "# <<" do
+
+    it "should add items from an array of test items" do
+      expected = [ TestItem.new(1), TestItem.new(2) ]
+      coll << expected
+
+      expect(coll.to_a).to eq(expected)
+    end
+
+    it "should add items from another collection" do
+      other = described_class.new(TestItem)
+      other.add( TestItem.new(1) )
+      other.add( TestItem.new(2) )
+      coll << other
+
+      expected = [ TestItem.new(1), TestItem.new(2) ]
+      expect(coll.to_a).to eq(expected)
+    end
+
+    it "should add items from an array of hashes" do
+      coll << [ {a:1}, {b:2}]
+
+      expected = [ TestItem.new({a:1}), TestItem.new({b:2}) ]
+      expect(coll.to_a).to eq(expected)
+    end
+
+    it "should append items" do
+      coll.add( TestItem.new(1))
+
+      coll << [ TestItem.new(2), TestItem.new(3) ]
+
+      expected = [ TestItem.new(1), TestItem.new(2), TestItem.new(3) ]
+      expect(coll.to_a).to eq(expected)
+    end
+
+    it "should fail when adding  a duplicate item but add any preceding items" do
+      coll.add( TestItem.new(1))
+
+      expect { coll << [ TestItem.new(2), TestItem.new(1), TestItem.new(4) ] }.to raise_exception
+
+      expected = [ TestItem.new(1), TestItem.new(2) ]
+      expect(coll.to_a).to eq(expected)
+    end
+
+  end
+
   describe "#for" do
 
     it "should find an item based on any field" do

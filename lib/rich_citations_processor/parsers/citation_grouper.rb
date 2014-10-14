@@ -28,14 +28,15 @@ module RichCitationsProcessor
       HYPHEN_SEPARATORS = ["-", "\u2013", "\u2014"]
       ALL_SEPARATORS    = [',', ''] + HYPHEN_SEPARATORS
 
-      attr_reader :paper
+      attr_reader :references
       attr_reader :citation_contexts
       attr_reader :current_group
       attr_reader :hyphen_found
 
-      def initialize(paper)
-        @group_id  = 0
-        @paper     = paper
+      def initialize(references)
+        @group_id   = 0
+        @references = references
+        @groups     = []
       end
 
       def add_citation(number, citation_context)
@@ -54,8 +55,9 @@ module RichCitationsProcessor
         end
       end
 
-      def finished!
-        end_group!(current_group) if current_group
+      def citation_groups
+        finished!
+        @groups
       end
 
       def is_separator?(text)
@@ -86,14 +88,17 @@ module RichCitationsProcessor
       end
 
       def start_group!
-        @current_group     = paper.citation_groups.add( id: next_group_id )
+        @current_group     = Models::CitationGroup.new( id: next_group_id )
+        @groups           << @current_group
         @citation_contexts = []
       end
 
       def end_group!(citation_group)
       end
 
-      private
+      def finished!
+        end_group!(current_group) if current_group
+      end
 
       def add_reference_range(range_end)
         range_start  = @last_number + 1
@@ -105,7 +110,7 @@ module RichCitationsProcessor
 
       def add_reference(number)
         @hyphen_found = false
-        reference = paper.references.for(number:number)
+        reference = references.for(number:number)
         raise ParseError.new("Refererence not found for number:#{number}") unless reference
 
         # Update references -> citation groups and citation groups -> references

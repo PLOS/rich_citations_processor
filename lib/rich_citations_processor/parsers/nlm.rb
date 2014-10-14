@@ -78,15 +78,15 @@ module RichCitationsProcessor
       end
 
       def parse_authors
-        AuthorParser.new(document:document, paper:paper).parse!
+        paper.authors << AuthorParser.new(document:document).parse!
       end
 
       def parse_references
-        ReferenceParser.new(document:document, paper:paper).parse!
+        paper.references << ReferenceParser.new(document:document).parse!
       end
 
       def parse_citation_groups
-        CitationGroupParser.new(document:document, paper:paper).parse!
+        paper.citation_groups << CitationGroupParser.new(document:document, references:paper.references).parse!
       end
 
       def word_count
