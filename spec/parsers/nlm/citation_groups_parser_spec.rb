@@ -21,7 +21,7 @@
 require 'spec_helper'
 require 'support/builders/nlm'
 
-describe RichCitationsProcessor::Parsers::NLM do
+describe RichCitationsProcessor::Parsers::NLM::CitationGroupParser do
   include Spec::Builders::NLM
 
   let (:parser)      { RichCitationsProcessor::Parsers::NLM.new(xml) }
@@ -178,14 +178,50 @@ describe RichCitationsProcessor::Parsers::NLM do
       before = (1..25).to_a.reverse.join(" ")
       after  = (1..15).to_a.join(" ")
       body "#{before} #{cite(1)} #{after}."
+
       expected_before = (1..20).to_a.reverse.join(" ")+' '
       expected_after  = ' '+(1..10).to_a.join(" ")
+
       expect(first_group).to have_attributes(citation:         "[1]",
                                              truncated_before: true,
                                              truncated_after:  true,
                                              text_before:      expected_before,
                                              text_after:       expected_after,
                                          )
+    end
+
+    it "should include truncation as long as there is text before" do
+      before = (1..10).to_a.reverse.join(" ")
+      after  = (1..5).to_a.join(" ")
+      body "#{before} #{cite(1)} #{after}."
+
+      expected_before = (1..10).to_a.reverse.join(" ")+' '
+      expected_after  = ' '+(1..5).to_a.join(" ")+'.'
+      expect(first_group).to have_attributes(citation:         "[1]",
+                                             truncated_before: false,
+                                             truncated_after:  false,
+                                             text_before:      expected_before,
+                                             text_after:       expected_after,
+                             )
+    end
+
+    it "should set the truncation flag to nil if there is no text before" do
+      before = ''
+      after  = (1..5).to_a.join(" ")
+      body "#{before} #{cite(1)} #{after}."
+      expect(first_group).to have_attributes(citation:         "[1]",
+                                             truncated_before: nil
+                             )
+    end
+
+    it "should set the truncation flag to nil if there is no text after" do
+      before = (1..5).to_a.join(" ")
+      after  = ''
+      body "#{before} #{cite(1)} #{after}"
+
+      expect(first_group).to have_attributes(citation:         "[1]",
+                                             truncated_after: nil
+                             )
     end
 
     it "should be limited to the nearest section" do

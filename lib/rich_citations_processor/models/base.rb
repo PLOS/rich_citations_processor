@@ -36,18 +36,25 @@ module RichCitationsProcessor
         end
       end
 
-      def indented_inspect(indent='')
-        # Get all the values that have both setters and getters
-        values = []
-        public_methods.each do |name|
+      def attribute_names
+        public_methods.map do |name|
           match = name.to_s.match(/\A(\w+)=\z/)
           next unless match
           getter = match[1]
           next unless respond_to?(getter)
-          value = send(getter)
-          next unless value.present?
 
-          values << "#{getter.titleize}: #{value.inspect}"
+          getter
+        end.compact
+      end
+
+      def attribute_values
+        attribute_names.map { |name| [name, send(name) ] }.to_h
+      end
+
+      def indented_inspect(indent='')
+        # Get all the values that have both setters and getters
+        values = attribute_values.compact.map do |name, value|
+          "#{name.titleize}: #{value.inspect}"
         end
 
         object_name = self.class.to_s.demodulize.titleize

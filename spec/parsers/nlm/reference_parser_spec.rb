@@ -21,7 +21,7 @@
 require 'spec_helper'
 require 'support/builders/nlm'
 
-describe RichCitationsProcessor::Parsers::NLM do
+describe RichCitationsProcessor::Parsers::NLM::ReferenceParser do
   include Spec::Builders::NLM
 
   let (:parser) { RichCitationsProcessor::Parsers::NLM.new(xml) }

@@ -100,11 +100,11 @@ module RichCitationsProcessor
           text_after  = XMLUtilities.text_after(context_node, citation_nodes.last)
           text_after, truncated_after  = text_after.word_truncate_ending(words_after )
 
-          citation_group.truncated_before = truncated_before.presence
+          citation_group.truncated_before = text_before.present? ? truncated_before : nil
           citation_group.text_before      = text_before.presence
-          citation_group.citation         = citation_text.presence
+          citation_group.citation         = citation_text.strip
           citation_group.text_after       = text_after.presence
-          citation_group.truncated_after  = truncated_after.presence
+          citation_group.truncated_after  = text_after.present? ? truncated_after : nil
         end
 
         # This doesn't handle markup currently ( [a]<i>,</>[b])
