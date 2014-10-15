@@ -53,7 +53,9 @@ paper = parser.parse!
 
 if paper
   puts "==== inspect ====="
-  puts paper.inspect
+  #puts paper.inspect
+  formatter = RichCitationsProcessor::Formatters::JSON.new(paper)
+  pp formatter.as_structured_hash
 else
   puts "\n*************** Document #{doi} could not be retrieved\n"
 end

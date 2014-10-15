@@ -21,6 +21,7 @@
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.acronym('HTTP')
   inflect.acronym('XML')
+  inflect.acronym('JSON')
 
   inflect.acronym('API')
   inflect.acronym('ID')
