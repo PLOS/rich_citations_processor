@@ -10,9 +10,38 @@ Add this line to your application's Gemfile:
     gem 'rich_citations_processor'
 
 
+## How it works
+
+A source (text document is passed through a series of steps:
+
+1. Parsing: The document is parsed from its source format (For example an XML document conforming to a NLM DTD)
+and turned into a set of internal object representations that closely match the Rich Citations JSON structure.
+If you want to support a new import format then you probably just want to write a new parser.
+
+2. Identifier Resolving: Each reference is analyzed to determine a set of candidate URIs that it could resolve to.
+
+3. Metadata Retrieval: Based on the candidate URIs a set of services is called to retrieve additional bibliographic
+metadata for each reference. This metadata conforms to the citeproc+json standard but can include additional metadata as needed such as licensing and abstracts.
+
+4. Additionally results are cached for a URI to speed up prcoessing.
+
+## Goals
+
+
 ## Usage
 
-TODO: Write usage instructions here
+Sample code would be something along the lines of:
+
+```
+  nlm_xml   = get_document_from_some_service
+  parser    = RichCitationsProcessor::Parsers::NLM.new(nlm_xml)
+  paper     = parser.parse!
+  formatter = RichCitationsProcessor::Formatters::JSON.new(paper)
+  output    = formatter.format
+
+```
+
+TODO: Write better usage instructions here
 
 ## Contributing
 
