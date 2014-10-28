@@ -19,44 +19,18 @@
 # THE SOFTWARE.
 
 module RichCitationsProcessor
-  module ID
 
-    class Registry
+  # The input to a URI is an identifier but it is returned as a Full URI
 
-      class << self
+  module URI
+    extend self
 
-        def add(id_class)
-          @@id_classes << id_class
-        end
-
-        def lookup(type, identifier)
-          load unless @@classes_loaded
-          @@id_classes.find do |klass| klass.matches?(type, identifier) end
-        end
-
-        def lookup!(type, identifier)
-          lookup(type, identifier) || raise("Unable to locate ID type for #{type.inspect}:#{identifier.inspect}")
-        end
-
-        # Load all the files in this directory to populate the Registry
-        def load
-          path = File.join( File.dirname(__FILE__), '*.rb')
-          Dir[path].each do |file|
-            ActiveSupport::Dependencies.require_or_load(file)
-          end
-          @@classes_loaded = true
-        end
-
-        private
-
-        @@id_classes = []
-        @@classes_loaded = false
-
-      end
-
+    # Create a URI based on an identifier
+    def create(identifier, source:, type:)
+      klass = Registry.lookup(identifier, type:type)
+      return unless klass
+      klass.new(identifier, source:source)
     end
+
   end
 end
-
-
-

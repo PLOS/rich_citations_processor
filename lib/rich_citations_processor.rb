@@ -29,4 +29,5 @@ require 'rich_citations_processor/version'
 require 'rich_citations_processor/extensions'
 require 'rich_citations_processor/config'
 require 'rich_citations_processor/initialization'
+require 'rich_citations_processor/uri'  # Required because URI is also a root class
 

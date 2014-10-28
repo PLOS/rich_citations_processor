@@ -31,7 +31,6 @@ module RichCitationsProcessor
       attr_reader :citation_groups
 
       delegate :uri,           :uri=,
-               :uri_source,    :uri_source=,
                :bibliographic, :bibliographic=,
                :authors,
            to: :cited_paper

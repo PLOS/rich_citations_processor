@@ -1,5 +1,5 @@
 # Copyright (c) 2014 Public Library of Science
-#
+
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -18,37 +18,29 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'spec_helper'
+require 'net/http'
+require 'net/http/persistent'
+require 'uri'
+require 'multi_json'
+require 'nokogiri'
 
-describe RichCitationsProcessor::Models::CitedPaper do
+module RichCitationsProcessor
+  module URI
 
-  describe "::new" do
+    class DOI < Base
 
-    it "should create a Cited paper" do
-      expect(described_class.new).not_to be_nil
+      def self.matches?(identifier, type:)
+        type == 'doi'
+      end
+
+      def full_uri
+        URI_PREFIX + identifier
+      end
+
+      private
+
+      URI_PREFIX = 'http://dx.doi.org/'
+
     end
-
-    it "should accept uri and uri_source parameters" do
-      instance = described_class.new(uri: TestURI.new('http://example.com/a'))
-      expect(instance).to have_attributes(uri: TestURI.new('http://example.com/a'))
-    end
-
   end
-
-  describe '#inspect' do
-
-    it "should return a valid inspection" do
-      instance = described_class.new( uri: TestURI.new('http://example.com/a'))
-      expect(instance.inspect).to eq('Paper: [test] http://example.com/a')
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
-
-    it "should accept uri and uri_source parameters" do
-      instance = described_class.new
-      expect(instance.inspect).to eq('Unresolved Paper')
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
-
-  end
-
 end

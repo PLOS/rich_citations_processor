@@ -29,8 +29,7 @@ describe RichCitationsProcessor::Formatters::JSON do
   describe "paper info" do
 
     it "should return the paper metadata" do
-      paper.uri_source    = 'test'
-      paper.uri           = 'http://example.com/a'
+      paper.uri           = TestURI.new('http://example.com/a', source:'test')
       paper.word_count    = 42
       paper.bibliographic = { 'metadata' => 1 }
 
@@ -97,12 +96,12 @@ describe RichCitationsProcessor::Formatters::JSON do
     end
 
     it "should have metadata for each reference" do
-      paper.references.add(id:'1', number:1, uri:'http://example.com/a', uri_source:'test',
+      paper.references.add(id:'1', number:1, uri:TestURI.new('http://example.com/a'),
                            original_citation:'Citation', accessed_at:DateTime.new(2014, 10, 15, 14, 02, 42),
                            bibliographic: { 'metadata' => 42}  )
 
       expect(references).to eq([{"id"=>"1", "number"=>1, "uri_source"=>"test", "uri"=>"http://example.com/a",
-                                 "accessed_at"=>"http://example.com/a", "original_citation"=>"Citation", "bibliographic"=>{"metadata"=>42}}] );
+                                 "accessed_at"=>"2014-10-15T14:02:42.000+00:00", "original_citation"=>"Citation", "bibliographic"=>{"metadata"=>42}}] );
 
 
     end

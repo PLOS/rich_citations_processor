@@ -58,7 +58,7 @@ module RichCitationsProcessor
       # http.debug_output = $stdout
 
       loop do
-        uri      = URI.parse(url)
+        uri      = ::URI.parse(url)
         request  = yield(uri.request_uri)
         response = http.request uri, request
 

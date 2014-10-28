@@ -60,11 +60,10 @@ module RichCitationsProcessor
 
           type  = node['pub-id-type']
           ident = node.text.strip
-          id    = ID::Registry.lookup(type, ident)
+          uri = URI.create(ident, type:type, source:'document')
 
-          if id
-            paper.uri_source = 'document'
-            paper.uri        = id.full_uri(ident)
+          if uri
+            paper.uri = uri
             break
           end
 

@@ -1,5 +1,5 @@
 # Copyright (c) 2014 Public Library of Science
-#
+
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -18,37 +18,57 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'spec_helper'
+module RichCitationsProcessor
+  module URI
 
-describe RichCitationsProcessor::Models::CitedPaper do
+    class Base
+      attr_reader :source
 
-  describe "::new" do
+      def self.matches?(identifier, type:)
+        method_not_implemented_error
+      end
 
-    it "should create a Cited paper" do
-      expect(described_class.new).not_to be_nil
+      def initialize(identifier, source:)
+        @identifier = identifier
+        @source     = source
+      end
+
+      def full_uri
+        method_not_implemented_error
+      end
+
+      def ==(other)
+        case other
+          when Base
+            self.class == other.class && self.source == other.source && self.full_uri == other.full_uri
+
+          when String
+            full_uri == other
+
+          else
+            raise "Unable to compare URI with #{other.class}"
+
+        end
+      end
+
+      def as_json(options=nil)
+        full_uri
+      end
+
+      def inspect
+        "[#{source}] #{full_uri}"
+      end
+
+      protected
+
+      attr_reader :identifier
+
+      private
+
+      def self.inherited(subclass)
+        Registry.add(subclass)
+      end
+
     end
-
-    it "should accept uri and uri_source parameters" do
-      instance = described_class.new(uri: TestURI.new('http://example.com/a'))
-      expect(instance).to have_attributes(uri: TestURI.new('http://example.com/a'))
-    end
-
   end
-
-  describe '#inspect' do
-
-    it "should return a valid inspection" do
-      instance = described_class.new( uri: TestURI.new('http://example.com/a'))
-      expect(instance.inspect).to eq('Paper: [test] http://example.com/a')
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
-
-    it "should accept uri and uri_source parameters" do
-      instance = described_class.new
-      expect(instance.inspect).to eq('Unresolved Paper')
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
-
-  end
-
 end

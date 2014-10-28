@@ -1,5 +1,5 @@
 # Copyright (c) 2014 Public Library of Science
-
+#
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -18,31 +18,27 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'net/http'
-require 'net/http/persistent'
-require 'uri'
-require 'multi_json'
-require 'nokogiri'
+require 'spec_helper'
 
-module RichCitationsProcessor
+describe RichCitationsProcessor::URI::DOI do
 
-  module ID
-    extend self
+  DOI = RichCitationsProcessor::URI::DOI
 
-    class DOI < Base
+  describe '#matches?' do
 
-      def self.matches?(type, identifier)
-        type == 'doi'
-      end
-
-      def self.full_uri(base)
-        URI_PREFIX + base
-      end
-
-      private
-
-      URI_PREFIX = 'http://dx.doi.org/'
-
+    it "should match any id with a type od 'doi'" do
+      expect( DOI.matches?('absolutely anything', type:'doi') ).to be_truthy
     end
+
   end
+
+  describe '#full_uri' do
+
+    it "should return the full uri" do
+      doi = DOI.new('10.123/456', source:'test')
+      expect( doi.full_uri ).to eq('http://dx.doi.org/10.123/456')
+    end
+
+  end
+
 end

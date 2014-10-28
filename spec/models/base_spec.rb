@@ -22,7 +22,7 @@ require 'spec_helper'
 
 describe RichCitationsProcessor::Models::Base do
 
-  class TestClass < RichCitationsProcessor::Models::Base
+  class ModelTestClass < RichCitationsProcessor::Models::Base
     attr_accessor  :attrib_1
     attr_accessor  :attrib_2
     attr_reader    :atrrib_r
@@ -32,31 +32,31 @@ describe RichCitationsProcessor::Models::Base do
   describe "::new" do
 
     it "should create an Object" do
-      expect(TestClass.new).not_to be_nil
+      expect(ModelTestClass.new).not_to be_nil
     end
 
     it "should create an object with values" do
-      instance = TestClass.new(attrib_1:'Value 1', attrib_2:'Value 2')
+      instance = ModelTestClass.new(attrib_1:'Value 1', attrib_2:'Value 2')
       expect(instance).to have_attributes(attrib_1:'Value 1', attrib_2:'Value 2')
 
-      instance = TestClass.new(attrib_2:'Value 2')
+      instance = ModelTestClass.new(attrib_2:'Value 2')
       expect(instance).to have_attributes(attrib_1:nil, attrib_2:'Value 2')
 
-      instance = TestClass.new(attrib_1:'Value 1')
+      instance = ModelTestClass.new(attrib_1:'Value 1')
       expect(instance).to have_attributes(attrib_1:'Value 1', attrib_2:nil)
     end
 
     it "should fail for non existent attributes" do
-      expect { TestClass.new(unknown_attrib_1:'Value') }.to raise_exception(ArgumentError)
+      expect { ModelTestClass.new(unknown_attrib_1:'Value') }.to raise_exception(ArgumentError)
     end
 
     it "should fail for read-pnly attributes" do
-      expect { TestClass.new(attrib_r:'Value') }.to raise_exception(ArgumentError)
+      expect { ModelTestClass.new(attrib_r:'Value') }.to raise_exception(ArgumentError)
     end
 
     it "should succeed for write-only attributes" do
       instance = nil
-      expect { instance = TestClass.new(attrib_w:'Value W') }.not_to raise_exception
+      expect { instance = ModelTestClass.new(attrib_w:'Value W') }.not_to raise_exception
       expect(instance.instance_variable_get(:@attrib_w)).to eq('Value W')
     end
 
@@ -65,31 +65,31 @@ describe RichCitationsProcessor::Models::Base do
   describe "#assign_attributes!!" do
 
     it "should create an object with values" do
-      instance = TestClass.new
+      instance = ModelTestClass.new
       instance.assign_attributes!(attrib_1:'Value 1', attrib_2:'Value 2')
       expect(instance).to have_attributes(attrib_1:'Value 1', attrib_2:'Value 2')
 
-      instance = TestClass.new
+      instance = ModelTestClass.new
       instance.assign_attributes!(attrib_2:'Value 2')
       expect(instance).to have_attributes(attrib_1:nil, attrib_2:'Value 2')
 
-      instance = TestClass.new
+      instance = ModelTestClass.new
       instance.assign_attributes!(attrib_1:'Value 1')
       expect(instance).to have_attributes(attrib_1:'Value 1', attrib_2:nil)
     end
 
     it "should fail for non existent attributes" do
-      instance = TestClass.new
+      instance = ModelTestClass.new
       expect {  instance.assign_attributes!(unknown_attrib_1:'Value') }.to raise_exception(ArgumentError)
     end
 
     it "should fail for read-pnly attributes" do
-      instance = TestClass.new
+      instance = ModelTestClass.new
       expect {  instance.assign_attributes!(attrib_r:'Value') }.to raise_exception(ArgumentError)
     end
 
     it "should succeed for write-only attributes" do
-      instance = TestClass.new
+      instance = ModelTestClass.new
       expect {  instance.assign_attributes!(attrib_w:'Value W') }.not_to raise_exception
       expect(instance.instance_variable_get(:@attrib_w)).to eq('Value W')
     end
@@ -99,31 +99,31 @@ describe RichCitationsProcessor::Models::Base do
   describe "#inspect" do
 
     it "should return an inspection string" do
-      instance = TestClass.new(attrib_1:'Value 1', attrib_2:'Value 2')
+      instance = ModelTestClass.new(attrib_1:'Value 1', attrib_2:'Value 2')
 
-      expect(instance.indented_inspect).to eq('Test Class: Attrib 1: "Value 1", Attrib 2: "Value 2"')
+      expect(instance.indented_inspect).to eq('Model Test Class: Attrib 1: "Value 1", Attrib 2: "Value 2"')
       expect(instance.inspect).to eq(instance.indented_inspect)
     end
 
     it "should return only non-nil values" do
-      instance = TestClass.new(attrib_1:nil, attrib_2:'Value 2')
+      instance = ModelTestClass.new(attrib_1:nil, attrib_2:'Value 2')
 
-      expect(instance.indented_inspect).to eq('Test Class: Attrib 2: "Value 2"')
+      expect(instance.indented_inspect).to eq('Model Test Class: Attrib 2: "Value 2"')
       expect(instance.inspect).to eq(instance.indented_inspect)
     end
 
     it "should ignore values with only a writer" do
-      instance = TestClass.new(attrib_1:nil, attrib_2:'Value 2', attrib_w:'Value W')
+      instance = ModelTestClass.new(attrib_1:nil, attrib_2:'Value 2', attrib_w:'Value W')
 
-      expect(instance.indented_inspect).to eq('Test Class: Attrib 2: "Value 2"')
+      expect(instance.indented_inspect).to eq('Model Test Class: Attrib 2: "Value 2"')
       expect(instance.inspect).to eq(instance.indented_inspect)
     end
 
     it "should ignore values with only a reader" do
-      instance = TestClass.new(attrib_1:nil, attrib_2:'Value 2')
+      instance = ModelTestClass.new(attrib_1:nil, attrib_2:'Value 2')
       instance.instance_variable_set(:@attrib_r, 'Value R')
 
-      expect(instance.indented_inspect).to eq('Test Class: Attrib 2: "Value 2"')
+      expect(instance.indented_inspect).to eq('Model Test Class: Attrib 2: "Value 2"')
       expect(instance.inspect).to eq(instance.indented_inspect)
     end
 

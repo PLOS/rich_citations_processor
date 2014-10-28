@@ -20,24 +20,23 @@
 
 require 'spec_helper'
 
-RichCitationsProcessor::ID::DOI
-describe RichCitationsProcessor::ID::Registry do
+module RichCitationsProcessor
 
-  Registry = RichCitationsProcessor::ID::Registry
+  describe URI do
 
-  describe '#Lookup' do
+    describe '::create' do
 
-    it 'can lookup the id class for a type' do
-      expect(Registry.lookup('doi', '10.1234/5678')).to eq( RichCitationsProcessor::ID::DOI)
-      expect(Registry.lookup!('doi', '10.1234/5678')).to eq( RichCitationsProcessor::ID::DOI)
-    end
+      it "should create an appropriate instance" do
+        instance = URI.create('10.123/456', type:'doi', source:'test')
+        expect( instance ).to be_a(URI::DOI)
+        expect( instance ).to have_attributes(full_uri:'http://dx.doi.org/10.123/456', source:'test')
+      end
 
-    it 'returns nil if the id type is not found' do
-      expect( Registry.lookup('unknown', 'anything') ).to be_nil
-    end
+      it "should return nil if it cannot create an appropriate instance" do
+        instance = URI.create('10.123/456', type:'unknown_type', source:'test')
+        expect( instance ).to be_nil
+      end
 
-    it 'raises an exception if the id type is not found' do
-      expect{ Registry.lookup!('unknown', 'anything') }.to raise_exception
     end
 
   end

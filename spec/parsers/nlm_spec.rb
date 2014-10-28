@@ -47,16 +47,16 @@ describe RichCitationsProcessor::Parsers::NLM do
 
     it "Should parse out the identifier" do
       article_id '10.12345/1234.12345', :doi
-      expect(paper).to have_attributes(uri_source:'document', uri:'http://dx.doi.org/10.12345/1234.12345')
+      expect(paper.uri).to eq(RichCitationsProcessor::URI::DOI.new('10.12345/1234.12345', source:'document') )
     end
 
     it "Should do nothing if there is no valid identifier" do
       article_id '10.12345/1234.12345', :unknown
-      expect(paper).to have_attributes(uri_source:nil, uri:nil)
+      expect(paper.uri).to be_nil
     end
 
     it "Should do nothing if there is no identifier to parse" do
-      expect(paper).to have_attributes(uri_source:nil, uri:nil)
+      expect(paper.uri).to be_nil
     end
 
   end
