@@ -59,7 +59,7 @@ module RichCitationsProcessor
           type  = node['pub-id-type']
           ident = node.text.strip
           URI.create(ident, type:type, source:'document')
-        end.first
+        end.find(&:present?)
 
       end
 
