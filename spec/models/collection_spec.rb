@@ -52,12 +52,50 @@ module RichCitationsProcessor::Models
       end
   
       it "should fail when adding  a duplicate item" do
+        coll = described_class.new(CollectionTestItem)
+
         i1 = CollectionTestItem.new(1)
         expect { coll.add(i1) }.not_to raise_error
         i2 = CollectionTestItem.new(1)
-        expect { coll.add(i2) }.to raise_error
+        expect { coll.add(i2) }.to raise_error(DuplicateError)
       end
-  
+
+      it "adding a duplicate item should not affect the collection" do
+        coll = described_class.new(CollectionTestItem)
+
+        i1 = CollectionTestItem.new(1)
+        expect { coll.add(i1) }.not_to raise_error
+        i2 = CollectionTestItem.new(1)
+        expect { coll.add(i2) }.to raise_error(DuplicateError)
+
+        expect(coll.length).to eq(1)
+        expect(coll.first).to eq(i1)
+      end
+
+      it "should not not fail when adding  a duplicate item if allow_duplicates is true" do
+        coll = described_class.new(CollectionTestItem, ignore_duplicates:true)
+
+        i1 = CollectionTestItem.new(1)
+        expect { coll.add(i1) }.not_to raise_error
+        i2 = CollectionTestItem.new(1)
+        result = nil
+        expect { result = coll.add(i2) }.not_to raise_error
+
+        expect(result).to be_nil
+      end
+
+      it "adding a duplicate item should not affect the collection" do
+        coll = described_class.new(CollectionTestItem, ignore_duplicates:true )
+
+        i1 = CollectionTestItem.new(1)
+        expect { coll.add(i1) }.not_to raise_error
+        i2 = CollectionTestItem.new(1)
+        expect { coll.add(i2) }.not_to raise_error
+
+        expect(coll.length).to eq(1)
+        expect(coll.first).to eq(i1)
+      end
+
       it "should add an item from multiple arguments" do
         result = nil
         expect { result = coll.add(1,2,3) }.not_to raise_error
@@ -80,7 +118,7 @@ module RichCitationsProcessor::Models
   
       it "should fail if a different class is added" do
         i = Object.new
-        expect { c.add(i) }.to raise_error
+        expect { coll.add(i) }.to raise_error(ArgumentError)
       end
   
     end
