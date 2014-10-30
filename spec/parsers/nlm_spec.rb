@@ -57,6 +57,12 @@ module RichCitationsProcessor
         expect(paper.uri).to be_nil
       end
 
+      it "Should take the first valid identifier" do
+        article_id '10.12345/1234.12345', :unknown
+        article_id '10.12345/1234.12345', :doi
+        expect(paper.uri).to eq(URI::DOI.new('10.12345/1234.12345', source:'document') )
+      end
+
       it "Should do nothing if there is no identifier to parse" do
         expect(paper.uri).to be_nil
       end

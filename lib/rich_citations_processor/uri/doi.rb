@@ -18,11 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'net/http'
-require 'net/http/persistent'
-require 'uri'
-require 'multi_json'
-require 'nokogiri'
+require 'yaml'
 
 module RichCitationsProcessor
   module URI
@@ -42,7 +38,7 @@ module RichCitationsProcessor
       end
 
       def full_uri
-        URI_PREFIX + identifier
+        URI_PREFIX + doi
       end
 
       def provider
