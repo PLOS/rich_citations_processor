@@ -20,7 +20,7 @@
 
 require 'spec_helper'
 
-describe Module do
+RSpec.describe Module do
 
   describe '#method_not_implemented_error' do
 

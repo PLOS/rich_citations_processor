@@ -20,44 +20,48 @@
 
 require 'spec_helper'
 
-describe RichCitationsProcessor::Models::CitingPaper do
+module RichCitationsProcessor::Models
 
-  describe "::new" do
+  RSpec.describe CitingPaper do
 
-    it "should create a CitingPaper" do
-      expect(described_class.new).not_to be_nil
+    describe "::new" do
+
+      it "should create a CitingPaper" do
+        expect(described_class.new).not_to be_nil
+      end
+
+      it "should accept uri and uri_source parameters" do
+        instance = described_class.new(uri: TestURI.new('http://example.com/a', source:'test'))
+        expect(instance).to have_attributes(uri: TestURI.new('http://example.com/a', source:'test'))
+      end
+
     end
 
-    it "should accept uri and uri_source parameters" do
-      instance = described_class.new(uri: TestURI.new('http://example.com/a', source:'test'))
-      expect(instance).to have_attributes(uri: TestURI.new('http://example.com/a', source:'test'))
-    end
+    describe '#inspect' do
 
-  end
+      it "should return a valid inspection" do
+        instance = described_class.new(uri: TestURI.new('http://example.com/a'))
+        expect(instance.inspect).to eq("Paper: [test] http://example.com/a\n  References[0]\n  Citation Groups[0]")
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-  describe '#inspect' do
+      it "should accept uri and uri_source parameters" do
+        instance = described_class.new
+        expect(instance.inspect).to eq("Unresolved Paper\n  References[0]\n  Citation Groups[0]")
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-    it "should return a valid inspection" do
-      instance = described_class.new(uri: TestURI.new('http://example.com/a'))
-      expect(instance.inspect).to eq("Paper: [test] http://example.com/a\n  References[0]\n  Citation Groups[0]")
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
+      it "should include references and citation groups" do
+        instance = described_class.new(uri: TestURI.new('http://example.com/a'))
+        instance.references.add(number:1, id:'ref-1')
+        instance.citation_groups.add(id:'group-1')
 
-    it "should accept uri and uri_source parameters" do
-      instance = described_class.new
-      expect(instance.inspect).to eq("Unresolved Paper\n  References[0]\n  Citation Groups[0]")
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
+        expect(instance.inspect).to eq("Paper: [test] http://example.com/a\n" +
+                                       "  References[1]:\n    Reference: \"ref-1\" [1] Citation Groups:[] => Unresolved Paper\n" +
+                                       "  Citation Groups[1]:\n    Citation Group: \"group-1\" References:[]")
+        expect(instance.inspect).to eq(instance.indented_inspect)
 
-    it "should include references and citation groups" do
-      instance = described_class.new(uri: TestURI.new('http://example.com/a'))
-      instance.references.add(number:1, id:'ref-1')
-      instance.citation_groups.add(id:'group-1')
-
-      expect(instance.inspect).to eq("Paper: [test] http://example.com/a\n" +
-                                     "  References[1]:\n    Reference: \"ref-1\" [1] Citation Groups:[] => Unresolved Paper\n" +
-                                     "  Citation Groups[1]:\n    Citation Group: \"group-1\" References:[]")
-      expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
     end
 

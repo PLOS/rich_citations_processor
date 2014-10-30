@@ -36,6 +36,7 @@ module RichCitationsProcessor
       text_nodes = container.xpath('.//text()').map(&:text)
       text = text_nodes.join(" ")
       clean_text = text.squish
+      clean_text
     end
 
     # Text up to a node

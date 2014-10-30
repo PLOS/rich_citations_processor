@@ -20,7 +20,7 @@
 
 require 'spec_helper'
 
-describe 'Regexp extensions' do
+RSpec.describe 'Regexp extensions' do
 
   describe "#all_matches" do
 

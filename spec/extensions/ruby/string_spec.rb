@@ -20,7 +20,7 @@
 
 require 'spec_helper'
 
-describe String do
+RSpec.describe String do
 
   describe "#word_count" do
 

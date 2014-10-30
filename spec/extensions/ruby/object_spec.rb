@@ -20,7 +20,7 @@
 
 require 'spec_helper'
 
-describe Object do
+RSpec.describe Object do
 
   describe '#method_not_implemented_error' do
 

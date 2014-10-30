@@ -20,7 +20,7 @@
 
 require 'spec_helper'
 
-describe NilClass do
+RSpec.describe NilClass do
 
   describe '#to_sym' do
 

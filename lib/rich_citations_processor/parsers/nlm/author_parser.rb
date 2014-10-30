@@ -94,7 +94,7 @@ module RichCitationsProcessor
         end
 
         def author_nodes
-          nodes = document.css('article-meta contrib[contrib-type=author]')
+          document.css('article-meta contrib[contrib-type=author]')
         end
 
       end

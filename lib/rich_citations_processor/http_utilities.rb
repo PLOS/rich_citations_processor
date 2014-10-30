@@ -63,7 +63,7 @@ module RichCitationsProcessor
         response = http.request uri, request
 
         # Handle redirects
-        location = response.header['location']
+        location = response['location']
         if location
           raise Net::HTTPFatalError.new("Recursive redirect", 508) if redirects.include?(location)
           raise Net::HTTPFatalError.new("Too many redirects", 508) if redirects.length >= REDIRECT_LIMIT

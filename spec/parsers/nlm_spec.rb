@@ -21,51 +21,55 @@
 require 'spec_helper'
 require 'support/builders/nlm'
 
-describe RichCitationsProcessor::Parsers::NLM do
-  include Spec::Builders::NLM
+module RichCitationsProcessor
 
-  let (:parser) { RichCitationsProcessor::Parsers::NLM.new(xml) }
-  let (:paper)  { parser.parse! }
+  RSpec.describe Parsers::NLM do
+    include Spec::Builders::NLM
 
-  describe "Parsing" do
+    let (:parser) { Parsers::NLM.new(xml) }
+    let (:paper)  { parser.parse! }
 
-    it "should parse from a Nokogiri document" do
-      expect(xml).to be_a_kind_of(Nokogiri::XML::Document)
-      parser = RichCitationsProcessor::Parsers::NLM.new(xml)
-      parser.parse!
+    describe "Parsing" do
+
+      it "should parse from a Nokogiri document" do
+        expect(xml).to be_a_kind_of(Nokogiri::XML::Document)
+        parser = Parsers::NLM.new(xml)
+        parser.parse!
+      end
+
+      it "should parse from a String document" do
+        xmls = xml.to_s
+        parser = Parsers::NLM.new(xmls)
+        parser.parse!
+      end
+
     end
 
-    it "should parse from a String document" do
-      xmls = xml.to_s
-      parser = RichCitationsProcessor::Parsers::NLM.new(xmls)
-      parser.parse!
+    describe "Identifier parsing" do
+
+      it "Should parse out the identifier" do
+        article_id '10.12345/1234.12345', :doi
+        expect(paper.uri).to eq(URI::DOI.new('10.12345/1234.12345', source:'document') )
+      end
+
+      it "Should do nothing if there is no valid identifier" do
+        article_id '10.12345/1234.12345', :unknown
+        expect(paper.uri).to be_nil
+      end
+
+      it "Should do nothing if there is no identifier to parse" do
+        expect(paper.uri).to be_nil
+      end
+
     end
 
-  end
+    describe "Parsing of metadata (excluding authors, references and ccitation groups)" do
 
-  describe "Identifier parsing" do
+      it "should include the word count" do
+        body 'here is <b>some</b> text'
+        expect(paper.word_count).to eq(4)
+      end
 
-    it "Should parse out the identifier" do
-      article_id '10.12345/1234.12345', :doi
-      expect(paper.uri).to eq(RichCitationsProcessor::URI::DOI.new('10.12345/1234.12345', source:'document') )
-    end
-
-    it "Should do nothing if there is no valid identifier" do
-      article_id '10.12345/1234.12345', :unknown
-      expect(paper.uri).to be_nil
-    end
-
-    it "Should do nothing if there is no identifier to parse" do
-      expect(paper.uri).to be_nil
-    end
-
-  end
-
-  describe "Parsing of metadata (excluding authors, references and ccitation groups)" do
-
-    it "should include the word count" do
-      body 'here is <b>some</b> text'
-      expect(paper.word_count).to eq(4)
     end
 
   end

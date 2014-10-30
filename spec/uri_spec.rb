@@ -22,7 +22,7 @@ require 'spec_helper'
 
 module RichCitationsProcessor
 
-  describe URI do
+  RSpec.describe URI do
 
     describe '::create' do
 

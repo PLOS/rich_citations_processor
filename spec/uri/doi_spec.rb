@@ -20,23 +20,25 @@
 
 require 'spec_helper'
 
-describe RichCitationsProcessor::URI::DOI do
+module RichCitationsProcessor
 
-  DOI = RichCitationsProcessor::URI::DOI
+  RSpec.describe RichCitationsProcessor::URI::DOI do
 
-  describe '#matches?' do
+    describe '#matches?' do
 
-    it "should match any id with a type od 'doi'" do
-      expect( DOI.matches?('absolutely anything', type:'doi') ).to be_truthy
+      it "should match any id with a type od 'doi'" do
+        expect( URI::DOI.matches?('absolutely anything', type:'doi') ).to be_truthy
+      end
+
     end
 
-  end
+    describe '#full_uri' do
 
-  describe '#full_uri' do
+      it "should return the full uri" do
+        doi = URI::DOI.new('10.123/456', source:'test')
+        expect( doi.full_uri ).to eq('http://dx.doi.org/10.123/456')
+      end
 
-    it "should return the full uri" do
-      doi = DOI.new('10.123/456', source:'test')
-      expect( doi.full_uri ).to eq('http://dx.doi.org/10.123/456')
     end
 
   end

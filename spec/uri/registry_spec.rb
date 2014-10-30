@@ -20,23 +20,25 @@
 
 require 'spec_helper'
 
-describe RichCitationsProcessor::URI::Registry do
+module RichCitationsProcessor
 
-  Registry = RichCitationsProcessor::URI::Registry
+  RSpec.describe URI::Registry do
 
-  describe '#Lookup' do
+    describe '#Lookup' do
 
-    it 'can lookup the id class for a type' do
-      expect(Registry.lookup('10.1234/5678', type:'doi')).to eq( RichCitationsProcessor::URI::DOI)
-      expect(Registry.lookup!('10.1234/5678', type:'doi')).to eq( RichCitationsProcessor::URI::DOI)
-    end
+      it 'can lookup the id class for a type' do
+        expect(URI::Registry.lookup('10.1234/5678', type:'doi')).to eq( URI::DOI)
+        expect(URI::Registry.lookup!('10.1234/5678', type:'doi')).to eq( URI::DOI)
+      end
 
-    it 'returns nil if the id type is not found' do
-      expect( Registry.lookup('unknown', type:'anything') ).to be_nil
-    end
+      it 'returns nil if the id type is not found' do
+        expect( URI::Registry.lookup('unknown', type:'anything') ).to be_nil
+      end
 
-    it 'raises an exception if the id type is not found' do
-      expect{ Registry.lookup!('unknown', type:'anything') }.to raise_exception
+      it 'raises an exception if the id type is not found' do
+        expect{ URI::Registry.lookup!('unknown', type:'anything') }.to raise_exception
+      end
+
     end
 
   end

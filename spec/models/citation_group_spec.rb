@@ -20,30 +20,34 @@
 
 require 'spec_helper'
 
-describe RichCitationsProcessor::Models::CitationGroup do
+module RichCitationsProcessor::Models
 
-  describe "::new" do
+  RSpec.describe CitationGroup do
 
-    it "should create a CitationGroup" do
-      expect(described_class.new).not_to be_nil
+    describe "::new" do
+
+      it "should create a CitationGroup" do
+        expect(described_class.new).not_to be_nil
+      end
+
+      it "should create a Reference with values" do
+        instance = described_class.new(id:"2")
+        expect(instance).to have_attributes(id:"2")
+      end
+
     end
 
-    it "should create a Reference with values" do
-      instance = described_class.new(id:"2")
-      expect(instance).to have_attributes(id:"2")
-    end
+    describe "#inspect" do
 
-  end
+      it "should return an inspection string" do
+        instance = described_class.new(id:"2")
+        instance.references.add(id:'r3')
+        instance.references.add(id:'r1')
 
-  describe "#inspect" do
+        expect(instance.inspect).to eq('Citation Group: "2" References:["r3", "r1"]')
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-    it "should return an inspection string" do
-      instance = described_class.new(id:"2")
-      instance.references.add(id:'r3')
-      instance.references.add(id:'r1')
-
-      expect(instance.inspect).to eq('Citation Group: "2" References:["r3", "r1"]')
-      expect(instance.inspect).to eq(instance.indented_inspect)
     end
 
   end

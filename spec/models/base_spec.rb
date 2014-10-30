@@ -20,111 +20,115 @@
 
 require 'spec_helper'
 
-describe RichCitationsProcessor::Models::Base do
+module RichCitationsProcessor::Models
 
-  class ModelTestClass < RichCitationsProcessor::Models::Base
-    attr_accessor  :attrib_1
-    attr_accessor  :attrib_2
-    attr_reader    :atrrib_r
-    attr_writer    :attrib_w
-  end
+  RSpec.describe Base do
 
-  describe "::new" do
-
-    it "should create an Object" do
-      expect(ModelTestClass.new).not_to be_nil
+    class ModelTestClass < Base
+      attr_accessor  :attrib_1
+      attr_accessor  :attrib_2
+      attr_reader    :atrrib_r
+      attr_writer    :attrib_w
     end
 
-    it "should create an object with values" do
-      instance = ModelTestClass.new(attrib_1:'Value 1', attrib_2:'Value 2')
-      expect(instance).to have_attributes(attrib_1:'Value 1', attrib_2:'Value 2')
+    describe "::new" do
 
-      instance = ModelTestClass.new(attrib_2:'Value 2')
-      expect(instance).to have_attributes(attrib_1:nil, attrib_2:'Value 2')
+      it "should create an Object" do
+        expect(ModelTestClass.new).not_to be_nil
+      end
 
-      instance = ModelTestClass.new(attrib_1:'Value 1')
-      expect(instance).to have_attributes(attrib_1:'Value 1', attrib_2:nil)
+      it "should create an object with values" do
+        instance = ModelTestClass.new(attrib_1:'Value 1', attrib_2:'Value 2')
+        expect(instance).to have_attributes(attrib_1:'Value 1', attrib_2:'Value 2')
+
+        instance = ModelTestClass.new(attrib_2:'Value 2')
+        expect(instance).to have_attributes(attrib_1:nil, attrib_2:'Value 2')
+
+        instance = ModelTestClass.new(attrib_1:'Value 1')
+        expect(instance).to have_attributes(attrib_1:'Value 1', attrib_2:nil)
+      end
+
+      it "should fail for non existent attributes" do
+        expect { ModelTestClass.new(unknown_attrib_1:'Value') }.to raise_exception(ArgumentError)
+      end
+
+      it "should fail for read-pnly attributes" do
+        expect { ModelTestClass.new(attrib_r:'Value') }.to raise_exception(ArgumentError)
+      end
+
+      it "should succeed for write-only attributes" do
+        instance = nil
+        expect { instance = ModelTestClass.new(attrib_w:'Value W') }.not_to raise_exception
+        expect(instance.instance_variable_get(:@attrib_w)).to eq('Value W')
+      end
+
     end
 
-    it "should fail for non existent attributes" do
-      expect { ModelTestClass.new(unknown_attrib_1:'Value') }.to raise_exception(ArgumentError)
+    describe "#assign_attributes!!" do
+
+      it "should create an object with values" do
+        instance = ModelTestClass.new
+        instance.assign_attributes!(attrib_1:'Value 1', attrib_2:'Value 2')
+        expect(instance).to have_attributes(attrib_1:'Value 1', attrib_2:'Value 2')
+
+        instance = ModelTestClass.new
+        instance.assign_attributes!(attrib_2:'Value 2')
+        expect(instance).to have_attributes(attrib_1:nil, attrib_2:'Value 2')
+
+        instance = ModelTestClass.new
+        instance.assign_attributes!(attrib_1:'Value 1')
+        expect(instance).to have_attributes(attrib_1:'Value 1', attrib_2:nil)
+      end
+
+      it "should fail for non existent attributes" do
+        instance = ModelTestClass.new
+        expect {  instance.assign_attributes!(unknown_attrib_1:'Value') }.to raise_exception(ArgumentError)
+      end
+
+      it "should fail for read-pnly attributes" do
+        instance = ModelTestClass.new
+        expect {  instance.assign_attributes!(attrib_r:'Value') }.to raise_exception(ArgumentError)
+      end
+
+      it "should succeed for write-only attributes" do
+        instance = ModelTestClass.new
+        expect {  instance.assign_attributes!(attrib_w:'Value W') }.not_to raise_exception
+        expect(instance.instance_variable_get(:@attrib_w)).to eq('Value W')
+      end
+
     end
 
-    it "should fail for read-pnly attributes" do
-      expect { ModelTestClass.new(attrib_r:'Value') }.to raise_exception(ArgumentError)
-    end
+    describe "#inspect" do
 
-    it "should succeed for write-only attributes" do
-      instance = nil
-      expect { instance = ModelTestClass.new(attrib_w:'Value W') }.not_to raise_exception
-      expect(instance.instance_variable_get(:@attrib_w)).to eq('Value W')
-    end
+      it "should return an inspection string" do
+        instance = ModelTestClass.new(attrib_1:'Value 1', attrib_2:'Value 2')
 
-  end
+        expect(instance.indented_inspect).to eq('Model Test Class: Attrib 1: "Value 1", Attrib 2: "Value 2"')
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-  describe "#assign_attributes!!" do
+      it "should return only non-nil values" do
+        instance = ModelTestClass.new(attrib_1:nil, attrib_2:'Value 2')
 
-    it "should create an object with values" do
-      instance = ModelTestClass.new
-      instance.assign_attributes!(attrib_1:'Value 1', attrib_2:'Value 2')
-      expect(instance).to have_attributes(attrib_1:'Value 1', attrib_2:'Value 2')
+        expect(instance.indented_inspect).to eq('Model Test Class: Attrib 2: "Value 2"')
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-      instance = ModelTestClass.new
-      instance.assign_attributes!(attrib_2:'Value 2')
-      expect(instance).to have_attributes(attrib_1:nil, attrib_2:'Value 2')
+      it "should ignore values with only a writer" do
+        instance = ModelTestClass.new(attrib_1:nil, attrib_2:'Value 2', attrib_w:'Value W')
 
-      instance = ModelTestClass.new
-      instance.assign_attributes!(attrib_1:'Value 1')
-      expect(instance).to have_attributes(attrib_1:'Value 1', attrib_2:nil)
-    end
+        expect(instance.indented_inspect).to eq('Model Test Class: Attrib 2: "Value 2"')
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-    it "should fail for non existent attributes" do
-      instance = ModelTestClass.new
-      expect {  instance.assign_attributes!(unknown_attrib_1:'Value') }.to raise_exception(ArgumentError)
-    end
+      it "should ignore values with only a reader" do
+        instance = ModelTestClass.new(attrib_1:nil, attrib_2:'Value 2')
+        instance.instance_variable_set(:@attrib_r, 'Value R')
 
-    it "should fail for read-pnly attributes" do
-      instance = ModelTestClass.new
-      expect {  instance.assign_attributes!(attrib_r:'Value') }.to raise_exception(ArgumentError)
-    end
+        expect(instance.indented_inspect).to eq('Model Test Class: Attrib 2: "Value 2"')
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-    it "should succeed for write-only attributes" do
-      instance = ModelTestClass.new
-      expect {  instance.assign_attributes!(attrib_w:'Value W') }.not_to raise_exception
-      expect(instance.instance_variable_get(:@attrib_w)).to eq('Value W')
-    end
-
-  end
-
-  describe "#inspect" do
-
-    it "should return an inspection string" do
-      instance = ModelTestClass.new(attrib_1:'Value 1', attrib_2:'Value 2')
-
-      expect(instance.indented_inspect).to eq('Model Test Class: Attrib 1: "Value 1", Attrib 2: "Value 2"')
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
-
-    it "should return only non-nil values" do
-      instance = ModelTestClass.new(attrib_1:nil, attrib_2:'Value 2')
-
-      expect(instance.indented_inspect).to eq('Model Test Class: Attrib 2: "Value 2"')
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
-
-    it "should ignore values with only a writer" do
-      instance = ModelTestClass.new(attrib_1:nil, attrib_2:'Value 2', attrib_w:'Value W')
-
-      expect(instance.indented_inspect).to eq('Model Test Class: Attrib 2: "Value 2"')
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
-
-    it "should ignore values with only a reader" do
-      instance = ModelTestClass.new(attrib_1:nil, attrib_2:'Value 2')
-      instance.instance_variable_set(:@attrib_r, 'Value R')
-
-      expect(instance.indented_inspect).to eq('Model Test Class: Attrib 2: "Value 2"')
-      expect(instance.inspect).to eq(instance.indented_inspect)
     end
 
   end

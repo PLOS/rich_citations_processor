@@ -20,174 +20,177 @@
 
 require 'spec_helper'
 
-describe RichCitationsProcessor::HTTPUtilities do
-  HTTPUtilities = RichCitationsProcessor::HTTPUtilities
+module RichCitationsProcessor
 
-  shared_examples "all HTTP methods" do
+  RSpec.describe HTTPUtilities do
 
-    describe "requests" do
+    shared_examples "all HTTP methods" do
 
-      it "should request a url" do
+      describe "requests" do
+
+        it "should request a url" do
+          stub_request(http_method, 'http://www.example.com/path')
+          action('http://www.example.com/path')
+        end
+
+        it "should request XML content" do
+          stub_request(http_method, 'http://www.example.com/path').with(headers:{'Accept' => 'application/xml'})
+          action('http://www.example.com/path', :xml)
+        end
+
+        it "should request JSON content" do
+          stub_request(http_method, 'http://www.example.com/path').with(headers:{'Accept' => 'application/json'})
+          action('http://www.example.com/path', :json)
+        end
+
+        it "should request a custom content type" do
+          stub_request(http_method, 'http://www.example.com/path').with(headers:{'Accept' => 'application/custom'})
+          action('http://www.example.com/path', 'application/custom')
+        end
+
+      end
+
+      describe "responses" do
+
+        it "should return an XML body if specified by the content type (application/xml)" do
+          stub_request(http_method, 'http://www.example.com/path').to_return(body:'<root/>', headers:{'Content_Type'=>'application/xml'}).times(1)
+          result = action('http://www.example.com/path', :json)
+          expect(result).to be_a_kind_of(Nokogiri::XML::Document)
+        end
+
+        it "should return an XML body if specified by the content type (text/xml)" do
+          stub_request(http_method, 'http://www.example.com/path').to_return(body:'<root/>', headers:{'Content_Type'=>'text/xml'}).times(1)
+          result = action('http://www.example.com/path', :json)
+          expect(result).to be_a_kind_of(Nokogiri::XML::Document)
+        end
+
+        it "should return an XML body if requested byt no content type returned" do
+          stub_request(http_method, 'http://www.example.com/path').to_return(body:'<root/>').times(1)
+          result = action('http://www.example.com/path', :xml)
+          expect(result).to be_a_kind_of(Nokogiri::XML::Document)
+        end
+
+        it "should return JSON as a hash if specified by the content type" do
+          stub_request(http_method, 'http://www.example.com/path').to_return(body:'{"a":1}', headers:{'Content_Type'=>'application/json'}).times(1)
+          result = action('http://www.example.com/path', :xml)
+          expect(result).to be_a_kind_of(Hash)
+        end
+
+        it "should return JSON as a hash if requested but no content type returned" do
+          stub_request(http_method, 'http://www.example.com/path').to_return(body:'{"a":1}').times(1)
+          result = action('http://www.example.com/path', :json)
+          expect(result).to be_a_kind_of(Hash)
+        end
+
+        it "should return text if there is no content type or accept" do
+          stub_request(http_method, 'http://www.example.com/path').to_return(body:'{"a":1}', headers:{'Content_Type'=>'application/unknown'}).times(1)
+          result = action('http://www.example.com/path', 'application/custom')
+          expect(result).to eq('{"a":1}')
+        end
+
+        it "should raise an exception" do
+          stub_request(http_method, 'http://www.example.com/path').to_return(status:404).times(1)
+          expect { action('http://www.example.com/path', 'application/custom') }.to raise_exception(Net::HTTPServerException)
+        end
+
+      end
+
+      describe "retries" do
+
+        it "should retry 3 times" do
+          stub_request(http_method, 'http://www.example.com/path').to_return(status:502).times(3)
+          expect(HTTPUtilities).to receive(:sleep).with( 5)
+          expect(HTTPUtilities).to receive(:sleep).with(10)
+          expect(HTTPUtilities).to receive(:sleep).with(15)
+          expect(HTTPUtilities).to_not receive(:sleep)
+
+          expect { action('http://www.example.com/path') }.to raise_exception(Net::HTTPFatalError)
+        end
+
+        it "should succeed during a retry" do
+          stub_request(http_method, 'http://www.example.com/path').to_return(status:502).then.
+                                                                   to_return(body:'Kalamazoo!')
+          expect(HTTPUtilities).to receive(:sleep).with( 5)
+          expect(HTTPUtilities).to_not receive(:sleep)
+
+          result = action('http://www.example.com/path')
+          expect(result).to eq('Kalamazoo!')
+        end
+
+      end
+
+      describe "redirects" do
+
+        it "should follow a location header if provided" do
+          stub_request(http_method, 'http://url1.example.com/path').to_return(headers:{'Location'=>'http://url2.example.com/path'})
+          stub_request(http_method, 'http://url2.example.com/path').to_return(body:'Content')
+
+          result = action('http://url1.example.com/path')
+          expect(result).to eq('Content')
+        end
+
+        it "should redirect up to 3 times" do
+          stub_request(http_method, 'http://url1.example.com/path').to_return(headers:{'Location'=>'http://url2.example.com/path'})
+          stub_request(http_method, 'http://url2.example.com/path').to_return(headers:{'Location'=>'http://url3.example.com/path'})
+          stub_request(http_method, 'http://url3.example.com/path').to_return(headers:{'Location'=>'http://url4.example.com/path'})
+          stub_request(http_method, 'http://url4.example.com/path').to_return(body:'Content')
+
+          result = action('http://url1.example.com/path')
+          expect(result).to eq('Content')
+        end
+
+        it "should fail on over 3 redirects" do
+          stub_request(http_method, 'http://url1.example.com/path').to_return(headers:{'Location'=>'http://url2.example.com/path'})
+          stub_request(http_method, 'http://url2.example.com/path').to_return(headers:{'Location'=>'http://url3.example.com/path'})
+          stub_request(http_method, 'http://url3.example.com/path').to_return(headers:{'Location'=>'http://url4.example.com/path'})
+          stub_request(http_method, 'http://url4.example.com/path').to_return(headers:{'Location'=>'http://url5.example.com/path'})
+
+          expect { action('http://url1.example.com/path') }.to raise_exception(Net::HTTPFatalError, "Too many redirects") { |ex| expect(ex.response).to eq(508) }
+        end
+
+        it "should fail on recursive redirects" do
+          stub_request(http_method, 'http://url1.example.com/path').to_return(headers:{'Location'=>'http://url2.example.com/path'})
+          stub_request(http_method, 'http://url2.example.com/path').to_return(headers:{'Location'=>'http://url1.example.com/path'})
+
+          expect { action('http://url1.example.com/path') }.to raise_exception(Net::HTTPFatalError, "Recursive redirect") { |ex| expect(ex.response).to eq(508) }
+        end
+
+      end
+
+    end
+
+    context "For a POST" do
+
+      def action(url, headers={})
+        HTTPUtilities.post(url, 'some-content', headers)
+      end
+
+      def http_method
+        :post
+      end
+
+      it_should_behave_like "all HTTP methods"
+
+      it "should include content" do
         stub_request(http_method, 'http://www.example.com/path')
         action('http://www.example.com/path')
       end
 
-      it "should request XML content" do
-        stub_request(http_method, 'http://www.example.com/path').with(headers:{'Accept' => 'application/xml'})
-        action('http://www.example.com/path', :xml)
-      end
-
-      it "should request JSON content" do
-        stub_request(http_method, 'http://www.example.com/path').with(headers:{'Accept' => 'application/json'})
-        action('http://www.example.com/path', :json)
-      end
-
-      it "should request a custom content type" do
-        stub_request(http_method, 'http://www.example.com/path').with(headers:{'Accept' => 'application/custom'})
-        action('http://www.example.com/path', 'application/custom')
-      end
-
     end
 
-    describe "responses" do
+    context "For a GET" do
 
-      it "should return an XML body if specified by the content type (application/xml)" do
-        stub_request(http_method, 'http://www.example.com/path').to_return(body:'<root/>', headers:{'Content_Type'=>'application/xml'}).times(1)
-        result = action('http://www.example.com/path', :json)
-        expect(result).to be_a_kind_of(Nokogiri::XML::Document)
+      def action(url, headers={})
+        HTTPUtilities.get(url, headers)
       end
 
-      it "should return an XML body if specified by the content type (text/xml)" do
-        stub_request(http_method, 'http://www.example.com/path').to_return(body:'<root/>', headers:{'Content_Type'=>'text/xml'}).times(1)
-        result = action('http://www.example.com/path', :json)
-        expect(result).to be_a_kind_of(Nokogiri::XML::Document)
+      def http_method
+        :get
       end
 
-      it "should return an XML body if requested byt no content type returned" do
-        stub_request(http_method, 'http://www.example.com/path').to_return(body:'<root/>').times(1)
-        result = action('http://www.example.com/path', :xml)
-        expect(result).to be_a_kind_of(Nokogiri::XML::Document)
-      end
-
-      it "should return JSON as a hash if specified by the content type" do
-        stub_request(http_method, 'http://www.example.com/path').to_return(body:'{"a":1}', headers:{'Content_Type'=>'application/json'}).times(1)
-        result = action('http://www.example.com/path', :xml)
-        expect(result).to be_a_kind_of(Hash)
-      end
-
-      it "should return JSON as a hash if requested but no content type returned" do
-        stub_request(http_method, 'http://www.example.com/path').to_return(body:'{"a":1}').times(1)
-        result = action('http://www.example.com/path', :json)
-        expect(result).to be_a_kind_of(Hash)
-      end
-
-      it "should return text if there is no content type or accept" do
-        stub_request(http_method, 'http://www.example.com/path').to_return(body:'{"a":1}', headers:{'Content_Type'=>'application/unknown'}).times(1)
-        result = action('http://www.example.com/path', 'application/custom')
-        expect(result).to eq('{"a":1}')
-      end
-
-      it "should raise an exception" do
-        stub_request(http_method, 'http://www.example.com/path').to_return(status:404).times(1)
-        expect { action('http://www.example.com/path', 'application/custom') }.to raise_exception(Net::HTTPServerException)
-      end
+      it_should_behave_like "all HTTP methods"
 
     end
-
-    describe "retries" do
-    
-      it "should retry 3 times" do
-        stub_request(http_method, 'http://www.example.com/path').to_return(status:502).times(3)
-        expect(HTTPUtilities).to receive(:sleep).with( 5)
-        expect(HTTPUtilities).to receive(:sleep).with(10)
-        expect(HTTPUtilities).to receive(:sleep).with(15)
-        expect(HTTPUtilities).to_not receive(:sleep)
-
-        expect { action('http://www.example.com/path') }.to raise_exception(Net::HTTPFatalError)
-      end
-
-      it "should succeed during a retry" do
-        stub_request(http_method, 'http://www.example.com/path').to_return(status:502).then.
-                                                                 to_return(body:'Kalamazoo!')
-        expect(HTTPUtilities).to receive(:sleep).with( 5)
-        expect(HTTPUtilities).to_not receive(:sleep)
-
-        result = action('http://www.example.com/path')
-        expect(result).to eq('Kalamazoo!')
-      end
-
-    end
-
-    describe "redirects" do
-
-      it "should follow a location header if provided" do
-        stub_request(http_method, 'http://url1.example.com/path').to_return(headers:{'Location'=>'http://url2.example.com/path'})
-        stub_request(http_method, 'http://url2.example.com/path').to_return(body:'Content')
-
-        result = action('http://url1.example.com/path')
-        expect(result).to eq('Content')
-      end
-
-      it "should redirect up to 3 times" do
-        stub_request(http_method, 'http://url1.example.com/path').to_return(headers:{'Location'=>'http://url2.example.com/path'})
-        stub_request(http_method, 'http://url2.example.com/path').to_return(headers:{'Location'=>'http://url3.example.com/path'})
-        stub_request(http_method, 'http://url3.example.com/path').to_return(headers:{'Location'=>'http://url4.example.com/path'})
-        stub_request(http_method, 'http://url4.example.com/path').to_return(body:'Content')
-
-        result = action('http://url1.example.com/path')
-        expect(result).to eq('Content')
-      end
-
-      it "should fail on over 3 redirects" do
-        stub_request(http_method, 'http://url1.example.com/path').to_return(headers:{'Location'=>'http://url2.example.com/path'})
-        stub_request(http_method, 'http://url2.example.com/path').to_return(headers:{'Location'=>'http://url3.example.com/path'})
-        stub_request(http_method, 'http://url3.example.com/path').to_return(headers:{'Location'=>'http://url4.example.com/path'})
-        stub_request(http_method, 'http://url4.example.com/path').to_return(headers:{'Location'=>'http://url5.example.com/path'})
-
-        expect { action('http://url1.example.com/path') }.to raise_exception(Net::HTTPFatalError, "Too many redirects") { |ex| expect(ex.response).to eq(508) }
-      end
-
-      it "should fail on recursive redirects" do
-        stub_request(http_method, 'http://url1.example.com/path').to_return(headers:{'Location'=>'http://url2.example.com/path'})
-        stub_request(http_method, 'http://url2.example.com/path').to_return(headers:{'Location'=>'http://url1.example.com/path'})
-
-        expect { action('http://url1.example.com/path') }.to raise_exception(Net::HTTPFatalError, "Recursive redirect") { |ex| expect(ex.response).to eq(508) }
-      end
-
-    end
-
-  end
-
-  context "For a POST" do
-
-    def action(url, headers={})
-      HTTPUtilities.post(url, 'some-content', headers)
-    end
-
-    def http_method
-      :post
-    end
-
-    it_should_behave_like "all HTTP methods"
-
-    it "should include content" do
-      stub_request(http_method, 'http://www.example.com/path')
-      action('http://www.example.com/path')
-    end
-
-  end
-
-  context "For a GET" do
-
-    def action(url, headers={})
-      HTTPUtilities.get(url, headers)
-    end
-
-    def http_method
-      :get
-    end
-
-    it_should_behave_like "all HTTP methods"
 
   end
 

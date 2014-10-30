@@ -55,19 +55,12 @@ module RichCitationsProcessor
       def parse_document_identifier
         identifier_nodes = document.css('front article-id')
 
-        #@todo this code needs some refactoring
-        id = identifier_nodes.each do |node|
-
+        paper.uri = identifier_nodes.lazy.map do |node|
           type  = node['pub-id-type']
           ident = node.text.strip
-          uri = URI.create(ident, type:type, source:'document')
+          URI.create(ident, type:type, source:'document')
+        end.first
 
-          if uri
-            paper.uri = uri
-            break
-          end
-
-        end
       end
 
       def parse_metadata

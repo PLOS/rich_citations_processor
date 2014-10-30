@@ -83,7 +83,7 @@ module RichCitationsProcessor
       end
 
       def reference(reference)
-        hash = {
+        {
             'id'                => reference.id,
             'number'            => reference.number,
             'uri_source'        => reference.uri && reference.uri.source,
