@@ -33,6 +33,16 @@ module RichCitationsProcessor
           action('http://www.example.com/path')
         end
 
+        it "should accept a ::URI instance" do
+          stub_request(http_method, 'http://www.example.com/path')
+          action( ::URI.parse('http://www.example.com/path') )
+        end
+
+        it "should request HTML content" do
+          stub_request(http_method, 'http://www.example.com/path').with(headers:{'Accept' => 'text/html'})
+          action('http://www.example.com/path', :html)
+        end
+
         it "should request XML content" do
           stub_request(http_method, 'http://www.example.com/path').with(headers:{'Accept' => 'application/xml'})
           action('http://www.example.com/path', :xml)
@@ -64,10 +74,22 @@ module RichCitationsProcessor
           expect(result).to be_a_kind_of(Nokogiri::XML::Document)
         end
 
-        it "should return an XML body if requested byt no content type returned" do
+        it "should return an XML body if requested but no content type returned" do
           stub_request(http_method, 'http://www.example.com/path').to_return(body:'<root/>').times(1)
           result = action('http://www.example.com/path', :xml)
           expect(result).to be_a_kind_of(Nokogiri::XML::Document)
+        end
+
+        it "should return an HTML body if specified by the content type (text/html)" do
+          stub_request(http_method, 'http://www.example.com/path').to_return(body:'<html><head></head><body></body></html>', headers:{'Content_Type'=>'text/html'}).times(1)
+          result = action('http://www.example.com/path', :json)
+          expect(result).to be_a_kind_of(Nokogiri::HTML::Document)
+        end
+
+        it "should return an HTML body if requested but no content type returned" do
+          stub_request(http_method, 'http://www.example.com/path').to_return(body:'<html><head></head><body></body></html>').times(1)
+          result = action('http://www.example.com/path', :html)
+          expect(result).to be_a_kind_of(Nokogiri::HTML::Document)
         end
 
         it "should return JSON as a hash if specified by the content type" do
@@ -126,6 +148,22 @@ module RichCitationsProcessor
           stub_request(http_method, 'http://url2.example.com/path').to_return(body:'Content')
 
           result = action('http://url1.example.com/path')
+          expect(result).to eq('Content')
+        end
+
+        it "should follow relative redirects" do
+          stub_request(http_method, 'http://url1.example.com/path/abc' ).to_return(headers:{'Location'=>'def'})
+          stub_request(http_method, 'http://url1.example.com/path/def').to_return(body:'Content')
+
+          result = action('http://url1.example.com/path/abc')
+          expect(result).to eq('Content')
+        end
+
+        it "should follow root relative redirects" do
+          stub_request(http_method, 'http://url1.example.com/path/abc').to_return(headers:{'Location'=>'/def'})
+          stub_request(http_method, 'http://url1.example.com/def'     ).to_return(body:'Content')
+
+          result = action('http://url1.example.com/path/abc')
           expect(result).to eq('Content')
         end
 

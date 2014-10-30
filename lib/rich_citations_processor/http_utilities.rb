@@ -51,14 +51,14 @@ module RichCitationsProcessor
 
     private
 
-    def self.make_request(url, headers={}, &block)
+    def self.make_request(uri, headers={}, &block)
       redirects      = []
       retry_count    = 0
       http      = Net::HTTP::Persistent.new
       # http.debug_output = $stdout
 
       loop do
-        uri      = ::URI.parse(url)
+        uri      = ::URI.parse(uri) unless uri.is_a?(::URI)
         request  = yield(uri.request_uri)
         response = http.request uri, request
 
@@ -68,7 +68,7 @@ module RichCitationsProcessor
           raise Net::HTTPFatalError.new("Recursive redirect", 508) if redirects.include?(location)
           raise Net::HTTPFatalError.new("Too many redirects", 508) if redirects.length >= REDIRECT_LIMIT
           redirects << location
-          url = location
+          uri = uri.merge(location)
 
         # Retry for certain response codes
         elsif (response.code.to_i == 502)
@@ -89,7 +89,7 @@ module RichCitationsProcessor
     def self.parse_headers(headers)
       case headers
         when Symbol
-          { 'Accept' => "application/#{headers}" }
+          { 'Accept' => ACCEPT_HEADERS[headers] }
         when String
           { 'Accept' => headers }
         when Hash
@@ -98,6 +98,12 @@ module RichCitationsProcessor
           headers
       end
     end
+
+    ACCEPT_HEADERS = {
+      xml:  'application/xml',
+      json: 'application/json',
+      html: 'text/html',
+    }
 
     # Parse response intelligently
 
@@ -112,14 +118,19 @@ module RichCitationsProcessor
     end
 
     def self.parsed_resoonse_for(content_type, body)
-      if ['text/xml', 'application/xml'].include?(content_type)
-        Nokogiri::XML.parse(body)
 
-      elsif ['application/json'].include?(content_type)
-        MultiJson.load(body, symbolize_names:true)
+      case content_type
+        when 'text/xml', 'application/xml'
+          Nokogiri::XML.parse(body)
 
-      else
-        nil
+        when 'text/html'
+          Nokogiri::HTML.parse(body)
+
+        when 'application/json'
+          MultiJson.load(body, symbolize_names:true)
+
+        else
+          nil
 
       end
     end
