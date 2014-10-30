@@ -59,6 +59,10 @@ module RichCitationsProcessor
         "[#{source}] #{full_uri}"
       end
 
+      def to_s
+        full_uri
+      end
+
       protected
 
       attr_reader :identifier

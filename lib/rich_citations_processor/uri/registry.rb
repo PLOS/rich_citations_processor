@@ -26,12 +26,13 @@ module RichCitationsProcessor
       class << self
 
         def add(id_class)
-          @@id_classes << id_class
+          @@classes << id_class
         end
 
         def lookup(identifier, type:)
           load unless @@classes_loaded
-          @@id_classes.find do |klass| klass.matches?(identifier, type:type) end
+          type = type.to_sym
+          @@classes.find do |klass| klass.matches?(identifier, type:type) end
         end
 
         def lookup!(identifier, type:)
@@ -40,6 +41,7 @@ module RichCitationsProcessor
 
         # Load all the files in this directory to populate the Registry
         def load
+          return if @@classes_loaded
           path = File.join( File.dirname(__FILE__), '*.rb')
           Dir[path].each do |file|
             ActiveSupport::Dependencies.require_or_load(file)
@@ -49,7 +51,7 @@ module RichCitationsProcessor
 
         private
 
-        @@id_classes = []
+        @@classes = []
         @@classes_loaded = false
 
       end
