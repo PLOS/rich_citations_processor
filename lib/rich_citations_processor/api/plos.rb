@@ -26,8 +26,8 @@ module RichCitationsProcessor
       # Given the DOI of a PLOS paper, downloads the XML and parses it
       # Returns an XML document
 
-      def self.get_document(doi)
-        url = DOCUMENT_URL % [doi]
+      def self.get_nlm_document(doi)
+        url = NLM_DOCUMENT_URL % [doi]
         HTTPUtilities.get(url, :xml)
 
       rescue Net::HTTPFatalError => ex
@@ -36,9 +36,14 @@ module RichCitationsProcessor
         nil
       end
 
+      def self.get_web_page(doi)
+        doi = URI::DOI.new(doi, source:'internal') unless doi.is_a?(URI::Base)
+        HTTPUtilities.get(doi.full_uri, :html)
+      end
+
       private
 
-      DOCUMENT_URL      = 'http://www.plosone.org/article/fetchObjectAttachment.action?uri=info:doi/%s&representation=XML'
+      NLM_DOCUMENT_URL = 'http://www.plosone.org/article/fetchObjectAttachment.action?uri=info:doi/%s&representation=XML'
 
     end
   end
