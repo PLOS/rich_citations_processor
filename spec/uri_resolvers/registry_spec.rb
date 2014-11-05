@@ -18,38 +18,37 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-module RichCitationsProcessor
-  module Models
+require 'spec_helper'
 
-    class Reference < Base
-      attr_accessor :id
-      attr_accessor :number
-      attr_accessor :original_citation
-      attr_accessor :accessed_at
+module RichCitationsProcessor::URIResolvers
 
-      attr_reader :cited_paper
-      attr_reader :citation_groups
+  RSpec.describe Registry do
 
-      delegate :uri,           :uri=,
-               :bibliographic, :bibliographic=,
-               :authors,
-               :candidate_uris,
-           to: :cited_paper
+    describe '#resolver_classes' do
 
-      def initialize(**attributes)
-        @cited_paper     = CitedPaper.new
-        @citation_groups = Collection.new(CitationGroup)
+      it "should return a list of URIResolver classes" do
+        expect( Registry.resolver_classes ).to eq([
+                                                     DoiFromPlosHtml
+                                                  ])
 
-        super
+
       end
-
-      def indented_inspect(indent='')
-        groups = citation_groups.map { |group| group.id.inspect }
-        groups = 'Citation Groups:[' + groups.join(', ') + ']'
-        "Reference: #{id.inspect} [#{number}] #{groups} => #{cited_paper.inspect}"
-      end
-      alias :inspect :indented_inspect
 
     end
+
+    describe '#return an instantiated list of resolvers' do
+
+      it "should return a list of URIResolver classes" do
+        classes   = Registry.resolver_classes
+        instances = Registry.resolvers(paper: 'paper', references:'references')
+
+        instances.zip(classes).each do |i, c|
+          expect(i.class).to eq(c)
+        end
+      end
+
+    end
+
   end
+
 end

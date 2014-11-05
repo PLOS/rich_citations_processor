@@ -1,5 +1,5 @@
 # Copyright (c) 2014 Public Library of Science
-#
+
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -18,37 +18,32 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+# Base class for resolving citation references to Candidate URIs
+# The base class is optimized for resolving references one at a time
+
 module RichCitationsProcessor
-  module Models
+  module URIResolvers
 
-    class Reference < Base
-      attr_accessor :id
-      attr_accessor :number
-      attr_accessor :original_citation
-      attr_accessor :accessed_at
+    class Individual < Base
 
-      attr_reader :cited_paper
-      attr_reader :citation_groups
+      def resolve!
+        filtered_references.each do |ref|
 
-      delegate :uri,           :uri=,
-               :bibliographic, :bibliographic=,
-               :authors,
-               :candidate_uris,
-           to: :cited_paper
+          id = identifier_for_reference(ref)
+          ref.candidate_uris.add(id) if id
 
-      def initialize(**attributes)
-        @cited_paper     = CitedPaper.new
-        @citation_groups = Collection.new(CitationGroup)
-
-        super
+        end if attempt?
       end
 
-      def indented_inspect(indent='')
-        groups = citation_groups.map { |group| group.id.inspect }
-        groups = 'Citation Groups:[' + groups.join(', ') + ']'
-        "Reference: #{id.inspect} [#{number}] #{groups} => #{cited_paper.inspect}"
+      protected
+
+      def identifier_for_reference(ref)
+        method_not_implemented_error
       end
-      alias :inspect :indented_inspect
+
+      def filtered_references
+        @references
+      end
 
     end
   end

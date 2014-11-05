@@ -18,38 +18,41 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+require 'spec_helper'
+
 module RichCitationsProcessor
-  module Models
 
-    class Reference < Base
-      attr_accessor :id
-      attr_accessor :number
-      attr_accessor :original_citation
-      attr_accessor :accessed_at
+  RSpec.describe URIResolver do
 
-      attr_reader :cited_paper
-      attr_reader :citation_groups
+    describe '#resolve!' do
 
-      delegate :uri,           :uri=,
-               :bibliographic, :bibliographic=,
-               :authors,
-               :candidate_uris,
-           to: :cited_paper
-
-      def initialize(**attributes)
-        @cited_paper     = CitedPaper.new
-        @citation_groups = Collection.new(CitationGroup)
-
-        super
+      def create_resolver
+        resolver = instance_double(URIResolvers::Base)
+        expect(resolver).to receive(:resolve!) {
+                              @called_resolvers << resolver
+                            }
+        resolver
       end
 
-      def indented_inspect(indent='')
-        groups = citation_groups.map { |group| group.id.inspect }
-        groups = 'Citation Groups:[' + groups.join(', ') + ']'
-        "Reference: #{id.inspect} [#{number}] #{groups} => #{cited_paper.inspect}"
+      def create_resolvers
+        @called_resolvers = []
+        (1..4).map { |i| create_resolver }
       end
-      alias :inspect :indented_inspect
+
+      it "should call each resolver in order" do
+        paper = Models::CitingPaper.new
+        resolvers = create_resolvers
+
+        expect(URIResolvers::Registry).to receive(:resolvers).with(references:paper.references, paper:paper).and_return(resolvers)
+
+        resolver = URIResolver.new(paper)
+        resolver.resolve!
+
+        expect(@called_resolvers).to eq(resolvers)
+      end
 
     end
+
   end
+
 end

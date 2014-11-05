@@ -1,5 +1,5 @@
 # Copyright (c) 2014 Public Library of Science
-#
+
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -19,37 +19,21 @@
 # THE SOFTWARE.
 
 module RichCitationsProcessor
-  module Models
 
-    class Reference < Base
-      attr_accessor :id
-      attr_accessor :number
-      attr_accessor :original_citation
-      attr_accessor :accessed_at
+  # Resolve references to citation URIs
 
-      attr_reader :cited_paper
-      attr_reader :citation_groups
+  class URIResolver
 
-      delegate :uri,           :uri=,
-               :bibliographic, :bibliographic=,
-               :authors,
-               :candidate_uris,
-           to: :cited_paper
-
-      def initialize(**attributes)
-        @cited_paper     = CitedPaper.new
-        @citation_groups = Collection.new(CitationGroup)
-
-        super
-      end
-
-      def indented_inspect(indent='')
-        groups = citation_groups.map { |group| group.id.inspect }
-        groups = 'Citation Groups:[' + groups.join(', ') + ']'
-        "Reference: #{id.inspect} [#{number}] #{groups} => #{cited_paper.inspect}"
-      end
-      alias :inspect :indented_inspect
-
+    def initialize(paper)
+      references = paper.references
+      @resolvers = URIResolvers::Registry.resolvers(paper:paper, references:references)
     end
+
+    def resolve!
+      @resolvers.each do |resolver|
+        resolver.resolve!
+      end
+    end
+
   end
 end
