@@ -59,7 +59,7 @@ module RichCitationsProcessor
           return nil unless node.present?
 
           doc = Loofah.xml_fragment(node.to_s)
-          doc.scrub!( JATSScrubber.new )
+          doc.scrub!( JatsToHtml.new )
         end
 
       end

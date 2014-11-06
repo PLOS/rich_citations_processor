@@ -20,11 +20,13 @@
 
 require 'loofah'
 
+#Convert JATS XML to HTML but keep enough structure to be used by later steps
+
 module RichCitationsProcessor
   module Parsers
     class NLM
 
-      class JATSScrubber < Loofah::Scrubbers::Strip
+      class JatsToHtml < Loofah::Scrubbers::Strip
 
         def scrub(node)
           return if node.text?
@@ -53,8 +55,10 @@ module RichCitationsProcessor
               node.remove_attributes
               node['class'] = 'author'
 
-            when 'surname', 'given-names', 'article-title', 'person-group',
-                 'source', 'volume', 'fpage', 'lpage', 'comment',
+            when 'article-title', 'elocation-id',
+                 'surname', 'given-names', 'collaborator', 'person-group',
+                 'source', 'volume', 'issue',
+                 'fpage', 'lpage', 'comment',
                  'year', 'month', 'day'
               node.remove_attributes
               node['class'] = node.name
