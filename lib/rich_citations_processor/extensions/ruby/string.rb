@@ -20,6 +20,17 @@
 
 class String
 
+  # Convert a string to a given name format. For example
+  # AJ becomes 'A. J.'
+  def as_given_names
+    clean = self.gsub(/[[.\s]/,'')
+    if clean.match(/\A[[:upper:]]+\z/)
+      clean.split(//).map { |c| "#{c}." }.join(' ')
+    else
+      self
+    end
+  end
+
   def word_count
     words = strip.split(/\s+/)
 

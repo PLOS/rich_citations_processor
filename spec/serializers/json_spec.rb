@@ -22,10 +22,10 @@ require 'spec_helper'
 
 module RichCitationsProcessor
 
-  RSpec.describe Formatters::JSON do
+  RSpec.describe Serializers::JSON do
 
     let(:paper) { Models::CitingPaper.new }
-    subject { Formatters::JSON.new(paper) }
+    subject { Serializers::JSON.new(paper) }
     let(:json) { MultiJson.load( subject.format ) }
 
     describe "paper info" do

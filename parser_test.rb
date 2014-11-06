@@ -40,7 +40,7 @@ doi = ARGV.last || DOI
 start_time = Time.now
 puts "Starting at ----------------- #{start_time}"
 
-xml = r = RichCitationsProcessor::API::PLOS.get_document( doi )
+xml = r = RichCitationsProcessor::API::PLOS.get_nlm_document( doi )
 
 r = xml.css('ref-list')
 # r = xml.css('body')
@@ -52,10 +52,28 @@ parser = RichCitationsProcessor::Parsers::NLM.new(xml)
 paper = parser.parse!
 
 if paper
-  puts "==== inspect ====="
+  puts "==== PAPER #{paper.uri.inspect} ====="
+
+  resolver = RichCitationsProcessor::URIResolver.new(paper)
+  resolver.resolve!
+
+  #puts "==== INSPECT ====="
   #puts paper.inspect
-  formatter = RichCitationsProcessor::Formatters::JSON.new(paper)
+
+  puts "==== JSON ====="
+  formatter = RichCitationsProcessor::Serializers::JSON.new(paper)
   pp formatter.as_structured_hash
+
+  # puts "==== CUSTOM ====="
+  # paper.references.each do |ref|
+  #   uris = if ref.candidate_uris.empty?
+  #     '<none>'
+  #   else
+  #     "[ #{ref.candidate_uris.map(&:full_uri).join(', ')} ]"
+  #   end
+  #   puts "#{ref.id} >> #{uris}"
+  # end
+
 else
   puts "\n*************** Document #{doi} could not be retrieved\n"
 end

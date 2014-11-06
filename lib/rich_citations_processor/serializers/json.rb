@@ -23,7 +23,7 @@
 require 'multi_json'
 
 module RichCitationsProcessor
-  module Formatters
+  module Serializers
 
     class JSON
       attr_reader :citing_paper
