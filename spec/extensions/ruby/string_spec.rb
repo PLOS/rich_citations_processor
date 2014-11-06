@@ -22,6 +22,25 @@ require 'spec_helper'
 
 RSpec.describe String do
 
+  describe '#as_given_names' do
+
+    it 'should add punctuation and spacing' do
+      expect('A'.as_given_names).to eq('A.')
+      expect('AJ'.as_given_names).to eq('A. J.')
+    end
+
+    it 'should not do anything for a fullname' do
+      expect('Andrew'.as_given_names).to eq('Andrew')
+      expect('Andrew John'.as_given_names).to eq('Andrew John')
+    end
+
+    it 'should ignore spacing and punctuation' do
+      expect(' A.  J . K'.as_given_names).to eq('A. J. K.')
+    end
+
+  end
+
+
   describe "#word_count" do
 
     it "should return the word count" do
