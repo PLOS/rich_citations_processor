@@ -43,6 +43,19 @@ module RichCitationsProcessor
         parser.parse!
       end
 
+      it "should parse a real document" do
+        xml = get_fixture('journal.pone.0032408.nlm.xml')
+        xml = Nokogiri::XML.parse(xml)
+
+        parser = RichCitationsProcessor::Parsers::NLM.new(xml)
+        paper = parser.parse!
+        serializer = RichCitationsProcessor::Serializers::JSON.new(paper)
+        result = serializer.as_structured_data
+
+        expected =MultiJson.load get_fixture('journal.pone.0032408.parser.json')
+        expect(result).to eq(expected)
+      end
+
     end
 
     describe "Identifier parsing" do

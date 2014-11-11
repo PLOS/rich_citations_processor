@@ -1,0 +1,2099 @@
+{
+  "uri_source":"document",
+  "uri":"http://dx.doi.org/10.1371/journal.pone.0032408",
+  "bibliographic":{
+    "author":[
+      {
+        "given":"Joel",
+        "family":"Hartter",
+        "email":"joel.hartter@unh.edu",
+        "affiliation":"Department of Geography, University of New Hampshire, Durham, New Hampshire, United States of America"
+      },
+      {
+        "given":"Mary D.",
+        "family":"Stampone",
+        "affiliation":"Department of Geography, University of New Hampshire, Durham, New Hampshire, United States of America"
+      },
+      {
+        "given":"Sadie J.",
+        "family":"Ryan",
+        "affiliation":"Department of Environmental and Forest Biology, College of Environmental Science and Forestry, State University of New York College of Environmental Science and Forestry, Syracuse, New York, United States of America"
+      },
+      {
+        "given":"Karen",
+        "family":"Kirner",
+        "affiliation":"Department of Anthropology, University of Florida, Gainesville, Florida, United States of America"
+      },
+      {
+        "given":"Colin A.",
+        "family":"Chapman",
+        "affiliation":"Department of Anthropology & McGill School of Environment, McGill University, Montreal, Canada"
+      },
+      {
+        "given":"Abraham",
+        "family":"Goldman",
+        "affiliation":"Department of Geography, University of Florida, Gainesville, Florida, United States of America"
+      }
+    ]
+  },
+  "word_count":6813,
+  "references":[
+    {
+      "id":"pone.0032408-Fisher1",
+      "number":1,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Fisher</span><span class=\"given-names\">B</span></span><span class=\"author\"><span class=\"surname\">Christopher</span><span class=\"given-names\">T</span></span></span>             <span class=\"year\">2007</span>             <span class=\"article-title\">Poverty and biodiversity: Measuring the overlap of human poverty and the biodiversity hotspots.</span>             <span class=\"source\">Ecol Econ</span>             <span class=\"volume\">62</span>             <span class=\"fpage\">93</span>             <span class=\"lpage\">101</span>          </span>",
+      "citation_groups":[
+        "1",
+        "10"
+      ]
+    },
+    {
+      "id":"pone.0032408-Hartter1",
+      "number":2,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Hartter</span><span class=\"given-names\">J</span></span><span class=\"author\"><span class=\"surname\">Goldman</span><span class=\"given-names\">A</span></span></span>             <span class=\"year\">2011</span>             <span class=\"article-title\">Local responses to a forest park in western Uganda: alternate narratives on fortress conservation.</span>             <span class=\"source\">Oryx</span>             <span class=\"volume\">45</span>             <span class=\"fpage\">60</span>             <span class=\"lpage\">68</span>          </span>",
+      "citation_groups":[
+        "2",
+        "33",
+        "58"
+      ]
+    },
+    {
+      "id":"pone.0032408-Hayes1",
+      "number":3,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Hayes</span><span class=\"given-names\">TM</span></span></span>             <span class=\"year\">2006</span>             <span class=\"article-title\">Parks, People, and Forest Protection: An Institutional Assessment of the Effectiveness of Protected Areas.</span>             <span class=\"source\">World Dev</span>             <span class=\"volume\">34</span>             <span class=\"fpage\">2064</span>             <span class=\"lpage\">2075</span>          </span>",
+      "citation_groups":[
+        "3"
+      ]
+    },
+    {
+      "id":"pone.0032408-Byron1",
+      "number":4,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Byron</span><span class=\"given-names\">N</span></span><span class=\"author\"><span class=\"surname\">Arnold</span><span class=\"given-names\">M</span></span></span>             <span class=\"year\">1999</span>             <span class=\"article-title\">What Futures for the People of the Tropical Forests?</span>             <span class=\"source\">World Dev</span>             <span class=\"volume\">27</span>             <span class=\"fpage\">789</span>             <span class=\"lpage\">805</span>          </span>",
+      "citation_groups":[
+        "3"
+      ]
+    },
+    {
+      "id":"pone.0032408-Wittemyer1",
+      "number":5,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Wittemyer</span><span class=\"given-names\">G</span></span><span class=\"author\"><span class=\"surname\">Elsen</span><span class=\"given-names\">P</span></span><span class=\"author\"><span class=\"surname\">Bean</span><span class=\"given-names\">WT</span></span><span class=\"author\"><span class=\"surname\">Burton</span><span class=\"given-names\">ACO</span></span><span class=\"author\"><span class=\"surname\">Brashares</span><span class=\"given-names\">JS</span></span></span>             <span class=\"year\">2008</span>             <span class=\"article-title\">Accelerated Human Population Growth at Protected Area Edges.</span>             <span class=\"source\">Science</span>             <span class=\"volume\">321</span>             <span class=\"fpage\">123</span>             <span class=\"lpage\">126</span>          </span>",
+      "citation_groups":[
+        "4"
+      ]
+    },
+    {
+      "id":"pone.0032408-Hansen1",
+      "number":6,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Hansen</span><span class=\"given-names\">AJ</span></span><span class=\"author\"><span class=\"surname\">DeFries</span><span class=\"given-names\">R</span></span></span>             <span class=\"year\">2007</span>             <span class=\"article-title\">Ecological mechanisms linking protected areas to surrounding lands.</span>             <span class=\"source\">Ecol Appl</span>             <span class=\"volume\">17</span>             <span class=\"fpage\">974</span>             <span class=\"lpage\">988</span>          </span>",
+      "citation_groups":[
+        "5",
+        "75"
+      ]
+    },
+    {
+      "id":"pone.0032408-DeFries1",
+      "number":7,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">DeFries</span><span class=\"given-names\">RS</span></span><span class=\"author\"><span class=\"surname\">Foley</span><span class=\"given-names\">JA</span></span><span class=\"author\"><span class=\"surname\">Asner</span><span class=\"given-names\">GP</span></span></span>             <span class=\"year\">2004</span>             <span class=\"article-title\">Land-use choices: balancing human needs and ecosystem function.</span>             <span class=\"source\">Front Ecol Environ</span>             <span class=\"volume\">2</span>             <span class=\"fpage\">249</span>             <span class=\"lpage\">257</span>          </span>",
+      "citation_groups":[
+        "5"
+      ]
+    },
+    {
+      "id":"pone.0032408-Broadbent1",
+      "number":8,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Broadbent</span><span class=\"given-names\">EN</span></span><span class=\"author\"><span class=\"surname\">Asner</span><span class=\"given-names\">GP</span></span><span class=\"author\"><span class=\"surname\">Keller</span><span class=\"given-names\">M</span></span><span class=\"author\"><span class=\"surname\">Knapp</span><span class=\"given-names\">DE</span></span><span class=\"author\"><span class=\"surname\">Oliveira</span><span class=\"given-names\">PJC</span></span></span>             <span class=\"year\">2008</span>             <span class=\"article-title\">Forest fragmentation and edge effects from deforestation and selective logging in the Brazilian Amazon.</span>             <span class=\"source\">Biol Conserv</span>             <span class=\"volume\">141</span>             <span class=\"fpage\">1745</span>             <span class=\"lpage\">1757</span>          </span>",
+      "citation_groups":[
+        "5"
+      ]
+    },
+    {
+      "id":"pone.0032408-Foley1",
+      "number":9,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Foley</span><span class=\"given-names\">JA</span></span><span class=\"author\"><span class=\"surname\">Asner</span><span class=\"given-names\">GP</span></span><span class=\"author\"><span class=\"surname\">Costa</span><span class=\"given-names\">MH</span></span><span class=\"author\"><span class=\"surname\">Coe</span><span class=\"given-names\">MT</span></span><span class=\"author\"><span class=\"surname\">DeFries</span><span class=\"given-names\">R</span></span></span>             <span class=\"year\">2007</span>             <span class=\"article-title\">Amazonia revealed: forest degradation and loss of ecosystem goods and services in the Amazon Basin.</span>             <span class=\"source\">Front Ecol Environ</span>             <span class=\"volume\">5</span>             <span class=\"fpage\">25</span>             <span class=\"lpage\">32</span>          </span>",
+      "citation_groups":[
+        "5"
+      ]
+    },
+    {
+      "id":"pone.0032408-Foley2",
+      "number":10,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Foley</span><span class=\"given-names\">JA</span></span><span class=\"author\"><span class=\"surname\">DeFries</span><span class=\"given-names\">R</span></span><span class=\"author\"><span class=\"surname\">Asner</span><span class=\"given-names\">GP</span></span><span class=\"author\"><span class=\"surname\">Barford</span><span class=\"given-names\">C</span></span><span class=\"author\"><span class=\"surname\">Bonan</span><span class=\"given-names\">G</span></span></span>             <span class=\"year\">2005</span>             <span class=\"article-title\">Global Consequences of Land Use.</span>             <span class=\"source\">Science</span>             <span class=\"volume\">309</span>             <span class=\"fpage\">570</span>             <span class=\"lpage\">574</span>          </span>",
+      "citation_groups":[
+        "5"
+      ]
+    },
+    {
+      "id":"pone.0032408-Hill1",
+      "number":11,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Hill</span><span class=\"given-names\">JL</span></span><span class=\"author\"><span class=\"surname\">Curran</span><span class=\"given-names\">PJ</span></span></span>             <span class=\"year\">2003</span>             <span class=\"article-title\">Area, shape and isolation of tropical forest fragments: effects on tree species diversity and implications for conservation.</span>             <span class=\"source\">J Biogeogr</span>             <span class=\"volume\">30</span>             <span class=\"fpage\">1391</span>             <span class=\"lpage\">1403</span>          </span>",
+      "citation_groups":[
+        "5"
+      ]
+    },
+    {
+      "id":"pone.0032408-Sala1",
+      "number":12,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Sala</span><span class=\"given-names\">OE</span></span><span class=\"author\"><span class=\"surname\">Stuart Chapin</span><span class=\"given-names\">F</span></span><span class=\"author\"><span class=\"surname\">Armesto</span><span class=\"given-names\">JJ</span></span><span class=\"author\"><span class=\"surname\">Berlow</span><span class=\"given-names\">E</span></span></span>             <span class=\"year\">2000</span>             <span class=\"article-title\">Global Biodiversity Scenarios for the Year 2100.</span>             <span class=\"source\">Science</span>             <span class=\"volume\">287</span>             <span class=\"fpage\">1770</span>             <span class=\"lpage\">1774</span>          </span>",
+      "citation_groups":[
+        "5"
+      ]
+    },
+    {
+      "id":"pone.0032408-Terborgh1",
+      "number":13,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Terborgh</span><span class=\"given-names\">J</span></span></span>             <span class=\"year\">2002</span>             <span class=\"source\">Making parks work: strategies for preserving tropical nature</span>             Washington, DC             Island Press 511           </span>",
+      "citation_groups":[
+        "6"
+      ]
+    },
+    {
+      "id":"pone.0032408-Bruner1",
+      "number":14,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Bruner</span><span class=\"given-names\">AG</span></span><span class=\"author\"><span class=\"surname\">Gullison</span><span class=\"given-names\">RE</span></span><span class=\"author\"><span class=\"surname\">Rice</span><span class=\"given-names\">RE</span></span><span class=\"author\"><span class=\"surname\">da Fonseca</span><span class=\"given-names\">GAB</span></span></span>             <span class=\"year\">2001</span>             <span class=\"article-title\">Effectiveness of Parks in Protecting Tropical Biodiversity.</span>             <span class=\"source\">Science</span>             <span class=\"volume\">291</span>             <span class=\"fpage\">125</span>             <span class=\"lpage\">128</span>          </span>",
+      "citation_groups":[
+        "6"
+      ]
+    },
+    {
+      "id":"pone.0032408-Chapman1",
+      "number":15,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Chapman</span><span class=\"given-names\">CA</span></span><span class=\"author\"><span class=\"surname\">Peres</span><span class=\"given-names\">CA</span></span></span>             <span class=\"year\">2001</span>             <span class=\"article-title\">Primate conservation in the new millennium: The role of scientists.</span>             <span class=\"source\">Evolutionary Anthropology: Issues, News, and Reviews</span>             <span class=\"volume\">10</span>             <span class=\"fpage\">16</span>             <span class=\"lpage\">33</span>          </span>",
+      "citation_groups":[
+        "7"
+      ]
+    },
+    {
+      "id":"pone.0032408-Chapman2",
+      "number":16,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Chapman</span><span class=\"given-names\">CA</span></span><span class=\"author\"><span class=\"surname\">Lawes</span><span class=\"given-names\">MJ</span></span><span class=\"author\"><span class=\"surname\">Eeley</span><span class=\"given-names\">HAC</span></span></span>             <span class=\"year\">2006</span>             <span class=\"article-title\">What hope for African primate diversity?</span>             <span class=\"source\">Afr J Ecol</span>             <span class=\"volume\">44</span>             <span class=\"fpage\">116</span>             <span class=\"lpage\">133</span>          </span>",
+      "citation_groups":[
+        "7",
+        "15"
+      ]
+    },
+    {
+      "id":"pone.0032408-Cincotta1",
+      "number":17,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Cincotta</span><span class=\"given-names\">RP</span></span><span class=\"author\"><span class=\"surname\">Wisnewski</span><span class=\"given-names\">J</span></span><span class=\"author\"><span class=\"surname\">Engelman</span><span class=\"given-names\">R</span></span></span>             <span class=\"year\">2000</span>             <span class=\"article-title\">Human population in the biodiversity hotspots.</span>             <span class=\"source\">Nature</span>             <span class=\"volume\">404</span>             <span class=\"fpage\">990</span>             <span class=\"lpage\">992</span>          </span>",
+      "citation_groups":[
+        "8"
+      ]
+    },
+    {
+      "id":"pone.0032408-MartnezMeyer1",
+      "number":18,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Martínez-Meyer</span><span class=\"given-names\">E</span></span><span class=\"author\"><span class=\"surname\">Peterson</span><span class=\"given-names\">AT</span></span><span class=\"author\"><span class=\"surname\">Hargrove</span><span class=\"given-names\">WW</span></span></span>             <span class=\"year\">2004</span>             <span class=\"article-title\">Ecological niches as stable distributional constraints on mammal species, with implications for Pleistocene extinctions and climate change projections for biodiversity.</span>             <span class=\"source\">Global Ecol Biogeogr</span>             <span class=\"volume\">13</span>             <span class=\"fpage\">305</span>             <span class=\"lpage\">314</span>          </span>",
+      "citation_groups":[
+        "9"
+      ]
+    },
+    {
+      "id":"pone.0032408-Midgley1",
+      "number":19,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Midgley</span><span class=\"given-names\">GF</span></span><span class=\"author\"><span class=\"surname\">Hannah</span><span class=\"given-names\">L</span></span><span class=\"author\"><span class=\"surname\">Millar</span><span class=\"given-names\">D</span></span><span class=\"author\"><span class=\"surname\">Thuiller</span><span class=\"given-names\">W</span></span><span class=\"author\"><span class=\"surname\">Booth</span><span class=\"given-names\">A</span></span></span>             <span class=\"year\">2003</span>             <span class=\"article-title\">Developing regional and species-level assessments of climate change impacts on biodiversity in the Cape Floristic Region.</span>             <span class=\"source\">Biol Conserv</span>             <span class=\"volume\">112</span>             <span class=\"fpage\">87</span>             <span class=\"lpage\">97</span>          </span>",
+      "citation_groups":[
+        "9"
+      ]
+    },
+    {
+      "id":"pone.0032408-Ogutu1",
+      "number":20,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Ogutu</span><span class=\"given-names\">JO</span></span><span class=\"author\"><span class=\"surname\">Owen-Smith</span><span class=\"given-names\">N</span></span></span>             <span class=\"year\">2003</span>             <span class=\"article-title\">ENSO, rainfall and temperature influences on extreme population declines among African savanna ungulates.</span>             <span class=\"source\">Ecol Lett</span>             <span class=\"volume\">6</span>             <span class=\"fpage\">412</span>             <span class=\"lpage\">419</span>          </span>",
+      "citation_groups":[
+        "9"
+      ]
+    },
+    {
+      "id":"pone.0032408-Bartlein1",
+      "number":21,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Bartlein</span><span class=\"given-names\">PJ</span></span><span class=\"author\"><span class=\"surname\">Whitlock</span><span class=\"given-names\">C</span></span><span class=\"author\"><span class=\"surname\">Shafer</span><span class=\"given-names\">SL</span></span></span>             <span class=\"year\">1997</span>             <span class=\"article-title\">Future Climate in the Yellowstone National Park Region and Its Potential Impact on Vegetation.</span>             <span class=\"source\">Conserv Biol</span>             <span class=\"volume\">11</span>             <span class=\"fpage\">782</span>             <span class=\"lpage\">792</span>          </span>",
+      "citation_groups":[
+        "9",
+        "73"
+      ]
+    },
+    {
+      "id":"pone.0032408-Houghton1",
+      "number":22,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Houghton</span><span class=\"given-names\">JT</span></span><span class=\"author\"><span class=\"surname\">Ding</span><span class=\"given-names\">Y</span></span><span class=\"author\"><span class=\"surname\">Griggs</span><span class=\"given-names\">DJ</span></span><span class=\"author\"><span class=\"surname\">Noguer</span><span class=\"given-names\">N</span></span><span class=\"author\"><span class=\"surname\">van der Linden</span><span class=\"given-names\">PJ</span></span></span>             <span class=\"year\">2001</span>             <span class=\"source\">Climate Change 2001: The Scientific Basis. Contribution of Working Group I to the Third Assessment Report of the Intergovernmental Panel on Climate Change</span>             Cambridge             Cambridge University Press, UK and New York, USA 881           </span>",
+      "citation_groups":[
+        "9",
+        "73",
+        "74"
+      ]
+    },
+    {
+      "id":"pone.0032408-McKee1",
+      "number":23,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">McKee</span><span class=\"given-names\">JK</span></span><span class=\"author\"><span class=\"surname\">Sciulli</span><span class=\"given-names\">PW</span></span><span class=\"author\"><span class=\"surname\">Fooce</span><span class=\"given-names\">CD</span></span><span class=\"author\"><span class=\"surname\">Waite</span><span class=\"given-names\">TA</span></span></span>             <span class=\"year\">2004</span>             <span class=\"article-title\">Forecasting global biodiversity threats associated with human population growth.</span>             <span class=\"source\">Biol Conserv</span>             <span class=\"volume\">115</span>             <span class=\"fpage\">161</span>             <span class=\"lpage\">164</span>          </span>",
+      "citation_groups":[
+        "10"
+      ]
+    },
+    {
+      "id":"pone.0032408-Cordeiro1",
+      "number":24,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Cordeiro</span><span class=\"given-names\">NJ</span></span><span class=\"author\"><span class=\"surname\">Burgess</span><span class=\"given-names\">ND</span></span><span class=\"author\"><span class=\"surname\">Dovie</span><span class=\"given-names\">DBK</span></span><span class=\"author\"><span class=\"surname\">Kaplin</span><span class=\"given-names\">BA</span></span><span class=\"author\"><span class=\"surname\">Plumptre</span><span class=\"given-names\">AJ</span></span></span>             <span class=\"year\">2007</span>             <span class=\"article-title\">Conservation in areas of high population density in sub-Saharan Africa.</span>             <span class=\"source\">Biol Conserv</span>             <span class=\"volume\">134</span>             <span class=\"fpage\">155</span>             <span class=\"lpage\">163</span>          </span>",
+      "citation_groups":[
+        "11",
+        "12"
+      ]
+    },
+    {
+      "id":"pone.0032408-Plumptre1",
+      "number":25,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Plumptre</span><span class=\"given-names\">AJ</span></span></span>             <span class=\"year\">2002</span>             <span class=\"source\">Extent and status of the forests in the Ugandan Albertine Rift. Unpublished report to UNDP/GEF</span>             Kampala, Uganda             Wildlife Conservation Society          </span>",
+      "citation_groups":[
+        "11"
+      ]
+    },
+    {
+      "id":"pone.0032408-Plumptre2",
+      "number":26,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Plumptre</span><span class=\"given-names\">AJ</span></span><span class=\"author\"><span class=\"surname\">Behangana</span><span class=\"given-names\">M</span></span><span class=\"author\"><span class=\"surname\">Davenport</span><span class=\"given-names\">TRB</span></span><span class=\"author\"><span class=\"surname\">Kahindo</span><span class=\"given-names\">C</span></span><span class=\"author\"><span class=\"surname\">Kityo</span><span class=\"given-names\">R</span></span></span>             <span class=\"year\">2003</span>             <span class=\"source\">The biodiversity of the Albertine Rift</span>             Kampala, Uganda             Wildlife Conservation Society          </span>",
+      "citation_groups":[
+        "11"
+      ]
+    },
+    {
+      "id":"pone.0032408-Plumptre3",
+      "number":27,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Plumptre</span><span class=\"given-names\">AJ</span></span><span class=\"author\"><span class=\"surname\">Davenport</span><span class=\"given-names\">TRB</span></span><span class=\"author\"><span class=\"surname\">Behangana</span><span class=\"given-names\">M</span></span><span class=\"author\"><span class=\"surname\">Kityo</span><span class=\"given-names\">R</span></span><span class=\"author\"><span class=\"surname\">Eilu</span><span class=\"given-names\">G</span></span></span>             <span class=\"year\">2007</span>             <span class=\"article-title\">The biodiversity of the Albertine Rift.</span>             <span class=\"source\">Biol Conserv</span>             <span class=\"volume\">134</span>             <span class=\"fpage\">194</span>          </span>",
+      "citation_groups":[
+        "11",
+        "12"
+      ]
+    },
+    {
+      "id":"pone.0032408-Burgess1",
+      "number":28,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Burgess</span><span class=\"given-names\">N</span></span><span class=\"author\"><span class=\"surname\">D'Amico Hales</span><span class=\"given-names\">J</span></span><span class=\"author\"><span class=\"surname\">Underwood</span><span class=\"given-names\">E</span></span><span class=\"author\"><span class=\"surname\">Dinerstein</span><span class=\"given-names\">E</span></span><span class=\"author\"><span class=\"surname\">Olson</span><span class=\"given-names\">D</span></span></span>             <span class=\"year\">2004</span>             <span class=\"source\">Terrestrial ecoregions of Africa and Madagascar: a continental assessment</span>             Washington DC             Island Press 501           </span>",
+      "citation_groups":[
+        "12"
+      ]
+    },
+    {
+      "id":"pone.0032408-Hartter2",
+      "number":29,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Hartter</span><span class=\"given-names\">J</span></span><span class=\"author\"><span class=\"surname\">Ryan</span><span class=\"given-names\">SJ</span></span></span>             <span class=\"year\">2010</span>             <span class=\"article-title\">Top-down or bottom-up?: Decentralization, natural resource management, and usufruct rights in the forests and wetlands of western Uganda.</span>             <span class=\"source\">Land Use Policy</span>             <span class=\"volume\">27</span>             <span class=\"fpage\">815</span>             <span class=\"lpage\">826</span>          </span>",
+      "citation_groups":[
+        "13",
+        "36"
+      ]
+    },
+    {
+      "id":"pone.0032408-Brooks1",
+      "number":30,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Brooks</span><span class=\"given-names\">T</span></span><span class=\"author\"><span class=\"surname\">Balmford</span><span class=\"given-names\">A</span></span><span class=\"author\"><span class=\"surname\">Burgess</span><span class=\"given-names\">N</span></span><span class=\"author\"><span class=\"surname\">Fjeldsa</span><span class=\"given-names\">J</span></span><span class=\"author\"><span class=\"surname\">Hansen</span><span class=\"given-names\">LA</span></span></span>             <span class=\"year\">2001</span>             <span class=\"article-title\">Toward a Blueprint for Conservation in Africa.</span>             <span class=\"source\">Bioscience</span>             <span class=\"volume\">51</span>             <span class=\"fpage\">613</span>             <span class=\"lpage\">624</span>          </span>",
+      "citation_groups":[
+        "14"
+      ]
+    },
+    {
+      "id":"pone.0032408-Malcolm1",
+      "number":31,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Malcolm</span><span class=\"given-names\">JR</span></span><span class=\"author\"><span class=\"surname\">Liu</span><span class=\"given-names\">C</span></span><span class=\"author\"><span class=\"surname\">Neilson</span><span class=\"given-names\">RP</span></span><span class=\"author\"><span class=\"surname\">Hansen</span><span class=\"given-names\">L</span></span><span class=\"author\"><span class=\"surname\">Hannah</span><span class=\"given-names\">L</span></span></span>             <span class=\"year\">2006</span>             <span class=\"article-title\">Global Warming and Extinctions of Endemic Species from Biodiversity Hotspots.</span>             <span class=\"source\">Conserv Biol</span>             <span class=\"volume\">20</span>             <span class=\"fpage\">538</span>             <span class=\"lpage\">548</span>          </span>",
+      "citation_groups":[
+        "15"
+      ]
+    },
+    {
+      "id":"pone.0032408-White1",
+      "number":32,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">White</span><span class=\"given-names\">TCR</span></span></span>             <span class=\"year\">2008</span>             <span class=\"article-title\">The role of food, weather and climate in limiting the abundance of animals.</span>             <span class=\"source\">Biol Rev</span>             <span class=\"volume\">83</span>             <span class=\"fpage\">227</span>             <span class=\"lpage\">248</span>          </span>",
+      "citation_groups":[
+        "16"
+      ]
+    },
+    {
+      "id":"pone.0032408-Chapman3",
+      "number":33,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Chapman</span><span class=\"given-names\">CA</span></span><span class=\"author\"><span class=\"surname\">Chapman</span><span class=\"given-names\">LJ</span></span><span class=\"author\"><span class=\"surname\">Struhsaker</span><span class=\"given-names\">TT</span></span><span class=\"author\"><span class=\"surname\">Zanne</span><span class=\"given-names\">AE</span></span><span class=\"author\"><span class=\"surname\">Clark</span><span class=\"given-names\">CJ</span></span></span>             <span class=\"year\">2005</span>             <span class=\"article-title\">A long-term evaluation of fruit phenology: importance of climate change.</span>             <span class=\"source\">J Trop Ecol</span>             <span class=\"volume\">21</span>             <span class=\"fpage\">35</span>             <span class=\"lpage\">45</span>          </span>",
+      "citation_groups":[
+        "16"
+      ]
+    },
+    {
+      "id":"pone.0032408-World1",
+      "number":34,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             World Population Prospects: The 2008 Revision (advanced Excel tables)             <span class=\"year\">2009</span>             New York             United Nations Department of Economic and Social Affairs Population Division          </span>",
+      "citation_groups":[
+        "17"
+      ]
+    },
+    {
+      "id":"pone.0032408-World2",
+      "number":35,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             World Population data sheet             <span class=\"year\">2009</span>             Washington, DC             Population Reference Bureau          </span>",
+      "citation_groups":[
+        "18"
+      ]
+    },
+    {
+      "id":"pone.0032408-The1",
+      "number":36,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             The 2002 Uganda Population and Housing Census, Main Report             <span class=\"year\">2005</span>             Kampala, Uganda             Uganda Bureau of Statistics          </span>",
+      "citation_groups":[
+        "19"
+      ]
+    },
+    {
+      "id":"pone.0032408-Pachauri1",
+      "number":37,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Pachauri</span><span class=\"given-names\">RK</span></span><span class=\"author\"><span class=\"surname\">Reisinger</span><span class=\"given-names\">A</span></span></span>             <span class=\"year\">2007</span>             <span class=\"article-title\">Climate Change 2007: Synthesis Report.</span>             <span class=\"comment\">Contribution of Working Groups I, II and III to the Fourth Assessment Report of the IPCC, Geneva, Switzerland</span> 104           </span>",
+      "citation_groups":[
+        "20"
+      ]
+    },
+    {
+      "id":"pone.0032408-Green1",
+      "number":38,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Green</span><span class=\"given-names\">D</span></span><span class=\"author\"><span class=\"surname\">Raygorodetsky</span><span class=\"given-names\">G</span></span></span>             <span class=\"year\">2010</span>             <span class=\"article-title\">Indigenous knowledge of a changing climate.</span>             <span class=\"source\">Clim Change</span>             <span class=\"volume\">100</span>             <span class=\"fpage\">239</span>             <span class=\"lpage\">242</span>          </span>",
+      "citation_groups":[
+        "21"
+      ]
+    },
+    {
+      "id":"pone.0032408-Thomas1",
+      "number":39,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Thomas</span><span class=\"given-names\">D</span></span><span class=\"author\"><span class=\"surname\">Twyman</span><span class=\"given-names\">C</span></span><span class=\"author\"><span class=\"surname\">Osbahr</span><span class=\"given-names\">H</span></span><span class=\"author\"><span class=\"surname\">Hewitson</span><span class=\"given-names\">B</span></span></span>             <span class=\"year\">2007</span>             <span class=\"article-title\">Adaptation to climate change and variability: farmer responses to intra-seasonal precipitation trends in South Africa.</span>             <span class=\"source\">Clim Change</span>             <span class=\"volume\">83</span>             <span class=\"fpage\">301</span>             <span class=\"lpage\">322</span>          </span>",
+      "citation_groups":[
+        "21"
+      ]
+    },
+    {
+      "id":"pone.0032408-Mertz1",
+      "number":40,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Mertz</span><span class=\"given-names\">O</span></span><span class=\"author\"><span class=\"surname\">Mbow</span><span class=\"given-names\">C</span></span><span class=\"author\"><span class=\"surname\">Reenberg</span><span class=\"given-names\">A</span></span><span class=\"author\"><span class=\"surname\">Diouf</span><span class=\"given-names\">A</span></span></span>             <span class=\"year\">2009</span>             <span class=\"article-title\">Farmers' perceptions of climate change and agricultural adaptation strategies in rural Sahel.</span>             <span class=\"source\">Environ Manage</span>             <span class=\"volume\">43</span>             <span class=\"fpage\">804</span>             <span class=\"lpage\">816</span>          </span>",
+      "citation_groups":[
+        "21"
+      ]
+    },
+    {
+      "id":"pone.0032408-Gbetibouo1",
+      "number":41,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Gbetibouo</span><span class=\"given-names\">GA</span></span></span>             <span class=\"year\">2009</span>             <span class=\"source\">Understanding farmers' perceptions and adaptations to climate change and variability. The Case of Limpopo Basin, South Africa. IFPRI Discussion Paper 00849</span>             Paris, France             International food Policy Research Institute          </span>",
+      "citation_groups":[
+        "22"
+      ]
+    },
+    {
+      "id":"pone.0032408-Maddison1",
+      "number":42,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Maddison</span><span class=\"given-names\">DJ</span></span></span>             <span class=\"year\">2007</span>             <span class=\"article-title\">The perception of and adaptation to climate change in Africa.</span>             <span class=\"comment\">World Bank Policy Research Working Paper No 4308. Available at SSRN: <a href=\"http://ssrn.com/abstract=1005547\">http://ssrn.com/abstract=1005547</a></span>          </span>",
+      "citation_groups":[
+        "22"
+      ]
+    },
+    {
+      "id":"pone.0032408-Zahran1",
+      "number":43,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Zahran</span><span class=\"given-names\">S</span></span><span class=\"author\"><span class=\"surname\">Brody</span><span class=\"given-names\">SD</span></span><span class=\"author\"><span class=\"surname\">Grover</span><span class=\"given-names\">H</span></span><span class=\"author\"><span class=\"surname\">Vedlitz</span><span class=\"given-names\">A</span></span></span>             <span class=\"year\">2006</span>             <span class=\"article-title\">Climate change vulnerability and policy support.</span>             <span class=\"source\">Soc Natur Resour</span>             <span class=\"volume\">19</span>             <span class=\"fpage\">771</span>             <span class=\"lpage\">789</span>          </span>",
+      "citation_groups":[
+        "22"
+      ]
+    },
+    {
+      "id":"pone.0032408-Naylor1",
+      "number":44,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Naylor</span><span class=\"given-names\">RL</span></span><span class=\"author\"><span class=\"surname\">Battisti</span><span class=\"given-names\">DS</span></span><span class=\"author\"><span class=\"surname\">Vimont</span><span class=\"given-names\">DJ</span></span><span class=\"author\"><span class=\"surname\">Falcon</span><span class=\"given-names\">WP</span></span><span class=\"author\"><span class=\"surname\">Burke</span><span class=\"given-names\">MB</span></span></span>             <span class=\"year\">2007</span>             <span class=\"article-title\">Assessing risks of climate variability and climate change for Indonesian rice agriculture.</span>             <span class=\"source\">P Natl Acad Sci USA</span>             <span class=\"volume\">104</span>             <span class=\"fpage\">7752</span>             <span class=\"lpage\">7757</span>          </span>",
+      "citation_groups":[
+        "23"
+      ]
+    },
+    {
+      "id":"pone.0032408-NaughtonTreves1",
+      "number":45,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Naughton-Treves</span><span class=\"given-names\">L</span></span><span class=\"author\"><span class=\"surname\">Treves</span><span class=\"given-names\">A</span></span><span class=\"author\"><span class=\"surname\">Chapman</span><span class=\"given-names\">C</span></span><span class=\"author\"><span class=\"surname\">Wrangham</span><span class=\"given-names\">R</span></span></span>             <span class=\"year\">1998</span>             <span class=\"article-title\">Temporal patterns of crop-raiding by primates: linking food availability in croplands and adjacent forest.</span>             <span class=\"source\">J Appl Ecol</span>             <span class=\"volume\">35</span>             <span class=\"fpage\">596</span>             <span class=\"lpage\">606</span>          </span>",
+      "citation_groups":[
+        "24",
+        "39",
+        "76"
+      ]
+    },
+    {
+      "id":"pone.0032408-Hartter3",
+      "number":46,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Hartter</span><span class=\"given-names\">J</span></span></span>             <span class=\"year\">2009</span>             <span class=\"article-title\">Attitudes of Rural Communities Toward Wetlands and Forest Fragments Around Kibale National Park, Uganda.</span>             <span class=\"source\">Human Dimensions of Wildlife: An International Journal</span>             <span class=\"volume\">14</span>             <span class=\"fpage\">433</span>             <span class=\"lpage\">447</span>          </span>",
+      "citation_groups":[
+        "24",
+        "56",
+        "58"
+      ]
+    },
+    {
+      "id":"pone.0032408-Verschuren1",
+      "number":47,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Verschuren</span><span class=\"given-names\">D</span></span><span class=\"author\"><span class=\"surname\">Laird</span><span class=\"given-names\">KR</span></span><span class=\"author\"><span class=\"surname\">Cumming</span><span class=\"given-names\">BF</span></span></span>             <span class=\"year\">2000</span>             <span class=\"article-title\">Rainfall and drought in equatorial east Africa during the past 1,100 years.</span>             <span class=\"source\">Nature</span>             <span class=\"volume\">403</span>             <span class=\"fpage\">410</span>             <span class=\"lpage\">414</span>          </span>",
+      "citation_groups":[
+        "25",
+        "35"
+      ]
+    },
+    {
+      "id":"pone.0032408-Nyong1",
+      "number":48,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Nyong</span><span class=\"given-names\">A</span></span><span class=\"author\"><span class=\"surname\">Adesina</span><span class=\"given-names\">F</span></span><span class=\"author\"><span class=\"surname\">Osman Elasha</span><span class=\"given-names\">B</span></span></span>             <span class=\"year\">2007</span>             <span class=\"article-title\">The value of indigenous knowledge in climate change mitigation and adaptation strategies in the African Sahel.</span>             <span class=\"source\">Mitigation and Adaptation Strategies for Global Change</span>             <span class=\"volume\">12</span>             <span class=\"fpage\">787</span>             <span class=\"lpage\">797</span>          </span>",
+      "citation_groups":[
+        "26",
+        "66"
+      ]
+    },
+    {
+      "id":"pone.0032408-Basalirwa1",
+      "number":49,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Basalirwa</span><span class=\"given-names\">CPK</span></span></span>             <span class=\"year\">1995</span>             <span class=\"article-title\">Delineation of Uganda into climatological rainfall zones using the method of principal component analysis.</span>             <span class=\"source\">Int J of Climatol</span>             <span class=\"volume\">15</span>             <span class=\"fpage\">1161</span>             <span class=\"lpage\">1177</span>          </span>",
+      "citation_groups":[
+        "27",
+        "32",
+        "37",
+        "43"
+      ]
+    },
+    {
+      "id":"pone.0032408-Stampone1",
+      "number":50,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Stampone</span><span class=\"given-names\">MD</span></span><span class=\"author\"><span class=\"surname\">Hartter</span><span class=\"given-names\">J</span></span><span class=\"author\"><span class=\"surname\">Chapman</span><span class=\"given-names\">CA</span></span><span class=\"author\"><span class=\"surname\">Ryan</span><span class=\"given-names\">SJ</span></span></span>             <span class=\"year\">2011</span>             <span class=\"article-title\">Trends and variability in localized precipitation around Kibale National Park, Western Uganda, Africa.</span>             <span class=\"source\">Res J Environ and Earth Sci</span>             <span class=\"volume\">3</span>             <span class=\"fpage\">14</span>             <span class=\"lpage\">23</span>          </span>",
+      "citation_groups":[
+        "27",
+        "37",
+        "42",
+        "43",
+        "52",
+        "54",
+        "77"
+      ]
+    },
+    {
+      "id":"pone.0032408-Indeje1",
+      "number":51,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Indeje</span><span class=\"given-names\">M</span></span><span class=\"author\"><span class=\"surname\">Semazzi</span><span class=\"given-names\">FHM</span></span><span class=\"author\"><span class=\"surname\">Ogallo</span><span class=\"given-names\">LJ</span></span></span>             <span class=\"year\">2000</span>             <span class=\"article-title\">ENSO signals in East African rainfall seasons.</span>             <span class=\"source\">Int J of Climatol</span>             <span class=\"volume\">20</span>             <span class=\"fpage\">19</span>             <span class=\"lpage\">46</span>          </span>",
+      "citation_groups":[
+        "28",
+        "29",
+        "37"
+      ]
+    },
+    {
+      "id":"pone.0032408-Myers1",
+      "number":52,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Myers</span><span class=\"given-names\">N</span></span></span>             <span class=\"year\">1991</span>             <span class=\"article-title\">Tropical forests: Present status and future outlook.</span>             <span class=\"source\">Clim Change</span>             <span class=\"volume\">19</span>             <span class=\"fpage\">3</span>             <span class=\"lpage\">32</span>          </span>",
+      "citation_groups":[
+        "28"
+      ]
+    },
+    {
+      "id":"pone.0032408-Nicholson1",
+      "number":53,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Nicholson</span><span class=\"given-names\">SE</span></span></span>             <span class=\"year\">1993</span>             <span class=\"article-title\">An Overview of African Rainfall Fluctuations of the Last Decade.</span>             <span class=\"source\">J Climate</span>             <span class=\"volume\">6</span>             <span class=\"fpage\">1463</span>             <span class=\"lpage\">1466</span>          </span>",
+      "citation_groups":[
+        "29",
+        "30"
+      ]
+    },
+    {
+      "id":"pone.0032408-Ogallo1",
+      "number":54,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Ogallo</span><span class=\"given-names\">LJ</span></span></span>             <span class=\"year\">1989</span>             <span class=\"article-title\">The spatial and temporal patterns of the East African seasonal rainfall derived from principal component analysis.</span>             <span class=\"source\">Int J Climatol</span>             <span class=\"volume\">9</span>             <span class=\"fpage\">145</span>             <span class=\"lpage\">167</span>          </span>",
+      "citation_groups":[
+        "29",
+        "32",
+        "37",
+        "43"
+      ]
+    },
+    {
+      "id":"pone.0032408-Conway1",
+      "number":55,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Conway</span><span class=\"given-names\">D</span></span><span class=\"author\"><span class=\"surname\">Allison</span><span class=\"given-names\">E</span></span><span class=\"author\"><span class=\"surname\">Felstead</span><span class=\"given-names\">R</span></span><span class=\"author\"><span class=\"surname\">Goulden</span><span class=\"given-names\">M</span></span></span>             <span class=\"year\">2005</span>             <span class=\"article-title\">Rainfall variability in East Africa: implications for natural resources management and livelihoods.</span>             <span class=\"source\">Philos Trans R Soc Lond A Math Phys Sci</span>             <span class=\"volume\">363</span>             <span class=\"fpage\">49</span>             <span class=\"lpage\">54</span>          </span>",
+      "citation_groups":[
+        "29",
+        "66"
+      ]
+    },
+    {
+      "id":"pone.0032408-Orlove1",
+      "number":56,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Orlove</span><span class=\"given-names\">B</span></span><span class=\"author\"><span class=\"surname\">Roncoli</span><span class=\"given-names\">C</span></span><span class=\"author\"><span class=\"surname\">Kabugo</span><span class=\"given-names\">M</span></span><span class=\"author\"><span class=\"surname\">Majugu</span><span class=\"given-names\">A</span></span></span>             <span class=\"year\">2010</span>             <span class=\"article-title\">Indigenous climate knowledge in southern Uganda: the multiple components of a dynamic regional system.</span>             <span class=\"source\">Clim Change</span>             <span class=\"volume\">100</span>             <span class=\"fpage\">243</span>             <span class=\"lpage\">265</span>          </span>",
+      "citation_groups":[
+        "31",
+        "69",
+        "72"
+      ]
+    },
+    {
+      "id":"pone.0032408-Thornton1",
+      "number":57,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Thornton</span><span class=\"given-names\">PK</span></span><span class=\"author\"><span class=\"surname\">Jones</span><span class=\"given-names\">PG</span></span><span class=\"author\"><span class=\"surname\">Alagarswamy</span><span class=\"given-names\">G</span></span><span class=\"author\"><span class=\"surname\">Andresen</span><span class=\"given-names\">J</span></span></span>             <span class=\"year\">2009</span>             <span class=\"article-title\">Spatial variation of crop yield response to climate change in East Africa.</span>             <span class=\"source\">Global Envion Chang</span>             <span class=\"volume\">19</span>             <span class=\"fpage\">54</span>             <span class=\"lpage\">65</span>          </span>",
+      "citation_groups":[
+        "32",
+        "65",
+        "73"
+      ]
+    },
+    {
+      "id":"pone.0032408-Camberlin1",
+      "number":58,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Camberlin</span><span class=\"given-names\">P</span></span><span class=\"author\"><span class=\"surname\">Moron</span><span class=\"given-names\">V</span></span><span class=\"author\"><span class=\"surname\">Okoola</span><span class=\"given-names\">R</span></span><span class=\"author\"><span class=\"surname\">Philippon</span><span class=\"given-names\">N</span></span><span class=\"author\"><span class=\"surname\">Gitau</span><span class=\"given-names\">W</span></span></span>             <span class=\"year\">2009</span>             <span class=\"article-title\">Components of rainy seasons' variability in Equatorial East Africa: onset, cessation, rainfall frequency and intensity.</span>             <span class=\"source\">Theor Appl Climatol</span>             <span class=\"volume\">98</span>             <span class=\"fpage\">237</span>             <span class=\"lpage\">249</span>          </span>",
+      "citation_groups":[
+        "32",
+        "44",
+        "45"
+      ]
+    },
+    {
+      "id":"pone.0032408-Phillips1",
+      "number":59,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Phillips</span><span class=\"given-names\">J</span></span><span class=\"author\"><span class=\"surname\">McIntyre</span><span class=\"given-names\">B</span></span></span>             <span class=\"year\">2000</span>             <span class=\"article-title\">ENSO and interannual rainfall variability in Uganda: implications for agricultural management.</span>             <span class=\"source\">Int J Climatol</span>             <span class=\"volume\">20</span>             <span class=\"fpage\">171</span>             <span class=\"lpage\">182</span>          </span>",
+      "citation_groups":[
+        "32",
+        "34"
+      ]
+    },
+    {
+      "id":"pone.0032408-Hartter4",
+      "number":60,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Hartter</span><span class=\"given-names\">J</span></span></span>             <span class=\"year\">2010</span>             <span class=\"article-title\">Resource Use and Ecosystem Services in a Forest Park Landscape.</span>             <span class=\"source\">Society &amp; Natural Resources: An International Journal</span>             <span class=\"volume\">23</span>             <span class=\"fpage\">207</span>             <span class=\"lpage\">223</span>          </span>",
+      "citation_groups":[
+        "33",
+        "40",
+        "58",
+        "76",
+        "78"
+      ]
+    },
+    {
+      "id":"pone.0032408-Huxley1",
+      "number":61,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Huxley</span><span class=\"given-names\">PA</span></span></span>             <span class=\"year\">1965</span>             <span class=\"article-title\">Climate and Agricultural Production in Uganda.</span>             <span class=\"source\">Exp Agr</span>             <span class=\"volume\">1</span>             <span class=\"fpage\">81</span>             <span class=\"lpage\">97</span>          </span>",
+      "citation_groups":[
+        "34"
+      ]
+    },
+    {
+      "id":"pone.0032408-Manning1",
+      "number":62,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Manning</span><span class=\"given-names\">HL</span></span></span>             <span class=\"year\">1956</span>             <span class=\"article-title\">The Statistical Assessment of Rainfall Probability and Its Application in Uganda Agriculture.</span>             <span class=\"source\">P Roy Soc Lond B Bio</span>             <span class=\"volume\">144</span>             <span class=\"fpage\">460</span>             <span class=\"lpage\">480</span>          </span>",
+      "citation_groups":[
+        "34"
+      ]
+    },
+    {
+      "id":"pone.0032408-Hanna1",
+      "number":63,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Hanna</span><span class=\"given-names\">LW</span></span></span>             <span class=\"year\">1971</span>             <span class=\"article-title\">The Effects of Water Availability on Tea Yields in Uganda.</span>             <span class=\"source\">J Appl Ecol</span>             <span class=\"volume\">8</span>             <span class=\"fpage\">791</span>             <span class=\"lpage\">813</span>          </span>",
+      "citation_groups":[
+        "34"
+      ]
+    },
+    {
+      "id":"pone.0032408-Fischer1",
+      "number":64,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Fischer</span><span class=\"given-names\">G</span></span><span class=\"author\"><span class=\"surname\">Shah</span><span class=\"given-names\">M</span></span><span class=\"author\"><span class=\"surname\">N. Tubiello</span><span class=\"given-names\">F</span></span><span class=\"author\"><span class=\"surname\">van Velhuizen</span><span class=\"given-names\">H</span></span></span>             <span class=\"year\">2005</span>             <span class=\"article-title\">Socio-economic and climate change impacts on agriculture: an integrated assessment, 1990–2080.</span>             <span class=\"source\">Philos T Roy Soc B</span>             <span class=\"volume\">360</span>             <span class=\"fpage\">2067</span>             <span class=\"lpage\">2083</span>          </span>",
+      "citation_groups":[
+        "34"
+      ]
+    },
+    {
+      "id":"pone.0032408-Hartter5",
+      "number":65,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Hartter</span><span class=\"given-names\">J</span></span><span class=\"author\"><span class=\"surname\">Ryan</span><span class=\"given-names\">SJ</span></span><span class=\"author\"><span class=\"surname\">Southworth</span><span class=\"given-names\">J</span></span><span class=\"author\"><span class=\"surname\">Chapman</span><span class=\"given-names\">C</span></span></span>             <span class=\"year\">2011</span>             <span class=\"article-title\">Landscapes as continuous entities: forest disturbance and recovery in the Albertine Rift landscape.</span>             <span class=\"source\">Landsc Ecol</span>             <span class=\"volume\">26</span>             <span class=\"fpage\">877</span>             <span class=\"lpage\">890</span>          </span>",
+      "citation_groups":[
+        "36",
+        "79"
+      ]
+    },
+    {
+      "id":"pone.0032408-Lepp1",
+      "number":66,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Lepp</span><span class=\"given-names\">A</span></span><span class=\"author\"><span class=\"surname\">Holland</span><span class=\"given-names\">S</span></span></span>             <span class=\"year\">2006</span>             <span class=\"article-title\">A Comparison of Attitudes Toward State-Led Conservation and Community-Based Conservation in the Village of Bigodi, Uganda.</span>             <span class=\"source\">Society &amp; Natural Resources: An International Journal</span>             <span class=\"volume\">19</span>             <span class=\"fpage\">609</span>             <span class=\"lpage\">623</span>          </span>",
+      "citation_groups":[
+        "38"
+      ]
+    },
+    {
+      "id":"pone.0032408-NaughtonTreves2",
+      "number":67,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Naughton-Treves</span><span class=\"given-names\">L</span></span><span class=\"author\"><span class=\"surname\">Holland</span><span class=\"given-names\">MB</span></span><span class=\"author\"><span class=\"surname\">Brandon</span><span class=\"given-names\">K</span></span></span>             <span class=\"year\">2005</span>             <span class=\"article-title\">The role of protected areas in conserving biodiversity and sustaining local livelihoods.</span>             <span class=\"source\">Annu Rev Env Rec</span>             <span class=\"volume\">30</span>             <span class=\"fpage\">219</span>             <span class=\"lpage\">252</span>          </span>",
+      "citation_groups":[
+        "41"
+      ]
+    },
+    {
+      "id":"pone.0032408-Ogallo2",
+      "number":68,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Ogallo</span><span class=\"given-names\">LJ</span></span></span>             <span class=\"year\">1980</span>             <span class=\"article-title\">Regional classification of the East African Rainfall stations into homogeneous groups using the method of Principal Component Analysis.</span>             <span class=\"source\">Statistical Climatology: Developments in Atmospheric Science</span>             <span class=\"volume\">13</span>             <span class=\"fpage\">255</span>             <span class=\"lpage\">266</span>          </span>",
+      "citation_groups":[
+        "43"
+      ]
+    },
+    {
+      "id":"pone.0032408-Moron1",
+      "number":69,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Moron</span><span class=\"given-names\">V</span></span><span class=\"author\"><span class=\"surname\">Robertson</span><span class=\"given-names\">AW</span></span><span class=\"author\"><span class=\"surname\">Ward</span><span class=\"given-names\">MN</span></span><span class=\"author\"><span class=\"surname\">Camberlin</span><span class=\"given-names\">P</span></span></span>             <span class=\"year\">2007</span>             <span class=\"article-title\">Spatial Coherence of Tropical Rainfall at the Regional Scale.</span>             <span class=\"source\">J Climate</span>             <span class=\"volume\">20</span>             <span class=\"fpage\">5244</span>             <span class=\"lpage\">5263</span>          </span>",
+      "citation_groups":[
+        "44",
+        "45"
+      ]
+    },
+    {
+      "id":"pone.0032408-Li1",
+      "number":70,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Li</span><span class=\"given-names\">W</span></span><span class=\"author\"><span class=\"surname\">Fu</span><span class=\"given-names\">R</span></span><span class=\"author\"><span class=\"surname\">Juárez</span><span class=\"given-names\">RIN</span></span><span class=\"author\"><span class=\"surname\">Fernandes</span><span class=\"given-names\">K</span></span></span>             <span class=\"year\">2008</span>             <span class=\"article-title\">Observed change of the standardized precipitation index, its potential cause and implications to future climate change in the Amazon region.</span>             <span class=\"source\">Philos T Roy Soc B</span>             <span class=\"volume\">363</span>             <span class=\"fpage\">1767</span>             <span class=\"lpage\">1772</span>          </span>",
+      "citation_groups":[
+        "46",
+        "50"
+      ]
+    },
+    {
+      "id":"pone.0032408-McKee2",
+      "number":71,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">McKee</span><span class=\"given-names\">TB</span></span><span class=\"author\"><span class=\"surname\">Doesken</span><span class=\"given-names\">NJ</span></span><span class=\"author\"><span class=\"surname\">Kleist</span><span class=\"given-names\">J</span></span></span>             <span class=\"year\">1993</span>             <span class=\"article-title\">The relationship of drought frequency and duration to time scales.</span>             <span class=\"fpage\">179</span>             <span class=\"lpage\">184</span>             <span class=\"comment\">Proc 8<sup>th</sup> Conf on Applied Climatology. American Meteorological Society, Boston, Massachusetts</span>          </span>",
+      "citation_groups":[
+        "46",
+        "49",
+        "51",
+        "52",
+        "53",
+        "54"
+      ]
+    },
+    {
+      "id":"pone.0032408-McKee3",
+      "number":72,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">McKee</span><span class=\"given-names\">TB</span></span><span class=\"author\"><span class=\"surname\">Doesken</span><span class=\"given-names\">NJ</span></span><span class=\"author\"><span class=\"surname\">Kleist</span><span class=\"given-names\">J</span></span></span>             <span class=\"year\">1995</span>             <span class=\"article-title\">Drought monitoring with multiple time scales.</span>             <span class=\"fpage\">233</span>             <span class=\"lpage\">236</span>             <span class=\"comment\">Proc 9<sup>th</sup> Conf on Applied Climatology. American Meteorological Society, Boston, Massachusetts</span>          </span>",
+      "citation_groups":[
+        "46",
+        "53",
+        "54"
+      ]
+    },
+    {
+      "id":"pone.0032408-Ntale1",
+      "number":73,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Ntale</span><span class=\"given-names\">HK</span></span><span class=\"author\"><span class=\"surname\">Gan</span><span class=\"given-names\">TY</span></span></span>             <span class=\"year\">2003</span>             <span class=\"article-title\">Drought indices and their application to East Africa.</span>             <span class=\"source\">Int J Climatol</span>             <span class=\"volume\">23</span>             <span class=\"fpage\">1335</span>             <span class=\"lpage\">1357</span>          </span>",
+      "citation_groups":[
+        "46",
+        "50",
+        "52",
+        "54"
+      ]
+    },
+    {
+      "id":"pone.0032408-Garbutt1",
+      "number":74,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Garbutt</span><span class=\"given-names\">D</span></span><span class=\"author\"><span class=\"surname\">Stern</span><span class=\"given-names\">R</span></span><span class=\"author\"><span class=\"surname\">Dennett</span><span class=\"given-names\">M</span></span><span class=\"author\"><span class=\"surname\">Elston</span><span class=\"given-names\">J</span></span></span>             <span class=\"year\">1981</span>             <span class=\"article-title\">A comparison of the rainfall climate of eleven places in West Africa using a two-part model for daily rainfall.</span>             <span class=\"source\">Meteorol Atmos Phys</span>             <span class=\"volume\">29</span>             <span class=\"fpage\">137</span>             <span class=\"lpage\">155</span>          </span>",
+      "citation_groups":[
+        "47"
+      ]
+    },
+    {
+      "id":"pone.0032408-Odekunle1",
+      "number":75,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Odekunle</span><span class=\"given-names\">TO</span></span></span>             <span class=\"year\">2006</span>             <span class=\"article-title\">Determining rainy season onset and retreat over Nigeria from precipitation amount and number of rainy days.</span>             <span class=\"source\">Theor Appl Climatol</span>             <span class=\"volume\">83</span>             <span class=\"fpage\">193</span>             <span class=\"lpage\">201</span>          </span>",
+      "citation_groups":[
+        "47"
+      ]
+    },
+    {
+      "id":"pone.0032408-Longobardi1",
+      "number":76,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Longobardi</span><span class=\"given-names\">A</span></span><span class=\"author\"><span class=\"surname\">Villani</span><span class=\"given-names\">P</span></span></span>             <span class=\"year\">2009</span>             <span class=\"article-title\">Trend analysis of annual and seasonal rainfall time series in the Mediterranean area.</span>             <span class=\"source\">Int J Climatol</span>             <span class=\"volume\">30</span>             <span class=\"fpage\">1538</span>             <span class=\"lpage\">1546</span>          </span>",
+      "citation_groups":[
+        "48"
+      ]
+    },
+    {
+      "id":"pone.0032408-Edwards1",
+      "number":77,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Edwards</span><span class=\"given-names\">CD</span></span><span class=\"author\"><span class=\"surname\">McKee</span><span class=\"given-names\">TB</span></span></span>             <span class=\"year\">1997</span>             <span class=\"article-title\">Characteristics of 20th century droughts in the United States at multiple time scales.</span>             <span class=\"comment\">Colorado State University, Fort Collins. Climatology Report No. 97-2</span>          </span>",
+      "citation_groups":[
+        "51"
+      ]
+    },
+    {
+      "id":"pone.0032408-Goldman1",
+      "number":78,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Goldman</span><span class=\"given-names\">A</span></span><span class=\"author\"><span class=\"surname\">Hartter</span><span class=\"given-names\">J</span></span><span class=\"author\"><span class=\"surname\">Southworth</span><span class=\"given-names\">J</span></span><span class=\"author\"><span class=\"surname\">Binford</span><span class=\"given-names\">M</span></span></span>             <span class=\"year\">2008</span>             <span class=\"article-title\">The human landscape around the island park: impacts and responses to Kibale National Park.</span>             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Wrangham</span><span class=\"given-names\">R</span></span><span class=\"author\"><span class=\"surname\">Ross</span><span class=\"given-names\">E</span></span></span>             <span class=\"source\">Science and conservation in a Ugandan rainforest: how long-term research can help habitat management</span>             Cambridge             Cambridge University Press             <span class=\"fpage\">129</span>             <span class=\"lpage\">144</span>          </span>",
+      "citation_groups":[
+        "55"
+      ]
+    },
+    {
+      "id":"pone.0032408-Baird1",
+      "number":79,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Baird</span><span class=\"given-names\">T</span></span><span class=\"author\"><span class=\"surname\">Leslie</span><span class=\"given-names\">P</span></span><span class=\"author\"><span class=\"surname\">McCabe</span><span class=\"given-names\">J</span></span></span>             <span class=\"year\">2009</span>             <span class=\"article-title\">The Effect of Wildlife Conservation on Local Perceptions of Risk and Behavioral Response.</span>             <span class=\"source\">Hum Ecol</span>             <span class=\"volume\">37</span>             <span class=\"fpage\">463</span>             <span class=\"lpage\">474</span>          </span>",
+      "citation_groups":[
+        "57"
+      ]
+    },
+    {
+      "id":"pone.0032408-Smith1",
+      "number":80,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Smith</span><span class=\"given-names\">K</span></span><span class=\"author\"><span class=\"surname\">Barrett</span><span class=\"given-names\">CB</span></span><span class=\"author\"><span class=\"surname\">Box</span><span class=\"given-names\">PW</span></span></span>             <span class=\"year\">2000</span>             <span class=\"article-title\">Participatory Risk Mapping for Targeting Research and Assistance: With an Example from East African Pastoralists.</span>             <span class=\"source\">World Dev</span>             <span class=\"volume\">28</span>             <span class=\"fpage\">1945</span>             <span class=\"lpage\">1959</span>          </span>",
+      "citation_groups":[
+        "57"
+      ]
+    },
+    {
+      "id":"pone.0032408-Kirner1",
+      "number":81,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Kirner</span><span class=\"given-names\">KE</span></span></span>             <span class=\"year\">2010</span>             <span class=\"source\">Agricultural variation and change among Batoro and Bakiga farmers around Kibale National Park in Southwest Uganda [MS]</span>             Gainesville, FL             University of Florida          </span>",
+      "citation_groups":[
+        "59"
+      ]
+    },
+    {
+      "id":"pone.0032408-Willmott1",
+      "number":82,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Willmott</span><span class=\"given-names\">CJ</span></span><span class=\"author\"><span class=\"surname\">Matsuura</span><span class=\"given-names\">K</span></span></span>             <span class=\"year\">2006</span>             <span class=\"article-title\">On the use of dimensioned measures of error to evaluate the performance of spatial interpolators.</span>             <span class=\"source\">Int J Geogr Inf Sci</span>             <span class=\"volume\">20</span>             <span class=\"fpage\">89</span>             <span class=\"lpage\">102</span>          </span>",
+      "citation_groups":[
+        "60"
+      ]
+    },
+    {
+      "id":"pone.0032408-Hartter6",
+      "number":83,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Hartter</span><span class=\"given-names\">J</span></span></span>             <span class=\"year\">2007</span>             <span class=\"source\">Landscape change around Kibale National Park, Uganda: impacts on land cover, land use and livelihoods [PhD]</span>             Gainesville             University of Florida 176           </span>",
+      "citation_groups":[
+        "61"
+      ]
+    },
+    {
+      "id":"pone.0032408-Thomas2",
+      "number":84,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Thomas</span><span class=\"given-names\">DSG</span></span><span class=\"author\"><span class=\"surname\">Twyman</span><span class=\"given-names\">C</span></span></span>             <span class=\"year\">2005</span>             <span class=\"article-title\">Equity and justice in climate change adaptation amongst natural-resource-dependent societies.</span>             <span class=\"source\">Global Environmental Change Part A</span>             <span class=\"volume\">15</span>             <span class=\"fpage\">115</span>             <span class=\"lpage\">124</span>          </span>",
+      "citation_groups":[
+        "62",
+        "63"
+      ]
+    },
+    {
+      "id":"pone.0032408-Twinomugisha1",
+      "number":85,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Twinomugisha</span><span class=\"given-names\">B</span></span></span>             <span class=\"year\">2005</span>             <span class=\"source\">A content analysis reports on climate change impacts, vulnerability and adaptation in Uganda</span>             London             International Institute for Environment and Development          </span>",
+      "citation_groups":[
+        "64"
+      ]
+    },
+    {
+      "id":"pone.0032408-Ministry1",
+      "number":86,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             Ministry of Water and Environment DoM             <span class=\"year\">2007</span>             <span class=\"source\">National Adaptation Programme of Actions</span>             Kampala, Uganda             Ministry of Water and Environment, Department of Metereology          </span>",
+      "citation_groups":[
+        "67"
+      ]
+    },
+    {
+      "id":"pone.0032408-Gbetibouo2",
+      "number":87,
+      "original_citation":"<span data-publicationtype=\"other\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Gbetibouo</span><span class=\"given-names\">GA</span></span></span>             <span class=\"year\">2009</span>             <span class=\"source\">Understanding farmers' perceptions and adaptations to climate change and variability. The case of the Limpopo Basin, South Africa</span>             Washington D.C.             International Food Policy Research Institute          </span>",
+      "citation_groups":[
+        "68",
+        "73"
+      ]
+    },
+    {
+      "id":"pone.0032408-Gearheard1",
+      "number":88,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Gearheard</span><span class=\"given-names\">S</span></span><span class=\"author\"><span class=\"surname\">Pocernich</span><span class=\"given-names\">M</span></span><span class=\"author\"><span class=\"surname\">Steward</span><span class=\"given-names\">R</span></span><span class=\"author\"><span class=\"surname\">Sanguya</span><span class=\"given-names\">J</span></span><span class=\"author\"><span class=\"surname\">Huntington</span><span class=\"given-names\">HP</span></span></span>             <span class=\"year\">2010</span>             <span class=\"article-title\">Linking Inuit knowledge and meteorological station observations to understand changing wind patterns at Clyde River, Nunavut.</span>             <span class=\"source\">Clim Change</span>             <span class=\"volume\">100</span>             <span class=\"fpage\">267</span>             <span class=\"lpage\">294</span>          </span>",
+      "citation_groups":[
+        "70"
+      ]
+    },
+    {
+      "id":"pone.0032408-Speranza1",
+      "number":89,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Speranza</span><span class=\"given-names\">CI</span></span><span class=\"author\"><span class=\"surname\">Kiteme</span><span class=\"given-names\">B</span></span><span class=\"author\"><span class=\"surname\">Ambenje</span><span class=\"given-names\">P</span></span><span class=\"author\"><span class=\"surname\">Wiesmann</span><span class=\"given-names\">U</span></span><span class=\"author\"><span class=\"surname\">Makali</span><span class=\"given-names\">S</span></span></span>             <span class=\"year\">2010</span>             <span class=\"article-title\">Indigenous knowledge related to climate variability and change: insights from droughts in semi-arid areas of former Makueni District, Kenya.</span>             <span class=\"source\">Clim Change</span>             <span class=\"volume\">100</span>             <span class=\"fpage\">295</span>             <span class=\"lpage\">315</span>          </span>",
+      "citation_groups":[
+        "70"
+      ]
+    },
+    {
+      "id":"pone.0032408-Weber1",
+      "number":90,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Weber</span><span class=\"given-names\">EU</span></span></span>             <span class=\"year\">2010</span>             <span class=\"article-title\">What shapes perceptions of climate change?</span>             <span class=\"source\">Wiley Interdisciplinary Reviews: Climate Change</span>             <span class=\"volume\">1</span>             <span class=\"fpage\">332</span>             <span class=\"lpage\">342</span>          </span>",
+      "citation_groups":[
+        "71"
+      ]
+    },
+    {
+      "id":"pone.0032408-Rebetz1",
+      "number":91,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Rebetz</span><span class=\"given-names\">M</span></span></span>             <span class=\"year\">1996</span>             <span class=\"article-title\">Public expectation as an element of human perception of climate change.</span>             <span class=\"source\">Clim Change</span>             <span class=\"volume\">32</span>             <span class=\"fpage\">495</span>             <span class=\"lpage\">509</span>          </span>",
+      "citation_groups":[
+        "72"
+      ]
+    },
+    {
+      "id":"pone.0032408-Easterling1",
+      "number":92,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Easterling</span><span class=\"given-names\">DR</span></span><span class=\"author\"><span class=\"surname\">Evans</span><span class=\"given-names\">JL</span></span><span class=\"author\"><span class=\"surname\">Groisman</span><span class=\"given-names\">PY</span></span><span class=\"author\"><span class=\"surname\">Karl</span><span class=\"given-names\">TR</span></span><span class=\"author\"><span class=\"surname\">Kunkel</span><span class=\"given-names\">KE</span></span></span>             <span class=\"year\">2000</span>             <span class=\"article-title\">Observed variability and trends in extreme climate events: A brief review.</span>             <span class=\"source\">B Am Meteorol Soc</span>             <span class=\"volume\">81</span>             <span class=\"fpage\">417</span>             <span class=\"lpage\">425</span>          </span>",
+      "citation_groups":[
+        "72"
+      ]
+    },
+    {
+      "id":"pone.0032408-DeFries2",
+      "number":93,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">DeFries</span><span class=\"given-names\">R</span></span><span class=\"author\"><span class=\"surname\">Rosenzweig</span><span class=\"given-names\">C</span></span></span>             <span class=\"year\">2010</span>             <span class=\"article-title\">Toward a whole-landscape approach for sustainable land use in the tropics.</span>             <span class=\"source\">P Natl Acad Sci USA</span>             <span class=\"volume\">107</span>             <span class=\"fpage\">19627</span>             <span class=\"lpage\">19632</span>          </span>",
+      "citation_groups":[
+        "79"
+      ]
+    },
+    {
+      "id":"pone.0032408-Rudnick1",
+      "number":94,
+      "original_citation":"<span data-publicationtype=\"journal\" class=\"citation\">             <span class=\"person-group\"><span class=\"author\"><span class=\"surname\">Rudnick</span><span class=\"given-names\">DA</span></span><span class=\"author\"><span class=\"surname\">Beier</span><span class=\"given-names\">P</span></span><span class=\"author\"><span class=\"surname\">Cushman</span><span class=\"given-names\">S</span></span><span class=\"author\"><span class=\"surname\">Dieffenbach</span><span class=\"given-names\">F</span></span><span class=\"author\"><span class=\"surname\">Epps</span><span class=\"given-names\">CW</span></span></span>             <span class=\"year\">upcoming</span>             <span class=\"article-title\">The role of landscape connectivity in planning and implementing conservation and restoration priorities.</span>             <span class=\"source\">Issues Ecol</span>          </span>",
+      "citation_groups":[
+        "79"
+      ]
+    }
+  ],
+  "citation_groups":[
+    {
+      "id":"1",
+      "section":"Introduction",
+      "word_position":27,
+      "context":{
+        "truncated_before":true,
+        "text_before":"climate change is fundamental to addressing the dual challenge of land conservation and poverty alleviation in densely populated tropical regions ",
+        "citation":"[1]",
+        "text_after":". Tropical deforestation is a major cause of land degradation",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Fisher1"
+      ]
+    },
+    {
+      "id":"2",
+      "section":"Introduction",
+      "word_position":65,
+      "context":{
+        "truncated_before":true,
+        "text_before":"on climate change. In tropical forested areas, protected areas (PAs) are generally smaller, scarcer, and more threatened than savannah PAs ",
+        "citation":"[2]",
+        "text_after":". Domesticated landscapes outside these PAs are important because they",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Hartter1"
+      ]
+    },
+    {
+      "id":"3",
+      "section":"Introduction",
+      "word_position":85,
+      "context":{
+        "truncated_before":true,
+        "text_before":"[2]. Domesticated landscapes outside these PAs are important because they represent reservoirs of land, resources, and economic opportunity for people ",
+        "citation":"[3], [4]",
+        "text_after":". Increased population density leads to increased land conversion and",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Hayes1",
+        "pone.0032408-Byron1"
+      ]
+    },
+    {
+      "id":"4",
+      "section":"Introduction",
+      "word_position":99,
+      "context":{
+        "truncated_before":true,
+        "text_before":"resources, and economic opportunity for people [3], [4]. Increased population density leads to increased land conversion and intensification surrounding PAs ",
+        "citation":"[5]",
+        "text_after":", which leads to altered ecological function and potentially the",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Wittemyer1"
+      ]
+    },
+    {
+      "id":"5",
+      "section":"Introduction",
+      "word_position":114,
+      "context":{
+        "truncated_before":true,
+        "text_before":"conversion and intensification surrounding PAs [5], which leads to altered ecological function and potentially the loss of biodiversity within PAs ",
+        "citation":"[6]–[12]",
+        "text_after":". For local people in most of the tropics, the",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Hansen1",
+        "pone.0032408-DeFries1",
+        "pone.0032408-Broadbent1",
+        "pone.0032408-Foley1",
+        "pone.0032408-Foley2",
+        "pone.0032408-Hill1",
+        "pone.0032408-Sala1"
+      ]
+    },
+    {
+      "id":"6",
+      "section":"Introduction",
+      "word_position":199,
+      "context":{
+        "truncated_before":false,
+        "text_before":"The primary mechanism used to protect remaining tropical forest biodiversity is PA establishment ",
+        "citation":"[13], [14]",
+        "text_after":", particularly in regions with high human densities [15], [16].",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Terborgh1",
+        "pone.0032408-Bruner1"
+      ]
+    },
+    {
+      "id":"7",
+      "section":"Introduction",
+      "word_position":208,
+      "context":{
+        "truncated_before":true,
+        "text_before":"mechanism used to protect remaining tropical forest biodiversity is PA establishment [13], [14], particularly in regions with high human densities ",
+        "citation":"[15], [16]",
+        "text_after":". A major management concern is that PAs will not",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Chapman1",
+        "pone.0032408-Chapman2"
+      ]
+    },
+    {
+      "id":"8",
+      "section":"Introduction",
+      "word_position":233,
+      "context":{
+        "truncated_before":true,
+        "text_before":"concern is that PAs will not be resilient to population pressure and land use intensification and extensification outside their boundaries ",
+        "citation":"[17]",
+        "text_after":". Climate change will further exacerbate pressures on PAs as",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Cincotta1"
+      ]
+    },
+    {
+      "id":"9",
+      "section":"Introduction",
+      "word_position":253,
+      "context":{
+        "truncated_before":true,
+        "text_before":"[17]. Climate change will further exacerbate pressures on PAs as they decline in habitat suitability for the species they protect ",
+        "citation":"[18]–[22]",
+        "text_after":". This juxtaposition of biodiversity preservation and intensification/extensification to sustain",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-MartnezMeyer1",
+        "pone.0032408-Midgley1",
+        "pone.0032408-Ogutu1",
+        "pone.0032408-Bartlein1",
+        "pone.0032408-Houghton1"
+      ]
+    },
+    {
+      "id":"10",
+      "section":"Introduction",
+      "word_position":281,
+      "context":{
+        "truncated_before":true,
+        "text_before":"to sustain rural livelihoods greatly challenges both the intentions of conservation infrastructure (PAs, corridors, e.g.) and poverty management and alleviation ",
+        "citation":"[1], [23]",
+        "text_after":"."
+      },
+      "references":[
+        "pone.0032408-Fisher1",
+        "pone.0032408-McKee1"
+      ]
+    },
+    {
+      "id":"11",
+      "section":"Introduction",
+      "word_position":301,
+      "context":{
+        "truncated_before":false,
+        "text_before":"The Albertine Rift region in East Africa (313 km2) is one of the world's most threatened biodiversity hotspots ",
+        "citation":"[24]–[27]",
+        "text_after":". This region, known for its extremely high species richness",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Cordeiro1",
+        "pone.0032408-Plumptre1",
+        "pone.0032408-Plumptre2",
+        "pone.0032408-Plumptre3"
+      ]
+    },
+    {
+      "id":"12",
+      "section":"Introduction",
+      "word_position":329,
+      "context":{
+        "truncated_before":true,
+        "text_before":"species richness and endemism, has more vertebrate species and more endemic and threatened vertebrate species than anywhere else in Africa ",
+        "citation":"[24], [27], [28]",
+        "text_after":". In Uganda alone, there are 21 mammals, 12 birds,",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Cordeiro1",
+        "pone.0032408-Plumptre3",
+        "pone.0032408-Burgess1"
+      ]
+    },
+    {
+      "id":"13",
+      "section":"Introduction",
+      "word_position":386,
+      "context":{
+        "truncated_before":true,
+        "text_before":"where there is also a high demand by local people for land and natural resources to support intensive smallholder agriculture ",
+        "citation":"[29]",
+        "text_after":". Thus, conservation of remaining forested areas is a high",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Hartter2"
+      ]
+    },
+    {
+      "id":"14",
+      "section":"Introduction",
+      "word_position":397,
+      "context":{
+        "truncated_before":true,
+        "text_before":"land and natural resources to support intensive smallholder agriculture [29]. Thus, conservation of remaining forested areas is a high priority ",
+        "citation":"[30]",
+        "text_after":". PA managers and conservation groups are particularly concerned about",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Brooks1"
+      ]
+    },
+    {
+      "id":"15",
+      "section":"Introduction",
+      "word_position":418,
+      "context":{
+        "truncated_before":true,
+        "text_before":"PA managers and conservation groups are particularly concerned about the impacts of climate variability and change on regional resource availability ",
+        "citation":"[16], [31]",
+        "text_after":" given the potential impacts on wildlife [32], [33].",
+        "truncated_after":false
+      },
+      "references":[
+        "pone.0032408-Chapman2",
+        "pone.0032408-Malcolm1"
+      ]
+    },
+    {
+      "id":"16",
+      "section":"Introduction",
+      "word_position":426,
+      "context":{
+        "truncated_before":true,
+        "text_before":"about the impacts of climate variability and change on regional resource availability [16], [31] given the potential impacts on wildlife ",
+        "citation":"[32], [33]",
+        "text_after":"."
+      },
+      "references":[
+        "pone.0032408-White1",
+        "pone.0032408-Chapman3"
+      ]
+    },
+    {
+      "id":"17",
+      "section":"Introduction",
+      "word_position":479,
+      "context":{
+        "truncated_before":true,
+        "text_before":"world. The Ugandan population continues to grow exponentially at an estimated 3.3% (2005–2010), which ranks eighth highest in the world ",
+        "citation":"[34]",
+        "text_after":". More alarming is that Uganda has the second youngest",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-World1"
+      ]
+    },
+    {
+      "id":"18",
+      "section":"Introduction",
+      "word_position":500,
+      "context":{
+        "truncated_before":true,
+        "text_before":"More alarming is that Uganda has the second youngest population in the world, with almost 49% under 15 years old ",
+        "citation":"[35]",
+        "text_after":". With few mineral resources, agricultural products are the main",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-World2"
+      ]
+    },
+    {
+      "id":"19",
+      "section":"Introduction",
+      "word_position":533,
+      "context":{
+        "truncated_before":true,
+        "text_before":"Uganda, where over 80% of the land is used for small-scale farming and nearly 80% of the population are farmers ",
+        "citation":"[36]",
+        "text_after":". Livelihoods of rural populations depend on rain-fed agriculture and",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-The1"
+      ]
+    },
+    {
+      "id":"20",
+      "section":"Introduction",
+      "word_position":571,
+      "context":{
+        "truncated_before":true,
+        "text_before":"to variability in the amount and timing of seasonal rainfall. Delayed, decreased, and even increased rainfall can impact crop productivity ",
+        "citation":"[37]",
+        "text_after":"."
+      },
+      "references":[
+        "pone.0032408-Pachauri1"
+      ]
+    },
+    {
+      "id":"21",
+      "section":"Introduction",
+      "word_position":632,
+      "context":{
+        "truncated_before":true,
+        "text_before":"local climate indicators (e.g., presence, absence, and direction of winds; humidity; clouds) that provide clues of season onset and cessation ",
+        "citation":"[38]–[40]",
+        "text_after":". Therefore, perceptions of climate change may vary based on",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Green1",
+        "pone.0032408-Thomas1",
+        "pone.0032408-Mertz1"
+      ]
+    },
+    {
+      "id":"22",
+      "section":"Introduction",
+      "word_position":658,
+      "context":{
+        "truncated_before":true,
+        "text_before":"may vary based on the number of years spent as a farmer, amount of formal education, wealth, gender, and age ",
+        "citation":"[41]–[43]",
+        "text_after":". Elsewhere, observed changes in rainfall variability is thought to",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Gbetibouo1",
+        "pone.0032408-Maddison1",
+        "pone.0032408-Zahran1"
+      ]
+    },
+    {
+      "id":"23",
+      "section":"Introduction",
+      "word_position":684,
+      "context":{
+        "truncated_before":true,
+        "text_before":"variability is thought to be a higher threat to rain-fed agriculture, and thus rural livelihoods, than changes in total rainfall ",
+        "citation":"[44]",
+        "text_after":". In addition, climate-induced changes in food abundance within PAs",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Naylor1"
+      ]
+    },
+    {
+      "id":"24",
+      "section":"Introduction",
+      "word_position":716,
+      "context":{
+        "truncated_before":true,
+        "text_before":"wildlife to seek alternate food sources, making farms near the PA boundary more vulnerable to crop damage and livestock predation ",
+        "citation":"[45], [46]",
+        "text_after":". The lack of long-term, high-frequency instrumental climate records for",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-NaughtonTreves1",
+        "pone.0032408-Hartter3"
+      ]
+    },
+    {
+      "id":"25",
+      "section":"Introduction",
+      "word_position":741,
+      "context":{
+        "truncated_before":true,
+        "text_before":"long-term, high-frequency instrumental climate records for this region has made characterizing this variability, and the impacts on human livelihoods, difficult ",
+        "citation":"[47]",
+        "text_after":"."
+      },
+      "references":[
+        "pone.0032408-Verschuren1"
+      ]
+    },
+    {
+      "id":"26",
+      "section":"Introduction",
+      "word_position":762,
+      "context":{
+        "truncated_before":false,
+        "text_before":"Much of the attention on climate change in Africa has been focused on the more dramatic impacts in drier areas ",
+        "citation":"[48]",
+        "text_after":", shifting attention away from wetter areas, such as the",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Nyong1"
+      ]
+    },
+    {
+      "id":"27",
+      "section":"Introduction",
+      "word_position":788,
+      "context":{
+        "truncated_before":true,
+        "text_before":"areas, such as the Albertine Rift. The spatial and temporal patterns of rainfall in the Albertine Rift are highly variable ",
+        "citation":"[49], [50]",
+        "text_after":" due to complex topography, large inland water bodies, and the",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Basalirwa1",
+        "pone.0032408-Stampone1"
+      ]
+    },
+    {
+      "id":"28",
+      "section":"Introduction",
+      "word_position":806,
+      "context":{
+        "truncated_before":true,
+        "text_before":"highly variable [49], [50] due to complex topography, large inland water bodies, and the existence of large tracts of forest ",
+        "citation":"[51], [52]",
+        "text_after":". Previous regional- and continental-scale characterizations of East Africa rainfall",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Indeje1",
+        "pone.0032408-Myers1"
+      ]
+    },
+    {
+      "id":"29",
+      "section":"Introduction",
+      "word_position":818,
+      "context":{
+        "truncated_before":true,
+        "text_before":"and the existence of large tracts of forest [51], [52]. Previous regional- and continental-scale characterizations of East Africa rainfall variability ",
+        "citation":"[51], [53]–[55]",
+        "text_after":" indicate that total annual rainfall has increased since the 1980s",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Indeje1",
+        "pone.0032408-Nicholson1",
+        "pone.0032408-Ogallo1",
+        "pone.0032408-Conway1"
+      ]
+    },
+    {
+      "id":"30",
+      "section":"Introduction",
+      "word_position":835,
+      "context":{
+        "truncated_before":true,
+        "text_before":"Africa rainfall variability [51], [53]–[55] indicate that total annual rainfall has increased since the 1980s over much of East Africa ",
+        "citation":"[53]",
+        "text_after":". However, these studies appear to run contrary to reports",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Nicholson1"
+      ]
+    },
+    {
+      "id":"31",
+      "section":"Introduction",
+      "word_position":869,
+      "context":{
+        "truncated_before":true,
+        "text_before":"Uganda, who cite changes in weather patterns, including increasing temperatures and decreasing rainfall, as a cause of decreased crop yields ",
+        "citation":"[56]",
+        "text_after":". Many have reported drought-stressed plants and the loss of",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Orlove1"
+      ]
+    },
+    {
+      "id":"32",
+      "section":"Introduction",
+      "word_position":940,
+      "context":{
+        "truncated_before":true,
+        "text_before":"onset, cessation, frequency, and intensity to assist agro-ecological communities in developing effective adaptive management at relevant and appropriate temporal scales ",
+        "citation":"[49], [54], [57]–[59]",
+        "text_after":"."
+      },
+      "references":[
+        "pone.0032408-Basalirwa1",
+        "pone.0032408-Ogallo1",
+        "pone.0032408-Thornton1",
+        "pone.0032408-Camberlin1",
+        "pone.0032408-Phillips1"
+      ]
+    },
+    {
+      "id":"33",
+      "section":"Introduction",
+      "word_position":1057,
+      "context":{
+        "truncated_before":true,
+        "text_before":"wealth and gender) per the results of previous surveys regarding resource use and park impacts conducted by Hartter and Goldman ",
+        "citation":"[2], [60]",
+        "text_after":"."
+      },
+      "references":[
+        "pone.0032408-Hartter1",
+        "pone.0032408-Hartter4"
+      ]
+    },
+    {
+      "id":"34",
+      "section":"Methods",
+      "word_position":1088,
+      "context":{
+        "truncated_before":false,
+        "text_before":"Understanding local trends in rainfall is very important for farmers growing subsistence and cash crops ",
+        "citation":"[59], [61]–[64]",
+        "text_after":" in order for them to develop coping mechanisms. For many",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Phillips1",
+        "pone.0032408-Huxley1",
+        "pone.0032408-Manning1",
+        "pone.0032408-Hanna1",
+        "pone.0032408-Fischer1"
+      ]
+    },
+    {
+      "id":"35",
+      "section":"Methods",
+      "word_position":1139,
+      "context":{
+        "truncated_before":true,
+        "text_before":"adaptation management practices is scarce or non-existent. Particularly, the lack of daily instrumental weather records representing rainfall over western Uganda ",
+        "citation":"[47]",
+        "text_after":" has limited previous investigations of inter-annual rainfall variability. Thus we",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Verschuren1"
+      ]
+    },
+    {
+      "id":"36",
+      "section":"Methods",
+      "word_position":1225,
+      "context":{
+        "truncated_before":true,
+        "text_before":"population. Kibale was originally demarcated in 1932 as a Crown Forest Reserve and changed to a national park in 1993 ",
+        "citation":"[29], [65]",
+        "text_after":". It protects 12 species of primates (including the endangered",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Hartter2",
+        "pone.0032408-Hartter5"
+      ]
+    },
+    {
+      "id":"37",
+      "section":"Methods",
+      "word_position":1442,
+      "context":{
+        "truncated_before":true,
+        "text_before":"rains: September through November. Elevation and proximity to large bodies of water account for some sub-regional and sub-seasonal rainfall variability ",
+        "citation":"[49]–[51], [54]",
+        "text_after":"."
+      },
+      "references":[
+        "pone.0032408-Basalirwa1",
+        "pone.0032408-Stampone1",
+        "pone.0032408-Indeje1",
+        "pone.0032408-Ogallo1"
+      ]
+    },
+    {
+      "id":"38",
+      "section":"Methods",
+      "word_position":1458,
+      "context":{
+        "truncated_before":false,
+        "text_before":"Kibale is situated in one of the most densely populated areas in Sub-Saharan Africa ",
+        "citation":"[66]",
+        "text_after":". The population around Kibale has increased over 300% between",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Lepp1"
+      ]
+    },
+    {
+      "id":"39",
+      "section":"Methods",
+      "word_position":1471,
+      "context":{
+        "truncated_before":true,
+        "text_before":"most densely populated areas in Sub-Saharan Africa [66]. The population around Kibale has increased over 300% between 1959 and 1990 ",
+        "citation":"[45]",
+        "text_after":". In 2006, the population density within 5 km of",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-NaughtonTreves1"
+      ]
+    },
+    {
+      "id":"40",
+      "section":"Methods",
+      "word_position":1491,
+      "context":{
+        "truncated_before":true,
+        "text_before":"[45]. In 2006, the population density within 5 km of the park boundary was estimated to be over 260 individuals/km2 ",
+        "citation":"[60]",
+        "text_after":", ranging as high as over 600 individuals/km2 (C. MacKenzie,",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Hartter4"
+      ]
+    },
+    {
+      "id":"41",
+      "section":"Methods",
+      "word_position":1529,
+      "context":{
+        "truncated_before":true,
+        "text_before":"this area, predominately Batoro and Bakiga tribes, subsists through farming and uses firewood as the primary energy source for cooking ",
+        "citation":"[67]",
+        "text_after":". Farms are relatively small, with most less than 5",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-NaughtonTreves2"
+      ]
+    },
+    {
+      "id":"42",
+      "section":"Methods",
+      "word_position":1597,
+      "context":{
+        "truncated_before":true,
+        "text_before":"total annual rainfall is not a useful metric for identifying inter-annual variability and trends in rainfall at practical temporal scales ",
+        "citation":"[50]",
+        "text_after":". Due to the lack of daily rainfall records within",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Stampone1"
+      ]
+    },
+    {
+      "id":"43",
+      "section":"Methods",
+      "word_position":1632,
+      "context":{
+        "truncated_before":true,
+        "text_before":"total seasonal rainfall using the sum of total monthly rainfall for the months corresponding to the occurrence of each season ",
+        "citation":"[49], [50], [54], [68]",
+        "text_after":". While national and regional-scale studies of East African rainfall",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Basalirwa1",
+        "pone.0032408-Stampone1",
+        "pone.0032408-Ogallo1",
+        "pone.0032408-Ogallo2"
+      ]
+    },
+    {
+      "id":"44",
+      "section":"Methods",
+      "word_position":1710,
+      "context":{
+        "truncated_before":false,
+        "text_before":"identify season onset (ONS), cessation (CES), duration (DUR), and total seasonal rainfall (P) ",
+        "citation":"[58], [69]",
+        "text_after":";"
+      },
+      "references":[
+        "pone.0032408-Camberlin1",
+        "pone.0032408-Moron1"
+      ]
+    },
+    {
+      "id":"45",
+      "section":"Methods",
+      "word_position":1742,
+      "context":{
+        "truncated_before":true,
+        "text_before":"(RD), reported as percent of season, and the average daily rainfall, or intensity (INT), for rain days within each season ",
+        "citation":"[58], [69]",
+        "text_after":";"
+      },
+      "references":[
+        "pone.0032408-Camberlin1",
+        "pone.0032408-Moron1"
+      ]
+    },
+    {
+      "id":"46",
+      "section":"Methods",
+      "word_position":1785,
+      "context":{
+        "truncated_before":false,
+        "text_before":"compute the Standardized Precipitation Index (SPI) as a measure of the relative “dryness” of each season between 1981 and 2010 ",
+        "citation":"[70]–[73]",
+        "text_after":"."
+      },
+      "references":[
+        "pone.0032408-Li1",
+        "pone.0032408-McKee2",
+        "pone.0032408-McKee3",
+        "pone.0032408-Ntale1"
+      ]
+    },
+    {
+      "id":"47",
+      "section":"Methods",
+      "word_position":1811,
+      "context":{
+        "truncated_before":true,
+        "text_before":"measured total daily rainfall in determining a “rain” or “no rain” day varies by region from 0.30 to 1.00 mm ",
+        "citation":"[74], [75]",
+        "text_after":". To be conservative, a daily rainfall threshold for a",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Garbutt1",
+        "pone.0032408-Odekunle1"
+      ]
+    },
+    {
+      "id":"48",
+      "section":"Methods",
+      "word_position":2114,
+      "context":{
+        "truncated_before":true,
+        "text_before":"statistics exceeding the 90% confidence levels (c.l.) are considered significant. Statistics exceeding the 95% and 99% c.l. are also identified ",
+        "citation":"[76]",
+        "text_after":"."
+      },
+      "references":[
+        "pone.0032408-Longobardi1"
+      ]
+    },
+    {
+      "id":"49",
+      "section":"Methods",
+      "word_position":2122,
+      "context":{
+        "truncated_before":false,
+        "text_before":"The original SPI ",
+        "citation":"[71]",
+        "text_after":" is a drought index that categorizes rainfall over a specified",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-McKee2"
+      ]
+    },
+    {
+      "id":"50",
+      "section":"Methods",
+      "word_position":2186,
+      "context":{
+        "truncated_before":true,
+        "text_before":"(e.g., total rainfall for all long rains from 1981–2010). SPI has been shown to be useful in tropical forested regions ",
+        "citation":"[70], [73]",
+        "text_after":". Values between −1.0 and +1.0 are within the range",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Li1",
+        "pone.0032408-Ntale1"
+      ]
+    },
+    {
+      "id":"51",
+      "section":"Methods",
+      "word_position":2220,
+      "context":{
+        "truncated_before":true,
+        "text_before":"(e.g., near normal), meaning that the total seasonal rainfall is within one standard deviation of the 1981–2010 mean season rainfall ",
+        "citation":"[71], [77]",
+        "text_after":". Seasons with SPI values greater than 1.0 indicate total",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-McKee2",
+        "pone.0032408-Edwards1"
+      ]
+    },
+    {
+      "id":"52",
+      "section":"Methods",
+      "word_position":2323,
+      "context":{
+        "truncated_before":true,
+        "text_before":"time series was first fitted to a gamma distribution, Γ(α), from which a cumulative probability function of Γ(α) was calculated ",
+        "citation":"[50], [71], [73]",
+        "text_after":". The probability density function of Γ(α) was transformed resulting",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Stampone1",
+        "pone.0032408-McKee2",
+        "pone.0032408-Ntale1"
+      ]
+    },
+    {
+      "id":"53",
+      "section":"Methods",
+      "word_position":2358,
+      "context":{
+        "truncated_before":true,
+        "text_before":"each season that are a set of standard normal random variables with a mean of zero and variance of one ",
+        "citation":"[71], [72]",
+        "text_after":". A more detailed description of the SPI algorithm is",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-McKee2",
+        "pone.0032408-McKee3"
+      ]
+    },
+    {
+      "id":"54",
+      "section":"Methods",
+      "word_position":2371,
+      "context":{
+        "truncated_before":true,
+        "text_before":"mean of zero and variance of one [71], [72]. A more detailed description of the SPI algorithm is given elsewhere ",
+        "citation":"[50], [71]–[73]",
+        "text_after":"."
+      },
+      "references":[
+        "pone.0032408-Stampone1",
+        "pone.0032408-McKee2",
+        "pone.0032408-McKee3",
+        "pone.0032408-Ntale1"
+      ]
+    },
+    {
+      "id":"55",
+      "section":"Methods",
+      "word_position":2488,
+      "context":{
+        "truncated_before":true,
+        "text_before":"points became the centers of 9-hectare areas (circles with radii of 170 m) termed “superpixels” (black circles in Fig. 1) ",
+        "citation":"[78]",
+        "text_after":". Interview respondents were selected in each superpixel for which",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Goldman1"
+      ]
+    },
+    {
+      "id":"56",
+      "section":"Methods",
+      "word_position":2587,
+      "context":{
+        "truncated_before":true,
+        "text_before":"the second interview, and so on. A full description of the geographic selection methodology can be found in Hartter (2009) ",
+        "citation":"[46]",
+        "text_after":"."
+      },
+      "references":[
+        "pone.0032408-Hartter3"
+      ]
+    },
+    {
+      "id":"57",
+      "section":"Methods",
+      "word_position":2659,
+      "context":{
+        "truncated_before":true,
+        "text_before":"use; and then using participatory risk mapping, respondents were asked to identify (free-list) any risks they and/or their families had ",
+        "citation":"[79], [80]",
+        "text_after":". Respondents then ranked the risks in order of importance",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Baird1",
+        "pone.0032408-Smith1"
+      ]
+    },
+    {
+      "id":"58",
+      "section":"Methods",
+      "word_position":2709,
+      "context":{
+        "truncated_before":true,
+        "text_before":"and wetland use, crop raiding, and their impressions of Kibale National Park. Additional results of these surveys are described elsewhere ",
+        "citation":"[2], [46], [60]",
+        "text_after":"."
+      },
+      "references":[
+        "pone.0032408-Hartter1",
+        "pone.0032408-Hartter3",
+        "pone.0032408-Hartter4"
+      ]
+    },
+    {
+      "id":"59",
+      "section":"Methods",
+      "word_position":2736,
+      "context":{
+        "truncated_before":true,
+        "text_before":"May and August 2009, respondents were asked about perceived changes to the local climate, which are described in Kirner (2010) ",
+        "citation":"[81]",
+        "text_after":"."
+      },
+      "references":[
+        "pone.0032408-Kirner1"
+      ]
+    },
+    {
+      "id":"60",
+      "section":"Results",
+      "word_position":3336,
+      "context":{
+        "truncated_before":true,
+        "text_before":"of predicted (pi) and observed (oi) values, or the mean absolute error (MAE), was calculated to evaluate the predicted values ",
+        "citation":"[82]",
+        "text_after":":(1)Results (Table 1) show that the MAE was within one",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Willmott1"
+      ]
+    },
+    {
+      "id":"61",
+      "section":"Results",
+      "word_position":5357,
+      "context":{
+        "truncated_before":true,
+        "text_before":"would be a dry area, it would be hot, and the land would not be suitable for farming (2006 survey, ",
+        "citation":"[83]",
+        "text_after":"). To them, the climate is more moderate because of",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Hartter6"
+      ]
+    },
+    {
+      "id":"62",
+      "section":"Discussion",
+      "word_position":5481,
+      "context":{
+        "truncated_before":true,
+        "text_before":"vulnerable to climate variability and change, in part because they have only a limited capacity to adapt to changing circumstances ",
+        "citation":"[84]",
+        "text_after":". A high reliance on natural resources, high poverty, limited",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Thomas2"
+      ]
+    },
+    {
+      "id":"63",
+      "section":"Discussion",
+      "word_position":5515,
+      "context":{
+        "truncated_before":true,
+        "text_before":"mitigation and adaptation strategies, and inadequate institutional capacity means that any environmental changes affecting resource availability will result in hardship ",
+        "citation":"[84]",
+        "text_after":". In Uganda, where rain-fed agriculture constitutes 42% of the",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Thomas2"
+      ]
+    },
+    {
+      "id":"64",
+      "section":"Discussion",
+      "word_position":5535,
+      "context":{
+        "truncated_before":true,
+        "text_before":"[84]. In Uganda, where rain-fed agriculture constitutes 42% of the gross domestic product and over 90% of the export earnings ",
+        "citation":"[85]",
+        "text_after":", sustainable livelihoods are directly related to food security. Objective,",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Twinomugisha1"
+      ]
+    },
+    {
+      "id":"65",
+      "section":"Discussion",
+      "word_position":5575,
+      "context":{
+        "truncated_before":false,
+        "text_before":"Analyses of other regions in Africa ",
+        "citation":"[57]",
+        "text_after":" indicate an increase in drought conditions over much of the",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Thornton1"
+      ]
+    },
+    {
+      "id":"66",
+      "section":"Discussion",
+      "word_position":5606,
+      "context":{
+        "truncated_before":true,
+        "text_before":"continent; however these tend to be at a coarse scale and focus on rain-poor regions (e.g., savannas in East Africa) ",
+        "citation":"[48], [55]",
+        "text_after":". Increasing drought frequency in East Africa and Uganda [86]",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Nyong1",
+        "pone.0032408-Conway1"
+      ]
+    },
+    {
+      "id":"67",
+      "section":"Discussion",
+      "word_position":5616,
+      "context":{
+        "truncated_before":true,
+        "text_before":"and focus on rain-poor regions (e.g., savannas in East Africa) [48], [55]. Increasing drought frequency in East Africa and Uganda ",
+        "citation":"[86]",
+        "text_after":" tends to be restricted geographically to the drier regions of",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Ministry1"
+      ]
+    },
+    {
+      "id":"68",
+      "section":"Discussion",
+      "word_position":5686,
+      "context":{
+        "truncated_before":false,
+        "text_before":"Perceptions of local farmers are important because farmers often manage land according to their perceptions and beliefs ",
+        "citation":"[87]",
+        "text_after":". In these communities, meteorological information from the scientific community",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Gbetibouo2"
+      ]
+    },
+    {
+      "id":"69",
+      "section":"Discussion",
+      "word_position":5870,
+      "context":{
+        "truncated_before":true,
+        "text_before":"a local “drying.” In addition, people may base their responses on extreme conditions or events that caused the greatest hardships ",
+        "citation":"[56]",
+        "text_after":". Many respondents believed that the timing and duration of",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Orlove1"
+      ]
+    },
+    {
+      "id":"70",
+      "section":"Discussion",
+      "word_position":6072,
+      "context":{
+        "truncated_before":true,
+        "text_before":"and develop coping strategies based on their dynamic and evolving knowledge, whether or not they are consistent with meteorological data ",
+        "citation":"[88], [89]",
+        "text_after":"."
+      },
+      "references":[
+        "pone.0032408-Gearheard1",
+        "pone.0032408-Speranza1"
+      ]
+    },
+    {
+      "id":"71",
+      "section":"Discussion",
+      "word_position":6236,
+      "context":{
+        "truncated_before":true,
+        "text_before":"likely shaped by a number of interacting factors, such as access to information, formal education, social interactions, and life experience ",
+        "citation":"[90]",
+        "text_after":". We were unable to detect significance for these variables",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Weber1"
+      ]
+    },
+    {
+      "id":"72",
+      "section":"Discussion",
+      "word_position":6389,
+      "context":{
+        "truncated_before":true,
+        "text_before":"stronger than those from periods of normal conditions and help to shape judgment and comparisons to successive events or seasons ",
+        "citation":"[56], [91], [92]",
+        "text_after":". We found that more farmers on the east side",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Orlove1",
+        "pone.0032408-Rebetz1",
+        "pone.0032408-Easterling1"
+      ]
+    },
+    {
+      "id":"73",
+      "section":"Discussion",
+      "word_position":6549,
+      "context":{
+        "truncated_before":true,
+        "text_before":"highly aged soils); and thus support high-density populations and small-scale agriculture, putting enormous resource pressures on protected and unprotected forests ",
+        "citation":"[21], [22], [57], [87]",
+        "text_after":". This ability to support particularly high densities of small-scale",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Bartlein1",
+        "pone.0032408-Houghton1",
+        "pone.0032408-Thornton1",
+        "pone.0032408-Gbetibouo2"
+      ]
+    },
+    {
+      "id":"74",
+      "section":"Discussion",
+      "word_position":6604,
+      "context":{
+        "truncated_before":true,
+        "text_before":"dynamics to exacerbate park vulnerability to resource exploitation. Climate change is expected to lead to drastic shifts of biodiversity-rich biomes ",
+        "citation":"[22]",
+        "text_after":", and these changes are expected to be particularly profound",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Houghton1"
+      ]
+    },
+    {
+      "id":"75",
+      "section":"Discussion",
+      "word_position":6649,
+      "context":{
+        "truncated_before":true,
+        "text_before":"density leads to increased land conversion and land use intensification surrounding parks, which changes ecological function and biodiversity within parks ",
+        "citation":"[6]",
+        "text_after":", and also increases pressure for access to resources in",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Hansen1"
+      ]
+    },
+    {
+      "id":"76",
+      "section":"Discussion",
+      "word_position":6691,
+      "context":{
+        "truncated_before":true,
+        "text_before":"to seek food in agricultural areas near the park boundary, increasing the vulnerability of farms to crop damage and predation ",
+        "citation":"[45], [60]",
+        "text_after":"."
+      },
+      "references":[
+        "pone.0032408-NaughtonTreves1",
+        "pone.0032408-Hartter4"
+      ]
+    },
+    {
+      "id":"77",
+      "section":"Discussion",
+      "word_position":6696,
+      "context":{
+        "truncated_before":false,
+        "text_before":"Stampone et al. ",
+        "citation":"[50]",
+        "text_after":" have shown that the Kibale region has high spatial variability",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Stampone1"
+      ]
+    },
+    {
+      "id":"78",
+      "section":"Discussion",
+      "word_position":6740,
+      "context":{
+        "truncated_before":true,
+        "text_before":"and rainfall trends points toward the need for better information on seasonal and annual rainfall patterns at the local level ",
+        "citation":"[60]",
+        "text_after":". There is, therefore, a strong need to educate local",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Hartter4"
+      ]
+    },
+    {
+      "id":"79",
+      "section":"Discussion",
+      "word_position":6760,
+      "context":{
+        "truncated_before":true,
+        "text_before":"[60]. There is, therefore, a strong need to educate local people and conservation managers alike using a whole landscape approach ",
+        "citation":"[65], [93], [94]",
+        "text_after":" to climate change mitigation and adaptation that includes both the",
+        "truncated_after":true
+      },
+      "references":[
+        "pone.0032408-Hartter5",
+        "pone.0032408-DeFries2",
+        "pone.0032408-Rudnick1"
+      ]
+    }
+  ]
+}
+
+
