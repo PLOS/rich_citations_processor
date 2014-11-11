@@ -58,6 +58,11 @@ module RichCitationsProcessor
           action('http://www.example.com/path', 'application/custom')
         end
 
+        it "should request with custom headers" do
+          stub_request(http_method, 'http://www.example.com/path').with(headers:{'Header1'=>'Custom1', 'Content-Type'=>'application/xml'})
+          action('http://www.example.com/path', 'Header1'=>'Custom1', 'Content-Type'=>:xml)
+        end
+
       end
 
       describe "responses" do
@@ -212,6 +217,40 @@ module RichCitationsProcessor
       it "should include content" do
         stub_request(http_method, 'http://www.example.com/path')
         action('http://www.example.com/path')
+      end
+
+      context "body conversion" do
+
+        it "hould send a JSON body if a hash is passed in" do
+          stub_request(http_method, 'http://www.example.com/path').with(
+                          body:    '{"a":[1,"c"]}',
+                          headers: {'Content-Type'=>'application/json'} )
+          HTTPUtilities.post('http://www.example.com/path', {a:[1,"c"]} )
+        end
+
+        it "hould send a JSON body if an array is passed in" do
+          stub_request(http_method, 'http://www.example.com/path').with(
+              body:    '[1,{"a":"c"}]',
+              headers: {'Content-Type'=>'application/json'} )
+          HTTPUtilities.post('http://www.example.com/path', [1,{a:'c'}] )
+        end
+
+        it "hould send an XML body if an XML document is passed in" do
+          stub_request(http_method, 'http://www.example.com/path').with(
+              body:    "<?xml version=\"1.0\"?>\n<root/>\n",
+              headers: {'Content-Type'=>'application/xml'} )
+          xml = Nokogiri::XML.parse('<root/>')
+          HTTPUtilities.post('http://www.example.com/path', xml )
+        end
+
+        it "hould send an HTML body if an HTML document is passed in" do
+          stub_request(http_method, 'http://www.example.com/path').with(
+              body:    "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\" \"http://www.w3.org/TR/REC-html40/loose.dtd\">\n<html>\n<head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"></head>\n<body></body>\n</html>\n",
+              headers: {'Content-Type'=>'text/html'} )
+          html = Nokogiri::HTML.parse('<html><head></head><body></body></html>')
+          HTTPUtilities.post('http://www.example.com/path', html )
+        end
+
       end
 
     end

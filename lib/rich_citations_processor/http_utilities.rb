@@ -33,6 +33,7 @@ module RichCitationsProcessor
 
     def self.get(url, headers={})
       headers   = parse_headers(headers)
+
       make_request( url, headers) do |request_uri|
         # puts "GET #{request_uri}"
         Net::HTTP::Get.new(request_uri, headers)
@@ -41,6 +42,8 @@ module RichCitationsProcessor
 
     def self.post(url, content, headers={})
       headers   = parse_headers(headers)
+      content   = convert_content(content, headers)
+
       make_request( url, headers) do |request_uri|
         # puts "POST #{request_uri}"
         req = Net::HTTP::Post.new(request_uri, headers)
@@ -89,21 +92,45 @@ module RichCitationsProcessor
     def self.parse_headers(headers)
       case headers
         when Symbol
-          { 'Accept' => ACCEPT_HEADERS[headers] }
+          { 'Accept' => MIME_TYPES[headers] }
         when String
           { 'Accept' => headers }
         when Hash
-          headers.each { |k,v| headers[k] = v.to_s }
+          headers.each { |k,v| headers[k] = MIME_TYPES[v] || v.to_s }
         else
           headers
       end
     end
 
-    ACCEPT_HEADERS = {
+    # Don't pull in all of Actionpack just for the Mime types
+    MIME_TYPES = {
       xml:  'application/xml',
       json: 'application/json',
       html: 'text/html',
     }
+
+    # Cpnvert input content
+
+    def convert_content(content, headers)
+      case content
+        when Hash, Array
+          headers['Content-Type'] ||= MIME_TYPES[:json]
+          MultiJson.dump(content)
+
+        when Nokogiri::HTML::Document, Nokogiri::HTML::DocumentFragment
+            headers['Content-Type'] ||= MIME_TYPES[:html]
+          content.to_html
+
+        when Nokogiri::XML::Node
+          headers['Content-Type'] ||= MIME_TYPES[:xml]
+          content.to_xml
+
+        else
+          content
+
+      end
+
+    end
 
     # Parse response intelligently
 
@@ -127,7 +154,7 @@ module RichCitationsProcessor
           Nokogiri::HTML.parse(body)
 
         when 'application/json'
-          MultiJson.load(body, symbolize_names:true)
+          MultiJson.load(body).with_indifferent_access
 
         else
           nil
