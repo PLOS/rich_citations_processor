@@ -18,6 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+require 'oj'
 require 'active_support'
 require 'active_support/dependencies'
 require 'active_support/core_ext'

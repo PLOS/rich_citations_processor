@@ -32,14 +32,15 @@ module RichCitationsProcessor
         @citing_paper = citing_paper
       end
 
-      def format(options={})
-        MultiJson.dump( as_structured_hash, options)
+      def serialize(options={})
+        MultiJson.dump( as_structured_data, options)
       end
 
       # turn the paper into a hash/array structure
-      def as_structured_hash
+      def as_structured_data
         paper(citing_paper)
       end
+      alias to_hash as_structured_data
 
       protected
 

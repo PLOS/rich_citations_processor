@@ -26,7 +26,7 @@ module RichCitationsProcessor
 
     let(:paper) { Models::CitingPaper.new }
     subject { Serializers::JSON.new(paper) }
-    let(:json) { MultiJson.load( subject.format ) }
+    let(:json) { MultiJson.load( subject.serialize ) }
 
     describe "paper info" do
 
