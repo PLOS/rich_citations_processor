@@ -26,34 +26,44 @@ module RichCitationsProcessor
       class << self
 
         def add(resolver_class)
-          # These aren't concrete classes
-          return if [Individual].include?(resolver_class)
-
+          raise "Cannot register #{resolver_class}}, classes alrady loaded."if  @@classes_loaded
           @@classes << resolver_class
         end
 
         def resolvers(references:, paper:)
-          resolver_classes.map { |klass|
+          resolver_classes.map do |klass|
             klass.new(references:references, paper:paper)
-          }
+          end
         end
 
         def resolver_classes
-          load unless @@classes_loaded
-          @@classes
+          prioritize_classes(load_classes)
         end
 
+        private
+
         # Load all the files in this directory to populate the Registry
-        def load
-          return if @@classes_loaded
+        def load_classes
+          return @@classes if @@classes_loaded
+
           path = File.join( File.dirname(__FILE__), '*.rb')
           Dir[path].each do |file|
             ActiveSupport::Dependencies.require_or_load(file)
           end
           @@classes_loaded = true
+
+          @@classes
         end
 
-        private
+        def prioritize_classes(classes)
+          classes = classes.reject do |c| c.abstract? end
+          classes =  classes.sort! do |a,b|
+                                      v = a.priority <=> b.priority
+                                      v==0 ? a.name <=> b.name : v
+                                   end
+
+          classes
+        end
 
         @@classes = []
         @@classes_loaded = false

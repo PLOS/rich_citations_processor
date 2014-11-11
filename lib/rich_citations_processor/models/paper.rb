@@ -34,6 +34,10 @@ module RichCitationsProcessor
         super
       end
 
+      def add_candidate_uri(uri)
+        candidate_uris.add(uri) if uri
+      end
+
       def indented_inspect(indent='')
         if uri.present?
           "Paper: #{uri.inspect}"

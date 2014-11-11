@@ -48,10 +48,23 @@ module RichCitationsProcessor
         @references
       end
 
+      # Lower priority resolvers run first
+      def self.priority
+        method_not_implemented_error
+      end
+
+      def self.abstract!
+        @abstract = true
+      end
+
       private
 
       def self.inherited(subclass)
         Registry.add(subclass)
+      end
+
+      def self.abstract?
+        defined?(@abstract)
       end
 
     end

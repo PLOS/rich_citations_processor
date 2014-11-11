@@ -25,19 +25,20 @@ module RichCitationsProcessor
   module URIResolvers
 
     class Individual < Base
+      abstract!
 
       def resolve!
         filtered_references.each do |ref|
 
-          id = identifier_for_reference(ref)
-          ref.candidate_uris.add(id) if id
+          uri = uri_for_reference(ref)
+          ref.add_candidate_uri(uri)
 
         end if attempt?
       end
 
       protected
 
-      def identifier_for_reference(ref)
+      def uri_for_reference(ref)
         method_not_implemented_error
       end
 

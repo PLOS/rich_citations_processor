@@ -24,14 +24,52 @@ module RichCitationsProcessor::URIResolvers
 
   RSpec.describe Registry do
 
+    class DontAdd < Base; abstract!; def self.inherited(subclass); end; end
+    class ClassA < DontAdd; abstract!; end
+
+    class Class1 < DontAdd; def self.priority; 1; end; end
+    class Class5 < DontAdd; def self.priority; 2; end; end
+    class Class9 < DontAdd; def self.priority; 3; end; end
+
+    class Class2 < DontAdd; def self.priority; 3; end; end
+    class Class3 < DontAdd; def self.priority; 3; end; end
+
+
     describe '#resolver_classes' do
 
       it "should return a list of URIResolver classes" do
         expect( Registry.resolver_classes ).to eq([
-                                                     DoiFromPlosHtml
+                                                     DoiFromPlosHtml,
+                                                     CrossRef
                                                   ])
 
 
+      end
+
+      it "should not return abstract classes" do
+        allow(Registry).to receive(:load_classes).and_return( [Class1, ClassA] )
+        expect(Registry.resolver_classes).to eq([Class1])
+      end
+
+      it "should sort resolvers by priority" do
+        allow(Registry).to receive(:load_classes).and_return( [Class1, Class5, Class9] )
+        expect(Registry.resolver_classes).to eq([Class1, Class5, Class9])
+
+        allow(Registry).to receive(:load_classes).and_return( [Class9, Class5, Class1] )
+        expect(Registry.resolver_classes).to eq([Class1, Class5, Class9])
+      end
+
+      it "should sort resolvers by name" do
+        allow(Registry).to receive(:load_classes).and_return( [Class1, Class2, Class3] )
+        expect(Registry.resolver_classes).to eq([Class1, Class2, Class3])
+
+        allow(Registry).to receive(:load_classes).and_return( [Class3, Class2, Class1] )
+        expect(Registry.resolver_classes).to eq([Class1, Class2, Class3])
+      end
+
+      it "should sort by priority before name" do
+        allow(Registry).to receive(:load_classes).and_return( [Class9, Class5, Class3, Class2, Class1] )
+        expect(Registry.resolver_classes).to eq([Class1, Class5, Class2, Class3, Class9])
       end
 
     end

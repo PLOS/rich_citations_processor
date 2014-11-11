@@ -33,7 +33,7 @@ module RichCitationsProcessor
       delegate :uri,           :uri=,
                :bibliographic, :bibliographic=,
                :authors,
-               :candidate_uris,
+               :candidate_uris, :add_candidate_uri,
            to: :cited_paper
 
       def initialize(**attributes)
