@@ -25,11 +25,15 @@ module RichCitationsProcessor
 
       protected
 
+      def self.priority
+        10
+      end
+
       def attempt?
         citing_uri.is_a?(URI::DOI) && citing_uri.provider == :plos
       end
 
-      def identifier_for_reference(ref)
+      def uri_for_reference(ref)
         ref_node = node_for_ref_id(ref.id)
         return unless ref_node.present?
 
@@ -38,7 +42,7 @@ module RichCitationsProcessor
 
         doi = links_node.first['data-doi']
 
-        doi && URI.create(doi, type: :doi, source:'plos_html')
+        doi && URI::DOI.new(doi, source:'plos_html')
       end
 
       private
@@ -46,7 +50,7 @@ module RichCitationsProcessor
       def reference_nodes
         @reference_nodes ||= begin
           html = API::PLOS::get_web_page(citing_uri)
-          html.css('ol.references li')
+          html.css('ol.references > li')
         end
       end
 

@@ -25,17 +25,22 @@ module RichCitationsProcessor
   module URIResolvers
 
     class Grouped < Base
+      abstract!
 
       def resolve!
-        method_not_implemented_error('GROUP_SIZE')  unless defined?(GROUP_SIZE)
-        filtered_references.each_slice(GROUP_SIZE) do |ref_list|
-          resolve_references(ref_list)
+        group_size = self.class.const_get(:GROUP_SIZE)
+        method_not_implemented_error('GROUP_SIZE')  unless group_size
+
+        filtered_references.each_slice(group_size) do |ref_list|
+          ref_collection = Models::Collection.new(Models::Reference)
+          ref_collection << ref_list
+          resolve_references!(ref_collection)
         end if attempt?
       end
 
       protected
 
-      def resolve_references(ref_list)
+      def resolve_references!(ref_collection)
         method_not_implemented_error
       end
 
