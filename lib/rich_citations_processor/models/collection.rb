@@ -28,7 +28,7 @@ module RichCitationsProcessor
                :first, :second, :third, :fourth, :fifth, :last,
                :length, :size, :count,
                :empty?, :present?,
-               :include?, :==,
+               :include?,
            to: :@items
 
       def initialize(contained_class, ignore_duplicates:false)
@@ -63,6 +63,14 @@ module RichCitationsProcessor
         items.each { |item| add( item ) }
       end
 
+      def ==(other)
+        if other.is_a?(Collection)
+          items == other.items
+        else
+          items == other
+        end
+      end
+
       def inspect
         indented_inspect
       end
@@ -73,10 +81,13 @@ module RichCitationsProcessor
 
         indent = indent + '  '
         result << ":\n#{indent}"
-        result << map { |i| i.indented_inspect(indent) }.join("\n#{indent}")
+        use_indented = first.respond_to?(:indented_inspect)
+        result << map { |i| use_indented ? i.indented_inspect(indent) : indent + i.inspect }.join("\n#{indent}")
       end
 
-      private
+      protected
+
+      attr_reader :items
 
       # Input can be either an object of the correct type, empty,
       # an array of constructor arguments or a hash of arguments
