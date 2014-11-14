@@ -42,10 +42,11 @@ module RichCitationsProcessor
         @paper    = Models::CitingPaper.new
 
         parse_document_identifier
-        parse_metadata
         parse_authors
         parse_references
         parse_citation_groups
+        # Do this after citation data because of word counter
+        parse_metadata
 
         paper
       end
@@ -78,11 +79,17 @@ module RichCitationsProcessor
       end
 
       def parse_citation_groups
-        paper.citation_groups << CitationGroupParser.new(document:document, references:paper.references).parse!
+        paper.citation_groups << CitationGroupParser.new(document:document,
+                                                         references:paper.references,
+                                                         word_counter:word_counter).parse!
+      end
+
+      def word_counter
+        @word_counter ||= XMLUtilities::WordCounter.new(body)
       end
 
       def word_count
-        XMLUtilities.text(body).word_count
+        word_counter.count_to_end
       end
 
       def body

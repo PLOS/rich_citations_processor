@@ -90,15 +90,15 @@ module RichCitationsProcessor
       end
 
       it "should return the text before the node" do
-        expect( subject.text_before( @xml.css('body'), @xml.css('c').first ) ).to eq('A B ')
+        expect( subject.text_before( @xml.css('body'), @xml.at_css('c') ) ).to eq('A B ')
       end
 
       it "it should return '' if for the first node" do
-        expect( subject.text_before( @xml.css('body'), @xml.css('a').first ) ).to eq('')
+        expect( subject.text_before( @xml.css('body'), @xml.at_css('a') ) ).to eq('')
       end
 
       it "it should return nil if node is not found" do
-        expect( subject.text_before( @xml.css('body'), @xml.css('other').first ) ).to be_nil
+        expect( subject.text_before( @xml.css('body'), @xml.at_css('other') ) ).to be_nil
       end
 
     end
@@ -217,6 +217,15 @@ module RichCitationsProcessor
         expect(result).to eq(['root','a','b','c','d','e'])
       end
 
+      it "should traverse breadth first from a sub node" do
+        result = []
+        subject.breadth_traverse(@xml.at_css('b')) do |n|
+          result << n.name if n.element?
+        end
+
+        expect(result).to eq(['b','c','d'])
+      end
+
       it "should find the nearest node" do
         d = @xml.css('d').first
         b = @xml.css('b').first
@@ -228,6 +237,80 @@ module RichCitationsProcessor
         d = @xml.css('d').first
 
         expect(subject.nearest(d, ['x-b','x-root'])).to be_nil
+      end
+
+    end
+
+    describe XMLUtilities::WordCounter do
+
+      before do
+        @xml = x(<<-EOX.strip_heredoc
+               <root>
+                 root 1
+                 <body>
+                    <a>A</a>
+                    <b>B</b>
+                    <c> C </c>
+                    <d>D</d>
+                    <e>E</e>
+                 </body>
+                 <other />
+                 root 99
+               </root>
+        EOX
+        )
+      end
+
+      subject { described_class.new(@xml.at_css('body') ) }
+
+      it "should create an instance" do
+        subject
+      end
+
+      it "should count the words" do
+        expect( subject.count_to( @xml.at_css('c')) ).to eq(2)
+      end
+
+      it "should raise an exception if the node is not in the container" do
+        expect { subject.count_to( @xml.at_css('other')) }.to raise_exception
+      end
+
+      it "should raise an exception if the node is a parent of the container" do
+        expect { subject.count_to( @xml.at_css('root')) }.to raise_exception
+      end
+
+      it "should count subsequent words" do
+        expect( subject.count_to( @xml.at_css('c')) ).to eq(2)
+        expect( subject.count_to( @xml.at_css('e')) ).to eq(4)
+      end
+
+      it "should raise an exception if the same node is requested twice" do
+        subject.count_to( @xml.at_css('c') )
+        expect { subject.count_to( @xml.at_css('c')) }.to raise_exception
+      end
+
+      it "should raise an exception if the counts are not ordered" do
+        subject.count_to( @xml.at_css('e') )
+        expect { subject.count_to( @xml.at_css('c')) }.to raise_exception
+      end
+
+      it "should count to the end" do
+        expect( subject.count_to_end ).to eq(5)
+      end
+
+      it "should count to the end more than once" do
+        expect( subject.count_to_end ).to eq(5)
+        expect( subject.count_to_end ).to eq(5)
+      end
+
+      it "after counting to the end counting should fail" do
+        expect( subject.count_to_end ).to eq(5)
+        expect { subject.count_to( @xml.at_css('c')) }.to raise_exception
+      end
+
+      it "should count to the end after counting other nodes" do
+        expect( subject.count_to( @xml.at_css('e')) ).to eq(4)
+        expect( subject.count_to_end ).to eq(5)
       end
 
     end

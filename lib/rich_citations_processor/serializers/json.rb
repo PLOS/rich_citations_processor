@@ -47,7 +47,7 @@ module RichCitationsProcessor
       def paper(paper)
         hash = {
           'uri_source'      => paper.uri && paper.uri.source,
-          'uri'             => paper.uri,
+          'uri'             => paper.uri && paper.uri.full_uri,
           'bibliographic'   => bibliographic_metadata(paper),
           'word_count'      => paper.word_count,
           'references'      => references(paper.references),

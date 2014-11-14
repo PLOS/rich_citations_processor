@@ -38,7 +38,7 @@ module RichCitationsProcessor
 
       def expect_request
         stub_request(:get, 'http://dx.doi.org/10.1371/journal.pone.0046843').
-            to_return(:body => get_fixture('journal.pone.0032408.html'))
+            to_return(body: get_fixture('journal.pone.0032408.html'))
       end
 
       it "should fetch the references" do
@@ -48,6 +48,14 @@ module RichCitationsProcessor
 
         expect( references.first.candidate_uris).to eq(['http://dx.doi.org/10.1016/j.ecolecon.2006.05.020'])
         expect( references.second.candidate_uris).to eq(['http://dx.doi.org/10.1017/s0030605310000141'])
+      end
+
+      it "should set the source correctly" do
+        expect_request
+
+        subject.resolve!
+
+        expect( references.first.candidate_uris.first.source).to eq('plos_html')
       end
 
       it "should not add references that aren't found" do

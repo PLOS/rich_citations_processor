@@ -25,8 +25,10 @@ module RichCitationsProcessor
 
         attr_reader :document
 
-        def initialize(document:, references:)
-          @document = document
+        def initialize(document:, references:, word_counter:)
+          @document     = document
+          @word_counter = word_counter
+
           super(references)
         end
 
@@ -85,7 +87,7 @@ module RichCitationsProcessor
         end
 
         def word_position_for(node)
-          XMLUtilities.text_before(body, node).word_count + 1
+          @word_counter.count_to(node) + 1
         end
 
         def add_context_info(citation_group, citation_nodes)
