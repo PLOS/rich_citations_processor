@@ -22,7 +22,7 @@ require 'spec_helper'
 
 module RichCitationsProcessor
 
-  RSpec.describe RichCitationsProcessor::URI::DOI do
+  RSpec.describe URI::DOI do
 
     describe '#matches?' do
 

@@ -20,8 +20,8 @@
 
 class TestURI < RichCitationsProcessor::URI::DOI
 
-  def initialize(identifier, source:'test')
-    super(identifier, source:source)
+  def initialize(identifier, source:'test', **extended)
+    super(identifier, source:source, **extended)
   end
 
   def full_uri

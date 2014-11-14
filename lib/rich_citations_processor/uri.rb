@@ -26,10 +26,10 @@ module RichCitationsProcessor
     extend self
 
     # Create a URI based on an identifier
-    def create(identifier, source:, type:)
+    def create(identifier, type:, source:, **extended)
       klass = Registry.lookup(identifier, type:type)
       return unless klass
-      klass.new(identifier, source:source)
+      klass.new(identifier, source:source, **extended)
     end
 
   end

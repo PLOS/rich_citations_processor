@@ -23,15 +23,17 @@ module RichCitationsProcessor
 
     class Base
       attr_reader :source
+      attr_reader :extended
 
       #@todo Not really happy with this. It would be good to find something more flexible
       def self.matches?(identifier, type:)
         method_not_implemented_error
       end
 
-      def initialize(identifier, source:)
+      def initialize(identifier, source:, **extended)
         @identifier = identifier
         @source     = source
+        @extended   = extended
       end
 
       def full_uri
@@ -41,7 +43,7 @@ module RichCitationsProcessor
       def ==(other)
         case other
           when Base
-            self.class == other.class && self.source == other.source && self.full_uri == other.full_uri
+            self.class == other.class && self.full_uri == other.full_uri
 
           when String
             full_uri == other
@@ -57,7 +59,8 @@ module RichCitationsProcessor
       end
 
       def inspect
-        "[#{source}] #{full_uri}"
+        suffix = ' [' + extended.map{ |k,v| "#{k}:#{v.nil? ? 'nil' : v}"}.join(';') + ']' if extended.present?
+        "[#{source}] #{full_uri}#{suffix}"
       end
 
       def to_s

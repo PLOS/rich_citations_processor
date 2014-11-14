@@ -38,6 +38,12 @@ module RichCitationsProcessor
         expect(json).to eq( 'uri_source'=>'test', 'word_count' => 42, 'uri'=>'http://example.com/a', 'bibliographic'=>{'metadata'=>1} )
       end
 
+      it "should include extended URI data" do
+        paper.uri           = TestURI.new('http://example.com/a', source:'test', more:'sample')
+
+        expect(json).to eq( 'uri_source'=>'test', 'uri'=>'http://example.com/a', 'bibliographic'=>{ 'more' => 'sample'} )
+      end
+
       it "should not return nil fields" do
         expect(json).to eq( {} )
       end
@@ -103,9 +109,15 @@ module RichCitationsProcessor
                              bibliographic: { 'metadata' => 42}  )
 
         expect(references).to eq([{"id"=>"1", "number"=>1, "uri_source"=>"test", "uri"=>"http://example.com/a",
-                                   "accessed_at"=>"2014-10-15T14:02:42.000+00:00", "original_citation"=>"Citation", "bibliographic"=>{"metadata"=>42}}] );
+                                   "accessed_at"=>"2014-10-15T14:02:42.000+00:00", "original_citation"=>"Citation",
+                                   "bibliographic"=>{"metadata"=>42}}] )
+      end
 
+      it "should include extended URI metadata in each reference" do
+        paper.references.add(id:'1', number:1, uri:TestURI.new('http://example.com/a', more:'sample') )
 
+        expect(references).to eq([{"id"=>"1", "number"=>1, "uri_source"=>"test", "uri"=>"http://example.com/a",
+                                   "bibliographic"=>{"more"=>"sample"}}] )
       end
 
       it "should return empty metadata for unspecified properties" do
