@@ -34,7 +34,7 @@ module RichCitationsProcessor
       def resolve_references!(ref_collection)
         texts = ref_collection.map do |ref| search_text_for(ref) end
         response = HTTPUtilities.post(API_URL, texts, :json)
-        return unless (!response['query_ok'])
+        return unless response['query_ok']
 
         response['results'].each_with_index do |result, i|
           next unless include_result?(result)
@@ -61,7 +61,7 @@ module RichCitationsProcessor
       MIN_CROSSREF_SCORE = 2.5 #@TODO: Keeping this value high to force skips for testing
 
       def include_result?(result)
-        result && result[:match] && result[:score] && result[:score] >= MIN_CROSSREF_SCORE
+        result && result['match'] && result['score'] && result['score'] >= MIN_CROSSREF_SCORE
       end
 
       def doi_for_result(result)
@@ -89,12 +89,12 @@ module RichCitationsProcessor
          'elocation-id' => 'e',
          'year'         => '',
         }.each do |name, prefix|
-           node = html_fragment.xpath(".//*[class=#{name}]")
-           parts[name] = prefix + node.text if node.present? && node.text.present?
+           node = html_fragment.at_xpath(".//*[@class='#{name}']")
+           parts[name] = prefix + node.text.strip if node.present? && node.text.present?
          end
 
         # special case for the last page
-        lpage = html_fragment.xpath(".//*[class=lpage]")
+        lpage = html_fragment.at_xpath(".//*[@class='lpage']")
         if parts['fpage'] && lpage.present? && lpage.text.present?
           parts['fpage'] += "-#{lpage.text}"
         end
@@ -104,24 +104,24 @@ module RichCitationsProcessor
 
       def formatted_names_for_crossref(html_fragment)
 
-        names = html_fragment.xpath('.//*[class=name]').map do |node|
-          surname = node.xpath('[class=surname]').text
+        names = html_fragment.xpath(".//*[@class='author']").map do |node|
+          surname = node.xpath("*[@class='surname']").text
           if surname.present?
-            given_names = node.xpath('*[class=given-names').text
+            given_names = node.xpath("*[@class='given-names']").text
             if given_names.present?
-              [given_names.as_given_names, surname].join(' ')
+              [given_names.strip.as_given_names, surname.strip].join(' ')
             else
-              surname
+              surname.strip
             end
           end
 
         end
 
-        collaborators = html_fragment.xpath('.//*[class=collaborator]').map do |node|
-          node.text.presence
+        collaborators = html_fragment.xpath(".//*[@class='collaborator']").map do |node|
+          node.text.strip.presence
         end
 
-        (names + collaborators).compact.join(', ')
+        (names + collaborators).compact.join(', ').presence
       end
 
     end

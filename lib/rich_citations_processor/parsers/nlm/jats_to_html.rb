@@ -50,18 +50,14 @@ module RichCitationsProcessor
               node.remove_attributes except:['data-publicationtype']
               node['class'] = 'citation'
 
-            when 'name'
-              node.name = 'span'
-              node.remove_attributes
-              node['class'] = 'author'
-
             when 'article-title', 'elocation-id',
-                 'surname', 'given-names', 'collaborator', 'person-group',
+                 'collab', 'name', 'surname', 'given-names', 'person-group',
                  'source', 'volume', 'issue',
                  'fpage', 'lpage', 'comment',
-                 'year', 'month', 'day'
+                 'year', 'month', 'day',
+                'publisher-name'
               node.remove_attributes
-              node['class'] = node.name
+              node['class'] = CLASS_RENAMES[node.name] || node.name
               node.name = 'span'
 
             # Convert some HTML tags
@@ -90,6 +86,10 @@ module RichCitationsProcessor
 
         end
 
+        CLASS_RENAMES = {
+            'name'   => 'author',
+            'collab' => 'collaborator'
+        }
       end
 
     end

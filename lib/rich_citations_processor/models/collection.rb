@@ -27,6 +27,7 @@ module RichCitationsProcessor
       delegate :each, :[],
                :first, :second, :third, :fourth, :fifth, :last,
                :length, :size, :count,
+               :delete, :delete_at,
                :empty?, :present?,
                :include?,
            to: :@items

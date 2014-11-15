@@ -52,6 +52,7 @@ module RichCitationsProcessor
         serializer = RichCitationsProcessor::Serializers::JSON.new(paper)
         result = serializer.as_structured_data
 
+        # puts MultiJson.dump(result, pretty:true)
         expected =MultiJson.load get_fixture('journal.pone.0032408.parser.json')
         expect(result).to eq(expected)
       end
