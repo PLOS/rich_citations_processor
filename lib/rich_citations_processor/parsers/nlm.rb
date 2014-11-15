@@ -23,7 +23,7 @@ require 'nokogiri'
 module RichCitationsProcessor
   module Parsers
 
-    class NLM
+    class NLM < Base
       attr_reader :paper
       attr_reader :document
 
@@ -32,10 +32,6 @@ module RichCitationsProcessor
           'application/nlm+xml',
           'application/vnd.nlm+xml'
         ]
-      end
-
-      def initialize(document)
-        @document = document.is_a?(Nokogiri::XML::Node) ? document : Nokogiri::XML.parse(document)
       end
 
       def parse!
@@ -48,7 +44,13 @@ module RichCitationsProcessor
         # Do this after citation data because of word counter
         parse_metadata
 
-        paper
+        @paper
+      end
+
+      protected
+
+      def convert_document(document)
+        Nokogiri::XML.parse(document) unless document.is_a?(Nokogiri::XML::Node)
       end
 
       private
