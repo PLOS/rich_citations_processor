@@ -25,11 +25,13 @@ require 'multi_json'
 module RichCitationsProcessor
   module Serializers
 
-    class JSON
-      attr_reader :citing_paper
+    class JSON < Base
 
-      def initialize(citing_paper)
-        @citing_paper = citing_paper
+      def self.mime_types
+        [
+            'application/richcitations+json',
+            'application/json'
+        ]
       end
 
       def serialize(options={})
