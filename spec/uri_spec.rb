@@ -24,7 +24,7 @@ module RichCitationsProcessor
 
   RSpec.describe URI do
 
-    describe '::create' do
+    describe '#create' do
 
       it "should create an appropriate instance" do
         instance = URI.create('10.123/456', type:'doi', source:'test' )
@@ -41,6 +41,27 @@ module RichCitationsProcessor
       it "should return nil if it cannot create an appropriate instance" do
         instance = URI.create('10.123/456', type:'unknown_type', source:'test' )
         expect( instance ).to be_nil
+      end
+
+    end
+
+    describe '#Lookup' do
+
+      it 'can lookup the id class for a type' do
+        expect(URI.lookup('10.1234/5678',  type: :doi)).to eq( URI::DOI)
+        expect(URI.lookup!('10.1234/5678', type: :doi)).to eq( URI::DOI)
+      end
+
+      it 'can lookup the id with a string' do
+        expect(URI.lookup('10.1234/5678',  type:'doi')).to eq( URI::DOI)
+      end
+
+      it 'returns nil if the id type is not found' do
+        expect( URI.lookup('unknown', type:'anything') ).to be_nil
+      end
+
+      it 'raises an exception if the id type is not found' do
+        expect{ URI.lookup!('unknown', type:'anything') }.to raise_exception
       end
 
     end

@@ -27,9 +27,16 @@ module RichCitationsProcessor
 
     # Create a URI based on an identifier
     def create(identifier, type:, source:, **extended)
-      klass = Registry.lookup(identifier, type:type)
-      return unless klass
-      klass.new(identifier, source:source, **extended)
+      klass = lookup(identifier, type:type)
+      klass && klass.new(identifier, source:source, **extended)
+    end
+
+    def lookup(identifier, type:)
+      Registry.lookup(identifier, type:type)
+    end
+
+    def lookup!(identifier, type:)
+      Registry.lookup!(identifier, type:type)
     end
 
   end

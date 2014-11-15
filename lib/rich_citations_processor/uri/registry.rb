@@ -25,12 +25,8 @@ module RichCitationsProcessor
 
       class << self
 
-        def add(id_class)
-          @@classes << id_class
-        end
-
         def lookup(identifier, type:)
-          load unless @@classes_loaded
+          load_classes unless @@classes_loaded
           type = type.to_sym
           @@classes.find do |klass| klass.matches?(identifier, type:type) end
         end
@@ -39,8 +35,14 @@ module RichCitationsProcessor
           lookup(identifier, type:type) || raise("Unable to locate URI type for #{type.inspect}:#{identifier.inspect}")
         end
 
+        def add(id_class)
+          @@classes << id_class
+        end
+
+        private
+
         # Load all the files in this directory to populate the Registry
-        def load
+        def load_classes
           return if @@classes_loaded
           path = File.join( File.dirname(__FILE__), '*.rb')
           Dir[path].each do |file|

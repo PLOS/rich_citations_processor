@@ -25,11 +25,6 @@ module RichCitationsProcessor
 
       class << self
 
-        def add(resolver_class)
-          raise "Cannot register #{resolver_class}}, classes alrady loaded."if  @@classes_loaded
-          @@classes << resolver_class
-        end
-
         def resolvers(references:, paper:)
           resolver_classes.map do |klass|
             klass.new(references:references, paper:paper)
@@ -38,6 +33,11 @@ module RichCitationsProcessor
 
         def resolver_classes
           prioritize_classes(load_classes)
+        end
+
+        def add(resolver_class)
+          raise "Cannot register #{resolver_class}}, classes alrady loaded."if  @@classes_loaded
+          @@classes << resolver_class
         end
 
         private
