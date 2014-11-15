@@ -33,11 +33,18 @@ metadata for each reference. This metadata conforms to the citeproc+json standar
 Sample code would be something along the lines of:
 
 ```
-  nlm_xml   = get_nlm_document_from_some_service
-  parser    = RichCitationsProcessor::Parsers::NLM.new(nlm_xml)
-  paper     = parser.parse!
-  formatter = RichCitationsProcessor::Formatters::JSON.new(paper)
-  output    = formatter.format
+  nlm_xml    = get_nlm_document_from_some_service
+  parser     = RichCitationsProcessor::Parsers::NLM.new(nlm_xml)
+  -- or by mime type ---
+  parser     = RichCitationsProcessor::Parsers.create('application/nlm+xml', nlm_xml)
+
+  paper      = parser.parse!
+
+  serializer = RichCitationsProcessor::Serializers::JSON.new(paper)
+  -- or by mime type ---
+  serializer = RichCitationsProcessor::Serializers.create('application/richcitations+json', paper)
+
+  output     = serializer.serialize
 
 ```
 
