@@ -84,7 +84,7 @@ module RichCitationsProcessor
       protected
 
       def start_new_group?(citation_context)
-        raise NotImplementedError.new("start_new_group? not implemented")
+        method_not_implemented_error
       end
 
       def start_group!

@@ -31,9 +31,9 @@ module RichCitationsProcessor
       attr_reader :citation_groups
 
       delegate :uri,           :uri=,
-               :uri_source,    :uri_source=,
                :bibliographic, :bibliographic=,
                :authors,
+               :candidate_uris, :add_candidate_uri,
            to: :cited_paper
 
       def initialize(**attributes)

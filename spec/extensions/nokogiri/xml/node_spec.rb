@@ -20,7 +20,7 @@
 
 require 'spec_helper'
 
-describe Nokogiri::XML::Node do
+RSpec.describe Nokogiri::XML::Node do
 
   def x(text)
     Nokogiri::XML::Document.parse(text)

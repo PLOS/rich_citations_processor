@@ -28,16 +28,21 @@ module RichCitationsProcessor
       attr_accessor :email
       attr_accessor :affiliation
 
+      # Define custom writers
+
+      undef :given=
       def given=(value)
         @given   = value.presence
         @literal = nil if value.present?
       end
 
+      undef :family=
       def family=(value)
         @family   = value.presence
         @literal = nil if value.present?
       end
 
+      undef :literal=
       def literal=(value)
         @literal   = value.presence
         @given = @family = nil if value.present?

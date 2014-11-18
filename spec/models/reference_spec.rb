@@ -20,38 +20,42 @@
 
 require 'spec_helper'
 
-describe RichCitationsProcessor::Models::Reference do
+module RichCitationsProcessor::Models
 
-  describe "::new" do
+  RSpec.describe Reference do
 
-    it "should create a Reference" do
-      expect(described_class.new).not_to be_nil
+    describe "::new" do
+
+      it "should create a Reference" do
+        expect(described_class.new).not_to be_nil
+      end
+
+      it "should create a Reference with values" do
+        instance = described_class.new(number:2, id:'ref-id-2', original_citation:'Citation')
+        expect(instance).to have_attributes(number:2, id:'ref-id-2', original_citation:'Citation')
+      end
+
     end
 
-    it "should create a Reference with values" do
-      instance = described_class.new(number:2, id:'ref-id-2', original_citation:'Citation')
-      expect(instance).to have_attributes(number:2, id:'ref-id-2', original_citation:'Citation')
-    end
+    describe "#inspect" do
 
-  end
+      it "should return an inspection string" do
+        instance = described_class.new(number:2, id:'ref-id-2', original_citation:'Citation')
+        instance.citation_groups.add(id:'g3')
+        instance.citation_groups.add(id:'g1')
 
-  describe "#inspect" do
+        expect(instance.inspect).to eq('Reference: "ref-id-2" [2] Citation Groups:["g3", "g1"] => Unresolved Paper')
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-    it "should return an inspection string" do
-      instance = described_class.new(number:2, id:'ref-id-2', original_citation:'Citation')
-      instance.citation_groups.add(id:'g3')
-      instance.citation_groups.add(id:'g1')
+      it "should return an inspection string with a cited paper" do
+        instance = described_class.new(number:2, id:'ref-id-2', original_citation:'Citation')
+        instance.cited_paper.uri = TestURI.new('10.1234/4567', source:'crossref')
 
-      expect(instance.inspect).to eq('Reference: "ref-id-2" [2] Citation Groups:["g3", "g1"] => Unresolved Paper')
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
+        expect(instance.inspect).to eq('Reference: "ref-id-2" [2] Citation Groups:[] => Paper: [crossref] http://dx.doi.org/10.1234/4567')
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-    it "should return an inspection string with a cited paper" do
-      instance = described_class.new(number:2, id:'ref-id-2', original_citation:'Citation')
-      instance.cited_paper.assign_attributes!(uri:'http://dx.doi.org/10.1234/4567', uri_source:'crossref')
-
-      expect(instance.inspect).to eq('Reference: "ref-id-2" [2] Citation Groups:[] => Paper: [crossref] http://dx.doi.org/10.1234/4567')
-      expect(instance.inspect).to eq(instance.indented_inspect)
     end
 
   end

@@ -28,8 +28,12 @@ module Spec
       end
 
       def article_id(id, type=:doi)
-        parts[:id]      = id
-        parts[:id_type] = type
+        nodes = parts[:id_nodes] ||= ''
+        nodes <<  "<article-id pub-id-type='#{type}'>#{id}</article-id>"
+      end
+
+      def id_nodes(nodes)
+        parts[:id_nodes] = nodes
       end
 
       def refs(*refs)
@@ -54,18 +58,11 @@ module Spec
         end
       end
 
-      def article_id_node
-        if parts[:id] && parts[:id_type]
-          "<article-id pub-id-type='#{parts[:id_type]}'>#{parts[:id]}</article-id>"
-        end
-      end
-
       def xml
         xml = <<-EOS
           <root>
             <front>
-              #{article_id_node}
-              <article-id pub-id-type='#{parts[:id_type]}'>#{parts[:id]}</article-id>
+              #{parts[:id_nodes]}
               <article-meta>#{parts[:meta]}</article-meta>
             </front>
             <body>#{parts[:body]}</body>

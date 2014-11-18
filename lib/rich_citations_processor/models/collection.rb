@@ -27,12 +27,14 @@ module RichCitationsProcessor
       delegate :each, :[],
                :first, :second, :third, :fourth, :fifth, :last,
                :length, :size, :count,
+               :delete, :delete_at,
                :empty?, :present?,
-               :include?, :==,
+               :include?,
            to: :@items
 
-      def initialize(contained_class)
-        @contained_class = contained_class
+      def initialize(contained_class, ignore_duplicates:false)
+        @contained_class   = contained_class
+        @ignore_duplicates = ignore_duplicates
         @items = []
       end
 
@@ -45,35 +47,29 @@ module RichCitationsProcessor
       end
 
       def add(*object_or_attributes)
-        if object_or_attributes.length == 0
-          object_or_attributes = @contained_class.new
-        elsif object_or_attributes.length > 1
-          object_or_attributes = @contained_class.new(*object_or_attributes)
+        instance = convert_object(*object_or_attributes)
+
+        if !include?(instance)
+          @items << instance
+          instance
+
         else
-          object_or_attributes = object_or_attributes.first
+          raise DuplicateError.new("Duplicate object added to Collection") unless @ignore_duplicates
         end
-
-        if object_or_attributes.is_a?(Hash)
-          object_or_attributes = @contained_class.new(**object_or_attributes)
-        end
-
-        if ! object_or_attributes.is_a?(@contained_class)
-          raise ArgumentError.new("Argument provided to Collection.add is not a #{@contained_class}")
-        end
-
-        # Don't allow duplicates
-        if include?(object_or_attributes)
-          raise ArgumentError.new("Duplicate object added to Collection")
-        end
-
-        @items << object_or_attributes
-        object_or_attributes
       end
 
       def <<(items)
         raise ArgumentError.new("items is not enumerable") unless items.respond_to?(:each)
 
         items.each { |item| add( item ) }
+      end
+
+      def ==(other)
+        if other.is_a?(Collection)
+          items == other.items
+        else
+          items == other
+        end
       end
 
       def inspect
@@ -86,7 +82,32 @@ module RichCitationsProcessor
 
         indent = indent + '  '
         result << ":\n#{indent}"
-        result << map { |i| i.indented_inspect(indent) }.join("\n#{indent}")
+        use_indented = first.respond_to?(:indented_inspect)
+        result << map { |i| use_indented ? i.indented_inspect(indent) : indent + i.inspect }.join("\n#{indent}")
+      end
+
+      protected
+
+      attr_reader :items
+
+      # Input can be either an object of the correct type, empty,
+      # an array of constructor arguments or a hash of arguments
+      def convert_object(*object_or_attributes)
+        if object_or_attributes.length == 0
+          return @contained_class.new
+        elsif object_or_attributes.length > 1
+          return @contained_class.new(*object_or_attributes)
+        else
+          object_or_attributes = object_or_attributes.first
+        end
+
+        if object_or_attributes.is_a?(Hash)
+          @contained_class.new(**object_or_attributes)
+
+        else
+          raise ArgumentError.new("Argument provided to Collection.add could not be converted to a #{@contained_class}") unless object_or_attributes.is_a?(@contained_class)
+          object_or_attributes
+        end
       end
 
     end

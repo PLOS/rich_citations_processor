@@ -23,7 +23,6 @@ module RichCitationsProcessor
 
     class Paper < Base
       attr_accessor :uri
-      attr_accessor :uri_source
       attr_accessor :bibliographic
 
       attr_reader   :authors
@@ -35,9 +34,13 @@ module RichCitationsProcessor
         super
       end
 
+      def add_candidate_uri(uri)
+        candidate_uris.add(uri) if uri
+      end
+
       def indented_inspect(indent='')
         if uri.present?
-          "Paper: [#{uri_source}] #{uri}"
+          "Paper: #{uri.inspect}"
         else
           "Unresolved Paper"
         end

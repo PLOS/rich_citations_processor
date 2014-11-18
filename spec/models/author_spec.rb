@@ -20,132 +20,136 @@
 
 require 'spec_helper'
 
-describe RichCitationsProcessor::Models::Author do
+module RichCitationsProcessor::Models
 
-  describe "::new" do
+  RSpec.describe Author do
 
-    it "should create an Author" do
-      expect(described_class.new).not_to be_nil
+    describe "::new" do
+
+      it "should create an Author" do
+        expect(described_class.new).not_to be_nil
+      end
+
+      it "should create an Author with values" do
+        instance = described_class.new(given:'J', family:'Smith', email:'joe@eample.com', affiliation:'PLOS')
+        expect(instance).to have_attributes(given:'J', family:'Smith', email:'joe@eample.com', affiliation:'PLOS')
+
+        instance = described_class.new(literal:'The PLOS Labs Team', email:'joe@eample.com', affiliation:'PLOS')
+        expect(instance).to have_attributes(literal:'The PLOS Labs Team', email:'joe@eample.com', affiliation:'PLOS')
+      end
+
     end
 
-    it "should create an Author with values" do
-      instance = described_class.new(given:'J', family:'Smith', email:'joe@eample.com', affiliation:'PLOS')
-      expect(instance).to have_attributes(given:'J', family:'Smith', email:'joe@eample.com', affiliation:'PLOS')
+    describe "accessors" do
 
-      instance = described_class.new(literal:'The PLOS Labs Team', email:'joe@eample.com', affiliation:'PLOS')
-      expect(instance).to have_attributes(literal:'The PLOS Labs Team', email:'joe@eample.com', affiliation:'PLOS')
+      it "should clear the given and family names when setting a literal value" do
+        instance = described_class.new(given:'J', family:'Smith')
+        expect(instance).to have_attributes(given:'J', family:'Smith', literal:nil)
+
+        instance.literal = 'The PLOS Labs Team'
+        expect(instance).to have_attributes(given:nil, family:nil, literal:'The PLOS Labs Team')
+      end
+
+      it "should NOT clear the given and family names when setting a literal to nil" do
+        instance = described_class.new(given:'J', family:'Smith')
+        expect(instance).to have_attributes(given:'J', family:'Smith', literal:nil)
+
+        instance.literal = nil
+        expect(instance).to have_attributes(given:'J', family:'Smith', literal:nil)
+      end
+
+      it "should clear the literal when setting a given value" do
+        instance = described_class.new(literal:'The PLOS Labs Team')
+        expect(instance).to have_attributes(given:nil, family:nil, literal:'The PLOS Labs Team')
+
+        instance.given = 'J.'
+        expect(instance).to have_attributes(given:'J.', family:nil, literal:nil)
+      end
+
+      it "should NOT clear the literal when setting the given value to nil" do
+        instance = described_class.new(literal:'The PLOS Labs Team')
+        expect(instance).to have_attributes(given:nil, family:nil, literal:'The PLOS Labs Team')
+
+        instance.given = nil
+        expect(instance).to have_attributes(given:nil, family:nil, literal:'The PLOS Labs Team')
+      end
+
+      it "should clear the literal when setting a family value" do
+        instance = described_class.new(literal:'The PLOS Labs Team')
+        expect(instance).to have_attributes(given:nil, family:nil, literal:'The PLOS Labs Team')
+
+        instance.family = 'Smith'
+        expect(instance).to have_attributes(given:nil, family:'Smith', literal:nil)
+      end
+
+      it "should NOT clear the literal when setting the family value to nil" do
+        instance = described_class.new(literal:'The PLOS Labs Team')
+        expect(instance).to have_attributes(given:nil, family:nil, literal:'The PLOS Labs Team')
+
+        instance.family = nil
+        expect(instance).to have_attributes(given:nil, family:nil, literal:'The PLOS Labs Team')
+      end
+
     end
 
-  end
+    describe "#inspect" do
 
-  describe "accessors" do
+      it "should return an inspection string if a literal is provided" do
+        instance = described_class.new(literal:'The PLOS Labs Team')
 
-    it "should clear the given and family names when setting a literal value" do
-      instance = described_class.new(given:'J', family:'Smith')
-      expect(instance).to have_attributes(given:'J', family:'Smith', literal:nil)
+        expect(instance.inspect).to eq('Author: The PLOS Labs Team')
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-      instance.literal = 'The PLOS Labs Team'
-      expect(instance).to have_attributes(given:nil, family:nil, literal:'The PLOS Labs Team')
-    end
+      it "should return an inspection string if given and fmaily names are provided" do
+        instance = described_class.new(given:'J', family:'Smith')
 
-    it "should NOT clear the given and family names when setting a literal to nil" do
-      instance = described_class.new(given:'J', family:'Smith')
-      expect(instance).to have_attributes(given:'J', family:'Smith', literal:nil)
+        expect(instance.inspect).to eq('Author: Smith, J')
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-      instance.literal = nil
-      expect(instance).to have_attributes(given:'J', family:'Smith', literal:nil)
-    end
+      it "should return an inspection string if only a fmaily name is provided" do
+        instance = described_class.new(family:'Smith')
 
-    it "should clear the literal when setting a given value" do
-      instance = described_class.new(literal:'The PLOS Labs Team')
-      expect(instance).to have_attributes(given:nil, family:nil, literal:'The PLOS Labs Team')
+        expect(instance.inspect).to eq('Author: Smith')
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-      instance.given = 'J.'
-      expect(instance).to have_attributes(given:'J.', family:nil, literal:nil)
-    end
+      it "should return an inspection string if only a given name is provided" do
+        instance = described_class.new(given:'Wilbur')
 
-    it "should NOT clear the literal when setting the given value to nil" do
-      instance = described_class.new(literal:'The PLOS Labs Team')
-      expect(instance).to have_attributes(given:nil, family:nil, literal:'The PLOS Labs Team')
+        expect(instance.inspect).to eq('Author: Wilbur')
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-      instance.given = nil
-      expect(instance).to have_attributes(given:nil, family:nil, literal:'The PLOS Labs Team')
-    end
+      it "should return an inspection string if no names are provided" do
+        instance = described_class.new
 
-    it "should clear the literal when setting a family value" do
-      instance = described_class.new(literal:'The PLOS Labs Team')
-      expect(instance).to have_attributes(given:nil, family:nil, literal:'The PLOS Labs Team')
+        expect(instance.inspect).to eq('Author: <not provided>')
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-      instance.family = 'Smith'
-      expect(instance).to have_attributes(given:nil, family:'Smith', literal:nil)
-    end
+      it "should include the email address if provided" do
+        instance = described_class.new(given:'J', family:'Smith', email:'john@example.com')
 
-    it "should NOT clear the literal when setting the family value to nil" do
-      instance = described_class.new(literal:'The PLOS Labs Team')
-      expect(instance).to have_attributes(given:nil, family:nil, literal:'The PLOS Labs Team')
+        expect(instance.inspect).to eq('Author: Smith, J (john@example.com)')
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-      instance.family = nil
-      expect(instance).to have_attributes(given:nil, family:nil, literal:'The PLOS Labs Team')
-    end
+      it "should include the affiliation if provided" do
+        instance = described_class.new(given:'J', family:'Smith', affiliation:'PLOS Labs')
 
-  end
+        expect(instance.inspect).to eq('Author: Smith, J (PLOS Labs)')
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-  describe "#inspect" do
+      it "should include the email address and affiliation if provided" do
+        instance = described_class.new(given:'J', family:'Smith', email:'john@example.com', affiliation:'PLOS Labs')
 
-    it "should return an inspection string if a literal is provided" do
-      instance = described_class.new(literal:'The PLOS Labs Team')
+        expect(instance.inspect).to eq('Author: Smith, J (john@example.com) (PLOS Labs)')
+        expect(instance.inspect).to eq(instance.indented_inspect)
+      end
 
-      expect(instance.inspect).to eq('Author: The PLOS Labs Team')
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
-
-    it "should return an inspection string if given and fmaily names are provided" do
-      instance = described_class.new(given:'J', family:'Smith')
-
-      expect(instance.inspect).to eq('Author: Smith, J')
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
-
-    it "should return an inspection string if only a fmaily name is provided" do
-      instance = described_class.new(family:'Smith')
-
-      expect(instance.inspect).to eq('Author: Smith')
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
-
-    it "should return an inspection string if only a given name is provided" do
-      instance = described_class.new(given:'Wilbur')
-
-      expect(instance.inspect).to eq('Author: Wilbur')
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
-
-    it "should return an inspection string if no names are provided" do
-      instance = described_class.new
-
-      expect(instance.inspect).to eq('Author: <not provided>')
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
-
-    it "should include the email address if provided" do
-      instance = described_class.new(given:'J', family:'Smith', email:'john@example.com')
-
-      expect(instance.inspect).to eq('Author: Smith, J (john@example.com)')
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
-
-    it "should include the affiliation if provided" do
-      instance = described_class.new(given:'J', family:'Smith', affiliation:'PLOS Labs')
-
-      expect(instance.inspect).to eq('Author: Smith, J (PLOS Labs)')
-      expect(instance.inspect).to eq(instance.indented_inspect)
-    end
-
-    it "should include the email address and affiliation if provided" do
-      instance = described_class.new(given:'J', family:'Smith', email:'john@example.com', affiliation:'PLOS Labs')
-
-      expect(instance.inspect).to eq('Author: Smith, J (john@example.com) (PLOS Labs)')
-      expect(instance.inspect).to eq(instance.indented_inspect)
     end
 
   end

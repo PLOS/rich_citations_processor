@@ -1,0 +1,1429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD Journal Publishing DTD v3.0 20080202//EN" "http://dtd.nlm.nih.gov/publishing/3.0/journalpublishing3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="3.0" xml:lang="EN">
+  <front>
+    <journal-meta><journal-id journal-id-type="nlm-ta">PLoS ONE</journal-id><journal-id journal-id-type="publisher-id">plos</journal-id><journal-id journal-id-type="pmc">plosone</journal-id><!--===== Grouping journal title elements =====--><journal-title-group><journal-title>PLoS ONE</journal-title></journal-title-group><issn pub-type="epub">1932-6203</issn><publisher>
+        <publisher-name>Public Library of Science</publisher-name>
+        <publisher-loc>San Francisco, USA</publisher-loc>
+      </publisher></journal-meta>
+    <article-meta><article-id pub-id-type="publisher-id">PONE-D-11-12938</article-id><article-id pub-id-type="doi">10.1371/journal.pone.0032408</article-id><article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Research Article</subject>
+        </subj-group>
+        <subj-group subj-group-type="Discipline-v2">
+          <subject>Biology</subject>
+          <subj-group>
+            <subject>Ecology</subject>
+          </subj-group>
+        </subj-group>
+        <subj-group subj-group-type="Discipline-v2">
+          <subject>Earth sciences</subject>
+          <subj-group>
+            <subject>Atmospheric science</subject>
+          </subj-group>
+          <subj-group>
+            <subject>Geography</subject>
+          </subj-group>
+        </subj-group>
+        <subj-group subj-group-type="Discipline-v2">
+          <subject>Social and behavioral sciences</subject>
+          <subj-group>
+            <subject>Geography</subject>
+            <subj-group>
+              <subject>Human geography</subject>
+            </subj-group>
+          </subj-group>
+        </subj-group>
+        <subj-group subj-group-type="Discipline">
+          <subject>Ecology</subject>
+        </subj-group>
+      </article-categories><title-group><article-title>Patterns and Perceptions of Climate Change in a Biodiversity Conservation Hotspot</article-title><alt-title alt-title-type="running-head">Perceptions of Climate Change in Western Uganda</alt-title></title-group><contrib-group>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Hartter</surname>
+            <given-names>Joel</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+          <xref ref-type="corresp" rid="cor1">
+            <sup>*</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Stampone</surname>
+            <given-names>Mary D.</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Ryan</surname>
+            <given-names>Sadie J.</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff3">
+            <sup>3</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Kirner</surname>
+            <given-names>Karen</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff4">
+            <sup>4</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Chapman</surname>
+            <given-names>Colin A.</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff5">
+            <sup>5</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff6">
+            <sup>6</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Goldman</surname>
+            <given-names>Abraham</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff7">
+            <sup>7</sup>
+          </xref>
+        </contrib>
+      </contrib-group><aff id="aff1"><label>1</label><addr-line>Department of Geography, University of New Hampshire, Durham, New Hampshire, United States of America</addr-line>       </aff><aff id="aff2"><label>2</label><addr-line>Department of Environmental and Forest Biology, College of Environmental Science and Forestry, State University of New York College of Environmental Science and Forestry, Syracuse, New York, United States of America</addr-line>       </aff><aff id="aff3"><label>3</label><addr-line>National Center for Ecological Analysis and Synthesis, University of California Santa Barbara, Santa Barbara, California, United States of America</addr-line>       </aff><aff id="aff4"><label>4</label><addr-line>Department of Anthropology, University of Florida, Gainesville, Florida, United States of America</addr-line>       </aff><aff id="aff5"><label>5</label><addr-line>Department of Anthropology &amp; McGill School of Environment, McGill University, Montreal, Canada</addr-line>       </aff><aff id="aff6"><label>6</label><addr-line>Wildlife Conservation Society, Bronx, New York, United States of America</addr-line>       </aff><aff id="aff7"><label>7</label><addr-line>Department of Geography, University of Florida, Gainesville, Florida, United States of America</addr-line>       </aff><contrib-group>
+        <contrib contrib-type="editor" xlink:type="simple">
+          <name name-style="western">
+            <surname>Añel</surname>
+            <given-names>Juan A.</given-names>
+          </name>
+          <role>Editor</role>
+          <xref ref-type="aff" rid="edit1"/>
+        </contrib>
+      </contrib-group><aff id="edit1">University of Oxford, United Kingdom</aff><author-notes>
+        <corresp id="cor1">* E-mail: <email xlink:type="simple">joel.hartter@unh.edu</email></corresp>
+        <fn fn-type="con">
+          <p>Conceived and designed the experiments: JH MDS CAC KK AG. Performed the experiments: JH MDS CAC KK AG. Analyzed the data: JH MDS SJR CAC KK AG. Contributed reagents/materials/analysis tools: JH MDS SJR CAC KK AG. Wrote the paper: JH MDS SJR CAC KK AG.</p>
+        </fn>
+      <fn fn-type="conflict">
+        <p>The authors have declared that no competing interests exist.</p>
+      </fn></author-notes><pub-date pub-type="collection">
+        <year>2012</year>
+      </pub-date><pub-date pub-type="epub">
+        <day>27</day>
+        <month>2</month>
+        <year>2012</year>
+      </pub-date><volume>7</volume><issue>2</issue><elocation-id>e32408</elocation-id><history>
+        <date date-type="received">
+          <day>6</day>
+          <month>7</month>
+          <year>2011</year>
+        </date>
+        <date date-type="accepted">
+          <day>29</day>
+          <month>1</month>
+          <year>2012</year>
+        </date>
+      </history><!--===== Grouping copyright info into permissions =====--><permissions><copyright-year>2012</copyright-year><copyright-holder>Hartter et al</copyright-holder><license><license-p>This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</license-p></license></permissions><abstract>
+        <p>Quantifying local people's perceptions to climate change, and their assessments of which changes matter, is fundamental to addressing the dual challenge of land conservation and poverty alleviation in densely populated tropical regions To develop appropriate policies and responses, it will be important not only to anticipate the nature of expected changes, but also how they are perceived, interpreted and adapted to by local residents. The Albertine Rift region in East Africa is one of the world's most threatened biodiversity hotspots due to dense smallholder agriculture, high levels of land and resource pressures, and habitat loss and conversion. Results of three separate household surveys conducted in the vicinity of Kibale National Park during the late 2000s indicate that farmers are concerned with variable precipitation. Many survey respondents reported that conditions are drier and rainfall timing is becoming less predictable. Analysis of daily rainfall data for the climate normal period 1981 to 2010 indicates that total rainfall both within and across seasons has not changed significantly, although the timing and transitions of seasons has been highly variable. Results of rainfall data analysis also indicate significant changes in the intra-seasonal rainfall distribution, including longer dry periods within rainy seasons, which may contribute to the perceived decrease in rainfall and can compromise food security. Our results highlight the need for fine-scale climate information to assist agro-ecological communities in developing effective adaptive management.</p>
+      </abstract><funding-group><funding-statement>AG, JH, and KK were funded through National Science Foundation grants (0352008, 0624343). SJR conducted this work while a Postdoctoral Associate at the National Center for Ecological Analysis and Synthesis, a Center funded by National Science Foundation (EF-0553768), the University of California, Santa Barbara, and the State of California. CAC's research was supported by Natural Sciences and Engineering Research Council, Canada Research Chair, and National Geographic Society. The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.</funding-statement></funding-group><counts>
+        <page-count count="12"/>
+      </counts></article-meta>
+  </front>
+  <body>
+    <sec id="s1">
+      <title>Introduction</title>
+      <p>Understanding local people's perceptions of climate change is fundamental to addressing the dual challenge of land conservation and poverty alleviation in densely populated tropical regions <xref ref-type="bibr" rid="pone.0032408-Fisher1">[1]</xref>. Tropical deforestation is a major cause of land degradation with impacts on local biodiversity and projected impacts on climate change. In tropical forested areas, protected areas (PAs) are generally smaller, scarcer, and more threatened than savannah PAs <xref ref-type="bibr" rid="pone.0032408-Hartter1">[2]</xref>. Domesticated landscapes outside these PAs are important because they represent reservoirs of land, resources, and economic opportunity for people <xref ref-type="bibr" rid="pone.0032408-Hayes1">[3]</xref>, <xref ref-type="bibr" rid="pone.0032408-Byron1">[4]</xref>. Increased population density leads to increased land conversion and intensification surrounding PAs <xref ref-type="bibr" rid="pone.0032408-Wittemyer1">[5]</xref>, which leads to altered ecological function and potentially the loss of biodiversity within PAs <xref ref-type="bibr" rid="pone.0032408-Hansen1">[6]</xref>–<xref ref-type="bibr" rid="pone.0032408-Sala1">[12]</xref>. For local people in most of the tropics, the main climatic issue is not temperature change, which varies little seasonally, but rather variable precipitation. Changes in precipitation quantity and pattern will impact the productivity of both tropical forests and neighboring agricultural lands. People are expected to alter their farming practices in response, often by increasing their cultivated areas and/or cultivating land more frequently and intensively – often termed “extensification” and “intensification” respectively.</p>
+      <p>The primary mechanism used to protect remaining tropical forest biodiversity is PA establishment <xref ref-type="bibr" rid="pone.0032408-Terborgh1">[13]</xref>, <xref ref-type="bibr" rid="pone.0032408-Bruner1">[14]</xref>, particularly in regions with high human densities <xref ref-type="bibr" rid="pone.0032408-Chapman1">[15]</xref>, <xref ref-type="bibr" rid="pone.0032408-Chapman2">[16]</xref>. A major management concern is that PAs will not be resilient to population pressure and land use intensification and extensification outside their boundaries <xref ref-type="bibr" rid="pone.0032408-Cincotta1">[17]</xref>. Climate change will further exacerbate pressures on PAs as they decline in habitat suitability for the species they protect <xref ref-type="bibr" rid="pone.0032408-MartnezMeyer1">[18]</xref>–<xref ref-type="bibr" rid="pone.0032408-Houghton1">[22]</xref>. This juxtaposition of biodiversity preservation and intensification/extensification to sustain rural livelihoods greatly challenges both the intentions of conservation infrastructure (PAs, corridors, e.g.) and poverty management and alleviation <xref ref-type="bibr" rid="pone.0032408-Fisher1">[1]</xref>, <xref ref-type="bibr" rid="pone.0032408-McKee1">[23]</xref>.</p>
+      <p>The Albertine Rift region in East Africa (313 km<sup>2</sup>) is one of the world's most threatened biodiversity hotspots <xref ref-type="bibr" rid="pone.0032408-Cordeiro1">[24]</xref>–<xref ref-type="bibr" rid="pone.0032408-Plumptre3">[27]</xref>. This region, known for its extremely high species richness and endemism, has more vertebrate species and more endemic and threatened vertebrate species than anywhere else in Africa <xref ref-type="bibr" rid="pone.0032408-Cordeiro1">[24]</xref>, <xref ref-type="bibr" rid="pone.0032408-Plumptre3">[27]</xref>, <xref ref-type="bibr" rid="pone.0032408-Burgess1">[28]</xref>. In Uganda alone, there are 21 mammals, 12 birds, 54 fish, and 38 invertebrates listed as endangered by the International Union for Conservation of Nature (IUCN). This area is highly threatened by habitat loss, where there is also a high demand by local people for land and natural resources to support intensive smallholder agriculture <xref ref-type="bibr" rid="pone.0032408-Hartter2">[29]</xref>. Thus, conservation of remaining forested areas is a high priority <xref ref-type="bibr" rid="pone.0032408-Brooks1">[30]</xref>. PA managers and conservation groups are particularly concerned about the impacts of climate variability and change on regional resource availability <xref ref-type="bibr" rid="pone.0032408-Chapman2">[16]</xref>, <xref ref-type="bibr" rid="pone.0032408-Malcolm1">[31]</xref> given the potential impacts on wildlife <xref ref-type="bibr" rid="pone.0032408-White1">[32]</xref>, <xref ref-type="bibr" rid="pone.0032408-Chapman3">[33]</xref>.</p>
+      <p>This region has garnered international attention primarily due to its key position in biodiversity conservation, but it also maintains some of the fastest growing and densest rural human populations in the world. The Ugandan population continues to grow exponentially at an estimated 3.3% (2005–2010), which ranks eighth highest in the world <xref ref-type="bibr" rid="pone.0032408-World1">[34]</xref>. More alarming is that Uganda has the second youngest population in the world, with almost 49% under 15 years old <xref ref-type="bibr" rid="pone.0032408-World2">[35]</xref>. With few mineral resources, agricultural products are the main economic resource in Uganda, where over 80% of the land is used for small-scale farming and nearly 80% of the population are farmers <xref ref-type="bibr" rid="pone.0032408-The1">[36]</xref>. Livelihoods of rural populations depend on rain-fed agriculture and locally-derived natural resources. This makes them very sensitive to variability in the amount and timing of seasonal rainfall. Delayed, decreased, and even increased rainfall can impact crop productivity <xref ref-type="bibr" rid="pone.0032408-Pachauri1">[37]</xref>.</p>
+      <p>Knowledge of rainfall variability and its temporal and spatial patterns is essential for food security, water resource and land use management. This knowledge is based on a longstanding experience and familiarity with seasonal patterns of rainfall and a set of local climate indicators (e.g., presence, absence, and direction of winds; humidity; clouds) that provide clues of season onset and cessation <xref ref-type="bibr" rid="pone.0032408-Green1">[38]</xref>–<xref ref-type="bibr" rid="pone.0032408-Mertz1">[40]</xref>. Therefore, perceptions of climate change may vary based on the number of years spent as a farmer, amount of formal education, wealth, gender, and age <xref ref-type="bibr" rid="pone.0032408-Gbetibouo1">[41]</xref>–<xref ref-type="bibr" rid="pone.0032408-Zahran1">[43]</xref>. Elsewhere, observed changes in rainfall variability is thought to be a higher threat to rain-fed agriculture, and thus rural livelihoods, than changes in total rainfall <xref ref-type="bibr" rid="pone.0032408-Naylor1">[44]</xref>. In addition, climate-induced changes in food abundance within PAs may cause wildlife to seek alternate food sources, making farms near the PA boundary more vulnerable to crop damage and livestock predation <xref ref-type="bibr" rid="pone.0032408-NaughtonTreves1">[45]</xref>, <xref ref-type="bibr" rid="pone.0032408-Hartter3">[46]</xref>. The lack of long-term, high-frequency instrumental climate records for this region has made characterizing this variability, and the impacts on human livelihoods, difficult <xref ref-type="bibr" rid="pone.0032408-Verschuren1">[47]</xref>.</p>
+      <p>Much of the attention on climate change in Africa has been focused on the more dramatic impacts in drier areas <xref ref-type="bibr" rid="pone.0032408-Nyong1">[48]</xref>, shifting attention away from wetter areas, such as the Albertine Rift. The spatial and temporal patterns of rainfall in the Albertine Rift are highly variable <xref ref-type="bibr" rid="pone.0032408-Basalirwa1">[49]</xref>, <xref ref-type="bibr" rid="pone.0032408-Stampone1">[50]</xref> due to complex topography, large inland water bodies, and the existence of large tracts of forest <xref ref-type="bibr" rid="pone.0032408-Indeje1">[51]</xref>, <xref ref-type="bibr" rid="pone.0032408-Myers1">[52]</xref>. Previous regional- and continental-scale characterizations of East Africa rainfall variability <xref ref-type="bibr" rid="pone.0032408-Indeje1">[51]</xref>, <xref ref-type="bibr" rid="pone.0032408-Nicholson1">[53]</xref>–<xref ref-type="bibr" rid="pone.0032408-Conway1">[55]</xref> indicate that total annual rainfall has increased since the 1980s over much of East Africa <xref ref-type="bibr" rid="pone.0032408-Nicholson1">[53]</xref>. However, these studies appear to run contrary to reports by farmers in western Uganda, who cite changes in weather patterns, including increasing temperatures and decreasing rainfall, as a cause of decreased crop yields <xref ref-type="bibr" rid="pone.0032408-Orlove1">[56]</xref>. Many have reported drought-stressed plants and the loss of entire seasons' worth of crops that either died or did not grow, forcing many rural households to purchase food, move, or go hungry. Such inconsistencies between regional studies and local perceptions underscore the need for more local-scale information on rainfall season onset, cessation, frequency, and intensity to assist agro-ecological communities in developing effective adaptive management at relevant and appropriate temporal scales <xref ref-type="bibr" rid="pone.0032408-Basalirwa1">[49]</xref>, <xref ref-type="bibr" rid="pone.0032408-Ogallo1">[54]</xref>, <xref ref-type="bibr" rid="pone.0032408-Thornton1">[57]</xref>–<xref ref-type="bibr" rid="pone.0032408-Phillips1">[59]</xref>.</p>
+      <p>In this study, we couple an analysis of local-scale rainfall variability with survey data collected in densely populated communities surrounding Kibale National Park (795 km<sup>2</sup>, <xref ref-type="fig" rid="pone-0032408-g001">Fig. 1</xref>), a forest park in western Uganda. Recent daily rainfall data from within Kibale were used to define rainy and dry seasons and quantify rainfall variability to provide a context for validating local perceptions of changes in seasonal and intra-seasonal rainfall and variability. We hypothesize that there are differences in the perceptions of local people, and that these perceptions vary by residence time, household location and demographics (e.g., wealth and gender) per the results of previous surveys regarding resource use and park impacts conducted by Hartter and Goldman <xref ref-type="bibr" rid="pone.0032408-Hartter1">[2]</xref>, <xref ref-type="bibr" rid="pone.0032408-Hartter4">[60]</xref>.</p>
+      <fig id="pone-0032408-g001" position="float">
+        <object-id pub-id-type="doi">10.1371/journal.pone.0032408.g001</object-id>
+        <label>Figure 1</label>
+        <caption>
+          <title>Kibale National Park and locations where household interviews were conducted.</title>
+        </caption>
+        <graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0032408.g001" xlink:type="simple"/>
+      </fig>
+    </sec>
+    <sec id="s2" sec-type="methods">
+      <title>Methods</title>
+      <p>Understanding local trends in rainfall is very important for farmers growing subsistence and cash crops <xref ref-type="bibr" rid="pone.0032408-Phillips1">[59]</xref>, <xref ref-type="bibr" rid="pone.0032408-Huxley1">[61]</xref>–<xref ref-type="bibr" rid="pone.0032408-Fischer1">[64]</xref> in order for them to develop coping mechanisms. For many regions in Africa, the fine-scale environmental and social information required to assist agro-ecological communities in developing effective climate change adaptation management practices is scarce or non-existent. Particularly, the lack of daily instrumental weather records representing rainfall over western Uganda <xref ref-type="bibr" rid="pone.0032408-Verschuren1">[47]</xref> has limited previous investigations of inter-annual rainfall variability. Thus we present a rare analysis of available daily rainfall data as a context for understanding how local farmers' perceptions of climatic change impact their decisions concerning land and resource use.</p>
+      <sec id="s2a">
+        <title>Study Area</title>
+        <p>Kibale National Park in western Uganda is a remnant of a transitional forest between savannah and mid-altitude tropical forest surrounded by a large agricultural population. Kibale was originally demarcated in 1932 as a Crown Forest Reserve and changed to a national park in 1993 <xref ref-type="bibr" rid="pone.0032408-Hartter2">[29]</xref>, <xref ref-type="bibr" rid="pone.0032408-Hartter5">[65]</xref>. It protects 12 species of primates (including the endangered chimpanzee, <italic>Pan troglodytes</italic>), making it one of the most diverse primate communities in the world. Kibale lies near the transition between wet equatorial and moist subtropical precipitation regimes. Elevation increases across the study area from around 900 m in the east to &gt;5000 m toward the Rwenzori Mountains along the western border of Uganda and the Democratic Republic of Congo. This generates a diverse landscape of variable topography, disparate and discontinuous land cover types, and seasonally distinct forcings on weather patterns, all of which may influence the distribution of rainfall at fine spatial and temporal scales. The average annual rainfall at Kibale (at Makerere University Biological Field Station, MUBFS) is 1,654 mm (1968–2010) (standard deviation = 196 mm). However, the seasonal distribution of rainfall varies significantly in response to the north-south migration of the Intertropical Convergence Zone (ITCZ), which results in a bi-modal rainfall pattern consisting of two rainy seasons separated by two dry seasons. Seasons are defined as: 1) first dry: approximately early December through late February; 2) short rains: approximately early March through mid-to-late May; 3) second dry: approximately late May through early September; 4) long rains: September through November. Elevation and proximity to large bodies of water account for some sub-regional and sub-seasonal rainfall variability <xref ref-type="bibr" rid="pone.0032408-Basalirwa1">[49]</xref>–<xref ref-type="bibr" rid="pone.0032408-Indeje1">[51]</xref>, <xref ref-type="bibr" rid="pone.0032408-Ogallo1">[54]</xref>.</p>
+        <p>Kibale is situated in one of the most densely populated areas in Sub-Saharan Africa <xref ref-type="bibr" rid="pone.0032408-Lepp1">[66]</xref>. The population around Kibale has increased over 300% between 1959 and 1990 <xref ref-type="bibr" rid="pone.0032408-NaughtonTreves1">[45]</xref>. In 2006, the population density within 5 km of the park boundary was estimated to be over 260 individuals/km<sup>2</sup> <xref ref-type="bibr" rid="pone.0032408-Hartter4">[60]</xref>, ranging as high as over 600 individuals/km<sup>2</sup> (C. MacKenzie, unpublished data). Almost 95% of the population in this area, predominately Batoro and Bakiga tribes, subsists through farming and uses firewood as the primary energy source for cooking <xref ref-type="bibr" rid="pone.0032408-NaughtonTreves2">[67]</xref>. Farms are relatively small, with most less than 5 hectares. Farmers plant more than 20 species of subsistence crops in two cropping cycles. Main staple foods are cooking bananas, sweet potatoes, Irish potatoes, beans, groundnuts, maize, and cassava.</p>
+      </sec>
+      <sec id="s2b">
+        <title>Rainfall Data</title>
+        <p>Given the bi-modal pattern of intra-annual rainfall, total annual rainfall is not a useful metric for identifying inter-annual variability and trends in rainfall at practical temporal scales <xref ref-type="bibr" rid="pone.0032408-Stampone1">[50]</xref>. Due to the lack of daily rainfall records within western Uganda, previous studies estimated total seasonal rainfall using the sum of total monthly rainfall for the months corresponding to the occurrence of each season <xref ref-type="bibr" rid="pone.0032408-Basalirwa1">[49]</xref>, <xref ref-type="bibr" rid="pone.0032408-Stampone1">[50]</xref>, <xref ref-type="bibr" rid="pone.0032408-Ogallo1">[54]</xref>, <xref ref-type="bibr" rid="pone.0032408-Ogallo2">[68]</xref>. While national and regional-scale studies of East African rainfall are limited to monthly rainfall observations, daily rainfall is available for Kibale at MUBFS for the climate normal period 1981 to 2010. This dataset, which is over 90% complete, represents the only long-term record of daily rainfall for Kibale and surrounding area that we are aware of. These data were used to:</p>
+        <list list-type="order">
+          <list-item>
+            <p>identify season onset (ONS), cessation (CES), duration (DUR), and total seasonal rainfall (<italic>P</italic>) <xref ref-type="bibr" rid="pone.0032408-Camberlin1">[58]</xref>, <xref ref-type="bibr" rid="pone.0032408-Moron1">[69]</xref>;</p>
+          </list-item>
+          <list-item>
+            <p>estimate the number of days in each season with rainfall (RD), reported as percent of season, and the average daily rainfall, or intensity (INT), for rain days within each season <xref ref-type="bibr" rid="pone.0032408-Camberlin1">[58]</xref>, <xref ref-type="bibr" rid="pone.0032408-Moron1">[69]</xref>;</p>
+          </list-item>
+          <list-item>
+            <p>identify trends in inter-annual variance about the mean for and dependence between seasonal rainfall and season onset, cessation, duration, and intensity;</p>
+          </list-item>
+          <list-item>
+            <p>compute the Standardized Precipitation Index (SPI) as a measure of the relative “dryness” of each season between 1981 and 2010 <xref ref-type="bibr" rid="pone.0032408-Li1">[70]</xref>–<xref ref-type="bibr" rid="pone.0032408-Ntale1">[73]</xref>.</p>
+          </list-item>
+        </list>
+        <p>The recommended minimum value for measured total daily rainfall in determining a “rain” or “no rain” day varies by region from 0.30 to 1.00 mm <xref ref-type="bibr" rid="pone.0032408-Garbutt1">[74]</xref>, <xref ref-type="bibr" rid="pone.0032408-Odekunle1">[75]</xref>. To be conservative, a daily rainfall threshold for a rain day of greater than or equal to 1.00 mm was used here. Application of cumulative daily rainfall statistics to the Kibale dataset was insufficient for delineating rainy season onset because three or more consecutive days with heavy rainfall are common during the dry seasons. Changes in the amount and distribution of seasonal rainfall occur during the dry seasons as well. Therefore, a model that approximates both rainy and dry season onset was developed using the duration, or persistence, of dry periods identified as cumulative days without rainfall and applied here to predict season onset. Although the cumulative rainfall amount over the transition between seasons is highly variable, a change in the number of consecutive days without rainfall was observed at the onset of both rainy and dry seasons.</p>
+        <p>Season onset estimates were based on daily rainfall patterns and compared to onset predictions based on the cumulative days without rain followed by cumulative rainfall amounts. Rainy season onset is the first of two or more consecutive rain days followed by three or fewer consecutive days with no rain. A multiday total rainfall of 20 mm or greater over the first multi-day period with rain is used to distinguish between a rainy season onset and a rainy period within a dry season. Dry season onset is similarly defined as the first of five or more consecutive days with no rain followed by four or fewer consecutive rain days. In the case of dry season onset, a multi-day total rainfall of less than 20 mm over the transition from rain to dry season is used. Trends in rainfall variables and correlations between rainfall season statistics exceeding the 90% confidence levels (c.l.) are considered significant. Statistics exceeding the 95% and 99% c.l. are also identified <xref ref-type="bibr" rid="pone.0032408-Longobardi1">[76]</xref>.</p>
+      </sec>
+      <sec id="s2c">
+        <title>Standardized Precipitation Index (SPI)</title>
+        <p>The original SPI <xref ref-type="bibr" rid="pone.0032408-McKee2">[71]</xref> is a drought index that categorizes rainfall over a specified period of time (e.g., long rains in 1987) as above, below or within the range of normal variability based on the average and standard deviation for the time period over the entire dataset (e.g., total rainfall for all long rains from 1981–2010). SPI has been shown to be useful in tropical forested regions <xref ref-type="bibr" rid="pone.0032408-Li1">[70]</xref>, <xref ref-type="bibr" rid="pone.0032408-Ntale1">[73]</xref>. Values between −1.0 and +1.0 are within the range of normal variability (e.g., near normal), meaning that the total seasonal rainfall is within one standard deviation of the 1981–2010 mean season rainfall <xref ref-type="bibr" rid="pone.0032408-McKee2">[71]</xref>, <xref ref-type="bibr" rid="pone.0032408-Edwards1">[77]</xref>. Seasons with SPI values greater than 1.0 indicate total season rainfall one or more standard deviations above the mean season rainfall (i.e., moderately, very, or extremely wet seasons). Seasons with SPI values less than −1.0 are seasons in which the total rainfall was one or more standard deviations below mean season rainfall (i.e., moderately, very, or extremely dry seasons).</p>
+        <p>SPI was calculated for the total seasonal rainfall to identify the relative variability about the seasonal mean for the period of record. The seasonal time series was first fitted to a gamma distribution, Γ(<italic>α</italic>), from which a cumulative probability function of Γ(<italic>α</italic>) was calculated <xref ref-type="bibr" rid="pone.0032408-Stampone1">[50]</xref>, <xref ref-type="bibr" rid="pone.0032408-McKee2">[71]</xref>, <xref ref-type="bibr" rid="pone.0032408-Ntale1">[73]</xref>. The probability density function of Γ(<italic>α</italic>) was transformed resulting in SPI values for each season that are a set of standard normal random variables with a mean of zero and variance of one <xref ref-type="bibr" rid="pone.0032408-McKee2">[71]</xref>, <xref ref-type="bibr" rid="pone.0032408-McKee3">[72]</xref>. A more detailed description of the SPI algorithm is given elsewhere <xref ref-type="bibr" rid="pone.0032408-Stampone1">[50]</xref>, <xref ref-type="bibr" rid="pone.0032408-McKee2">[71]</xref>–<xref ref-type="bibr" rid="pone.0032408-Ntale1">[73]</xref>.</p>
+      </sec>
+      <sec id="s2d">
+        <title>Household Climate Perceptions and Risks</title>
+        <p>Household surveys were used to assess local farmers' perceptions of environmental change near Kibale. Two research areas were defined within 5 km of the park boundary on the east and west sides of the park. The two regions differ in altitude, ethnic composition, and settlement and land use history. The east study area (56 km<sup>2</sup>) is settled predominately by Bakiga households, while the west study area (110 km<sup>2</sup>) is settled predominately by Batoro households (<xref ref-type="fig" rid="pone-0032408-g001">Fig. 1</xref>). A set of 95 random geographic coordinates within these areas was selected, and those points became the centers of 9-hectare areas (circles with radii of 170 m) termed “superpixels” (black circles in <xref ref-type="fig" rid="pone-0032408-g001">Fig. 1</xref>) <xref ref-type="bibr" rid="pone.0032408-Goldman1">[78]</xref>. Interview respondents were selected in each superpixel for which there were landholders (n = 68, 36 on the west side and 32 on the east side). The number of respondents selected per superpixel was proportional to the number of landholders controlling land within the superpixel and at least one interview was conducted in each superpixel. Houses were selected based on proximity to the center of the superpixel. The closest house was selected for the first interview, the next closest for the second interview, and so on. A full description of the geographic selection methodology can be found in Hartter (2009) <xref ref-type="bibr" rid="pone.0032408-Hartter3">[46]</xref>.</p>
+        <p>Three separate surveys were conducted in 2005, 2006, and 2009, all of which used the superpixel sampling framework. Some of the same individuals or households were interviewed in multiple surveys.</p>
+        <list list-type="order">
+          <list-item>
+            <p><italic>2005/6 survey (n = 70):</italic> Between May and June 2005 and 2006, respondents were asked general questions about household composition, employment, and land use; and then using participatory risk mapping, respondents were asked to identify (free-list) any risks they and/or their families had <xref ref-type="bibr" rid="pone.0032408-Baird1">[79]</xref>, <xref ref-type="bibr" rid="pone.0032408-Smith1">[80]</xref>. Respondents then ranked the risks in order of importance to the household.</p>
+          </list-item>
+          <list-item>
+            <p><italic>2006 survey (n = 130):</italic> Between May and August 2006, respondents were asked about land use, forest fragment and wetland use, crop raiding, and their impressions of Kibale National Park. Additional results of these surveys are described elsewhere <xref ref-type="bibr" rid="pone.0032408-Hartter1">[2]</xref>, <xref ref-type="bibr" rid="pone.0032408-Hartter3">[46]</xref>, <xref ref-type="bibr" rid="pone.0032408-Hartter4">[60]</xref>.</p>
+          </list-item>
+          <list-item>
+            <p><italic>2009 survey (n = 100):</italic> Between May and August 2009, respondents were asked about perceived changes to the local climate, which are described in Kirner (2010) <xref ref-type="bibr" rid="pone.0032408-Kirner1">[81]</xref>.</p>
+          </list-item>
+        </list>
+        <p>Interviews were conducted in person by Hartter, Goldman, and/or Kirner using a trained local interpreter in one of the main local languages, Rutoro or Rukiga, or in English. Questions were mostly open-ended, and respondents could further expound on their initial responses. Responses were then coded into categories during data analysis. Relationships between categorical responses and independent variables were examined with chi-square tests for independence (gender, location, wealth, newcomer status), while continuous variables were examined using Mann-Whitney U-tests (residence time, distance to park, and respondent age).</p>
+      </sec>
+    </sec>
+    <sec id="s3">
+      <title>Results</title>
+      <sec id="s3a">
+        <title>Season Onset, Cessation, Duration, and Total Rainfall</title>
+        <p>Timing and distribution of daily rainfall during the transition from one season to the next varied from year to year. Standard deviations (<italic>σ</italic>) about the mean season onset date for all seasons ranged between 10 to 20 days (<xref ref-type="table" rid="pone-0032408-t001">Table 1</xref>) with a difference in season onset from one year to the next as high as 30 days. Absolute differences between observed and predicted season onset of less than five days occurred for seasons in which there was an abrupt transition from one season to the next. Differences as large as ±20 days occurred for a few seasons in which the transition was gradual (<xref ref-type="fig" rid="pone-0032408-g002">Fig. 2</xref>). However, based on the average and absolute difference between observed and predicted onset dates determined from consecutive no-rain day intervals, the predicted dates reproduced the observed inter-annual variability in season onset reasonably well.</p>
+        <fig id="pone-0032408-g002" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0032408.g002</object-id>
+          <label>Figure 2</label>
+          <caption>
+            <title>Distribution of rainfall seasons at MUBFS, Kibale National Park for the climate normal period 1981 to 2010.</title>
+            <p>The inter-annual distribution of rainfall seasons from total daily rainfall observations at MUBFS, 1981–2010. The light gray areas indicate the difference between predicted and observed season onset dates. The vertical dashed lines represent the average season onset for the period of record. The uncertainty (the difference between the start date observed and the start date predicted using a statistical model) in season onset for 1993 is not displayed due to missing data for April, May and June.</p>
+          </caption>
+          <graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0032408.g002" xlink:type="simple"/>
+        </fig>
+        <table-wrap id="pone-0032408-t001" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0032408.t001</object-id><label>Table 1</label><caption>
+            <title>Observed (<italic>predicted</italic>) mean (<inline-formula><inline-graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0032408.e001" xlink:type="simple"/></inline-formula>), standard deviation (<inline-formula><inline-graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0032408.e002" xlink:type="simple"/></inline-formula>), mean absolute error (MAE) and Pearson product moment correlation coefficient (<italic>r</italic>) for seasonal rainfall variables derived from daily rainfall observations at MUBFS for the period 1981–2010.</title>
+          </caption><!--===== Grouping alternate versions of objects =====--><alternatives><graphic id="pone-0032408-t001-1" mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0032408.t001" xlink:type="simple"/><table>
+            <colgroup span="1">
+              <col align="left" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+            </colgroup>
+            <thead>
+              <tr>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">ONS</td>
+                <td align="left" colspan="1" rowspan="1">DUR (days)</td>
+                <td align="left" colspan="1" rowspan="1"><italic>P</italic> (mm)</td>
+                <td align="left" colspan="1" rowspan="1">RD (%)</td>
+                <td align="left" colspan="1" rowspan="1">INT (mm day<sup>−1</sup>)</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">(A) First Dry<xref ref-type="table-fn" rid="nt101">1</xref></td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <inline-formula><inline-graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0032408.e003" xlink:type="simple"/></inline-formula>
+                </td>
+                <td align="left" colspan="1" rowspan="1">17 December</td>
+                <td align="left" colspan="1" rowspan="1">73</td>
+                <td align="left" colspan="1" rowspan="1">103.17</td>
+                <td align="left" colspan="1" rowspan="1">16.5</td>
+                <td align="left" colspan="1" rowspan="1">8.25</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">(<italic>13 December</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>80</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>135.54</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>18.3</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>8.83</italic>)</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <inline-formula><inline-graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0032408.e004" xlink:type="simple"/></inline-formula>
+                </td>
+                <td align="left" colspan="1" rowspan="1">10.8 days</td>
+                <td align="left" colspan="1" rowspan="1">21.53</td>
+                <td align="left" colspan="1" rowspan="1">74.83</td>
+                <td align="left" colspan="1" rowspan="1">5.8</td>
+                <td align="left" colspan="1" rowspan="1">3.45</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">(<italic>11.9 days</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>22.1</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>86.52</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>6.0</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>3.43</italic>)</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">MAE</td>
+                <td align="left" colspan="1" rowspan="1">3.2 days</td>
+                <td align="left" colspan="1" rowspan="1">8.2</td>
+                <td align="left" colspan="1" rowspan="1">36.65</td>
+                <td align="left" colspan="1" rowspan="1">2.9</td>
+                <td align="left" colspan="1" rowspan="1">1.14</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>R</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1">0.84</td>
+                <td align="left" colspan="1" rowspan="1">0.91</td>
+                <td align="left" colspan="1" rowspan="1">0.82</td>
+                <td align="left" colspan="1" rowspan="1">0.67</td>
+                <td align="left" colspan="1" rowspan="1">0.87</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">(B) Short Rains<xref ref-type="table-fn" rid="nt102">2</xref></td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <inline-formula><inline-graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0032408.e005" xlink:type="simple"/></inline-formula>
+                </td>
+                <td align="left" colspan="1" rowspan="1">28 February</td>
+                <td align="left" colspan="1" rowspan="1">95</td>
+                <td align="left" colspan="1" rowspan="1">535.26</td>
+                <td align="left" colspan="1" rowspan="1">51.5</td>
+                <td align="left" colspan="1" rowspan="1">11.12</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">(<italic>3 March</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>91</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>512.86</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>51.4</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>11.16</italic>)</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <inline-formula><inline-graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0032408.e006" xlink:type="simple"/></inline-formula>
+                </td>
+                <td align="left" colspan="1" rowspan="1">16.4 days</td>
+                <td align="left" colspan="1" rowspan="1">20.7</td>
+                <td align="left" colspan="1" rowspan="1">141.28</td>
+                <td align="left" colspan="1" rowspan="1">7.4</td>
+                <td align="left" colspan="1" rowspan="1">2.29</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">(<italic>16.6 days</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>20.6</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>142.23</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>7.8</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>2.49</italic>)</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">MAE</td>
+                <td align="left" colspan="1" rowspan="1">3.8 days</td>
+                <td align="left" colspan="1" rowspan="1">6.0</td>
+                <td align="left" colspan="1" rowspan="1">23.78</td>
+                <td align="left" colspan="1" rowspan="1">1.3</td>
+                <td align="left" colspan="1" rowspan="1">0.31</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>R</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1">0.96</td>
+                <td align="left" colspan="1" rowspan="1">0.95</td>
+                <td align="left" colspan="1" rowspan="1">0.98</td>
+                <td align="left" colspan="1" rowspan="1">0.97</td>
+                <td align="left" colspan="1" rowspan="1">0.99</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">(C) Second Dry<xref ref-type="table-fn" rid="nt102">2</xref></td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <inline-formula><inline-graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0032408.e007" xlink:type="simple"/></inline-formula>
+                </td>
+                <td align="left" colspan="1" rowspan="1">3 June</td>
+                <td align="left" colspan="1" rowspan="1">68</td>
+                <td align="left" colspan="1" rowspan="1">111.63</td>
+                <td align="left" colspan="1" rowspan="1">22.6</td>
+                <td align="left" colspan="1" rowspan="1">7.12</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">(<italic>3 June</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>69</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>121.93</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>21.8</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>7.44</italic>)</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <inline-formula><inline-graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0032408.e008" xlink:type="simple"/></inline-formula>
+                </td>
+                <td align="left" colspan="1" rowspan="1">13.3 days</td>
+                <td align="left" colspan="1" rowspan="1">21.8</td>
+                <td align="left" colspan="1" rowspan="1">81.52</td>
+                <td align="left" colspan="1" rowspan="1">14.9</td>
+                <td align="left" colspan="1" rowspan="1">3.28</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">(<italic>31.2 days</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>22.9</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>95.02</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>7.6</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>3.35</italic>)</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">MAE</td>
+                <td align="left" colspan="1" rowspan="1">2.5 days</td>
+                <td align="left" colspan="1" rowspan="1">4.9</td>
+                <td align="left" colspan="1" rowspan="1">16.15</td>
+                <td align="left" colspan="1" rowspan="1">3.4</td>
+                <td align="left" colspan="1" rowspan="1">0.98</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>R</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1">0.94</td>
+                <td align="left" colspan="1" rowspan="1">0.93</td>
+                <td align="left" colspan="1" rowspan="1">0.96</td>
+                <td align="left" colspan="1" rowspan="1">0.74</td>
+                <td align="left" colspan="1" rowspan="1">0.87</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">(D) Long Rains</td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <inline-formula><inline-graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0032408.e009" xlink:type="simple"/></inline-formula>
+                </td>
+                <td align="left" colspan="1" rowspan="1">10 August</td>
+                <td align="left" colspan="1" rowspan="1">129</td>
+                <td align="left" colspan="1" rowspan="1">923.11</td>
+                <td align="left" colspan="1" rowspan="1">59.9</td>
+                <td align="left" colspan="1" rowspan="1">12.37</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">(<italic>12 August</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>124</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>877.35</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>60.1</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>12.34</italic>)</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <inline-formula><inline-graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0032408.e010" xlink:type="simple"/></inline-formula>
+                </td>
+                <td align="left" colspan="1" rowspan="1">17.4 days</td>
+                <td align="left" colspan="1" rowspan="1">22.8</td>
+                <td align="left" colspan="1" rowspan="1">173.27</td>
+                <td align="left" colspan="1" rowspan="1">9.0</td>
+                <td align="left" colspan="1" rowspan="1">2.81</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">(<italic>18.0 days</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>24.7</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>160.34</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>9.8</italic>)</td>
+                <td align="left" colspan="1" rowspan="1">(<italic>2.72</italic>)</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">MAE</td>
+                <td align="left" colspan="1" rowspan="1">2.3 days</td>
+                <td align="left" colspan="1" rowspan="1">7.1</td>
+                <td align="left" colspan="1" rowspan="1">46.97</td>
+                <td align="left" colspan="1" rowspan="1">1.2</td>
+                <td align="left" colspan="1" rowspan="1">0.30</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>R</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1">0.98</td>
+                <td align="left" colspan="1" rowspan="1">0.91</td>
+                <td align="left" colspan="1" rowspan="1">0.94</td>
+                <td align="left" colspan="1" rowspan="1">0.97</td>
+                <td align="left" colspan="1" rowspan="1">0.99</td>
+              </tr>
+            </tbody>
+          </table></alternatives><table-wrap-foot>
+            <fn id="nt101">
+              <label>1</label>
+              <p>The first dry season begins in December of the previous year and continues into February of the current year.</p>
+            </fn>
+            <fn id="nt102">
+              <label>2</label>
+              <p>First rain and second dry season statistics are omitted for 1993 due to missing data for March, April and June of 1993.</p>
+            </fn>
+          </table-wrap-foot></table-wrap>
+        <p>The average absolute difference between a set of predicted (<italic>p<sub>i</sub></italic>) and observed (<italic>o<sub>i</sub></italic>) values, or the mean absolute error (MAE), was calculated to evaluate the predicted values <xref ref-type="bibr" rid="pone.0032408-Willmott1">[82]</xref>:<disp-formula><graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0032408.e011" xlink:type="simple"/><label>(1)</label></disp-formula>Results (<xref ref-type="table" rid="pone-0032408-t001">Table 1</xref>) show that the MAE was within one standard deviation of the mean onset date for all seasons. Therefore, any differences or prediction errors between the predicted and observed onset dates are within the range of natural variability. Furthermore, no prediction errors were significant (95% c.l.), indicating that the criteria used to predict season onset from daily rainfall observations provides a reasonable approximation of reality, and its application here is appropriate.</p>
+      </sec>
+      <sec id="s3b">
+        <title>Inter-Annual and Intra-Seasonal Variability in Rainfall</title>
+        <p>Significant trends in season rainfall variables occurred during the first dry, short rains and second dry seasons (<xref ref-type="table" rid="pone-0032408-t002">Table 2</xref>). The only significant trends (90% c.l.) in season ONS and CES were associated with changes in the short rains. Significant inter-annual trends (95% c.l.) occurred in the DUR of the first dry and short rains, RD for the short rains and second dry, and <italic>P</italic> during the second dry. Significant intra-seasonal trends also occurred in the number and length of dry periods, defined as two or more consecutive days without rain, during the short rains (<xref ref-type="table" rid="pone-0032408-t003">Table 3</xref>). Intra-seasonal distribution of rainfall during the long rains did not change significantly over the period of record.</p>
+        <table-wrap id="pone-0032408-t002" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0032408.t002</object-id><label>Table 2</label><caption>
+            <title>Seasonal time series trend statistics for MUBFS daily rainfall observations over the period of record 1981–2010.</title>
+          </caption><!--===== Grouping alternate versions of objects =====--><alternatives><graphic id="pone-0032408-t002-2" mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0032408.t002" xlink:type="simple"/><table>
+            <colgroup span="1">
+              <col align="left" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+            </colgroup>
+            <thead>
+              <tr>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="2" rowspan="1">First Dry<sup>1</sup></td>
+                <td align="left" colspan="2" rowspan="1">Short Rains<sup>2</sup></td>
+                <td align="left" colspan="2" rowspan="1">Second Dry<sup>2</sup></td>
+                <td align="left" colspan="2" rowspan="1">Long Rains</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">Trend</td>
+                <td align="left" colspan="1" rowspan="1"><italic>p</italic>-value</td>
+                <td align="left" colspan="1" rowspan="1">Trend</td>
+                <td align="left" colspan="1" rowspan="1"><italic>p</italic>-value</td>
+                <td align="left" colspan="1" rowspan="1">Trend</td>
+                <td align="left" colspan="1" rowspan="1"><italic>p</italic>-value</td>
+                <td align="left" colspan="1" rowspan="1">Trend</td>
+                <td align="left" colspan="1" rowspan="1"><italic>p</italic>-value</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">ONS (days)</td>
+                <td align="left" colspan="1" rowspan="1">4</td>
+                <td align="left" colspan="1" rowspan="1">0.30</td>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>−14</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>0.08</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>12</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>0.08</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1">−5</td>
+                <td align="left" colspan="1" rowspan="1">0.31</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">CES (days)</td>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>−14</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>0.07</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>12</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>0.07</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1">−6</td>
+                <td align="left" colspan="1" rowspan="1">0.30</td>
+                <td align="left" colspan="1" rowspan="1">6</td>
+                <td align="left" colspan="1" rowspan="1">0.18</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">DUR (days)</td>
+                <td align="left" colspan="1" rowspan="1">
+                  <bold>−22</bold>
+                </td>
+                <td align="left" colspan="1" rowspan="1">
+                  <bold>0.03</bold>
+                </td>
+                <td align="left" colspan="1" rowspan="1">
+                  <bold>27</bold>
+                </td>
+                <td align="left" colspan="1" rowspan="1">
+                  <bold>0.02</bold>
+                </td>
+                <td align="left" colspan="1" rowspan="1">−16</td>
+                <td align="left" colspan="1" rowspan="1">0.12</td>
+                <td align="left" colspan="1" rowspan="1">6</td>
+                <td align="left" colspan="1" rowspan="1">0.33</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1"><italic>P</italic> (mm)</td>
+                <td align="left" colspan="1" rowspan="1">13.27</td>
+                <td align="left" colspan="1" rowspan="1">0.39</td>
+                <td align="left" colspan="1" rowspan="1">102.85</td>
+                <td align="left" colspan="1" rowspan="1">0.12</td>
+                <td align="left" colspan="1" rowspan="1">
+                  <bold>−93.34</bold>
+                </td>
+                <td align="left" colspan="1" rowspan="1">
+                  <bold>0.03</bold>
+                </td>
+                <td align="left" colspan="1" rowspan="1">−27.73</td>
+                <td align="left" colspan="1" rowspan="1">0.40</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">RD (%)</td>
+                <td align="left" colspan="1" rowspan="1">−0.5</td>
+                <td align="left" colspan="1" rowspan="1">0.45</td>
+                <td align="left" colspan="1" rowspan="1">
+                  <bold>−11.2</bold>
+                </td>
+                <td align="left" colspan="1" rowspan="1">
+                  <bold>0.01</bold>
+                </td>
+                <td align="left" colspan="1" rowspan="1">
+                  <bold>−21.0</bold>
+                </td>
+                <td align="left" colspan="1" rowspan="1">
+                  <bold>0.01</bold>
+                </td>
+                <td align="left" colspan="1" rowspan="1">−3.1</td>
+                <td align="left" colspan="1" rowspan="1">0.30</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">INT (mm day<sup>−1</sup>)</td>
+                <td align="left" colspan="1" rowspan="1">2.35</td>
+                <td align="left" colspan="1" rowspan="1">0.16</td>
+                <td align="left" colspan="1" rowspan="1">1.47</td>
+                <td align="left" colspan="1" rowspan="1">0.15</td>
+                <td align="left" colspan="1" rowspan="1">−1.44</td>
+                <td align="left" colspan="1" rowspan="1">0.23</td>
+                <td align="left" colspan="1" rowspan="1">0.13</td>
+                <td align="left" colspan="1" rowspan="1">0.47</td>
+              </tr>
+            </tbody>
+          </table></alternatives><table-wrap-foot>
+            <fn id="nt103">
+              <label/>
+              <p>Significant trends at the 90% c.l. are shown in italics and 95% c.l. are shown in bold.</p>
+            </fn>
+          </table-wrap-foot></table-wrap>
+        <table-wrap id="pone-0032408-t003" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0032408.t003</object-id><label>Table 3</label><caption>
+            <title>Average, standard deviation (<inline-formula><inline-graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0032408.e012" xlink:type="simple"/></inline-formula>) and trend in the number of two or more consecutive no-rain days and the mean, median and maximum length of no-rain periods within the short rains.</title>
+          </caption><!--===== Grouping alternate versions of objects =====--><alternatives><graphic id="pone-0032408-t003-3" mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0032408.t003" xlink:type="simple"/><table>
+            <colgroup span="1">
+              <col align="left" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+            </colgroup>
+            <thead>
+              <tr>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">Number</td>
+                <td align="left" colspan="1" rowspan="1">Mean (days)</td>
+                <td align="left" colspan="1" rowspan="1">Median (days)</td>
+                <td align="left" colspan="1" rowspan="1">Maximum (days)</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Average</td>
+                <td align="left" colspan="1" rowspan="1">18</td>
+                <td align="left" colspan="1" rowspan="1">2</td>
+                <td align="left" colspan="1" rowspan="1">1.4</td>
+                <td align="left" colspan="1" rowspan="1">12</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <inline-formula><inline-graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0032408.e013" xlink:type="simple"/></inline-formula>
+                </td>
+                <td align="left" colspan="1" rowspan="1">5</td>
+                <td align="left" colspan="1" rowspan="1">0.5</td>
+                <td align="left" colspan="1" rowspan="1">0.5</td>
+                <td align="left" colspan="1" rowspan="1">2</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Trend</td>
+                <td align="left" colspan="1" rowspan="1">5.7</td>
+                <td align="left" colspan="1" rowspan="1">0.74</td>
+                <td align="left" colspan="1" rowspan="1">1.1</td>
+                <td align="left" colspan="1" rowspan="1">3.0</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1"><italic>p</italic>-value</td>
+                <td align="left" colspan="1" rowspan="1">0.03</td>
+                <td align="left" colspan="1" rowspan="1">0.02</td>
+                <td align="left" colspan="1" rowspan="1">0.01</td>
+                <td align="left" colspan="1" rowspan="1">0.03</td>
+              </tr>
+            </tbody>
+          </table></alternatives><table-wrap-foot>
+            <fn id="nt104">
+              <label/>
+              <p>All statistics are significant at the 95% c.l. Short rains season statistics for 1993 are missing.</p>
+            </fn>
+          </table-wrap-foot></table-wrap>
+        <p>The significant trend toward and earlier ONS and later CES during the short rains accounts for the significant increase in the DUR of the short rains by 27 from 1981 to 2010 as well as trends in an earlier first dry CES and a later second dry ONS. The increase in DUR is negatively correlated with the significant, 11% decrease in the ratio of rain to no rain days (<italic>r</italic> = 0.30, <italic>p</italic>-value = 0.060) in favor of more days without rain. Total rainfall during the short rains is significantly correlated to DUR (<italic>r</italic> = 0.75, <italic>p</italic>-value&lt;0.001), ONS (<italic>r</italic> = −0.59, <italic>p</italic>-value&lt;0.001), and CES (<italic>r</italic> = 0.43, <italic>p</italic>-value = 0.010). Therefore, an increase in DUR due to an earlier ONS and later CES resulted in an increase in <italic>P</italic>, though this increase was not statistically significant.</p>
+        <p>As the proportion of days with rain during the short rains decreased, there was no significant change in INT, which increases as <italic>P</italic> increases (<italic>r</italic> = 0.60, <italic>p</italic>-value&lt;0.001) and/or percent RD decreases (<italic>r</italic> = −0.44, <italic>p</italic>-value = 0.008). Analysis of the intra-seasonal distribution of rain and no rain days indicated that the number and length of dry periods during the short rains increased significantly (<xref ref-type="table" rid="pone-0032408-t003">Table 3</xref>). Therefore, the decrease in rain days within the season does not result in a decrease in total seasonal rainfall. Rather, the rainfall occurs on fewer days within the season.</p>
+        <p>There was an overall decrease in rainfall during the second dry season with significant (95% c.l.) decreases in RD and <italic>P</italic>. Significant (95% c.l.) correlations exist between <italic>P</italic> and percent RD (<italic>r</italic> = 0.36, <italic>p</italic>-value = 0.027) and INT (<italic>r</italic> = 0.74, <italic>p</italic>-value&lt;0.001) meaning that the second dry season is becoming drier overall with less rain falling over fewer days. Although not significant, there was a trend (−5.7 days) toward an earlier cessation of the second dry season from 1981 to 2010. Given the significant (95% c.l.) correlations between <italic>P</italic> and CES (<italic>r</italic> = 0.83, <italic>p</italic>-value&lt;0.001) and DUR (<italic>r</italic> = 0.74, <italic>p</italic>-value&lt;0.001), a shorter season due to an earlier end typically results in a decrease in <italic>P</italic>. The CES is correlated with INT (<italic>r</italic> = 0.59, <italic>p</italic>-value&lt;0.001) and DUR (<italic>r</italic> = 0.82, <italic>p</italic>-value = 0.001), indicating a greater change in daily rainfall patterns toward the end of season transition to the long rains. This could be indicative of changing weather patterns during the long rains onset.</p>
+      </sec>
+      <sec id="s3c">
+        <title>Standardized Precipitation Index</title>
+        <p>The magnitude and direction of SPI values varied from year to year and season to season with climatological means within the range of normal variability (−1.0&lt;SPI&lt;1.0; <xref ref-type="fig" rid="pone-0032408-g003">Fig. 3</xref>). Significant trends toward higher, positive SPI values exist within the first dry (trend = 0.37; 95% c.l.) and short rains (trend = 0.28; 90% c.l.) season statistics with a significant trend toward abnormally dry conditions within the second dry season (trend = −1.14; 95% c.l.). While there was no significant trend in SPI values for the long rains, there was a significant decrease (trend = −0.89; 95% c.l.) in the absolute SPI value for the long rains. This indicates that the inter-annual variability in <italic>P</italic> decreased from 1981 to 2010 while trending toward more “normal” conditions.</p>
+        <fig id="pone-0032408-g003" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0032408.g003</object-id>
+          <label>Figure 3</label>
+          <caption>
+            <title>Time series of seasonal SPI values derived from MUBFS daily rainfall observations for the climate normal period 1981–2010.</title>
+          </caption>
+          <graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0032408.g003" xlink:type="simple"/>
+        </fig>
+        <p>The first dry season varied more than two standard deviations from the mean in 1996 (SPI = 2.75; extremely wet) and in 2009 (SPI = −2.10; extremely dry) (<xref ref-type="fig" rid="pone-0032408-g003">Fig. 3</xref>). Though trending toward positive SPI values, there was very little variability and no seasonal extremes during the short rains for all years. From 1981 to 2010, SPI values for the short rains remained near the seasonal mean and within the normal range of variability about the seasonal mean (<xref ref-type="fig" rid="pone-0032408-g003">Fig. 3</xref>). The second dry season did not exceed two standard deviations from the mean over the period of record, exceeding 1.5 standard deviations above the mean in 1996 (SPI = 1.86; severely wet) and one standard deviation from the mean in 2001 (SPI = −1.32; moderately dry), 2005 (SPI = −1.49; moderately dry), and 2006 (SPI = 1.14; moderately wet) (<xref ref-type="fig" rid="pone-0032408-g003">Fig. 3</xref>). Despite a “moderately wet” 2006 season, there has been a trend in the second dry season toward “moderately dry” conditions (SPI&lt;−1.0) since 1981. The long rains varied more than two standard deviations from the mean in 1982 (SPI = −2.66; extremely dry) and 1983 (SPI = 2.51; severely wet). However, the magnitude of <italic>P</italic> extremes has decreased, ranging between normal (±1) and extremely abnormal (±2) in 1988 (SPI = 1.60; severely wet), 1992 (SPI = 1.42; moderately wet), 1998 (SPI = −1.62; severely dry), and 2004 (SPI = −1.15; moderately dry) (<xref ref-type="fig" rid="pone-0032408-g003">Fig. 3</xref>).</p>
+      </sec>
+      <sec id="s3d">
+        <title>Household Climate Perceptions and Risks</title>
+        <p>Climate variability or change is one of the substantive risks farmers face, though it usually is perceived as less widespread or significant than illness or crop raiding (although raiding is strongly affected by location with respect to the park or other areas that harbor crop-raiding animals). From the 2005/6 risk survey (n = 69), most respondents cited drought (80%) and excess rainfall (timing and/or amount) (54%) as among the risks they face. It is important to note that the local translation for drought is Ekyanda (in Rukiga) and Enjaara (in Rutoro), which means a prolonged period without rain and leading to a food shortage. This period is outside the “normal” dry seasons -meaning that if there is a prolonged dry season, whereby it would be dry in a time that would “normally” be the rainy season. Since this paper discusses perceptions of people, we did not want to constrain the definition of drought. (Other risks named included sickness 88% and crop raiding 42%). When asked to rank their risks, most respondents ranked sickness as a top-3 risk (83%), then drought (55%) and crop raiding (49%). Too much rain was ranked by 16% of respondents as a top-3 risk.</p>
+        <p>Our data from the 2009 survey indicate that 96% of the local farmers (n = 100) perceived that the timing and/or amount of seasonal rainfall had changed, while four respondents said there was no change. This perceived change in seasonal rainfall is widespread across the survey regions and does not appear to be a function of location or demographic characteristics (<italic>p</italic>-value&gt;0.05) (<xref ref-type="table" rid="pone-0032408-t004">Table 4</xref>). More than half of respondents (59%) reported that the timing of rainy season onset and/or cessation has become less predictable in recent years. Many respondents (43%) reported less total annual rainfall, while only 2% reported more rainfall overall. This perception was not affected by wealth or gender. However, older residents were more likely to report that the rains have changed (<italic>p</italic>-value = 0.015). More residents on the west side of Kibale (mainly Batoro) than those on the east side (mainly Bakiga) (<italic>p</italic>-value = 0.003) reported changes in season onset and cessation, but more east side residents reported less rain (<italic>p</italic>-value&lt;0.001).</p>
+        <table-wrap id="pone-0032408-t004" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0032408.t004</object-id><label>Table 4</label><caption>
+            <title>Perceptions of local households of rainfall variability, change in season onset/session and less rain in recent years.</title>
+          </caption><!--===== Grouping alternate versions of objects =====--><alternatives><graphic id="pone-0032408-t004-4" mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0032408.t004" xlink:type="simple"/><table>
+            <colgroup span="1">
+              <col align="left" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+            </colgroup>
+            <thead>
+              <tr>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">Total n</td>
+                <td align="left" colspan="1" rowspan="1">Rains have changed</td>
+                <td align="left" colspan="1" rowspan="1">Season Onset/Cessation</td>
+                <td align="left" colspan="1" rowspan="1">Less Rain</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Total</td>
+                <td align="left" colspan="1" rowspan="1">100</td>
+                <td align="left" colspan="1" rowspan="1">96%</td>
+                <td align="left" colspan="1" rowspan="1">59%</td>
+                <td align="left" colspan="1" rowspan="1">43%</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Gender</td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Male</td>
+                <td align="left" colspan="1" rowspan="1">34</td>
+                <td align="left" colspan="1" rowspan="1">97%</td>
+                <td align="left" colspan="1" rowspan="1">56%</td>
+                <td align="left" colspan="1" rowspan="1">47%</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Female</td>
+                <td align="left" colspan="1" rowspan="1">66</td>
+                <td align="left" colspan="1" rowspan="1">95%</td>
+                <td align="left" colspan="1" rowspan="1">61%</td>
+                <td align="left" colspan="1" rowspan="1">41%</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>p-value</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">0.454</td>
+                <td align="left" colspan="1" rowspan="1">0.625</td>
+                <td align="left" colspan="1" rowspan="1">0.565</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Side</td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">East</td>
+                <td align="left" colspan="1" rowspan="1">45</td>
+                <td align="left" colspan="1" rowspan="1">96%</td>
+                <td align="left" colspan="1" rowspan="1">44%</td>
+                <td align="left" colspan="1" rowspan="1">62%</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">West</td>
+                <td align="left" colspan="1" rowspan="1">55</td>
+                <td align="left" colspan="1" rowspan="1">96%</td>
+                <td align="left" colspan="1" rowspan="1">71%</td>
+                <td align="left" colspan="1" rowspan="1">27%</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>p-value</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">0.718</td>
+                <td align="left" colspan="1" rowspan="1">0.003</td>
+                <td align="left" colspan="1" rowspan="1">&lt;0.001</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Wealth</td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Below average</td>
+                <td align="left" colspan="1" rowspan="1">16</td>
+                <td align="left" colspan="1" rowspan="1">94%</td>
+                <td align="left" colspan="1" rowspan="1">44%</td>
+                <td align="left" colspan="1" rowspan="1">63%</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Average</td>
+                <td align="left" colspan="1" rowspan="1">79</td>
+                <td align="left" colspan="1" rowspan="1">96%</td>
+                <td align="left" colspan="1" rowspan="1">61%</td>
+                <td align="left" colspan="1" rowspan="1">42%</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Above average</td>
+                <td align="left" colspan="1" rowspan="1">5</td>
+                <td align="left" colspan="1" rowspan="1">100%</td>
+                <td align="left" colspan="1" rowspan="1">80%</td>
+                <td align="left" colspan="1" rowspan="1">0%</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>p-value</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">0.303</td>
+                <td align="left" colspan="1" rowspan="1">0.436</td>
+                <td align="left" colspan="1" rowspan="1">0.121</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Newcomer (&lt; = 5 yrs)</td>
+                <td align="left" colspan="1" rowspan="1">17</td>
+                <td align="left" colspan="1" rowspan="1">88%</td>
+                <td align="left" colspan="1" rowspan="1">41%</td>
+                <td align="left" colspan="1" rowspan="1">53%</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>p-value</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">0.611</td>
+                <td align="left" colspan="1" rowspan="1">0.184</td>
+                <td align="left" colspan="1" rowspan="1">0.552</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">residence (total yrs/age)</td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>p-value</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">0.185</td>
+                <td align="left" colspan="1" rowspan="1">0.785</td>
+                <td align="left" colspan="1" rowspan="1">0.744</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Distance to park</td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>p-value</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">0.246</td>
+                <td align="left" colspan="1" rowspan="1">0.136</td>
+                <td align="left" colspan="1" rowspan="1">0.562</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Age</td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">
+                  <italic>p-value</italic>
+                </td>
+                <td align="left" colspan="1" rowspan="1"/>
+                <td align="left" colspan="1" rowspan="1">0.015</td>
+                <td align="left" colspan="1" rowspan="1">0.314</td>
+                <td align="left" colspan="1" rowspan="1">0.531</td>
+              </tr>
+            </tbody>
+          </table></alternatives><table-wrap-foot>
+            <fn id="nt105">
+              <label/>
+              <p><italic>Gender</italic>, <italic>Side</italic>, <italic>Wealth</italic>, and <italic>Newcomer</italic> tested using Pearson chi-squared analysis; <italic>Residence</italic>, <italic>Distance to Park</italic>, and <italic>Age</italic> tested using Mann-Whitney U-test. (2009 survey, n = 100).</p>
+            </fn>
+            <fn id="nt106">
+              <label/>
+              <p>Newcomer = respondent who came to the area within the last 5 years.</p>
+            </fn>
+            <fn id="nt107">
+              <label/>
+              <p>Residence = proportion of respondent's life at current farm.</p>
+            </fn>
+            <fn id="nt108">
+              <label/>
+              <p>Side = east or west side of Kibale National Park.</p>
+            </fn>
+          </table-wrap-foot></table-wrap>
+        <p>Weather plays an important role in daily life and is a common topic of conversation. Along with the widespread perception that weather patterns have changed or are highly variable, there is a general consensus among farmers on how to determine rainy season onset and cessation. Rainy season onset, as described by local farmers, occurs when sky cover changes to “heavy nimbus” (or rain) clouds, thunderstorms, and cool winds within the months that rain is expected. It ends two to three months later when cloud cover decreases and skies become clear with ample sunshine, the cloudless days become hot, and there are strong, dry winds. Farmers communicate these observations and interpretations to other farmers, which likely plays a role in influencing planting and harvesting decisions.</p>
+        <p>With over 95% of the respondents supporting their livelihoods as farmers, the timing and amount of seasonal rainfall have direct impacts on household food security. Seventy-six percent of respondents in the 2009 survey (n = 100) believe that changes in weather have affected their agricultural outputs. Unlike the perceptions of a changing climate, these perceptions are common throughout the landscape and do not differ by wealth, gender, newcomer status, or location (east or west side of park (<italic>p</italic>-value&gt;0.05).</p>
+        <p>Farmers' responses suggest that they have observed impacts of land use change with respect to the park as well as intact forest fragments and wetlands in the domesticated landscape. Further, farmers identified non-material benefits from the park and natural areas, which in turn link to local climate. They report that the presence of forests from Kibale, and also the unprotected, small interstitial forests and papyrus wetlands outside the park, provided what could be characterized as ecosystem services. Perceived benefits from Kibale that were collapsed in to the “ecosystem services” category included: [Kibale] regulates climate, provides a moderate climate, provides rainfall (both timing and amount were mentioned), provides fresh air, provides cool air, provides habitat for wildlife, and maintains soil moisture near boundary. Again, these are respondents' own perceptions about benefits from Kibale. Rainfall and “fresh air”, attributed to the existence of these natural areas and Kibale, were most often mentioned (<xref ref-type="table" rid="pone-0032408-t005">Table 5</xref>). Perception about “regulation of local climate” was mentioned quite often. Local residents described this as the maintenance of local weather conditions in general that were hospitable to their way of life. They tell us that without Kibale, this would be a dry area, it would be hot, and the land would not be suitable for farming (2006 survey, <xref ref-type="bibr" rid="pone.0032408-Hartter6">[83]</xref>). To them, the climate is more moderate because of the presence of Kibale and these natural areas.</p>
+        <table-wrap id="pone-0032408-t005" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0032408.t005</object-id><label>Table 5</label><caption>
+            <title>Farmers' perceptions that forest fragments, wetlands, and Kibale National Park provide ecosystem services.</title>
+          </caption><!--===== Grouping alternate versions of objects =====--><alternatives><graphic id="pone-0032408-t005-5" mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0032408.t005" xlink:type="simple"/><table>
+            <colgroup span="1">
+              <col align="left" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+            </colgroup>
+            <thead>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Ecosystem services</td>
+                <td align="left" colspan="1" rowspan="1">Forests (outside park)</td>
+                <td align="left" colspan="1" rowspan="1">n</td>
+                <td align="left" colspan="1" rowspan="1">Park</td>
+                <td align="left" colspan="1" rowspan="1">n</td>
+                <td align="left" colspan="1" rowspan="1">Wetlands (outside park)</td>
+                <td align="left" colspan="1" rowspan="1">N</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Ecosystem services</td>
+                <td align="left" colspan="1" rowspan="1">16%</td>
+                <td align="left" colspan="1" rowspan="1">21</td>
+                <td align="left" colspan="1" rowspan="1">43%</td>
+                <td align="left" colspan="1" rowspan="1">52</td>
+                <td align="left" colspan="1" rowspan="1">31%</td>
+                <td align="left" colspan="1" rowspan="1">40</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Rain (timing &amp; amount)</td>
+                <td align="left" colspan="1" rowspan="1">14%</td>
+                <td align="left" colspan="1" rowspan="1">18</td>
+                <td align="left" colspan="1" rowspan="1">36%</td>
+                <td align="left" colspan="1" rowspan="1">47</td>
+                <td align="left" colspan="1" rowspan="1">23%</td>
+                <td align="left" colspan="1" rowspan="1">30</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Fresh air</td>
+                <td align="left" colspan="1" rowspan="1">9%</td>
+                <td align="left" colspan="1" rowspan="1">12</td>
+                <td align="left" colspan="1" rowspan="1">14%</td>
+                <td align="left" colspan="1" rowspan="1">18</td>
+                <td align="left" colspan="1" rowspan="1">8%</td>
+                <td align="left" colspan="1" rowspan="1">11</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Regulation of local climate</td>
+                <td align="left" colspan="1" rowspan="1">1%</td>
+                <td align="left" colspan="1" rowspan="1">1</td>
+                <td align="left" colspan="1" rowspan="1">14%</td>
+                <td align="left" colspan="1" rowspan="1">18</td>
+                <td align="left" colspan="1" rowspan="1">3%</td>
+                <td align="left" colspan="1" rowspan="1">4</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Soil moisture</td>
+                <td align="left" colspan="1" rowspan="1">3%</td>
+                <td align="left" colspan="1" rowspan="1">4</td>
+                <td align="left" colspan="1" rowspan="1">2%</td>
+                <td align="left" colspan="1" rowspan="1">2</td>
+                <td align="left" colspan="1" rowspan="1">6%</td>
+                <td align="left" colspan="1" rowspan="1">8</td>
+              </tr>
+              <tr>
+                <td align="left" colspan="1" rowspan="1">Soil fertility</td>
+                <td align="left" colspan="1" rowspan="1">0%</td>
+                <td align="left" colspan="1" rowspan="1">0</td>
+                <td align="left" colspan="1" rowspan="1">2%</td>
+                <td align="left" colspan="1" rowspan="1">2</td>
+                <td align="left" colspan="1" rowspan="1">0%</td>
+                <td align="left" colspan="1" rowspan="1">0</td>
+              </tr>
+            </tbody>
+          </table></alternatives><table-wrap-foot>
+            <fn id="nt109">
+              <label/>
+              <p>(2006 survey, n = 130).</p>
+            </fn>
+          </table-wrap-foot></table-wrap>
+      </sec>
+    </sec>
+    <sec id="s4">
+      <title>Discussion</title>
+      <p>Many African countries are vulnerable to climate variability and change, in part because they have only a limited capacity to adapt to changing circumstances <xref ref-type="bibr" rid="pone.0032408-Thomas2">[84]</xref>. A high reliance on natural resources, high poverty, limited capital to invest in mitigation and adaptation strategies, and inadequate institutional capacity means that any environmental changes affecting resource availability will result in hardship <xref ref-type="bibr" rid="pone.0032408-Thomas2">[84]</xref>. In Uganda, where rain-fed agriculture constitutes 42% of the gross domestic product and over 90% of the export earnings <xref ref-type="bibr" rid="pone.0032408-Twinomugisha1">[85]</xref>, sustainable livelihoods are directly related to food security. Objective, quantitative information on seasonal rainfall variability and trends is crucial for timely implementation of sustainable agricultural practices to deal with present and predicted change.</p>
+      <p>Analyses of other regions in Africa <xref ref-type="bibr" rid="pone.0032408-Thornton1">[57]</xref> indicate an increase in drought conditions over much of the continent; however these tend to be at a coarse scale and focus on rain-poor regions (e.g., savannas in East Africa) <xref ref-type="bibr" rid="pone.0032408-Nyong1">[48]</xref>, <xref ref-type="bibr" rid="pone.0032408-Conway1">[55]</xref>. Increasing drought frequency in East Africa and Uganda <xref ref-type="bibr" rid="pone.0032408-Ministry1">[86]</xref> tends to be restricted geographically to the drier regions of Uganda north and northeast of our study area. In contrast, even with some variability, Kibale has adequate rainfall with few significant trends in total seasonal rainfall, season onset and cessation. Climatologically, this is an area of high rainfall with a bimodal distribution.</p>
+      <p>Perceptions of local farmers are important because farmers often manage land according to their perceptions and beliefs <xref ref-type="bibr" rid="pone.0032408-Gbetibouo2">[87]</xref>. In these communities, meteorological information from the scientific community is rarely available, and farmers rely on their own observations and subjective interpretations. Despite the fact that this is an area of high rainfall, “drought” – which usually comprises insufficient rain at critical periods in the agricultural calendar – is frequently cited as an important risk, as is excess rain. When we quantified changes in direction and magnitude of seasonal rainfall, overall it appeared not to validate local perceptions. However, a closer examination of the rainy seasons revealed dynamics that may be contributing to local perceptions of altered seasonal timing.</p>
+      <p>Our analyses indicate that despite fairly consistent seasonal rainfall totals, the short rains have had more no rain days since the mid-1990s with longer periods of no rain days in between rain events. The second dry season has become drier, and there have been fewer abnormally wet long rains since 1981. In the absence of instrumental rainfall records, these weather patterns may manifest in perceptions of a local “drying.” In addition, people may base their responses on extreme conditions or events that caused the greatest hardships <xref ref-type="bibr" rid="pone.0032408-Orlove1">[56]</xref>. Many respondents believed that the timing and duration of the rainy seasons has varied. They report that they cannot depend on the timing and amount of rainy season precipitation, as it has become unpredictable compared to the past. We found that there was high inter-annual variability in season onset and cessation over the period of record for all seasons and the transition from the first dry season to the short rains has become less distinct. This variable season onset and change in transition between dry and rain seasons may lead farmers to perceive changing seasonal timing, which may have substantial impacts on crop planting and harvesting.</p>
+      <p>Many communities near Kibale fear changes in seasonal rainfall amount and duration, but few households distinguish general (aggregate) trends from seasonal trends. Peoples' comments suggest they blended the seasons and years together to form their own perceptions of rainfall variability. Overall, local farmers' perceptions of changing rainfall are more extreme than the rainfall data suggest. However, it is important to be aware of these perceptions since people frequently act on their perceptions, change their behavior, and develop coping strategies based on their dynamic and evolving knowledge, whether or not they are consistent with meteorological data <xref ref-type="bibr" rid="pone.0032408-Gearheard1">[88]</xref>, <xref ref-type="bibr" rid="pone.0032408-Speranza1">[89]</xref>.</p>
+      <p>Determining the start, end, and duration of the rains is important to people. Local farmers explain simply that planting and harvesting cycles begin and end when the rainy season comes and goes, and when crops are ripened to maturity. Given the variability in season onset and the amount that farmers perceive and experience, many report that it is difficult to determine when to plant and harvest. Heavy rainstorms, short heavy rains, or extended periods of no rain during the rainy season can affect productivity and agricultural activities. Harvesting crops too soon or too late has implications for food security in the short-term (food for the family), and long-term, since farmers need a seed source for the following season. Around Kibale, many people are worried about drought, and most respondents reported experiencing decreased agricultural outputs.</p>
+      <p>Perceptions based on individual and collective interpretations are likely shaped by a number of interacting factors, such as access to information, formal education, social interactions, and life experience <xref ref-type="bibr" rid="pone.0032408-Weber1">[90]</xref>. We were unable to detect significance for these variables in our analysis; however, they are likely still contributing to overall perceptions. For example, older people may be more likely to report changes in rain because they have had more experience on the land and with farming – i.e., a larger proportion of their life has been tied to the outputs of rain-fed agriculture. Therefore, they may draw their impressions from a much longer temporal scale. Farmers around Kibale have been reporting increased inter- and intra-annual and seasonal variability since at least the 1970s, (T. Struhsaker, personal communication). Such interpretations of long-term average environmental conditions tend to be influenced by recent, short-term weather events as well as memories of extreme events, such as drought and periods of food insecurity. These impressions tend to be stronger than those from periods of normal conditions and help to shape judgment and comparisons to successive events or seasons <xref ref-type="bibr" rid="pone.0032408-Orlove1">[56]</xref>, <xref ref-type="bibr" rid="pone.0032408-Rebetz1">[91]</xref>, <xref ref-type="bibr" rid="pone.0032408-Easterling1">[92]</xref>. We found that more farmers on the east side versus the west side of Kibale report less rainfall than in the past. Inadequate rainfall may be more noticeable to east side residents because maize is more commonly planted on this side (bananas are much more common on the west side). Since maize is planted seasonally, whereas bananas are planted annually, the effects of “less rainfall” may be more evident in maize. Clearly, this calls for a more detailed survey to understand the nuances of indigenous knowledge about climate change in this area. It is likely that the perceived decrease in agricultural output is indicative of broader-scale landscape changes. Mid- to high-altitude tropical forest areas with good to very good soils, like Kibale, have unusually high agricultural potential (as compared to the far more extensive lowland forests with highly aged soils); and thus support high-density populations and small-scale agriculture, putting enormous resource pressures on protected and unprotected forests <xref ref-type="bibr" rid="pone.0032408-Bartlein1">[21]</xref>, <xref ref-type="bibr" rid="pone.0032408-Houghton1">[22]</xref>, <xref ref-type="bibr" rid="pone.0032408-Thornton1">[57]</xref>, <xref ref-type="bibr" rid="pone.0032408-Gbetibouo2">[87]</xref>. This ability to support particularly high densities of small-scale agriculture may result in highly amplified impacts of change. This suggests that there is a high potential for climate and land use dynamics to exacerbate park vulnerability to resource exploitation. Climate change is expected to lead to drastic shifts of biodiversity-rich biomes <xref ref-type="bibr" rid="pone.0032408-Houghton1">[22]</xref>, and these changes are expected to be particularly profound in tropical forests where the highest concentrations of biodiversity and endemism are found. Increased population density leads to increased land conversion and land use intensification surrounding parks, which changes ecological function and biodiversity within parks <xref ref-type="bibr" rid="pone.0032408-Hansen1">[6]</xref>, and also increases pressure for access to resources in the park. Changes in food abundance within parks may also force wildlife to seek food in agricultural areas near the park boundary, increasing the vulnerability of farms to crop damage and predation <xref ref-type="bibr" rid="pone.0032408-NaughtonTreves1">[45]</xref>, <xref ref-type="bibr" rid="pone.0032408-Hartter4">[60]</xref>.</p>
+      <p>Stampone et al. <xref ref-type="bibr" rid="pone.0032408-Stampone1">[50]</xref> have shown that the Kibale region has high spatial variability in rainfall due to topography and other factors, and the discrepancy between perception and rainfall trends points toward the need for better information on seasonal and annual rainfall patterns at the local level <xref ref-type="bibr" rid="pone.0032408-Hartter4">[60]</xref>. There is, therefore, a strong need to educate local people and conservation managers alike using a whole landscape approach <xref ref-type="bibr" rid="pone.0032408-Hartter5">[65]</xref>, <xref ref-type="bibr" rid="pone.0032408-DeFries2">[93]</xref>, <xref ref-type="bibr" rid="pone.0032408-Rudnick1">[94]</xref> to climate change mitigation and adaptation that includes both the park and surrounding domesticated landscape. Results of this research will provide local people with more relevant and physically accurate information that, if accepted, could lead to more sustainable land use management practices outside the park that are concurrent with conservation objectives.</p>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <p>Makerere University Biological Field Station, Uganda Wildlife Authority, Uganda Council for Science and Technology, and many local government officials provided useful assistance and granted permission for this research. Permissions to carry out this research were also granted by the University of New Hampshire's Institutional Review Board for the Protection of Human Subjects in Research and the University of Florida's Behavioral/NonMedical Institutional Review Board. Valuable contributions in the field were made by our field assistants Erimosi Agaba and Peace Mwesigwe. We are grateful to Tom Struhsaker for providing long-term weather data for Kibale and to Catrina MacKenzie for valuable contextual information. Finally, we wish to thank the many farmers who were willing to tolerate our questions and tell us about their lives.</p>
+    </ack>
+    <ref-list>
+      <title>References</title>
+      <ref id="pone.0032408-Fisher1">
+        <label>1</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Fisher</surname><given-names>B</given-names></name><name name-style="western"><surname>Christopher</surname><given-names>T</given-names></name></person-group>             <year>2007</year>             <article-title>Poverty and biodiversity: Measuring the overlap of human poverty and the biodiversity hotspots.</article-title>             <source>Ecol Econ</source>             <volume>62</volume>             <fpage>93</fpage>             <lpage>101</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Hartter1">
+        <label>2</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Hartter</surname><given-names>J</given-names></name><name name-style="western"><surname>Goldman</surname><given-names>A</given-names></name></person-group>             <year>2011</year>             <article-title>Local responses to a forest park in western Uganda: alternate narratives on fortress conservation.</article-title>             <source>Oryx</source>             <volume>45</volume>             <fpage>60</fpage>             <lpage>68</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Hayes1">
+        <label>3</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Hayes</surname><given-names>TM</given-names></name></person-group>             <year>2006</year>             <article-title>Parks, People, and Forest Protection: An Institutional Assessment of the Effectiveness of Protected Areas.</article-title>             <source>World Dev</source>             <volume>34</volume>             <fpage>2064</fpage>             <lpage>2075</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Byron1">
+        <label>4</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Byron</surname><given-names>N</given-names></name><name name-style="western"><surname>Arnold</surname><given-names>M</given-names></name></person-group>             <year>1999</year>             <article-title>What Futures for the People of the Tropical Forests?</article-title>             <source>World Dev</source>             <volume>27</volume>             <fpage>789</fpage>             <lpage>805</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Wittemyer1">
+        <label>5</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Wittemyer</surname><given-names>G</given-names></name><name name-style="western"><surname>Elsen</surname><given-names>P</given-names></name><name name-style="western"><surname>Bean</surname><given-names>WT</given-names></name><name name-style="western"><surname>Burton</surname><given-names>ACO</given-names></name><name name-style="western"><surname>Brashares</surname><given-names>JS</given-names></name></person-group>             <year>2008</year>             <article-title>Accelerated Human Population Growth at Protected Area Edges.</article-title>             <source>Science</source>             <volume>321</volume>             <fpage>123</fpage>             <lpage>126</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Hansen1">
+        <label>6</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Hansen</surname><given-names>AJ</given-names></name><name name-style="western"><surname>DeFries</surname><given-names>R</given-names></name></person-group>             <year>2007</year>             <article-title>Ecological mechanisms linking protected areas to surrounding lands.</article-title>             <source>Ecol Appl</source>             <volume>17</volume>             <fpage>974</fpage>             <lpage>988</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-DeFries1">
+        <label>7</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>DeFries</surname><given-names>RS</given-names></name><name name-style="western"><surname>Foley</surname><given-names>JA</given-names></name><name name-style="western"><surname>Asner</surname><given-names>GP</given-names></name></person-group>             <year>2004</year>             <article-title>Land-use choices: balancing human needs and ecosystem function.</article-title>             <source>Front Ecol Environ</source>             <volume>2</volume>             <fpage>249</fpage>             <lpage>257</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Broadbent1">
+        <label>8</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Broadbent</surname><given-names>EN</given-names></name><name name-style="western"><surname>Asner</surname><given-names>GP</given-names></name><name name-style="western"><surname>Keller</surname><given-names>M</given-names></name><name name-style="western"><surname>Knapp</surname><given-names>DE</given-names></name><name name-style="western"><surname>Oliveira</surname><given-names>PJC</given-names></name><etal/></person-group>             <year>2008</year>             <article-title>Forest fragmentation and edge effects from deforestation and selective logging in the Brazilian Amazon.</article-title>             <source>Biol Conserv</source>             <volume>141</volume>             <fpage>1745</fpage>             <lpage>1757</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Foley1">
+        <label>9</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Foley</surname><given-names>JA</given-names></name><name name-style="western"><surname>Asner</surname><given-names>GP</given-names></name><name name-style="western"><surname>Costa</surname><given-names>MH</given-names></name><name name-style="western"><surname>Coe</surname><given-names>MT</given-names></name><name name-style="western"><surname>DeFries</surname><given-names>R</given-names></name><etal/></person-group>             <year>2007</year>             <article-title>Amazonia revealed: forest degradation and loss of ecosystem goods and services in the Amazon Basin.</article-title>             <source>Front Ecol Environ</source>             <volume>5</volume>             <fpage>25</fpage>             <lpage>32</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Foley2">
+        <label>10</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Foley</surname><given-names>JA</given-names></name><name name-style="western"><surname>DeFries</surname><given-names>R</given-names></name><name name-style="western"><surname>Asner</surname><given-names>GP</given-names></name><name name-style="western"><surname>Barford</surname><given-names>C</given-names></name><name name-style="western"><surname>Bonan</surname><given-names>G</given-names></name><etal/></person-group>             <year>2005</year>             <article-title>Global Consequences of Land Use.</article-title>             <source>Science</source>             <volume>309</volume>             <fpage>570</fpage>             <lpage>574</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Hill1">
+        <label>11</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Hill</surname><given-names>JL</given-names></name><name name-style="western"><surname>Curran</surname><given-names>PJ</given-names></name></person-group>             <year>2003</year>             <article-title>Area, shape and isolation of tropical forest fragments: effects on tree species diversity and implications for conservation.</article-title>             <source>J Biogeogr</source>             <volume>30</volume>             <fpage>1391</fpage>             <lpage>1403</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Sala1">
+        <label>12</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Sala</surname><given-names>OE</given-names></name><name name-style="western"><surname>Stuart Chapin</surname><given-names>F</given-names></name><name name-style="western"><surname>Armesto</surname><given-names>JJ</given-names></name><name name-style="western"><surname>Berlow</surname><given-names>E</given-names></name><etal/></person-group>             <year>2000</year>             <article-title>Global Biodiversity Scenarios for the Year 2100.</article-title>             <source>Science</source>             <volume>287</volume>             <fpage>1770</fpage>             <lpage>1774</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Terborgh1">
+        <label>13</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Terborgh</surname><given-names>J</given-names></name></person-group>             <year>2002</year>             <source>Making parks work: strategies for preserving tropical nature</source>             <publisher-loc>Washington, DC</publisher-loc>             <publisher-name>Island Press</publisher-name> <!--===== Restructure page-count as size[@units="page"] =====--><size units="page">511</size>           </element-citation>
+      </ref>
+      <ref id="pone.0032408-Bruner1">
+        <label>14</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Bruner</surname><given-names>AG</given-names></name><name name-style="western"><surname>Gullison</surname><given-names>RE</given-names></name><name name-style="western"><surname>Rice</surname><given-names>RE</given-names></name><name name-style="western"><surname>da Fonseca</surname><given-names>GAB</given-names></name></person-group>             <year>2001</year>             <article-title>Effectiveness of Parks in Protecting Tropical Biodiversity.</article-title>             <source>Science</source>             <volume>291</volume>             <fpage>125</fpage>             <lpage>128</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Chapman1">
+        <label>15</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Chapman</surname><given-names>CA</given-names></name><name name-style="western"><surname>Peres</surname><given-names>CA</given-names></name></person-group>             <year>2001</year>             <article-title>Primate conservation in the new millennium: The role of scientists.</article-title>             <source>Evolutionary Anthropology: Issues, News, and Reviews</source>             <volume>10</volume>             <fpage>16</fpage>             <lpage>33</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Chapman2">
+        <label>16</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Chapman</surname><given-names>CA</given-names></name><name name-style="western"><surname>Lawes</surname><given-names>MJ</given-names></name><name name-style="western"><surname>Eeley</surname><given-names>HAC</given-names></name></person-group>             <year>2006</year>             <article-title>What hope for African primate diversity?</article-title>             <source>Afr J Ecol</source>             <volume>44</volume>             <fpage>116</fpage>             <lpage>133</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Cincotta1">
+        <label>17</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Cincotta</surname><given-names>RP</given-names></name><name name-style="western"><surname>Wisnewski</surname><given-names>J</given-names></name><name name-style="western"><surname>Engelman</surname><given-names>R</given-names></name></person-group>             <year>2000</year>             <article-title>Human population in the biodiversity hotspots.</article-title>             <source>Nature</source>             <volume>404</volume>             <fpage>990</fpage>             <lpage>992</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-MartnezMeyer1">
+        <label>18</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Martínez-Meyer</surname><given-names>E</given-names></name><name name-style="western"><surname>Peterson</surname><given-names>AT</given-names></name><name name-style="western"><surname>Hargrove</surname><given-names>WW</given-names></name></person-group>             <year>2004</year>             <article-title>Ecological niches as stable distributional constraints on mammal species, with implications for Pleistocene extinctions and climate change projections for biodiversity.</article-title>             <source>Global Ecol Biogeogr</source>             <volume>13</volume>             <fpage>305</fpage>             <lpage>314</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Midgley1">
+        <label>19</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Midgley</surname><given-names>GF</given-names></name><name name-style="western"><surname>Hannah</surname><given-names>L</given-names></name><name name-style="western"><surname>Millar</surname><given-names>D</given-names></name><name name-style="western"><surname>Thuiller</surname><given-names>W</given-names></name><name name-style="western"><surname>Booth</surname><given-names>A</given-names></name></person-group>             <year>2003</year>             <article-title>Developing regional and species-level assessments of climate change impacts on biodiversity in the Cape Floristic Region.</article-title>             <source>Biol Conserv</source>             <volume>112</volume>             <fpage>87</fpage>             <lpage>97</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Ogutu1">
+        <label>20</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Ogutu</surname><given-names>JO</given-names></name><name name-style="western"><surname>Owen-Smith</surname><given-names>N</given-names></name></person-group>             <year>2003</year>             <article-title>ENSO, rainfall and temperature influences on extreme population declines among African savanna ungulates.</article-title>             <source>Ecol Lett</source>             <volume>6</volume>             <fpage>412</fpage>             <lpage>419</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Bartlein1">
+        <label>21</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Bartlein</surname><given-names>PJ</given-names></name><name name-style="western"><surname>Whitlock</surname><given-names>C</given-names></name><name name-style="western"><surname>Shafer</surname><given-names>SL</given-names></name></person-group>             <year>1997</year>             <article-title>Future Climate in the Yellowstone National Park Region and Its Potential Impact on Vegetation.</article-title>             <source>Conserv Biol</source>             <volume>11</volume>             <fpage>782</fpage>             <lpage>792</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Houghton1">
+        <label>22</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Houghton</surname><given-names>JT</given-names></name><name name-style="western"><surname>Ding</surname><given-names>Y</given-names></name><name name-style="western"><surname>Griggs</surname><given-names>DJ</given-names></name><name name-style="western"><surname>Noguer</surname><given-names>N</given-names></name><name name-style="western"><surname>van der Linden</surname><given-names>PJ</given-names></name><etal/></person-group>             <year>2001</year>             <source>Climate Change 2001: The Scientific Basis. Contribution of Working Group I to the Third Assessment Report of the Intergovernmental Panel on Climate Change</source>             <publisher-loc>Cambridge</publisher-loc>             <publisher-name>Cambridge University Press, UK and New York, USA</publisher-name> <!--===== Restructure page-count as size[@units="page"] =====--><size units="page">881</size>           </element-citation>
+      </ref>
+      <ref id="pone.0032408-McKee1">
+        <label>23</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>McKee</surname><given-names>JK</given-names></name><name name-style="western"><surname>Sciulli</surname><given-names>PW</given-names></name><name name-style="western"><surname>Fooce</surname><given-names>CD</given-names></name><name name-style="western"><surname>Waite</surname><given-names>TA</given-names></name></person-group>             <year>2004</year>             <article-title>Forecasting global biodiversity threats associated with human population growth.</article-title>             <source>Biol Conserv</source>             <volume>115</volume>             <fpage>161</fpage>             <lpage>164</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Cordeiro1">
+        <label>24</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Cordeiro</surname><given-names>NJ</given-names></name><name name-style="western"><surname>Burgess</surname><given-names>ND</given-names></name><name name-style="western"><surname>Dovie</surname><given-names>DBK</given-names></name><name name-style="western"><surname>Kaplin</surname><given-names>BA</given-names></name><name name-style="western"><surname>Plumptre</surname><given-names>AJ</given-names></name><etal/></person-group>             <year>2007</year>             <article-title>Conservation in areas of high population density in sub-Saharan Africa.</article-title>             <source>Biol Conserv</source>             <volume>134</volume>             <fpage>155</fpage>             <lpage>163</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Plumptre1">
+        <label>25</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Plumptre</surname><given-names>AJ</given-names></name></person-group>             <year>2002</year>             <source>Extent and status of the forests in the Ugandan Albertine Rift. Unpublished report to UNDP/GEF</source>             <publisher-loc>Kampala, Uganda</publisher-loc>             <publisher-name>Wildlife Conservation Society</publisher-name>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Plumptre2">
+        <label>26</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Plumptre</surname><given-names>AJ</given-names></name><name name-style="western"><surname>Behangana</surname><given-names>M</given-names></name><name name-style="western"><surname>Davenport</surname><given-names>TRB</given-names></name><name name-style="western"><surname>Kahindo</surname><given-names>C</given-names></name><name name-style="western"><surname>Kityo</surname><given-names>R</given-names></name><etal/></person-group>             <year>2003</year>             <source>The biodiversity of the Albertine Rift</source>             <publisher-loc>Kampala, Uganda</publisher-loc>             <publisher-name>Wildlife Conservation Society</publisher-name>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Plumptre3">
+        <label>27</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Plumptre</surname><given-names>AJ</given-names></name><name name-style="western"><surname>Davenport</surname><given-names>TRB</given-names></name><name name-style="western"><surname>Behangana</surname><given-names>M</given-names></name><name name-style="western"><surname>Kityo</surname><given-names>R</given-names></name><name name-style="western"><surname>Eilu</surname><given-names>G</given-names></name><etal/></person-group>             <year>2007</year>             <article-title>The biodiversity of the Albertine Rift.</article-title>             <source>Biol Conserv</source>             <volume>134</volume>             <fpage>194</fpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Burgess1">
+        <label>28</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Burgess</surname><given-names>N</given-names></name><name name-style="western"><surname>D'Amico Hales</surname><given-names>J</given-names></name><name name-style="western"><surname>Underwood</surname><given-names>E</given-names></name><name name-style="western"><surname>Dinerstein</surname><given-names>E</given-names></name><name name-style="western"><surname>Olson</surname><given-names>D</given-names></name><etal/></person-group>             <year>2004</year>             <source>Terrestrial ecoregions of Africa and Madagascar: a continental assessment</source>             <publisher-loc>Washington DC</publisher-loc>             <publisher-name>Island Press</publisher-name> <!--===== Restructure page-count as size[@units="page"] =====--><size units="page">501</size>           </element-citation>
+      </ref>
+      <ref id="pone.0032408-Hartter2">
+        <label>29</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Hartter</surname><given-names>J</given-names></name><name name-style="western"><surname>Ryan</surname><given-names>SJ</given-names></name></person-group>             <year>2010</year>             <article-title>Top-down or bottom-up?: Decentralization, natural resource management, and usufruct rights in the forests and wetlands of western Uganda.</article-title>             <source>Land Use Policy</source>             <volume>27</volume>             <fpage>815</fpage>             <lpage>826</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Brooks1">
+        <label>30</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Brooks</surname><given-names>T</given-names></name><name name-style="western"><surname>Balmford</surname><given-names>A</given-names></name><name name-style="western"><surname>Burgess</surname><given-names>N</given-names></name><name name-style="western"><surname>Fjeldsa</surname><given-names>J</given-names></name><name name-style="western"><surname>Hansen</surname><given-names>LA</given-names></name><etal/></person-group>             <year>2001</year>             <article-title>Toward a Blueprint for Conservation in Africa.</article-title>             <source>Bioscience</source>             <volume>51</volume>             <fpage>613</fpage>             <lpage>624</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Malcolm1">
+        <label>31</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Malcolm</surname><given-names>JR</given-names></name><name name-style="western"><surname>Liu</surname><given-names>C</given-names></name><name name-style="western"><surname>Neilson</surname><given-names>RP</given-names></name><name name-style="western"><surname>Hansen</surname><given-names>L</given-names></name><name name-style="western"><surname>Hannah</surname><given-names>L</given-names></name></person-group>             <year>2006</year>             <article-title>Global Warming and Extinctions of Endemic Species from Biodiversity Hotspots.</article-title>             <source>Conserv Biol</source>             <volume>20</volume>             <fpage>538</fpage>             <lpage>548</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-White1">
+        <label>32</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>White</surname><given-names>TCR</given-names></name></person-group>             <year>2008</year>             <article-title>The role of food, weather and climate in limiting the abundance of animals.</article-title>             <source>Biol Rev</source>             <volume>83</volume>             <fpage>227</fpage>             <lpage>248</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Chapman3">
+        <label>33</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Chapman</surname><given-names>CA</given-names></name><name name-style="western"><surname>Chapman</surname><given-names>LJ</given-names></name><name name-style="western"><surname>Struhsaker</surname><given-names>TT</given-names></name><name name-style="western"><surname>Zanne</surname><given-names>AE</given-names></name><name name-style="western"><surname>Clark</surname><given-names>CJ</given-names></name><etal/></person-group>             <year>2005</year>             <article-title>A long-term evaluation of fruit phenology: importance of climate change.</article-title>             <source>J Trop Ecol</source>             <volume>21</volume>             <fpage>35</fpage>             <lpage>45</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-World1">
+        <label>34</label>
+        <element-citation publication-type="other" xlink:type="simple">             <collab xlink:type="simple">World Population Prospects: The 2008 Revision (advanced Excel tables)</collab>             <year>2009</year>             <publisher-loc>New York</publisher-loc>             <publisher-name>United Nations Department of Economic and Social Affairs Population Division</publisher-name>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-World2">
+        <label>35</label>
+        <element-citation publication-type="other" xlink:type="simple">             <collab xlink:type="simple">World Population data sheet</collab>             <year>2009</year>             <publisher-loc>Washington, DC</publisher-loc>             <publisher-name>Population Reference Bureau</publisher-name>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-The1">
+        <label>36</label>
+        <element-citation publication-type="other" xlink:type="simple">             <collab xlink:type="simple">The 2002 Uganda Population and Housing Census, Main Report</collab>             <year>2005</year>             <publisher-loc>Kampala, Uganda</publisher-loc>             <publisher-name>Uganda Bureau of Statistics</publisher-name>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Pachauri1">
+        <label>37</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="editor"><name name-style="western"><surname>Pachauri</surname><given-names>RK</given-names></name><name name-style="western"><surname>Reisinger</surname><given-names>A</given-names></name></person-group>             <year>2007</year>             <article-title>Climate Change 2007: Synthesis Report.</article-title>             <comment>Contribution of Working Groups I, II and III to the Fourth Assessment Report of the IPCC, Geneva, Switzerland</comment> <!--===== Restructure page-count as size[@units="page"] =====--><size units="page">104</size>           </element-citation>
+      </ref>
+      <ref id="pone.0032408-Green1">
+        <label>38</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Green</surname><given-names>D</given-names></name><name name-style="western"><surname>Raygorodetsky</surname><given-names>G</given-names></name></person-group>             <year>2010</year>             <article-title>Indigenous knowledge of a changing climate.</article-title>             <source>Clim Change</source>             <volume>100</volume>             <fpage>239</fpage>             <lpage>242</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Thomas1">
+        <label>39</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Thomas</surname><given-names>D</given-names></name><name name-style="western"><surname>Twyman</surname><given-names>C</given-names></name><name name-style="western"><surname>Osbahr</surname><given-names>H</given-names></name><name name-style="western"><surname>Hewitson</surname><given-names>B</given-names></name></person-group>             <year>2007</year>             <article-title>Adaptation to climate change and variability: farmer responses to intra-seasonal precipitation trends in South Africa.</article-title>             <source>Clim Change</source>             <volume>83</volume>             <fpage>301</fpage>             <lpage>322</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Mertz1">
+        <label>40</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Mertz</surname><given-names>O</given-names></name><name name-style="western"><surname>Mbow</surname><given-names>C</given-names></name><name name-style="western"><surname>Reenberg</surname><given-names>A</given-names></name><name name-style="western"><surname>Diouf</surname><given-names>A</given-names></name></person-group>             <year>2009</year>             <article-title>Farmers' perceptions of climate change and agricultural adaptation strategies in rural Sahel.</article-title>             <source>Environ Manage</source>             <volume>43</volume>             <fpage>804</fpage>             <lpage>816</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Gbetibouo1">
+        <label>41</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Gbetibouo</surname><given-names>GA</given-names></name></person-group>             <year>2009</year>             <source>Understanding farmers' perceptions and adaptations to climate change and variability. The Case of Limpopo Basin, South Africa. IFPRI Discussion Paper 00849</source>             <publisher-loc>Paris, France</publisher-loc>             <publisher-name>International food Policy Research Institute</publisher-name>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Maddison1">
+        <label>42</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Maddison</surname><given-names>DJ</given-names></name></person-group>             <year>2007</year>             <article-title>The perception of and adaptation to climate change in Africa.</article-title>             <comment>World Bank Policy Research Working Paper No 4308. Available at SSRN: <ext-link ext-link-type="uri" xlink:href="http://ssrn.com/abstract=1005547" xlink:type="simple">http://ssrn.com/abstract=1005547</ext-link></comment>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Zahran1">
+        <label>43</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Zahran</surname><given-names>S</given-names></name><name name-style="western"><surname>Brody</surname><given-names>SD</given-names></name><name name-style="western"><surname>Grover</surname><given-names>H</given-names></name><name name-style="western"><surname>Vedlitz</surname><given-names>A</given-names></name></person-group>             <year>2006</year>             <article-title>Climate change vulnerability and policy support.</article-title>             <source>Soc Natur Resour</source>             <volume>19</volume>             <fpage>771</fpage>             <lpage>789</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Naylor1">
+        <label>44</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Naylor</surname><given-names>RL</given-names></name><name name-style="western"><surname>Battisti</surname><given-names>DS</given-names></name><name name-style="western"><surname>Vimont</surname><given-names>DJ</given-names></name><name name-style="western"><surname>Falcon</surname><given-names>WP</given-names></name><name name-style="western"><surname>Burke</surname><given-names>MB</given-names></name></person-group>             <year>2007</year>             <article-title>Assessing risks of climate variability and climate change for Indonesian rice agriculture.</article-title>             <source>P Natl Acad Sci USA</source>             <volume>104</volume>             <fpage>7752</fpage>             <lpage>7757</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-NaughtonTreves1">
+        <label>45</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Naughton-Treves</surname><given-names>L</given-names></name><name name-style="western"><surname>Treves</surname><given-names>A</given-names></name><name name-style="western"><surname>Chapman</surname><given-names>C</given-names></name><name name-style="western"><surname>Wrangham</surname><given-names>R</given-names></name></person-group>             <year>1998</year>             <article-title>Temporal patterns of crop-raiding by primates: linking food availability in croplands and adjacent forest.</article-title>             <source>J Appl Ecol</source>             <volume>35</volume>             <fpage>596</fpage>             <lpage>606</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Hartter3">
+        <label>46</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Hartter</surname><given-names>J</given-names></name></person-group>             <year>2009</year>             <article-title>Attitudes of Rural Communities Toward Wetlands and Forest Fragments Around Kibale National Park, Uganda.</article-title>             <source>Human Dimensions of Wildlife: An International Journal</source>             <volume>14</volume>             <fpage>433</fpage>             <lpage>447</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Verschuren1">
+        <label>47</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Verschuren</surname><given-names>D</given-names></name><name name-style="western"><surname>Laird</surname><given-names>KR</given-names></name><name name-style="western"><surname>Cumming</surname><given-names>BF</given-names></name></person-group>             <year>2000</year>             <article-title>Rainfall and drought in equatorial east Africa during the past 1,100 years.</article-title>             <source>Nature</source>             <volume>403</volume>             <fpage>410</fpage>             <lpage>414</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Nyong1">
+        <label>48</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Nyong</surname><given-names>A</given-names></name><name name-style="western"><surname>Adesina</surname><given-names>F</given-names></name><name name-style="western"><surname>Osman Elasha</surname><given-names>B</given-names></name></person-group>             <year>2007</year>             <article-title>The value of indigenous knowledge in climate change mitigation and adaptation strategies in the African Sahel.</article-title>             <source>Mitigation and Adaptation Strategies for Global Change</source>             <volume>12</volume>             <fpage>787</fpage>             <lpage>797</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Basalirwa1">
+        <label>49</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Basalirwa</surname><given-names>CPK</given-names></name></person-group>             <year>1995</year>             <article-title>Delineation of Uganda into climatological rainfall zones using the method of principal component analysis.</article-title>             <source>Int J of Climatol</source>             <volume>15</volume>             <fpage>1161</fpage>             <lpage>1177</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Stampone1">
+        <label>50</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Stampone</surname><given-names>MD</given-names></name><name name-style="western"><surname>Hartter</surname><given-names>J</given-names></name><name name-style="western"><surname>Chapman</surname><given-names>CA</given-names></name><name name-style="western"><surname>Ryan</surname><given-names>SJ</given-names></name></person-group>             <year>2011</year>             <article-title>Trends and variability in localized precipitation around Kibale National Park, Western Uganda, Africa.</article-title>             <source>Res J Environ and Earth Sci</source>             <volume>3</volume>             <fpage>14</fpage>             <lpage>23</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Indeje1">
+        <label>51</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Indeje</surname><given-names>M</given-names></name><name name-style="western"><surname>Semazzi</surname><given-names>FHM</given-names></name><name name-style="western"><surname>Ogallo</surname><given-names>LJ</given-names></name></person-group>             <year>2000</year>             <article-title>ENSO signals in East African rainfall seasons.</article-title>             <source>Int J of Climatol</source>             <volume>20</volume>             <fpage>19</fpage>             <lpage>46</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Myers1">
+        <label>52</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Myers</surname><given-names>N</given-names></name></person-group>             <year>1991</year>             <article-title>Tropical forests: Present status and future outlook.</article-title>             <source>Clim Change</source>             <volume>19</volume>             <fpage>3</fpage>             <lpage>32</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Nicholson1">
+        <label>53</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Nicholson</surname><given-names>SE</given-names></name></person-group>             <year>1993</year>             <article-title>An Overview of African Rainfall Fluctuations of the Last Decade.</article-title>             <source>J Climate</source>             <volume>6</volume>             <fpage>1463</fpage>             <lpage>1466</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Ogallo1">
+        <label>54</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Ogallo</surname><given-names>LJ</given-names></name></person-group>             <year>1989</year>             <article-title>The spatial and temporal patterns of the East African seasonal rainfall derived from principal component analysis.</article-title>             <source>Int J Climatol</source>             <volume>9</volume>             <fpage>145</fpage>             <lpage>167</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Conway1">
+        <label>55</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Conway</surname><given-names>D</given-names></name><name name-style="western"><surname>Allison</surname><given-names>E</given-names></name><name name-style="western"><surname>Felstead</surname><given-names>R</given-names></name><name name-style="western"><surname>Goulden</surname><given-names>M</given-names></name></person-group>             <year>2005</year>             <article-title>Rainfall variability in East Africa: implications for natural resources management and livelihoods.</article-title>             <source>Philos Trans R Soc Lond A Math Phys Sci</source>             <volume>363</volume>             <fpage>49</fpage>             <lpage>54</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Orlove1">
+        <label>56</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Orlove</surname><given-names>B</given-names></name><name name-style="western"><surname>Roncoli</surname><given-names>C</given-names></name><name name-style="western"><surname>Kabugo</surname><given-names>M</given-names></name><name name-style="western"><surname>Majugu</surname><given-names>A</given-names></name></person-group>             <year>2010</year>             <article-title>Indigenous climate knowledge in southern Uganda: the multiple components of a dynamic regional system.</article-title>             <source>Clim Change</source>             <volume>100</volume>             <fpage>243</fpage>             <lpage>265</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Thornton1">
+        <label>57</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Thornton</surname><given-names>PK</given-names></name><name name-style="western"><surname>Jones</surname><given-names>PG</given-names></name><name name-style="western"><surname>Alagarswamy</surname><given-names>G</given-names></name><name name-style="western"><surname>Andresen</surname><given-names>J</given-names></name></person-group>             <year>2009</year>             <article-title>Spatial variation of crop yield response to climate change in East Africa.</article-title>             <source>Global Envion Chang</source>             <volume>19</volume>             <fpage>54</fpage>             <lpage>65</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Camberlin1">
+        <label>58</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Camberlin</surname><given-names>P</given-names></name><name name-style="western"><surname>Moron</surname><given-names>V</given-names></name><name name-style="western"><surname>Okoola</surname><given-names>R</given-names></name><name name-style="western"><surname>Philippon</surname><given-names>N</given-names></name><name name-style="western"><surname>Gitau</surname><given-names>W</given-names></name></person-group>             <year>2009</year>             <article-title>Components of rainy seasons' variability in Equatorial East Africa: onset, cessation, rainfall frequency and intensity.</article-title>             <source>Theor Appl Climatol</source>             <volume>98</volume>             <fpage>237</fpage>             <lpage>249</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Phillips1">
+        <label>59</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Phillips</surname><given-names>J</given-names></name><name name-style="western"><surname>McIntyre</surname><given-names>B</given-names></name></person-group>             <year>2000</year>             <article-title>ENSO and interannual rainfall variability in Uganda: implications for agricultural management.</article-title>             <source>Int J Climatol</source>             <volume>20</volume>             <fpage>171</fpage>             <lpage>182</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Hartter4">
+        <label>60</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Hartter</surname><given-names>J</given-names></name></person-group>             <year>2010</year>             <article-title>Resource Use and Ecosystem Services in a Forest Park Landscape.</article-title>             <source>Society &amp; Natural Resources: An International Journal</source>             <volume>23</volume>             <fpage>207</fpage>             <lpage>223</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Huxley1">
+        <label>61</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Huxley</surname><given-names>PA</given-names></name></person-group>             <year>1965</year>             <article-title>Climate and Agricultural Production in Uganda.</article-title>             <source>Exp Agr</source>             <volume>1</volume>             <fpage>81</fpage>             <lpage>97</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Manning1">
+        <label>62</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Manning</surname><given-names>HL</given-names></name></person-group>             <year>1956</year>             <article-title>The Statistical Assessment of Rainfall Probability and Its Application in Uganda Agriculture.</article-title>             <source>P Roy Soc Lond B Bio</source>             <volume>144</volume>             <fpage>460</fpage>             <lpage>480</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Hanna1">
+        <label>63</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Hanna</surname><given-names>LW</given-names></name></person-group>             <year>1971</year>             <article-title>The Effects of Water Availability on Tea Yields in Uganda.</article-title>             <source>J Appl Ecol</source>             <volume>8</volume>             <fpage>791</fpage>             <lpage>813</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Fischer1">
+        <label>64</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Fischer</surname><given-names>G</given-names></name><name name-style="western"><surname>Shah</surname><given-names>M</given-names></name><name name-style="western"><surname>N. Tubiello</surname><given-names>F</given-names></name><name name-style="western"><surname>van Velhuizen</surname><given-names>H</given-names></name></person-group>             <year>2005</year>             <article-title>Socio-economic and climate change impacts on agriculture: an integrated assessment, 1990–2080.</article-title>             <source>Philos T Roy Soc B</source>             <volume>360</volume>             <fpage>2067</fpage>             <lpage>2083</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Hartter5">
+        <label>65</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Hartter</surname><given-names>J</given-names></name><name name-style="western"><surname>Ryan</surname><given-names>SJ</given-names></name><name name-style="western"><surname>Southworth</surname><given-names>J</given-names></name><name name-style="western"><surname>Chapman</surname><given-names>C</given-names></name></person-group>             <year>2011</year>             <article-title>Landscapes as continuous entities: forest disturbance and recovery in the Albertine Rift landscape.</article-title>             <source>Landsc Ecol</source>             <volume>26</volume>             <fpage>877</fpage>             <lpage>890</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Lepp1">
+        <label>66</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Lepp</surname><given-names>A</given-names></name><name name-style="western"><surname>Holland</surname><given-names>S</given-names></name></person-group>             <year>2006</year>             <article-title>A Comparison of Attitudes Toward State-Led Conservation and Community-Based Conservation in the Village of Bigodi, Uganda.</article-title>             <source>Society &amp; Natural Resources: An International Journal</source>             <volume>19</volume>             <fpage>609</fpage>             <lpage>623</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-NaughtonTreves2">
+        <label>67</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Naughton-Treves</surname><given-names>L</given-names></name><name name-style="western"><surname>Holland</surname><given-names>MB</given-names></name><name name-style="western"><surname>Brandon</surname><given-names>K</given-names></name></person-group>             <year>2005</year>             <article-title>The role of protected areas in conserving biodiversity and sustaining local livelihoods.</article-title>             <source>Annu Rev Env Rec</source>             <volume>30</volume>             <fpage>219</fpage>             <lpage>252</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Ogallo2">
+        <label>68</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Ogallo</surname><given-names>LJ</given-names></name></person-group>             <year>1980</year>             <article-title>Regional classification of the East African Rainfall stations into homogeneous groups using the method of Principal Component Analysis.</article-title>             <source>Statistical Climatology: Developments in Atmospheric Science</source>             <volume>13</volume>             <fpage>255</fpage>             <lpage>266</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Moron1">
+        <label>69</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Moron</surname><given-names>V</given-names></name><name name-style="western"><surname>Robertson</surname><given-names>AW</given-names></name><name name-style="western"><surname>Ward</surname><given-names>MN</given-names></name><name name-style="western"><surname>Camberlin</surname><given-names>P</given-names></name></person-group>             <year>2007</year>             <article-title>Spatial Coherence of Tropical Rainfall at the Regional Scale.</article-title>             <source>J Climate</source>             <volume>20</volume>             <fpage>5244</fpage>             <lpage>5263</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Li1">
+        <label>70</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Li</surname><given-names>W</given-names></name><name name-style="western"><surname>Fu</surname><given-names>R</given-names></name><name name-style="western"><surname>Juárez</surname><given-names>RIN</given-names></name><name name-style="western"><surname>Fernandes</surname><given-names>K</given-names></name></person-group>             <year>2008</year>             <article-title>Observed change of the standardized precipitation index, its potential cause and implications to future climate change in the Amazon region.</article-title>             <source>Philos T Roy Soc B</source>             <volume>363</volume>             <fpage>1767</fpage>             <lpage>1772</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-McKee2">
+        <label>71</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>McKee</surname><given-names>TB</given-names></name><name name-style="western"><surname>Doesken</surname><given-names>NJ</given-names></name><name name-style="western"><surname>Kleist</surname><given-names>J</given-names></name></person-group>             <year>1993</year>             <article-title>The relationship of drought frequency and duration to time scales.</article-title>             <fpage>179</fpage>             <lpage>184</lpage>             <comment>Proc 8<sup>th</sup> Conf on Applied Climatology. American Meteorological Society, Boston, Massachusetts</comment>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-McKee3">
+        <label>72</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>McKee</surname><given-names>TB</given-names></name><name name-style="western"><surname>Doesken</surname><given-names>NJ</given-names></name><name name-style="western"><surname>Kleist</surname><given-names>J</given-names></name></person-group>             <year>1995</year>             <article-title>Drought monitoring with multiple time scales.</article-title>             <fpage>233</fpage>             <lpage>236</lpage>             <comment>Proc 9<sup>th</sup> Conf on Applied Climatology. American Meteorological Society, Boston, Massachusetts</comment>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Ntale1">
+        <label>73</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Ntale</surname><given-names>HK</given-names></name><name name-style="western"><surname>Gan</surname><given-names>TY</given-names></name></person-group>             <year>2003</year>             <article-title>Drought indices and their application to East Africa.</article-title>             <source>Int J Climatol</source>             <volume>23</volume>             <fpage>1335</fpage>             <lpage>1357</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Garbutt1">
+        <label>74</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Garbutt</surname><given-names>D</given-names></name><name name-style="western"><surname>Stern</surname><given-names>R</given-names></name><name name-style="western"><surname>Dennett</surname><given-names>M</given-names></name><name name-style="western"><surname>Elston</surname><given-names>J</given-names></name></person-group>             <year>1981</year>             <article-title>A comparison of the rainfall climate of eleven places in West Africa using a two-part model for daily rainfall.</article-title>             <source>Meteorol Atmos Phys</source>             <volume>29</volume>             <fpage>137</fpage>             <lpage>155</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Odekunle1">
+        <label>75</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Odekunle</surname><given-names>TO</given-names></name></person-group>             <year>2006</year>             <article-title>Determining rainy season onset and retreat over Nigeria from precipitation amount and number of rainy days.</article-title>             <source>Theor Appl Climatol</source>             <volume>83</volume>             <fpage>193</fpage>             <lpage>201</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Longobardi1">
+        <label>76</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Longobardi</surname><given-names>A</given-names></name><name name-style="western"><surname>Villani</surname><given-names>P</given-names></name></person-group>             <year>2009</year>             <article-title>Trend analysis of annual and seasonal rainfall time series in the Mediterranean area.</article-title>             <source>Int J Climatol</source>             <volume>30</volume>             <fpage>1538</fpage>             <lpage>1546</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Edwards1">
+        <label>77</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Edwards</surname><given-names>CD</given-names></name><name name-style="western"><surname>McKee</surname><given-names>TB</given-names></name></person-group>             <year>1997</year>             <article-title>Characteristics of 20th century droughts in the United States at multiple time scales.</article-title>             <comment>Colorado State University, Fort Collins. Climatology Report No. 97-2</comment>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Goldman1">
+        <label>78</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Goldman</surname><given-names>A</given-names></name><name name-style="western"><surname>Hartter</surname><given-names>J</given-names></name><name name-style="western"><surname>Southworth</surname><given-names>J</given-names></name><name name-style="western"><surname>Binford</surname><given-names>M</given-names></name></person-group>             <year>2008</year>             <article-title>The human landscape around the island park: impacts and responses to Kibale National Park.</article-title>             <person-group person-group-type="editor"><name name-style="western"><surname>Wrangham</surname><given-names>R</given-names></name><name name-style="western"><surname>Ross</surname><given-names>E</given-names></name></person-group>             <source>Science and conservation in a Ugandan rainforest: how long-term research can help habitat management</source>             <publisher-loc>Cambridge</publisher-loc>             <publisher-name>Cambridge University Press</publisher-name>             <fpage>129</fpage>             <lpage>144</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Baird1">
+        <label>79</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Baird</surname><given-names>T</given-names></name><name name-style="western"><surname>Leslie</surname><given-names>P</given-names></name><name name-style="western"><surname>McCabe</surname><given-names>J</given-names></name></person-group>             <year>2009</year>             <article-title>The Effect of Wildlife Conservation on Local Perceptions of Risk and Behavioral Response.</article-title>             <source>Hum Ecol</source>             <volume>37</volume>             <fpage>463</fpage>             <lpage>474</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Smith1">
+        <label>80</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Smith</surname><given-names>K</given-names></name><name name-style="western"><surname>Barrett</surname><given-names>CB</given-names></name><name name-style="western"><surname>Box</surname><given-names>PW</given-names></name></person-group>             <year>2000</year>             <article-title>Participatory Risk Mapping for Targeting Research and Assistance: With an Example from East African Pastoralists.</article-title>             <source>World Dev</source>             <volume>28</volume>             <fpage>1945</fpage>             <lpage>1959</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Kirner1">
+        <label>81</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Kirner</surname><given-names>KE</given-names></name></person-group>             <year>2010</year>             <source>Agricultural variation and change among Batoro and Bakiga farmers around Kibale National Park in Southwest Uganda [MS]</source>             <publisher-loc>Gainesville, FL</publisher-loc>             <publisher-name>University of Florida</publisher-name>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Willmott1">
+        <label>82</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Willmott</surname><given-names>CJ</given-names></name><name name-style="western"><surname>Matsuura</surname><given-names>K</given-names></name></person-group>             <year>2006</year>             <article-title>On the use of dimensioned measures of error to evaluate the performance of spatial interpolators.</article-title>             <source>Int J Geogr Inf Sci</source>             <volume>20</volume>             <fpage>89</fpage>             <lpage>102</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Hartter6">
+        <label>83</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Hartter</surname><given-names>J</given-names></name></person-group>             <year>2007</year>             <source>Landscape change around Kibale National Park, Uganda: impacts on land cover, land use and livelihoods [PhD]</source>             <publisher-loc>Gainesville</publisher-loc>             <publisher-name>University of Florida</publisher-name> <!--===== Restructure page-count as size[@units="page"] =====--><size units="page">176</size>           </element-citation>
+      </ref>
+      <ref id="pone.0032408-Thomas2">
+        <label>84</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Thomas</surname><given-names>DSG</given-names></name><name name-style="western"><surname>Twyman</surname><given-names>C</given-names></name></person-group>             <year>2005</year>             <article-title>Equity and justice in climate change adaptation amongst natural-resource-dependent societies.</article-title>             <source>Global Environmental Change Part A</source>             <volume>15</volume>             <fpage>115</fpage>             <lpage>124</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Twinomugisha1">
+        <label>85</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Twinomugisha</surname><given-names>B</given-names></name></person-group>             <year>2005</year>             <source>A content analysis reports on climate change impacts, vulnerability and adaptation in Uganda</source>             <publisher-loc>London</publisher-loc>             <publisher-name>International Institute for Environment and Development</publisher-name>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Ministry1">
+        <label>86</label>
+        <element-citation publication-type="other" xlink:type="simple">             <collab xlink:type="simple">Ministry of Water and Environment DoM</collab>             <year>2007</year>             <source>National Adaptation Programme of Actions</source>             <publisher-loc>Kampala, Uganda</publisher-loc>             <publisher-name>Ministry of Water and Environment, Department of Metereology</publisher-name>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Gbetibouo2">
+        <label>87</label>
+        <element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Gbetibouo</surname><given-names>GA</given-names></name></person-group>             <year>2009</year>             <source>Understanding farmers' perceptions and adaptations to climate change and variability. The case of the Limpopo Basin, South Africa</source>             <publisher-loc>Washington D.C.</publisher-loc>             <publisher-name>International Food Policy Research Institute</publisher-name>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Gearheard1">
+        <label>88</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Gearheard</surname><given-names>S</given-names></name><name name-style="western"><surname>Pocernich</surname><given-names>M</given-names></name><name name-style="western"><surname>Steward</surname><given-names>R</given-names></name><name name-style="western"><surname>Sanguya</surname><given-names>J</given-names></name><name name-style="western"><surname>Huntington</surname><given-names>HP</given-names></name></person-group>             <year>2010</year>             <article-title>Linking Inuit knowledge and meteorological station observations to understand changing wind patterns at Clyde River, Nunavut.</article-title>             <source>Clim Change</source>             <volume>100</volume>             <fpage>267</fpage>             <lpage>294</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Speranza1">
+        <label>89</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Speranza</surname><given-names>CI</given-names></name><name name-style="western"><surname>Kiteme</surname><given-names>B</given-names></name><name name-style="western"><surname>Ambenje</surname><given-names>P</given-names></name><name name-style="western"><surname>Wiesmann</surname><given-names>U</given-names></name><name name-style="western"><surname>Makali</surname><given-names>S</given-names></name></person-group>             <year>2010</year>             <article-title>Indigenous knowledge related to climate variability and change: insights from droughts in semi-arid areas of former Makueni District, Kenya.</article-title>             <source>Clim Change</source>             <volume>100</volume>             <fpage>295</fpage>             <lpage>315</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Weber1">
+        <label>90</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Weber</surname><given-names>EU</given-names></name></person-group>             <year>2010</year>             <article-title>What shapes perceptions of climate change?</article-title>             <source>Wiley Interdisciplinary Reviews: Climate Change</source>             <volume>1</volume>             <fpage>332</fpage>             <lpage>342</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Rebetz1">
+        <label>91</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Rebetz</surname><given-names>M</given-names></name></person-group>             <year>1996</year>             <article-title>Public expectation as an element of human perception of climate change.</article-title>             <source>Clim Change</source>             <volume>32</volume>             <fpage>495</fpage>             <lpage>509</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Easterling1">
+        <label>92</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Easterling</surname><given-names>DR</given-names></name><name name-style="western"><surname>Evans</surname><given-names>JL</given-names></name><name name-style="western"><surname>Groisman</surname><given-names>PY</given-names></name><name name-style="western"><surname>Karl</surname><given-names>TR</given-names></name><name name-style="western"><surname>Kunkel</surname><given-names>KE</given-names></name><etal/></person-group>             <year>2000</year>             <article-title>Observed variability and trends in extreme climate events: A brief review.</article-title>             <source>B Am Meteorol Soc</source>             <volume>81</volume>             <fpage>417</fpage>             <lpage>425</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-DeFries2">
+        <label>93</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>DeFries</surname><given-names>R</given-names></name><name name-style="western"><surname>Rosenzweig</surname><given-names>C</given-names></name></person-group>             <year>2010</year>             <article-title>Toward a whole-landscape approach for sustainable land use in the tropics.</article-title>             <source>P Natl Acad Sci USA</source>             <volume>107</volume>             <fpage>19627</fpage>             <lpage>19632</lpage>          </element-citation>
+      </ref>
+      <ref id="pone.0032408-Rudnick1">
+        <label>94</label>
+        <element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author"><name name-style="western"><surname>Rudnick</surname><given-names>DA</given-names></name><name name-style="western"><surname>Beier</surname><given-names>P</given-names></name><name name-style="western"><surname>Cushman</surname><given-names>S</given-names></name><name name-style="western"><surname>Dieffenbach</surname><given-names>F</given-names></name><name name-style="western"><surname>Epps</surname><given-names>CW</given-names></name><etal/></person-group>             <year>upcoming</year>             <article-title>The role of landscape connectivity in planning and implementing conservation and restoration priorities.</article-title>             <source>Issues Ecol</source>          </element-citation>
+      </ref>
+    </ref-list>
+    
+  </back>
+</article>

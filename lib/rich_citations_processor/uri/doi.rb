@@ -1,5 +1,5 @@
 # Copyright (c) 2014 Public Library of Science
-#
+
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -18,10 +18,52 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-module RichCitations
-  module Parsers
+require 'yaml'
 
-    class ParseError < StandardErrror; end
+module RichCitationsProcessor
+  module URI
 
+    class DOI < Base
+
+      def self.matches?(identifier, type:)
+        type == :doi
+      end
+
+      def doi
+        identifier
+      end
+
+      def prefix
+        doi.split('/',2).first
+      end
+
+      def full_uri
+        URI_PREFIX + doi
+      end
+
+      def provider
+        PREFIX_PROVIDER_MAP[prefix]
+      end
+
+      private
+
+      # convert the file of provider -> prefix to a prefix->provider lookup
+      def self.load_provider_prefixes
+        filename = RichCitationsProcessor.config.doi_providers
+        provider_prefixes = YAML.load_file(filename)
+
+        provider_prefixes.flat_map do |provider, prefixes|
+          provider = provider.to_sym
+          prefixes.map do |prefix|
+            [prefix, provider]
+          end
+        end.to_h
+      end
+
+      PREFIX_PROVIDER_MAP = load_provider_prefixes
+
+      URI_PREFIX = 'http://dx.doi.org/'
+
+    end
   end
 end

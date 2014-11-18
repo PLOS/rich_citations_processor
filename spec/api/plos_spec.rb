@@ -20,23 +20,50 @@
 
 require 'spec_helper'
 
-describe RichCitationsProcessor::API::PLOS do
+module RichCitationsProcessor
 
-  describe '::get_document' do
+  RSpec.describe API::PLOS do
 
-    it "should call the api" do
-      stub_request(:get, 'http://www.plosone.org/article/fetchObjectAttachment.action?uri=info:doi/10.1234/5678&representation=XML').
-            with(headers:{'Accept'=>'application/xml'}).
-            to_return(body:'<root/>')
-      result = RichCitationsProcessor::API::PLOS.get_document('10.1234/5678')
-      expect(result).to be_a_kind_of(Nokogiri::XML::Node)
+    describe '::get_nlm_document' do
+
+      it "should call the api" do
+        stub_request(:get, 'http://www.plosone.org/article/fetchObjectAttachment.action?uri=info:doi/10.1234/5678&representation=XML').
+              with(headers:{'Accept'=>'application/xml'}).
+              to_return(body:'<root/>')
+        result = API::PLOS.get_nlm_document('10.1234/5678')
+        expect(result).to be_a_kind_of(Nokogiri::XML::Node)
+      end
+
+      it "should eturn nil on a 500 error" do
+        stub_request(:get, 'http://www.plosone.org/article/fetchObjectAttachment.action?uri=info:doi/10.1234/5678&representation=XML').
+            to_return(status:500)
+        result = API::PLOS.get_nlm_document('10.1234/5678')
+        expect(result).to be_nil
+      end
+
     end
 
-    it "should eturn nil on a 500 error" do
-      stub_request(:get, 'http://www.plosone.org/article/fetchObjectAttachment.action?uri=info:doi/10.1234/5678&representation=XML').
-          to_return(status:500)
-      result = RichCitationsProcessor::API::PLOS.get_document('10.1234/5678')
-      expect(result).to be_nil
+    describe '::get_web_page' do
+
+      it "should call the api" do
+        stub_request(:get, 'http://dx.doi.org/10.1234/5678').
+            with(headers:{'Accept'=>'text/html'}).
+            to_return(body:'<html/>')
+
+        doi = URI::DOI.new('10.1234/5678', source:'test')
+        result = API::PLOS.get_web_page(doi)
+        expect(result).to be_a_kind_of(Nokogiri::HTML::Document)
+      end
+
+      it "should accept a plain doi" do
+        stub_request(:get, 'http://dx.doi.org/10.1234/5678').
+            with(headers:{'Accept'=>'text/html'}).
+            to_return(body:'<html/>')
+
+        result = API::PLOS.get_web_page('10.1234/5678')
+        expect(result).to be_a_kind_of(Nokogiri::HTML::Document)
+      end
+
     end
 
   end

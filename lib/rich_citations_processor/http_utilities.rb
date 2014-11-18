@@ -33,6 +33,7 @@ module RichCitationsProcessor
 
     def self.get(url, headers={})
       headers   = parse_headers(headers)
+
       make_request( url, headers) do |request_uri|
         # puts "GET #{request_uri}"
         Net::HTTP::Get.new(request_uri, headers)
@@ -41,6 +42,8 @@ module RichCitationsProcessor
 
     def self.post(url, content, headers={})
       headers   = parse_headers(headers)
+      content   = convert_content(content, headers)
+
       make_request( url, headers) do |request_uri|
         # puts "POST #{request_uri}"
         req = Net::HTTP::Post.new(request_uri, headers)
@@ -51,24 +54,24 @@ module RichCitationsProcessor
 
     private
 
-    def self.make_request(url, headers={}, &block)
+    def self.make_request(uri, headers={}, &block)
       redirects      = []
       retry_count    = 0
       http      = Net::HTTP::Persistent.new
       # http.debug_output = $stdout
 
       loop do
-        uri      = URI.parse(url)
+        uri      = ::URI.parse(uri) unless uri.is_a?(::URI)
         request  = yield(uri.request_uri)
         response = http.request uri, request
 
         # Handle redirects
-        location = response.header['location']
+        location = response['location']
         if location
           raise Net::HTTPFatalError.new("Recursive redirect", 508) if redirects.include?(location)
           raise Net::HTTPFatalError.new("Too many redirects", 508) if redirects.length >= REDIRECT_LIMIT
           redirects << location
-          url = location
+          uri = uri.merge(location)
 
         # Retry for certain response codes
         elsif (response.code.to_i == 502)
@@ -89,14 +92,44 @@ module RichCitationsProcessor
     def self.parse_headers(headers)
       case headers
         when Symbol
-          { 'Accept' => "application/#{headers}" }
+          { 'Accept' => MIME_TYPES[headers] }
         when String
           { 'Accept' => headers }
         when Hash
-          headers.each { |k,v| headers[k] = v.to_s }
+          headers.each { |k,v| headers[k] = MIME_TYPES[v] || v.to_s }
         else
           headers
       end
+    end
+
+    # Don't pull in all of Actionpack just for the Mime types
+    MIME_TYPES = {
+      xml:  'application/xml',
+      json: 'application/json',
+      html: 'text/html',
+    }
+
+    # Cpnvert input content
+
+    def convert_content(content, headers)
+      case content
+        when Hash, Array
+          headers['Content-Type'] ||= MIME_TYPES[:json]
+          MultiJson.dump(content)
+
+        when Nokogiri::HTML::Document, Nokogiri::HTML::DocumentFragment
+            headers['Content-Type'] ||= MIME_TYPES[:html]
+          content.to_html
+
+        when Nokogiri::XML::Node
+          headers['Content-Type'] ||= MIME_TYPES[:xml]
+          content.to_xml
+
+        else
+          content
+
+      end
+
     end
 
     # Parse response intelligently
@@ -112,14 +145,19 @@ module RichCitationsProcessor
     end
 
     def self.parsed_resoonse_for(content_type, body)
-      if ['text/xml', 'application/xml'].include?(content_type)
-        Nokogiri::XML.parse(body)
 
-      elsif ['application/json'].include?(content_type)
-        MultiJson.load(body, symbolize_names:true)
+      case content_type
+        when 'text/xml', 'application/xml'
+          Nokogiri::XML.parse(body)
 
-      else
-        nil
+        when 'text/html'
+          Nokogiri::HTML.parse(body)
+
+        when 'application/json'
+          MultiJson.load(body).with_indifferent_access
+
+        else
+          nil
 
       end
     end

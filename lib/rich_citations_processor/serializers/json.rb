@@ -23,30 +23,33 @@
 require 'multi_json'
 
 module RichCitationsProcessor
-  module Formatters
+  module Serializers
 
-    class JSON
-      attr_reader :citing_paper
+    class JSON < Base
 
-      def initialize(citing_paper)
-        @citing_paper = citing_paper
+      def self.mime_types
+        [
+            'application/richcitations+json',
+            'application/json'
+        ]
       end
 
-      def format(options={})
-        MultiJson.dump( as_structured_hash, options)
+      def serialize(options={})
+        MultiJson.dump( as_structured_data, options)
       end
 
       # turn the paper into a hash/array structure
-      def as_structured_hash
+      def as_structured_data
         paper(citing_paper)
       end
+      alias to_hash as_structured_data
 
       protected
 
       def paper(paper)
         hash = {
-          'uri_source'      => paper.uri_source,
-          'uri'             => paper.uri,
+          'uri_source'      => paper.uri && paper.uri.source,
+          'uri'             => paper.uri && paper.uri.full_uri,
           'bibliographic'   => bibliographic_metadata(paper),
           'word_count'      => paper.word_count,
           'references'      => references(paper.references),
@@ -58,6 +61,7 @@ module RichCitationsProcessor
 
       def bibliographic_metadata(paper)
         metadata = paper.bibliographic.deep_dup
+        metadata.merge!(paper.uri.extended) if paper.uri
 
         # Merge in the authors
         metadata['author'] = authors(paper.authors)
@@ -83,12 +87,12 @@ module RichCitationsProcessor
       end
 
       def reference(reference)
-        hash = {
+        {
             'id'                => reference.id,
             'number'            => reference.number,
-            'uri_source'        => reference.uri_source,
+            'uri_source'        => reference.uri && reference.uri.source,
             'uri'               => reference.uri,
-            'accessed_at'       => reference.uri,
+            'accessed_at'       => reference.accessed_at,
             'original_citation' => reference.original_citation,
             'bibliographic'     => bibliographic_metadata(reference.cited_paper),
             'citation_groups'   => id_list(reference.citation_groups)

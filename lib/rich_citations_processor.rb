@@ -18,6 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+require 'oj'
 require 'active_support'
 require 'active_support/dependencies'
 require 'active_support/core_ext'
@@ -29,4 +30,5 @@ require 'rich_citations_processor/version'
 require 'rich_citations_processor/extensions'
 require 'rich_citations_processor/config'
 require 'rich_citations_processor/initialization'
+require 'rich_citations_processor/uri'  # Required because URI is also a root class
 

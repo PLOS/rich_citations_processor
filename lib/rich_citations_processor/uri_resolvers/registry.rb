@@ -19,37 +19,53 @@
 # THE SOFTWARE.
 
 module RichCitationsProcessor
-  module ID
+  module URIResolvers
 
     class Registry
 
       class << self
 
-        def add(id_class)
-          @@id_classes << id_class
+        def resolvers(references:, paper:)
+          resolver_classes.map do |klass|
+            klass.new(references:references, paper:paper)
+          end
         end
 
-        def lookup(type, identifier)
-          load unless @@classes_loaded
-          @@id_classes.find do |klass| klass.matches?(type, identifier) end
+        def resolver_classes
+          prioritize_classes(load_classes)
         end
 
-        def lookup!(type, identifier)
-          lookup(type, identifier) || raise("Unable to locate ID type for #{type.inspect}:#{identifier.inspect}")
+        def add(resolver_class)
+          raise "Cannot register #{resolver_class}}, classes alrady loaded."if  @@classes_loaded
+          @@classes << resolver_class
         end
+
+        private
 
         # Load all the files in this directory to populate the Registry
-        def load
+        def load_classes
+          return @@classes if @@classes_loaded
+
           path = File.join( File.dirname(__FILE__), '*.rb')
           Dir[path].each do |file|
             ActiveSupport::Dependencies.require_or_load(file)
           end
           @@classes_loaded = true
+
+          @@classes
         end
 
-        private
+        def prioritize_classes(classes)
+          classes = classes.reject do |c| c.abstract? end
+          classes =  classes.sort! do |a,b|
+                                      v = a.priority <=> b.priority
+                                      v==0 ? a.name <=> b.name : v
+                                   end
 
-        @@id_classes = []
+          classes
+        end
+
+        @@classes = []
         @@classes_loaded = false
 
       end

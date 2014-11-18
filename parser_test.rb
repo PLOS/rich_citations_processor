@@ -24,9 +24,9 @@ $LOAD_PATH << 'lib'
 require 'pp'
 require 'rich_citations_processor'
 
-DOI='10.1371/journal.pone.0046843'
+# DOI='10.1371/journal.pone.0046843'
 # DOI='10.1371/journal.pbio.0050222xxx'
-# DOI='10.1371/journal.pone.0032408' # The Paper from Hell
+DOI='10.1371/journal.pone.0032408' # The Paper from Hell
 # DOI='10.1371/journal.pbio.0050093' # DOI with odd hyphens
 # DOI='10.1371/journal.pone.0041419' # ISBN
 # DOI='10.1371/journal.pgen.1001139' # Pubmed ID
@@ -40,22 +40,40 @@ doi = ARGV.last || DOI
 start_time = Time.now
 puts "Starting at ----------------- #{start_time}"
 
-xml = r = RichCitationsProcessor::API::PLOS.get_document( doi )
+xml = r = RichCitationsProcessor::API::PLOS.get_nlm_document( doi )
 
-r = xml.css('ref-list')
+# r = xml.css('ref-list')
 # r = xml.css('body')
 # puts r.to_xml; exit
 
 # info = PaperParser.parse_xml(xml)
 
-parser = RichCitationsProcessor::Parsers::NLM.new(xml)
+parser = RichCitationsProcessor::Parsers.create('application/nlm+xml', xml)
 paper = parser.parse!
 
 if paper
-  puts "==== inspect ====="
+  puts "==== PAPER #{paper.uri.inspect} ====="
+
+  resolver = RichCitationsProcessor::URIResolver.new(paper)
+  resolver.resolve!
+
+  #puts "==== INSPECT ====="
   #puts paper.inspect
-  formatter = RichCitationsProcessor::Formatters::JSON.new(paper)
-  pp formatter.as_structured_hash
+
+  puts "==== JSON ====="
+  serializer = RichCitationsProcessor::Serializers.create('application/richcitations+json', paper)
+  pp serializer.as_structured_data
+
+  # puts "==== CUSTOM ====="
+  # paper.references.each do |ref|
+  #   uris = if ref.candidate_uris.empty?
+  #     '<none>'
+  #   else
+  #     "[ #{ref.candidate_uris.map(&:full_uri).join(', ')} ]"
+  #   end
+  #   puts "#{ref.id} >> #{uris}"
+  # end
+
 else
   puts "\n*************** Document #{doi} could not be retrieved\n"
 end

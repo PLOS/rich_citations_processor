@@ -21,77 +21,81 @@
 require 'spec_helper'
 require 'support/builders/nlm'
 
-describe RichCitationsProcessor::Parsers::NLM::AuthorParser do
-  include Spec::Builders::NLM
+module RichCitationsProcessor
 
-  let (:parser) { RichCitationsProcessor::Parsers::NLM.new(xml) }
-  let (:paper)  { parser.parse! }
+  RSpec.describe Parsers::NLM::AuthorParser do
+    include Spec::Builders::NLM
 
-  let (:authors) { paper.authors }
+    let (:parser) { Parsers::NLM.new(xml) }
+    let (:paper)  { parser.parse! }
 
-  it "should parse out the authors" do
-    meta <<-EOS
-      <contrib contrib-type="author">
-        <surname>Jolie</surname><given-names>Angelina</given-names>
-      </contrib>
-      <contrib contrib-type="author">
-        <surname>Roberts</surname><given-names>Julia</given-names>
-      </contrib>
-    EOS
+    let (:authors) { paper.authors }
 
-    expect(authors.count).to eq (2)
-    expect(authors.first ).to have_attributes(family: 'Jolie',   given:'Angelina')
-    expect(authors.second).to have_attributes(family: 'Roberts', given:'Julia'   )
-  end
+    it "should parse out the authors" do
+      meta <<-EOS
+        <contrib contrib-type="author">
+          <surname>Jolie</surname><given-names>Angelina</given-names>
+        </contrib>
+        <contrib contrib-type="author">
+          <surname>Roberts</surname><given-names>Julia</given-names>
+        </contrib>
+      EOS
 
-  it "should parse out literal authors" do
-    meta <<-EOS
-      <contrib contrib-type="author">
-        <literal>Roberts, Julia</literal>
-      </contrib>
-    EOS
+      expect(authors.count).to eq (2)
+      expect(authors.first ).to have_attributes(family: 'Jolie',   given:'Angelina')
+      expect(authors.second).to have_attributes(family: 'Roberts', given:'Julia'   )
+    end
 
-    expect(authors.first).to have_attributes(literal: 'Roberts, Julia')
-  end
+    it "should parse out literal authors" do
+      meta <<-EOS
+        <contrib contrib-type="author">
+          <literal>Roberts, Julia</literal>
+        </contrib>
+      EOS
 
-  it "should ignore non-authors" do
-    meta <<-EOS
-      <contrib contrib-type="author">
-        <surname>Jolie</surname><given-names>Angelina</given-names>
-      </contrib>
-     <contrib contrib-type="editor">
-        <surname>Jackson</surname><given-names>Randy</given-names>
-      </contrib>
-    EOS
+      expect(authors.first).to have_attributes(literal: 'Roberts, Julia')
+    end
 
-    expect(authors.count).to eq(1)
-    expect(authors.first).to have_attributes(family: 'Jolie',   given:'Angelina')
-  end
+    it "should ignore non-authors" do
+      meta <<-EOS
+        <contrib contrib-type="author">
+          <surname>Jolie</surname><given-names>Angelina</given-names>
+        </contrib>
+       <contrib contrib-type="editor">
+          <surname>Jackson</surname><given-names>Randy</given-names>
+        </contrib>
+      EOS
 
-  it "should include emails if available" do
-    meta <<-EOS
-      <contrib contrib-type="author">
-        <surname>Jolie</surname><given-names>Angelina</given-names>
-        <xref ref-type='corresp' rid='cor2'>
-      </contrib>
-      <corresp id="cor1">* E-mail: <email xlink:type="simple">f.flintstone@plos.org</email></corresp>
-      <corresp id="cor2">* E-mail: <email xlink:type="simple">a.jolie@plos.org</email></corresp>
-    EOS
+      expect(authors.count).to eq(1)
+      expect(authors.first).to have_attributes(family: 'Jolie',   given:'Angelina')
+    end
 
-    expect(authors.first).to have_attributes(family: 'Jolie',   given:'Angelina', email:'a.jolie@plos.org')
-  end
+    it "should include emails if available" do
+      meta <<-EOS
+        <contrib contrib-type="author">
+          <surname>Jolie</surname><given-names>Angelina</given-names>
+          <xref ref-type='corresp' rid='cor2'>
+        </contrib>
+        <corresp id="cor1">* E-mail: <email xlink:type="simple">f.flintstone@plos.org</email></corresp>
+        <corresp id="cor2">* E-mail: <email xlink:type="simple">a.jolie@plos.org</email></corresp>
+      EOS
 
-  it "should include affilitions if available" do
-    meta <<-EOS
-      <contrib contrib-type="author">
-        <surname>Jolie</surname><given-names>Angelina</given-names>
-        <xref ref-type='aff' rid='aff2'>
-      </contrib>
-      <aff id="aff1"><addr-line>Somewhere</addr-line></aff>
-      <aff id="aff2"><addr-line>Hollywood</addr-line></aff>
-    EOS
+      expect(authors.first).to have_attributes(family: 'Jolie',   given:'Angelina', email:'a.jolie@plos.org')
+    end
 
-    expect(authors.first).to have_attributes(family: 'Jolie',   given:'Angelina', affiliation:'Hollywood')
+    it "should include affilitions if available" do
+      meta <<-EOS
+        <contrib contrib-type="author">
+          <surname>Jolie</surname><given-names>Angelina</given-names>
+          <xref ref-type='aff' rid='aff2'>
+        </contrib>
+        <aff id="aff1"><addr-line>Somewhere</addr-line></aff>
+        <aff id="aff2"><addr-line>Hollywood</addr-line></aff>
+      EOS
+
+      expect(authors.first).to have_attributes(family: 'Jolie',   given:'Angelina', affiliation:'Hollywood')
+    end
+
   end
 
 end

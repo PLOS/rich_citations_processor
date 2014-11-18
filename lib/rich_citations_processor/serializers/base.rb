@@ -19,24 +19,24 @@
 # THE SOFTWARE.
 
 module RichCitationsProcessor
-  module ID
+  module Serializers
 
     class Base
+      attr_reader :citing_paper
 
-      def self.types
-        not_implemented
+      def self.mime_types
+        method_not_implemented_error
       end
 
-      def self.full_uri(base)
-        not_implemented
+      def initialize(citing_paper)
+        @citing_paper = citing_paper
+      end
+
+      def serialize(options={})
+        method_not_implemented_error
       end
 
       private
-
-      def self.not_implemented
-        method_name = caller_locations(1,1).first.label
-        raise NotImplementedError.new("#{method_name} not implemented for #{name}")
-      end
 
       def self.inherited(subclass)
         Registry.add(subclass)

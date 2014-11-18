@@ -36,19 +36,20 @@ module RichCitationsProcessor
       text_nodes = container.xpath('.//text()').map(&:text)
       text = text_nodes.join(" ")
       clean_text = text.squish
+      clean_text
     end
 
     # Text up to a node
     def self.text_before(container, node)
-      text = ''
+      texts = []
       container = container.first if container.is_a?(Nokogiri::XML::NodeSet)
       breadth_traverse(container) do |n|
-        return text.lstrip if n == node
-        text += n.text if n.text?
+        return texts.join('').lstrip if n == node
+        texts << n.text if n.text?
       end
 
       # If node is not found it is a failure
-      node ? nil : text.lstrip
+      node ? nil : texts.join('').lstrip
     end
 
     # Text after a node
@@ -101,12 +102,54 @@ module RichCitationsProcessor
     end
 
     def self.breadth_traverse(container, &block)
-      block.call(container)
-      container.children.each{ |j| breadth_traverse(j, &block) }
+      all_children = container.xpath('.//node()')
+
+      if block_given?
+        yield(container)
+        all_children.each(&block)
+      else
+        ( [container] + all_children.to_a ).each
+      end
+
+      # This is very slow
+      # block.call(container)
+      # container.children.each{ |j| breadth_traverse(j, &block) }
     end
 
     def self.depth_traverse(container, &block)
       container.traverse(&block)
+    end
+
+    # Optimize word counting by caching the iterator and not always going back to the beginning
+    class WordCounter
+      def initialize(container)
+        @iterator   = XMLUtilities.breadth_traverse(container)
+        @word_count = 0
+      end
+
+      def count_to(node)
+        raise "Already Counted to end" unless @iterator
+
+        while true do
+          current = @iterator.next
+          return @word_count if node == current
+          @word_count += current.text.word_count if current.text?
+        end
+      end
+
+      def count_to_end
+        return @word_count unless @iterator
+
+        while true do
+          current = @iterator.next
+          @word_count += current.text.word_count if current.text?
+        end
+
+      rescue StopIteration
+        @iterator = nil
+        @word_count
+      end
+
     end
 
   end

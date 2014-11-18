@@ -19,6 +19,8 @@
 # THE SOFTWARE.
 
 RichCitationsProcessor.configure do |conf|
+  conf.root                          = File.expand_path('../../..', __FILE__)
   conf.citation_context.words_before = 20
   conf.citation_context.words_after  = 10
+  conf.doi_providers                 = File.join(conf.root, 'config', 'doi_providers.yml')
 end

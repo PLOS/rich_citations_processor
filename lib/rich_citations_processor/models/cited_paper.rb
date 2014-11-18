@@ -22,6 +22,14 @@ module RichCitationsProcessor
   module Models
 
     class CitedPaper < Paper
+      # THese are URIs which will be searched for metadata
+      attr_reader :candidate_uris
+
+      def initialize(**attributes)
+        @candidate_uris = Collection.new(URI::Base, ignore_duplicates:true)
+
+        super
+      end
 
     end
   end

@@ -6,10 +6,10 @@
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
-#
+# 
 # The above copyright notice and this permission notice shall be included in
 # all copies or substantial portions of the Software.
-#
+# 
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -18,31 +18,29 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'net/http'
-require 'net/http/persistent'
-require 'uri'
-require 'multi_json'
-require 'nokogiri'
+require 'spec_helper'
 
-module RichCitationsProcessor
+RSpec.describe Object do
 
-  module ID
-    extend self
+  describe '#method_not_implemented_error' do
 
-    class DOI < Base
-
-      def self.matches?(type, identifier)
-        type == 'doi'
+    class NotImplementedTestClass
+      def self.class_test
+        method_not_implemented_error
       end
-
-      def self.full_uri(base)
-        URI_PREFIX + base
+      def instance_test
+        method_not_implemented_error
       end
-
-      private
-
-      URI_PREFIX = 'http://dx.doi.org/'
-
     end
+
+    it "should raise a message not implemented error for an instance method" do
+      expect { NotImplementedTestClass.new.instance_test }.to raise_exception(NotImplementedError, 'instance_test not implemented for NotImplementedTestClass')
+    end
+
+    it "should raise a message not implemented error for a class method" do
+      expect { NotImplementedTestClass.class_test }.to raise_exception(NotImplementedError, 'class_test not implemented for NotImplementedTestClass')
+    end
+
   end
+
 end

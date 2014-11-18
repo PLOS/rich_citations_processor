@@ -30,7 +30,6 @@ module RichCitationsProcessor
       def assign_attributes!(**attributes)
         attributes.each do |name, value|
           setter = "#{name}="
-          "testing setter #{setter.inspect}"
           raise ArgumentError.new("Parameter #{name} not supported") unless respond_to?(setter)
           send(setter, value)
         end

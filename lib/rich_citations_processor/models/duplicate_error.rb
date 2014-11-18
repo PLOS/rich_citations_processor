@@ -18,26 +18,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'spec_helper'
+module RichCitationsProcessor
+  module Models
 
-describe RichCitationsProcessor::ID::DOI do
-
-  DOI = RichCitationsProcessor::ID::DOI
-
-  describe '#matches?' do
-
-    it "should match any id with a type od 'doi'" do
-      expect( DOI.matches?('doi', 'absolutely anything') ).to be_truthy
-    end
+    class DuplicateError < StandardError; end
 
   end
-
-  describe '#full_uri' do
-
-    it "should return the full uri" do
-      expect( DOI.full_uri('10.123/456') ).to eq('http://dx.doi.org/10.123/456')
-    end
-
-  end
-
 end

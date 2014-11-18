@@ -1,5 +1,5 @@
 # Copyright (c) 2014 Public Library of Science
-#
+
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -18,28 +18,20 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'spec_helper'
+module RichCitationsProcessor
 
-RichCitationsProcessor::ID::DOI
-describe RichCitationsProcessor::ID::Registry do
+  module Serializers
 
-  Registry = RichCitationsProcessor::ID::Registry
+    extend self
 
-  describe '#Lookup' do
-
-    it 'can lookup the id class for a type' do
-      expect(Registry.lookup('doi', '10.1234/5678')).to eq( RichCitationsProcessor::ID::DOI)
-      expect(Registry.lookup!('doi', '10.1234/5678')).to eq( RichCitationsProcessor::ID::DOI)
+    def create(mime_type, paper)
+      klass = lookup(mime_type)
+      klass && klass.new(paper)
     end
 
-    it 'returns nil if the id type is not found' do
-      expect( Registry.lookup('unknown', 'anything') ).to be_nil
-    end
-
-    it 'raises an exception if the id type is not found' do
-      expect{ Registry.lookup!('unknown', 'anything') }.to raise_exception
+    def lookup(mime_type)
+      Registry.lookup(mime_type)
     end
 
   end
-
 end

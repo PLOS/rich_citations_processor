@@ -24,7 +24,7 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.acronym('JSON')
 
   inflect.acronym('API')
-  inflect.acronym('ID')
+  inflect.acronym('URI')
 
   inflect.acronym('PLOS')
   inflect.acronym('NLM')
