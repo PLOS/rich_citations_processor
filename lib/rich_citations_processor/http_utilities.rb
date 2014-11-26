@@ -43,17 +43,19 @@ module RichCitationsProcessor
     private
 
     def self.retry_request(method, url, content, headers)
-      retry_count = 0
-      while retry_count < 3
+      retry_count = 1
+      while retry_count < @client.follow_redirect_count
         resp = @client.request(method, url, nil, content, headers, true)
         if (resp.status == 502)
-          return nil if retry_count > 2
-          retry_count += 1
           sleep 5 * retry_count
+          retry_count += 1
+        elsif (resp.status == 404)
+          fail HTTPClient::BadResponseError, 'not found'
         else
           return parse_response(resp, headers)
         end
       end
+      fail HTTPClient::BadResponseError, 'error count exceeded'
     end
     
     def self.parse_headers(headers)

@@ -117,7 +117,7 @@ module RichCitationsProcessor
 
         it "should raise an exception" do
           stub_request(http_method, 'http://www.example.com/path').to_return(status:404).times(1)
-          expect(action('http://www.example.com/path', 'application/custom')).to be_nil
+          expect { action('http://www.example.com/path', 'application/custom') }.to raise_exception(HTTPClient::BadResponseError, 'not found')
         end
 
       end
@@ -131,7 +131,7 @@ module RichCitationsProcessor
           expect(HTTPUtilities).to receive(:sleep).with(15)
           expect(HTTPUtilities).to_not receive(:sleep)
 
-          expect(action('http://www.example.com/path')).to be_nil
+          expect { action('http://www.example.com/path') }.to raise_exception(HTTPClient::BadResponseError, 'error count exceeded')
         end
 
         it "should succeed during a retry" do
