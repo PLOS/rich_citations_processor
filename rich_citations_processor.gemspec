@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'activesupport'
   spec.add_runtime_dependency 'rails-html-sanitizer'
-  spec.add_runtime_dependency 'net-http-persistent'
+  spec.add_runtime_dependency 'httpclient'
   spec.add_runtime_dependency 'multi_json'
   spec.add_runtime_dependency 'oj'
   spec.add_runtime_dependency 'nokogiri'

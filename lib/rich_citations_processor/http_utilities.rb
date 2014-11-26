@@ -18,9 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'net/http'
-require 'net/http/persistent'
-require 'uri'
+require 'httpclient'
 require 'multi_json'
 require 'nokogiri'
 
@@ -29,66 +27,37 @@ module RichCitationsProcessor
   module HTTPUtilities
     extend self
 
-    REDIRECT_LIMIT = 3
+    @client = HTTPClient.new
+    @client.follow_redirect_count = 4
 
-    def self.get(url, headers={})
-      headers   = parse_headers(headers)
-
-      make_request( url, headers) do |request_uri|
-        # puts "GET #{request_uri}"
-        Net::HTTP::Get.new(request_uri, headers)
-      end
+    def self.get(url, headers = {})
+      retry_request(:get, url, nil, parse_headers(headers))
     end
 
-    def self.post(url, content, headers={})
+    def self.post(url, content, headers = {})
       headers   = parse_headers(headers)
       content   = convert_content(content, headers)
-
-      make_request( url, headers) do |request_uri|
-        # puts "POST #{request_uri}"
-        req = Net::HTTP::Post.new(request_uri, headers)
-        req.body = content
-        req
-      end
+      retry_request(:post, url, content, headers)
     end
 
     private
 
-    def self.make_request(uri, headers={}, &block)
-      redirects      = []
-      retry_count    = 0
-      http      = Net::HTTP::Persistent.new
-      # http.debug_output = $stdout
-
-      loop do
-        uri      = ::URI.parse(uri) unless uri.is_a?(::URI)
-        request  = yield(uri.request_uri)
-        response = http.request uri, request
-
-        # Handle redirects
-        location = response['location']
-        if location
-          raise Net::HTTPFatalError.new("Recursive redirect", 508) if redirects.include?(location)
-          raise Net::HTTPFatalError.new("Too many redirects", 508) if redirects.length >= REDIRECT_LIMIT
-          redirects << location
-          uri = uri.merge(location)
-
-        # Retry for certain response codes
-        elsif (response.code.to_i == 502)
-          response.value if retry_count > 2
-          retry_count +=1
-          # slow it down
-          http.shutdown
+    def self.retry_request(method, url, content, headers)
+      retry_count = 1
+      while retry_count < @client.follow_redirect_count
+        resp = @client.request(method, url, nil, content, headers, true)
+        if (resp.status == 502)
           sleep 5 * retry_count
-
+          retry_count += 1
+        elsif (resp.status == 404)
+          fail HTTPClient::BadResponseError, 'not found'
         else
-          response.value
-          return parse_response( response, headers )
+          return parse_response(resp, headers)
         end
-
       end
+      fail HTTPClient::BadResponseError, 'error count exceeded'
     end
-
+    
     def self.parse_headers(headers)
       case headers
         when Symbol
@@ -137,7 +106,6 @@ module RichCitationsProcessor
     def self.parse_response(response, sent_headers)
       body = response.body
       return nil if body.blank?
-
       # Try parsing using the returned type then the requested type
       parsed_resoonse_for(response.content_type, body) ||
       parsed_resoonse_for(sent_headers['Accept'], body) ||
@@ -145,16 +113,15 @@ module RichCitationsProcessor
     end
 
     def self.parsed_resoonse_for(content_type, body)
-
       case content_type
-        when 'text/xml', 'application/xml'
-          Nokogiri::XML.parse(body)
+      when %r{^text/xml}, %r{^application/xml}
+        Nokogiri::XML.parse(body)
 
-        when 'text/html'
-          Nokogiri::HTML.parse(body)
+      when %r{^text/html}
+        Nokogiri::HTML.parse(body)
 
-        when 'application/json'
-          MultiJson.load(body).with_indifferent_access
+      when %r{application/json}
+        MultiJson.load(body).with_indifferent_access
 
         else
           nil
