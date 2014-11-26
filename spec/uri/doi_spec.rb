@@ -24,10 +24,88 @@ module RichCitationsProcessor
 
   RSpec.describe URI::DOI do
 
-    describe '#matches?' do
+    describe '::matches?' do
 
       it "should match with symbols" do
         expect( URI::DOI.matches?('absolutely anything', type: :doi) ).to be_truthy
+      end
+
+    end
+
+    describe '::from_uri' do
+
+      it "should parse a DOI from a URL" do
+        uri = URI::DOI.from_uri('http://dx.doi.org/10.123/456', source:'foo')
+        expect(uri.doi).to eq('10.123/456')
+      end
+
+      it "should return nil when a DOI could not be parsed" do
+        expect( URI::DOI.from_uri('http://dx.doi.org/10.123456') ).to be_nil
+        expect( URI::DOI.from_uri('http://dx.foo.org/10.123/456') ).to be_nil
+        expect( URI::DOI.from_uri('10.123/456') ).to be_nil
+        expect( URI::DOI.from_uri('some text') ).to be_nil
+      end
+
+    end
+
+    describe '::from_text' do
+
+      it "should parse a DOI from text" do
+        uris = URI::DOI.from_text('http://dx.doi.org/10.123/456', source:'foo')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse multiple DOIs from text" do
+        uris = URI::DOI.from_text('http://dx.doi.org/10.123/444 http://dx.doi.org/10.123/555', source:'foo')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/444', 'http://dx.doi.org/10.123/555'] )
+      end
+
+      it "should parse a DOI in URI format" do
+        uris = URI::DOI.from_text('somethinghttp://dx.doi.org/10.123/456', source:'foo')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse a DOI in bare format at the start of a string" do
+        uris = URI::DOI.from_text('10.123/456', source:'foo')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse a DOI in bare format after white-space" do
+        uris = URI::DOI.from_text('text 10.123/456', source:'foo')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse a DOI in bare format after punctuation" do
+        uris = URI::DOI.from_text('Did he go?10.123/456', source:'foo')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse a DOI in bare format at the end of a string" do
+        uris = URI::DOI.from_text('10.123/456', source:'foo')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse a DOI in bare format ended by white-space" do
+        uris = URI::DOI.from_text('10.123/456 some text', source:'foo')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse a DOI in bare format ended by" do
+        uris = URI::DOI.from_text('10.123/456: But then there were', source:'foo')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse a DOI containing puncutation" do
+        uris = URI::DOI.from_text('10.123/4.5+6%7: But then there were', source:'foo')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/4.5+6%7'] )
+      end
+
+      it "should return nil when a DOI could not be parsed" do
+        expect( URI::DOI.from_text('some text without a DOI', source:'foo') ).to be_nil
+      end
+
+      it "should not match some similar doi URLs" do
+        expect( URI::DOI.from_text('x10.123/4567.890 ', source:'foo') ).to be_nil
       end
 
     end

@@ -66,10 +66,16 @@ module RichCitationsProcessor
       def to_s
         full_uri
       end
+      def to_uri
+        full_uri
+      end
 
       protected
 
       attr_reader :identifier
+
+      PUNCT              = %q{[\]'"`.,:;?!)\-\/]}  # Posix [[:punct:]] regex is more liberal than we want
+      NOT_PUNCT_OR_SPACE = %q{[^\]'"`.,>[[:space:]]:;?!)\-\/]}
 
       private
 

@@ -29,16 +29,27 @@ module RichCitationsProcessor
         type == :doi
       end
 
+      def self.from_uri(url, **attributes)
+        match = DOI_URL_REGEX.match(url)
+        match && new(match['doi'], **attributes)
+      end
+
+      # Returns an array of URIs
+      def self.from_text(text, **attributes)
+        matches = DOI_TEXT_REGEX.all_matches(text)
+        matches && matches.map do |match| new( match['doi'], **attributes) end
+      end
+
       def doi
         identifier
       end
 
-      def prefix
-        doi.split('/',2).first
-      end
-
       def full_uri
         URI_PREFIX + doi
+      end
+
+      def prefix
+        doi.split('/',2).first
       end
 
       def provider
@@ -60,9 +71,37 @@ module RichCitationsProcessor
         end.to_h
       end
 
-      PREFIX_PROVIDER_MAP = load_provider_prefixes
+      URI_PREFIX       = 'http://dx.doi.org/'
 
-      URI_PREFIX = 'http://dx.doi.org/'
+      DOI_PREFIX_CHAR  = %q{[^\/[[:space:]]]}
+      DOI_CHAR         = %q{[^[[:space:]]'"]}
+      DOI_END_CHAR     = NOT_PUNCT_OR_SPACE
+
+      # For extracting DOIs from text we have to be stricter than the DOI spec which
+      # allows spaces and trailing punctuation
+      DOI_TEXT_REGEX = /
+                         ( \A | \s | #{PUNCT} | #{Regexp.escape(URI_PREFIX)} )  # a DOI must begin with whitespace, punctuation or a URI
+                         (?<doi>
+                           10\.                         # All DOIs start with '10.'
+                           #{DOI_PREFIX_CHAR}+          # The prefix is anything without a slash
+                           \/                           # At least one slash
+                           #{DOI_CHAR}*                 # Any character is acceptable in a DOI
+                           #{DOI_END_CHAR}              # Don't end with punctuation or white space
+                          )
+                       /iox
+
+      # For testing a string that is a complete DOI URL we can use a more relaxed regex
+      DOI_URL_REGEX =/\A
+                      #{Regexp.escape(URI_PREFIX)}   # URL Prefix
+                      (?<doi>
+                        10\.                         # All DOIs start with '10.'
+                        [^\/]+                       # The prefix is anything without a slash
+                        \/                           # At least one slash
+                        .+                           # Any character is acceptable in a DOI
+                      )
+                      \z /iox
+
+      PREFIX_PROVIDER_MAP = load_provider_prefixes
 
     end
   end
