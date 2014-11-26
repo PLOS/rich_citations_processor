@@ -64,7 +64,7 @@ module RichCitationsProcessor
 
         subject.resolve!
 
-        expect( references.first.candidate_uris).to eq([])
+        expect( references.first.candidate_uris).to be_empty
       end
 
       it "should not fetch references that exist but don't have a link" do
@@ -73,7 +73,7 @@ module RichCitationsProcessor
 
         subject.resolve!
 
-        expect( references.first.candidate_uris).to eq([])
+        expect( references.first.candidate_uris).to be_empty
       end
 
       it "should not add references that don't have a DOI" do
@@ -82,7 +82,7 @@ module RichCitationsProcessor
 
         subject.resolve!
 
-        expect( references.first.candidate_uris).to eq([])
+        expect( references.first.candidate_uris).to be_empty
       end
 
       it "should only fetch the HTML page once" do
@@ -96,8 +96,8 @@ module RichCitationsProcessor
 
         subject.resolve!
 
-        expect( references.first.candidate_uris).to eq([])
-        expect( references.second.candidate_uris).to eq([])
+        expect( references.first.candidate_uris).to be_empty
+        expect( references.second.candidate_uris).to be_empty
       end
 
     end
