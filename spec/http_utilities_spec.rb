@@ -117,7 +117,7 @@ module RichCitationsProcessor
 
         it "should raise an exception" do
           stub_request(http_method, 'http://www.example.com/path').to_return(status:404).times(1)
-          expect { action('http://www.example.com/path', 'application/custom') }.to raise_exception(Net::HTTPServerException)
+          expect(action('http://www.example.com/path', 'application/custom')).to be_nil
         end
 
       end
@@ -131,7 +131,7 @@ module RichCitationsProcessor
           expect(HTTPUtilities).to receive(:sleep).with(15)
           expect(HTTPUtilities).to_not receive(:sleep)
 
-          expect { action('http://www.example.com/path') }.to raise_exception(Net::HTTPFatalError)
+          expect(action('http://www.example.com/path')).to be_nil
         end
 
         it "should succeed during a retry" do
@@ -139,7 +139,6 @@ module RichCitationsProcessor
                                                                    to_return(body:'Kalamazoo!')
           expect(HTTPUtilities).to receive(:sleep).with( 5)
           expect(HTTPUtilities).to_not receive(:sleep)
-
           result = action('http://www.example.com/path')
           expect(result).to eq('Kalamazoo!')
         end
@@ -149,7 +148,7 @@ module RichCitationsProcessor
       describe "redirects" do
 
         it "should follow a location header if provided" do
-          stub_request(http_method, 'http://url1.example.com/path').to_return(headers:{'Location'=>'http://url2.example.com/path'})
+          stub_request(http_method, 'http://url1.example.com/path').to_return(status: 301, headers:{'Location'=>'http://url2.example.com/path'})
           stub_request(http_method, 'http://url2.example.com/path').to_return(body:'Content')
 
           result = action('http://url1.example.com/path')
@@ -157,7 +156,7 @@ module RichCitationsProcessor
         end
 
         it "should follow relative redirects" do
-          stub_request(http_method, 'http://url1.example.com/path/abc' ).to_return(headers:{'Location'=>'def'})
+          stub_request(http_method, 'http://url1.example.com/path/abc' ).to_return(status: 301, headers:{'Location'=>'def'})
           stub_request(http_method, 'http://url1.example.com/path/def').to_return(body:'Content')
 
           result = action('http://url1.example.com/path/abc')
@@ -165,7 +164,7 @@ module RichCitationsProcessor
         end
 
         it "should follow root relative redirects" do
-          stub_request(http_method, 'http://url1.example.com/path/abc').to_return(headers:{'Location'=>'/def'})
+          stub_request(http_method, 'http://url1.example.com/path/abc').to_return(status: 301, headers:{'Location'=>'/def'})
           stub_request(http_method, 'http://url1.example.com/def'     ).to_return(body:'Content')
 
           result = action('http://url1.example.com/path/abc')
@@ -173,9 +172,9 @@ module RichCitationsProcessor
         end
 
         it "should redirect up to 3 times" do
-          stub_request(http_method, 'http://url1.example.com/path').to_return(headers:{'Location'=>'http://url2.example.com/path'})
-          stub_request(http_method, 'http://url2.example.com/path').to_return(headers:{'Location'=>'http://url3.example.com/path'})
-          stub_request(http_method, 'http://url3.example.com/path').to_return(headers:{'Location'=>'http://url4.example.com/path'})
+          stub_request(http_method, 'http://url1.example.com/path').to_return(status: 301, headers:{'Location'=>'http://url2.example.com/path'})
+          stub_request(http_method, 'http://url2.example.com/path').to_return(status: 301, headers:{'Location'=>'http://url3.example.com/path'})
+          stub_request(http_method, 'http://url3.example.com/path').to_return(status: 301, headers:{'Location'=>'http://url4.example.com/path'})
           stub_request(http_method, 'http://url4.example.com/path').to_return(body:'Content')
 
           result = action('http://url1.example.com/path')
@@ -183,19 +182,19 @@ module RichCitationsProcessor
         end
 
         it "should fail on over 3 redirects" do
-          stub_request(http_method, 'http://url1.example.com/path').to_return(headers:{'Location'=>'http://url2.example.com/path'})
-          stub_request(http_method, 'http://url2.example.com/path').to_return(headers:{'Location'=>'http://url3.example.com/path'})
-          stub_request(http_method, 'http://url3.example.com/path').to_return(headers:{'Location'=>'http://url4.example.com/path'})
-          stub_request(http_method, 'http://url4.example.com/path').to_return(headers:{'Location'=>'http://url5.example.com/path'})
+          stub_request(http_method, 'http://url1.example.com/path').to_return(status: 301, headers:{'Location'=>'http://url2.example.com/path'})
+          stub_request(http_method, 'http://url2.example.com/path').to_return(status: 301, headers:{'Location'=>'http://url3.example.com/path'})
+          stub_request(http_method, 'http://url3.example.com/path').to_return(status: 301, headers:{'Location'=>'http://url4.example.com/path'})
+          stub_request(http_method, 'http://url4.example.com/path').to_return(status: 301, headers:{'Location'=>'http://url5.example.com/path'})
 
-          expect { action('http://url1.example.com/path') }.to raise_exception(Net::HTTPFatalError, "Too many redirects") { |ex| expect(ex.response).to eq(508) }
+          expect { action('http://url1.example.com/path') }.to raise_exception(HTTPClient::BadResponseError, 'retry count exceeded')
         end
 
         it "should fail on recursive redirects" do
-          stub_request(http_method, 'http://url1.example.com/path').to_return(headers:{'Location'=>'http://url2.example.com/path'})
-          stub_request(http_method, 'http://url2.example.com/path').to_return(headers:{'Location'=>'http://url1.example.com/path'})
+          stub_request(http_method, 'http://url1.example.com/path').to_return(status: 301, headers: { 'Location'=>'http://url2.example.com/path'})
+          stub_request(http_method, 'http://url2.example.com/path').to_return(status: 301, headers: { 'Location'=>'http://url1.example.com/path'})
 
-          expect { action('http://url1.example.com/path') }.to raise_exception(Net::HTTPFatalError, "Recursive redirect") { |ex| expect(ex.response).to eq(508) }
+          expect { action('http://url1.example.com/path') }.to raise_exception(HTTPClient::BadResponseError, 'retry count exceeded')
         end
 
       end
