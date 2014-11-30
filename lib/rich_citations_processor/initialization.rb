@@ -29,4 +29,5 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.acronym('PLOS')
   inflect.acronym('NLM')
   inflect.acronym('DOI')
+  inflect.acronym('ISBN')
 end

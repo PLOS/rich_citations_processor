@@ -30,13 +30,13 @@ module RichCitationsProcessor
       end
 
       def self.from_uri(url, **attributes)
-        match = DOI_URL_REGEX.match(url)
+        match = URL_REGEX.match(url)
         match && new(match['doi'], **attributes)
       end
 
       # Returns an array of URIs
       def self.from_text(text, **attributes)
-        matches = DOI_TEXT_REGEX.all_matches(text)
+        matches = TEXT_REGEX.all_matches(text)
         matches && matches.map do |match| new( match['doi'], **attributes) end
       end
 
@@ -71,7 +71,8 @@ module RichCitationsProcessor
         end.to_h
       end
 
-      URI_PREFIX       = 'http://dx.doi.org/'
+      URI_PREFIX        = 'http://dx.doi.org/'
+      URI_PREFIX_REGEX  = 'https?:\/\/dx\.doi\.org\/'
 
       DOI_PREFIX_CHAR  = %q{[^\/[[:space:]]]}
       DOI_CHAR         = %q{[^[[:space:]]'"]}
@@ -79,8 +80,8 @@ module RichCitationsProcessor
 
       # For extracting DOIs from text we have to be stricter than the DOI spec which
       # allows spaces and trailing punctuation
-      DOI_TEXT_REGEX = /
-                         ( \A | \s | #{PUNCT} | #{Regexp.escape(URI_PREFIX)} )  # a DOI must begin with whitespace, punctuation or a URI
+      TEXT_REGEX =     /
+                         ( \A | \s | #{PUNCT} | #{URI_PREFIX_REGEX} )  # a DOI must begin with whitespace, punctuation or a URI
                          (?<doi>
                            10\.                         # All DOIs start with '10.'
                            #{DOI_PREFIX_CHAR}+          # The prefix is anything without a slash
@@ -91,8 +92,8 @@ module RichCitationsProcessor
                        /iox
 
       # For testing a string that is a complete DOI URL we can use a more relaxed regex
-      DOI_URL_REGEX =/\A
-                      #{Regexp.escape(URI_PREFIX)}   # URL Prefix
+      URL_REGEX     = /\A
+                      #{URI_PREFIX_REGEX}            # URL Prefix
                       (?<doi>
                         10\.                         # All DOIs start with '10.'
                         [^\/]+                       # The prefix is anything without a slash
