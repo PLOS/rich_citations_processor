@@ -48,20 +48,20 @@ module RichCitationsProcessor
     describe '#Lookup' do
 
       it 'can lookup the id class for a type' do
-        expect(URI.lookup('10.1234/5678',  type: :doi)).to eq( URI::DOI)
-        expect(URI.lookup!('10.1234/5678', type: :doi)).to eq( URI::DOI)
+        expect(URI.lookup(:doi)).to eq( URI::DOI)
+        expect(URI.lookup!(:doi)).to eq( URI::DOI)
       end
 
       it 'can lookup the id with a string' do
-        expect(URI.lookup('10.1234/5678',  type:'doi')).to eq( URI::DOI)
+        expect(URI.lookup('doi')).to eq( URI::DOI)
       end
 
       it 'returns nil if the id type is not found' do
-        expect( URI.lookup('unknown', type:'anything') ).to be_nil
+        expect( URI.lookup('anything') ).to be_nil
       end
 
       it 'raises an exception if the id type is not found' do
-        expect{ URI.lookup!('unknown', type:'anything') }.to raise_exception
+        expect{ URI.lookup!('anything') }.to raise_exception
       end
 
     end

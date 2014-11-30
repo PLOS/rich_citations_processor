@@ -25,8 +25,8 @@ module RichCitationsProcessor
 
     class ISBN < Base
 
-      def self.matches?(identifier, type:)
-        type == :isbn
+      def self.types
+        [:isbn]
       end
 
       def self.from_uri(url, **attributes)

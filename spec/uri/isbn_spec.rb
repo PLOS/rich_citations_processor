@@ -24,14 +24,6 @@ module RichCitationsProcessor
 
   RSpec.describe URI::ISBN do
 
-    describe '::matches?' do
-
-      it "should match with symbols" do
-        expect( URI::ISBN.matches?('absolutely anything', type: :isbn) ).to be_truthy
-      end
-
-    end
-
     describe '::from_uri' do
 
       it "should parse an ISBN from a URL" do

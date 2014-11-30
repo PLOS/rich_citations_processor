@@ -25,8 +25,8 @@ module RichCitationsProcessor
 
     class DOI < Base
 
-      def self.matches?(identifier, type:)
-        type == :doi
+      def self.types
+        [:doi]
       end
 
       def self.from_uri(url, **attributes)

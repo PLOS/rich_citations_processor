@@ -20,6 +20,10 @@
 
 class TestURI < RichCitationsProcessor::URI::DOI
 
+  def self.types
+    []
+  end
+
   def initialize(identifier, source:'test', **extended)
     super(identifier, source:source, **extended)
   end

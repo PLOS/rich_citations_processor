@@ -24,7 +24,7 @@ module RichCitationsProcessor
   module URI
 
     class Test < Base
-      def self.matches?(*); false; end
+      def self.types; [:foo]; end
       def full_uri; "uri://#{identifier}"; end
       public :identifier
     end

@@ -26,7 +26,7 @@ module RichCitationsProcessor
       attr_reader :extended
 
       #@todo Not really happy with this. It would be good to find something more flexible
-      def self.matches?(identifier, type:)
+      def self.types
         method_not_implemented_error
       end
 

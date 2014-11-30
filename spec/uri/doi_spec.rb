@@ -24,14 +24,6 @@ module RichCitationsProcessor
 
   RSpec.describe URI::DOI do
 
-    describe '::matches?' do
-
-      it "should match with symbols" do
-        expect( URI::DOI.matches?('absolutely anything', type: :doi) ).to be_truthy
-      end
-
-    end
-
     describe '::from_uri' do
 
       it "should parse a DOI from a URL" do
