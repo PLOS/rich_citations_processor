@@ -19,6 +19,7 @@
 # THE SOFTWARE.
 
 require 'spec_helper'
+require_relative 'shared'
 require 'support/builders/nlm'
 
 module RichCitationsProcessor
@@ -28,6 +29,9 @@ module RichCitationsProcessor
 
     let (:parser) { Parsers::NLM.new(xml) }
     let (:paper)  { parser.parse! }
+    subject { parser }
+
+    it_should_behave_like 'a parser'
 
     describe "Parsing" do
 

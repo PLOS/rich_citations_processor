@@ -19,6 +19,7 @@
 # THE SOFTWARE.
 
 require 'spec_helper'
+require_relative 'shared'
 
 module RichCitationsProcessor
   module URIResolvers
@@ -34,6 +35,8 @@ module RichCitationsProcessor
       end
       let(:references) do paper.references end
       let(:ref ) do references.first end
+
+      it_should_behave_like 'a resolver'
 
       it "should extract a reference from href attributes" do
         ref.text = '<span><a href="http://dx.doi.org/10.1/23">text</a></span>'

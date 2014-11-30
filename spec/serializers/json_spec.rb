@@ -19,6 +19,7 @@
 # THE SOFTWARE.
 
 require 'spec_helper'
+require_relative 'shared'
 
 module RichCitationsProcessor
 
@@ -27,6 +28,8 @@ module RichCitationsProcessor
     let(:paper) { Models::CitingPaper.new }
     subject { Serializers::JSON.new(paper) }
     let(:json) { MultiJson.load( subject.serialize ) }
+
+    it_should_behave_like 'a serializer'
 
     describe "paper info" do
 

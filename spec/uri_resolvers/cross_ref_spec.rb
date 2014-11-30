@@ -19,6 +19,7 @@
 # THE SOFTWARE.
 
 require 'spec_helper'
+require_relative 'shared'
 
 module RichCitationsProcessor
   module URIResolvers
@@ -39,6 +40,8 @@ module RichCitationsProcessor
       def expect_request(body = {'query_ok' => false})
         stub_request(:post, 'http://search.crossref.org/links').to_return(body: body.to_json)
       end
+
+      it_should_behave_like 'a resolver'
 
       it "should call the crossref API" do
         expect_request.with(body: '["cite 1","cite 2"]').times(1)

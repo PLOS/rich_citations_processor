@@ -19,6 +19,7 @@
 # THE SOFTWARE.
 
 require 'spec_helper'
+require_relative 'shared'
 
 module RichCitationsProcessor
   module URIResolvers
@@ -35,6 +36,8 @@ module RichCitationsProcessor
         p
       end
       let(:references) do paper.references end
+
+      it_should_behave_like 'a resolver'
 
       def expect_request
         stub_request(:get, 'http://dx.doi.org/10.1371/journal.pone.0046843').

@@ -19,10 +19,15 @@
 # THE SOFTWARE.
 
 require 'spec_helper'
+require_relative 'shared'
 
 module RichCitationsProcessor
 
   RSpec.describe URI::DOI do
+
+    subject { described_class.new('identifier', source:'test') }
+    
+    it_should_behave_like 'a parseable uri'
 
     describe '::from_uri' do
 
