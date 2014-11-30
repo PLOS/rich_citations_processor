@@ -25,6 +25,7 @@ module RichCitationsProcessor
 
     class Test < Base
       def self.types; [:foo]; end
+      def self.priority; 999_999_999; end
       def full_uri; "uri://#{identifier}"; end
       public :identifier
     end

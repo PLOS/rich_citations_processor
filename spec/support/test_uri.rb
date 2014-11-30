@@ -24,6 +24,10 @@ class TestURI < RichCitationsProcessor::URI::DOI
     []
   end
 
+  def self.priority
+    999_999_999
+  end
+
   def initialize(identifier, source:'test', **extended)
     super(identifier, source:source, **extended)
   end

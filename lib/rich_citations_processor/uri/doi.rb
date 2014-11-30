@@ -29,6 +29,10 @@ module RichCitationsProcessor
         [:doi]
       end
 
+      def self.priority
+        100
+      end
+
       def self.from_uri(url, **attributes)
         match = URL_REGEX.match(url)
         match && new(match['doi'], **attributes)

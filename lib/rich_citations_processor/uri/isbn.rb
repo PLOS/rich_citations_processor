@@ -29,6 +29,10 @@ module RichCitationsProcessor
         [:isbn]
       end
 
+      def self.priority
+        200
+      end
+
       def self.from_uri(url, **attributes)
         match = URL_REGEX.match(url)
         match && new( match['isbn'], **attributes)
