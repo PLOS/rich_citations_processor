@@ -38,7 +38,7 @@ module RichCitationsProcessor
           @@loaded_classes << id_class
         end
 
-        def classes_that_can(method_name)
+        def classes_that_respond_to(method_name)
           classes.select do |klass| klass.respond_to?(method_name) end
         end
 

@@ -52,7 +52,7 @@ module RichCitationsProcessor::Models
         instance = described_class.new(number:2, id:'ref-id-2', original_citation:'Citation')
         instance.cited_paper.uri = TestURI.new('10.1234/4567', source:'crossref')
 
-        expect(instance.inspect).to eq('Reference: "ref-id-2" [2] Citation Groups:[] => Paper: [crossref] http://dx.doi.org/10.1234/4567')
+        expect(instance.inspect).to eq('Reference: "ref-id-2" [2] Citation Groups:[] => Paper: [crossref] api://namespace/10.1234/4567')
         expect(instance.inspect).to eq(instance.indented_inspect)
       end
 

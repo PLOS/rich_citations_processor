@@ -26,7 +26,7 @@ module RichCitationsProcessor
       protected
 
       def self.priority
-        10
+        100
       end
 
       def attempt?

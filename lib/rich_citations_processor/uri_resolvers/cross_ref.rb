@@ -26,7 +26,7 @@ module RichCitationsProcessor
       protected
 
       def self.priority
-        20
+        200
       end
 
       GROUP_SIZE=50

@@ -23,7 +23,7 @@ require 'spec_helper'
 module RichCitationsProcessor
   module URIResolvers
 
-    RSpec.describe DoiFromReference do
+    RSpec.describe UrisFromReference do
 
       subject do described_class.new( references:references, paper:paper) end
 
@@ -63,6 +63,49 @@ module RichCitationsProcessor
                                               'http://dx.doi.org/10.1/11',
                                               'http://dx.doi.org/10.1/33',
                                               'http://dx.doi.org/10.1/44',
+                                          ])
+      end
+
+      it "should extract references of different types from hrefs" do
+        ref.text = '<span> <a href="http://dx.doi.org/10.1/22">22</a> <a href="http://isbn.openlibrary.org/1234567890123">22</a> </span>'
+
+        subject.resolve!
+
+        expect( ref.candidate_uris).to eq([
+                                              'http://dx.doi.org/10.1/22',
+                                              'http://isbn.openlibrary.org/1234567890123',
+                                          ])
+      end
+
+      it "should extract references of different types from text" do
+        ref.text = '.. http://dx.doi.org/10.1/22  isbn:1234567890123...'
+
+        subject.resolve!
+
+        expect( ref.candidate_uris).to eq([
+                                              'http://dx.doi.org/10.1/22',
+                                              'http://isbn.openlibrary.org/1234567890123',
+                                          ])
+      end
+
+      it "should extract mixed references of different types from text and href" do
+        ref.text = '<span>.. <a href="http://dx.doi.org/10.1/22">  isbn:1234567890123 </a>...</span>'
+
+        subject.resolve!
+
+        expect( ref.candidate_uris).to eq([
+                                              'http://dx.doi.org/10.1/22',
+                                              'http://isbn.openlibrary.org/1234567890123',
+                                          ])
+      end
+
+      it "should only add a reference a single time" do
+        ref.text = '<span> some text 10.1/11 <a href="http://dx.doi.org/10.1/11">http://dx.doi.org/10.1/11</a> http://dx.doi.org/10.1/11 </span>'
+
+        subject.resolve!
+
+        expect( ref.candidate_uris).to eq([
+                                              'http://dx.doi.org/10.1/11',
                                           ])
       end
 

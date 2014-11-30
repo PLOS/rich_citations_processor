@@ -41,7 +41,7 @@ module RichCitationsProcessor::URIResolvers
         expect( Registry.resolver_classes ).to eq([
                                                      DoiFromPlosHtml,
                                                      CrossRef,
-                                                     DoiFromReference
+                                                     UrisFromReference
                                                   ])
 
 

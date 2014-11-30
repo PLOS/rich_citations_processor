@@ -21,7 +21,7 @@
 module RichCitationsProcessor
   module URIResolvers
 
-    class DoiFromReference < Base
+    class UrisFromReference < Base
 
       def resolve!
         filtered_references.each do |ref| resolve_reference(ref) end
@@ -30,27 +30,52 @@ module RichCitationsProcessor
       protected
 
       def self.priority
-        30
+        10000
       end
 
       def resolve_reference(ref)
         fragment = Nokogiri::HTML::DocumentFragment.parse(ref.original_citation)
 
-        # Find URIs in href attributes
-        nodes = fragment.xpath('.//*[@href]')
-        nodes.each do |node|
-          href = node['href'].to_s
-          uri = URI::DOI.from_uri(href, source:'reference')
-          ref.add_candidate_uri(uri)
-        end
-
-        # Find URIs in the text
-        text = fragment.text
-        uris = URI::DOI.from_text(text, source:'reference')
-        uris && uris.each do |uri| ref.add_candidate_uri(uri) end
+        resolve_from_href(ref, fragment)
+        resolve_from_text(ref, fragment.text)
       end
 
       private
+
+      # Find URIs in href attributes
+      def resolve_from_href(ref, fragment)
+        href_nodes = fragment.xpath('.//*[@href]')
+        uri_classes = uri_classes_that_can_parse_uris
+
+        uri_classes.each do |uri_class|
+          href_nodes.each do |node|
+            href_value = node['href'].to_s
+
+            uri = uri_class.from_uri(href_value, source:'reference')
+            ref.add_candidate_uri(uri)
+
+          end
+        end
+      end
+
+      # Find URIs in the text
+      def resolve_from_text(ref, text)
+        uri_classes = uri_classes_that_can_parse_text
+
+        uri_classes.each do |uri_class|
+          uris = uri_class.from_text(text, source:'reference')
+          uris && uris.each do |uri| ref.add_candidate_uri(uri) end
+        end
+
+      end
+
+      def uri_classes_that_can_parse_text
+        URI::Registry.classes_that_respond_to(:from_text)
+      end
+
+      def uri_classes_that_can_parse_uris
+        URI::Registry.classes_that_respond_to(:from_uri)
+      end
 
     end
   end

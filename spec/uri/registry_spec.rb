@@ -93,7 +93,7 @@ module RichCitationsProcessor::URI
 
     end
 
-    describe "#classes_that_can" do
+    describe "#classes_that_respond_to" do
 
       before do
         Registry.reset!
@@ -104,7 +104,7 @@ module RichCitationsProcessor::URI
 
       it "should sort URIs by priority" do
         allow(Registry).to receive(:load_classes).and_return( [Class1, Class5, Class9, Class2, Class3] )
-        expect(Registry.classes_that_can(:foo)).to eq([Class1, Class9])
+        expect(Registry.classes_that_respond_to(:foo)).to eq([Class1, Class9])
       end
 
     end

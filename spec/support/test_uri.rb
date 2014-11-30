@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-class TestURI < RichCitationsProcessor::URI::DOI
+class TestURI < RichCitationsProcessor::URI::Base
 
   def self.types
     []
@@ -36,7 +36,7 @@ class TestURI < RichCitationsProcessor::URI::DOI
     if identifier.include?('://')
       identifier
     else
-      super
+      "api://namespace/#{identifier}"
     end
   end
 
