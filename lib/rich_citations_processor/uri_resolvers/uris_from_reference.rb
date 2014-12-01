@@ -18,6 +18,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+
+# This resolver attempts to find any type of parseable URI
+# From a reference href attributes and text
+
 module RichCitationsProcessor
   module URIResolvers
 

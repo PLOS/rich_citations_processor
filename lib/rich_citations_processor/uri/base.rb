@@ -18,6 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+# To be parseable a URI must implement ::from_uri and ::from_text
+
 module RichCitationsProcessor
   module URI
 

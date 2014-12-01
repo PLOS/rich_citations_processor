@@ -18,7 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'yaml'
+# Note: We don't validate ISBN checksums in any way
+#   (except for recalculating them when converting to ISBN13)
 
 module RichCitationsProcessor
   module URI
