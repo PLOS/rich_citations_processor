@@ -29,7 +29,7 @@ module RichCitationsProcessor
       let(:document) { '<root/>' }
 
       it "should create a parser" do
-        expect( Parsers.create('application/nlm+xml', document) ).to be_an_instance_of(Parsers::NLM)
+        expect( Parsers.create('application/jats+xml', document) ).to be_an_instance_of(Parsers::JATS)
       end
 
       it "should return nil if a parser could not be created" do

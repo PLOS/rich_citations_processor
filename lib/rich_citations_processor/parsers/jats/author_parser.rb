@@ -21,7 +21,7 @@
 
 module RichCitationsProcessor
   module Parsers
-    class NLM
+    class JATS
       class AuthorParser
 
         attr_reader :document

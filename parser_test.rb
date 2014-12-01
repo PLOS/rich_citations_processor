@@ -40,7 +40,7 @@ doi = ARGV.last || DOI
 start_time = Time.now
 puts "Starting at ----------------- #{start_time}"
 
-xml = r = RichCitationsProcessor::API::PLOS.get_nlm_document( doi )
+xml = r = RichCitationsProcessor::API::PLOS.get_jats_document( doi )
 
 # r = xml.css('ref-list')
 # r = xml.css('body')
@@ -48,7 +48,7 @@ xml = r = RichCitationsProcessor::API::PLOS.get_nlm_document( doi )
 
 # info = PaperParser.parse_xml(xml)
 
-parser = RichCitationsProcessor::Parsers.create('application/nlm+xml', xml)
+parser = RichCitationsProcessor::Parsers.create('application/jats+xml', xml)
 paper = parser.parse!
 
 if paper

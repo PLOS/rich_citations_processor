@@ -27,7 +27,7 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.acronym('URI')
 
   inflect.acronym('PLOS')
-  inflect.acronym('NLM')
+  inflect.acronym('JATS')
   inflect.acronym('DOI')
   inflect.acronym('ISBN')
 end

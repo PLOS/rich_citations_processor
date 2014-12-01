@@ -20,7 +20,7 @@
 
 module RichCitationsProcessor
   module Parsers
-    class NLM
+    class JATS
       class CitationGroupParser < CitationGrouper
 
         attr_reader :document

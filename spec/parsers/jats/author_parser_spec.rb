@@ -19,14 +19,14 @@
 # THE SOFTWARE.
 
 require 'spec_helper'
-require 'support/builders/nlm'
+require 'support/builders/jats'
 
 module RichCitationsProcessor
 
-  RSpec.describe Parsers::NLM::AuthorParser do
-    include Spec::Builders::NLM
+  RSpec.describe Parsers::JATS::AuthorParser do
+    include Spec::Builders::JATS
 
-    let (:parser) { Parsers::NLM.new(xml) }
+    let (:parser) { Parsers::JATS.new(xml) }
     let (:paper)  { parser.parse! }
 
     let (:authors) { paper.authors }

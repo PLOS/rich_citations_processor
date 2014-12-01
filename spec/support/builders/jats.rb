@@ -21,7 +21,7 @@
 module Spec
   module Builders
 
-    module NLM
+    module JATS
 
       def parts
         @parts ||= {}

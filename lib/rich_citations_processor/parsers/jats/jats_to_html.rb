@@ -24,7 +24,7 @@ require 'loofah'
 
 module RichCitationsProcessor
   module Parsers
-    class NLM
+    class JATS
 
       class JatsToHtml < Loofah::Scrubbers::Strip
 

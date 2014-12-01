@@ -14,7 +14,7 @@ Add this line to your application's Gemfile:
 
 A source (text document is passed through a series of steps:
 
-1. Parsing: The document is parsed from its source format (For example an XML document conforming to a NLM DTD)
+1. Parsing: The document is parsed from its source format (For example an XML document conforming to a JATS/NLM DTD)
 and turned into a set of internal object representations that closely match the Rich Citations JSON structure.
 If you want to support a new import format then you probably just want to write a new parser.
 
@@ -33,10 +33,10 @@ metadata for each reference. This metadata conforms to the citeproc+json standar
 Sample code would be something along the lines of:
 
 ```
-  nlm_xml    = get_nlm_document_from_some_service
-  parser     = RichCitationsProcessor::Parsers::NLM.new(nlm_xml)
+  jats_xml   = get_jats_or_nlm_document_from_some_service
+  parser     = RichCitationsProcessor::Parsers::JATS.new(jats_xml)
   -- or by mime type ---
-  parser     = RichCitationsProcessor::Parsers.create('application/nlm+xml', nlm_xml)
+  parser     = RichCitationsProcessor::Parsers.create('application/jats+xml', jats_xml)
 
   paper      = parser.parse!
 

@@ -23,14 +23,16 @@ require 'nokogiri'
 module RichCitationsProcessor
   module Parsers
 
-    class NLM < Base
+    class JATS < Base
       attr_reader :paper
       attr_reader :document
 
       def self.mime_types
         [
+          'application/jats+xml',
           'application/nlm+xml',
-          'application/vnd.nlm+xml'
+          'application/vnd.jats+xml',
+          'application/vnd.nlm+xml',
         ]
       end
 
