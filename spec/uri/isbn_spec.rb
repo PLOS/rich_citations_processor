@@ -156,6 +156,11 @@ module RichCitationsProcessor
         expect( uri.isbn_10 ).to eq('3161484107')
       end
 
+      it "should convert an ISBN 10 to upperase" do
+        uri = URI::ISBN.new('3-16-148410-x', source:'test')
+        expect( uri.isbn_10 ).to eq('316148410X')
+      end
+
       it "should calculate the isbn 10" do
         uri = URI::ISBN.new('978-030640615-9', source:'test')
         expect( uri.isbn_10 ).to eq('0306406152')
