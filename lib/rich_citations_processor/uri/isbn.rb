@@ -103,8 +103,8 @@ module RichCitationsProcessor
       # 10 or 13 digits with optional hyphens
       ISBN_REGEX = '(\d{3}\-?)?(\d\-?){9}(\d|X)'
 
-      URI_PREFIX       = 'http://isbn.openlibrary.org/'
-      URI_PREFIX_REGEX = 'https?:\/\/isbn\.openlibrary\.org\/'
+      URI_PREFIX       = 'urn:isbn:'
+      URI_PREFIX_REGEX = Regexp.escape(URI_PREFIX)
 
       TEXT_REGEX     = /
                          ( (#{URI_PREFIX_REGEX} ) | # an ISBN must begin with a URI or 'isbn:'

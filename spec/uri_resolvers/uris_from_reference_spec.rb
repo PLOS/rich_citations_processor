@@ -70,13 +70,13 @@ module RichCitationsProcessor
       end
 
       it "should extract references of different types from hrefs" do
-        ref.text = '<span> <a href="http://dx.doi.org/10.1/22">22</a> <a href="http://isbn.openlibrary.org/1234567890123">22</a> </span>'
+        ref.text = '<span> <a href="http://dx.doi.org/10.1/22">22</a> <a href="urn:isbn:1234567890123">22</a> </span>'
 
         subject.resolve!
 
         expect( ref.candidate_uris).to eq([
                                               'http://dx.doi.org/10.1/22',
-                                              'http://isbn.openlibrary.org/1234567890123',
+                                              'urn:isbn:1234567890123',
                                           ])
       end
 
@@ -87,7 +87,7 @@ module RichCitationsProcessor
 
         expect( ref.candidate_uris).to eq([
                                               'http://dx.doi.org/10.1/22',
-                                              'http://isbn.openlibrary.org/1234567890123',
+                                              'urn:isbn:1234567890123',
                                           ])
       end
 
@@ -98,7 +98,7 @@ module RichCitationsProcessor
 
         expect( ref.candidate_uris).to eq([
                                               'http://dx.doi.org/10.1/22',
-                                              'http://isbn.openlibrary.org/1234567890123',
+                                              'urn:isbn:1234567890123',
                                           ])
       end
 

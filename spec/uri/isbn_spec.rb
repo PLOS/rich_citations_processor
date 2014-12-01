@@ -32,13 +32,14 @@ module RichCitationsProcessor
     describe '::from_uri' do
 
       it "should parse an ISBN from a URL" do
-        uri = URI::ISBN.from_uri('http://isbn.openlibrary.org/10-123-4567-X', source:'foo')
+        uri = URI::ISBN.from_uri('urn:isbn:10-123-4567-X', source:'foo')
         expect(uri.raw_isbn).to eq('10-123-4567-X')
       end
 
       it "should return nil when an ISBN could not be parsed" do
-        expect( URI::ISBN.from_uri('http://isbn.openlibrary.org/10-123456') ).to be_nil
-        expect( URI::ISBN.from_uri('http://isbn.foo.org/10.123-4567-X') ).to be_nil
+        expect( URI::ISBN.from_uri('urn:isbn:10-123456') ).to be_nil
+        expect( URI::ISBN.from_uri('urn:foo:10.123-4567-X') ).to be_nil
+        expect( URI::ISBN.from_uri('urx:isbn:10-1234567X') ).to be_nil
         expect( URI::ISBN.from_uri('10-123-4567-X') ).to be_nil
         expect( URI::ISBN.from_uri('some text') ).to be_nil
       end
@@ -48,67 +49,67 @@ module RichCitationsProcessor
     describe '::from_text' do
 
       it "should parse a ISBN from text" do
-        uris = URI::ISBN.from_text('http://isbn.openlibrary.org/978-10-123-4567-X', source:'foo')
-        expect(uris).to eq( ['http://isbn.openlibrary.org/978101234567X'] )
+        uris = URI::ISBN.from_text('urn:isbn:978-10-123-4567-X', source:'foo')
+        expect(uris).to eq( ['urn:isbn:978101234567X'] )
       end
 
       it "should parse multiple ISBNs from text" do
-        uris = URI::ISBN.from_text('http://isbn.openlibrary.org/10-123-444-44 http://isbn.openlibrary.org/10-123-555-55', source:'foo')
-        expect(uris).to eq( ['http://isbn.openlibrary.org/9781012344443', 'http://isbn.openlibrary.org/9781012355555'] )
+        uris = URI::ISBN.from_text('urn:isbn:10-123-444-44 urn:isbn:10-123-555-55', source:'foo')
+        expect(uris).to eq( ['urn:isbn:9781012344443', 'urn:isbn:9781012355555'] )
       end
 
       it "should parse a ISBN 10 in URI format" do
-        uris = URI::ISBN.from_text('somethinghttp://isbn.openlibrary.org/10-123-4567-9', source:'foo')
-        expect(uris).to eq( ['http://isbn.openlibrary.org/9781012345679'] )
+        uris = URI::ISBN.from_text('somethingurn:isbn:10-123-4567-9', source:'foo')
+        expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
 
       it "should parse a ISBN 13 in URI format" do
-        uris = URI::ISBN.from_text('somethinghttp://isbn.openlibrary.org/978-10-123-4567-9', source:'foo')
-        expect(uris).to eq( ['http://isbn.openlibrary.org/9781012345679'] )
+        uris = URI::ISBN.from_text('somethingurn:isbn:978-10-123-4567-9', source:'foo')
+        expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
 
       it "should parse a ISBN 10 in prefix format" do
         uris = URI::ISBN.from_text('isbn: 10-123-4567-9', source:'foo')
-        expect(uris).to eq( ['http://isbn.openlibrary.org/9781012345679'] )
+        expect(uris).to eq( ['urn:isbn:9781012345679'] )
         uris = URI::ISBN.from_text('isbn:10-123-4567-9', source:'foo')
-        expect(uris).to eq( ['http://isbn.openlibrary.org/9781012345679'] )
+        expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
 
       it "should parse a ISBN 13 in prefix format" do
         uris = URI::ISBN.from_text('isbn: 978-10-123-4567-9', source:'foo')
-        expect(uris).to eq( ['http://isbn.openlibrary.org/9781012345679'] )
+        expect(uris).to eq( ['urn:isbn:9781012345679'] )
         uris = URI::ISBN.from_text('isbn:978-10-123-4567-9', source:'foo')
-        expect(uris).to eq( ['http://isbn.openlibrary.org/9781012345679'] )
+        expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
 
       it "should parse a ISBN in prefix format at the start of a string" do
         uris = URI::ISBN.from_text('isbn:10-123-4567-9', source:'foo')
-        expect(uris).to eq( ['http://isbn.openlibrary.org/9781012345679'] )
+        expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
       
       it "should parse a ISBN in prefix format after white-space" do
         uris = URI::ISBN.from_text(' isbn:10-123-4567-9', source:'foo')
-        expect(uris).to eq( ['http://isbn.openlibrary.org/9781012345679'] )
+        expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
       
       it "should parse a ISBN in prefix format after punctuation" do
         uris = URI::ISBN.from_text('.isbn:10-123-4567-9', source:'foo')
-        expect(uris).to eq( ['http://isbn.openlibrary.org/9781012345679'] )
+        expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
       
       it "should parse a ISBN in prefix format at the end of a string" do
         uris = URI::ISBN.from_text('isbn:10-123-4567-9', source:'foo')
-        expect(uris).to eq( ['http://isbn.openlibrary.org/9781012345679'] )
+        expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
       
       it "should parse a ISBN in prefix format ended by white-space" do
         uris = URI::ISBN.from_text('isbn:10-123-4567-9 ', source:'foo')
-        expect(uris).to eq( ['http://isbn.openlibrary.org/9781012345679'] )
+        expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
       
       it "should parse a ISBN in prefix format ended by punctuation" do
         uris = URI::ISBN.from_text('isbn:10-123-4567-9? But then there were', source:'foo')
-        expect(uris).to eq( ['http://isbn.openlibrary.org/9781012345679'] )
+        expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
       
       it "should return nil when a ISBN could not be parsed" do
@@ -121,7 +122,7 @@ module RichCitationsProcessor
 
       it "should return the full uri as an ISBN 13 without dashes" do
         uri = URI::ISBN.new('123-456-789-X', source:'test')
-        expect( uri.full_uri ).to eq('http://isbn.openlibrary.org/9781234567897')
+        expect( uri.full_uri ).to eq('urn:isbn:9781234567897')
       end
 
     end
