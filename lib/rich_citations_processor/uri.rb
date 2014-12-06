@@ -26,17 +26,46 @@ module RichCitationsProcessor
     extend self
 
     # Create a URI based on an identifier
-    def create(identifier, type:, source:, **extended)
-      klass = lookup(identifier, type:type)
-      klass && klass.new(identifier, source:source, **extended)
+    def create(identifier, type:)
+      klass = lookup(type)
+      klass && klass.new(identifier)
     end
 
-    def lookup(identifier, type:)
-      Registry.lookup(identifier, type:type)
+    def add_metadata(uri, **metadata)
+      Wrapper.add_metadata(uri, **metadata)
     end
 
-    def lookup!(identifier, type:)
-      Registry.lookup!(identifier, type:type)
+    def from_uri(uri)
+      classes_that_can_parse_uris.each do |uri_class|
+        instance = uri_class.from_uri(uri)
+        return instance if instance
+      end
+
+      nil
+    end
+
+    def from_text(text)
+      classes_that_can_parse_text.flat_map do |uri_class|
+        uri_class.from_text(text) || []
+      end
+    end
+
+    def lookup(type)
+      Registry.lookup(type)
+    end
+
+    def lookup!(type)
+      Registry.lookup!(type)
+    end
+
+    private
+
+    def classes_that_can_parse_uris
+      @uri_parsers ||= Registry.classes_that_respond_to(:from_uri)
+    end
+
+    def classes_that_can_parse_text
+      @text_parsers ||= Registry.classes_that_respond_to(:from_text)
     end
 
   end

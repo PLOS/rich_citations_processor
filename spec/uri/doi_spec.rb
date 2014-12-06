@@ -19,15 +19,106 @@
 # THE SOFTWARE.
 
 require 'spec_helper'
+require_relative 'shared'
 
 module RichCitationsProcessor
 
   RSpec.describe URI::DOI do
 
-    describe '#matches?' do
+    subject { described_class.new('identifier') }
+    
+    it_should_behave_like 'a parseable uri'
 
-      it "should match with symbols" do
-        expect( URI::DOI.matches?('absolutely anything', type: :doi) ).to be_truthy
+    describe '::new' do
+
+      it "create a DOI from a plain identifier" do
+        uri = URI::DOI.new('10.123/456')
+        expect(uri.doi).to eq('10.123/456')
+        expect(uri.full_uri).to eq('http://dx.doi.org/10.123/456')
+      end
+
+      it "create a DOI from a URL" do
+        uri = URI::DOI.new('http://dx.doi.org/10.123/456')
+        expect(uri.doi).to eq('10.123/456')
+        expect(uri.full_uri).to eq('http://dx.doi.org/10.123/456')
+      end
+
+    end
+
+    describe '::from_uri' do
+
+      it "should parse a DOI from a URL" do
+        uri = URI::DOI.from_uri('http://dx.doi.org/10.123/456')
+        expect(uri.doi).to eq('10.123/456')
+      end
+
+      it "should return nil when a DOI could not be parsed" do
+        expect( URI::DOI.from_uri('http://dx.doi.org/10.123456') ).to be_nil
+        expect( URI::DOI.from_uri('http://dx.foo.org/10.123/456') ).to be_nil
+        expect( URI::DOI.from_uri('10.123/456') ).to be_nil
+        expect( URI::DOI.from_uri('some text') ).to be_nil
+      end
+
+    end
+
+    describe '::from_text' do
+
+      it "should parse a DOI from text" do
+        uris = URI::DOI.from_text('http://dx.doi.org/10.123/456')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse multiple DOIs from text" do
+        uris = URI::DOI.from_text('http://dx.doi.org/10.123/444 http://dx.doi.org/10.123/555')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/444', 'http://dx.doi.org/10.123/555'] )
+      end
+
+      it "should parse a DOI in URI format" do
+        uris = URI::DOI.from_text('somethinghttp://dx.doi.org/10.123/456')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse a DOI in bare format at the start of a string" do
+        uris = URI::DOI.from_text('10.123/456')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse a DOI in bare format after white-space" do
+        uris = URI::DOI.from_text('text 10.123/456')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse a DOI in bare format after punctuation" do
+        uris = URI::DOI.from_text('Did he go?10.123/456')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse a DOI in bare format at the end of a string" do
+        uris = URI::DOI.from_text('10.123/456')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse a DOI in bare format ended by white-space" do
+        uris = URI::DOI.from_text('10.123/456 some text')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse a DOI in bare format ended by" do
+        uris = URI::DOI.from_text('10.123/456: But then there were')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/456'] )
+      end
+
+      it "should parse a DOI containing puncutation" do
+        uris = URI::DOI.from_text('10.123/4.5+6%7: But then there were')
+        expect(uris).to eq( ['http://dx.doi.org/10.123/4.5+6%7'] )
+      end
+
+      it "should return nil when a DOI could not be parsed" do
+        expect( URI::DOI.from_text('some text without a DOI') ).to be_nil
+      end
+
+      it "should not match some similar doi URLs" do
+        expect( URI::DOI.from_text('x10.123/4567.890 ') ).to be_nil
       end
 
     end
@@ -35,7 +126,7 @@ module RichCitationsProcessor
     describe '#full_uri' do
 
       it "should return the full uri" do
-        uri = URI::DOI.new('10.123/456', source:'test')
+        uri = URI::DOI.new('10.123/456')
         expect( uri.full_uri ).to eq('http://dx.doi.org/10.123/456')
       end
 
@@ -44,7 +135,7 @@ module RichCitationsProcessor
     describe '#doi' do
 
       it "should return the doi" do
-        uri = URI::DOI.new('10.123/456', source:'test')
+        uri = URI::DOI.new('10.123/456')
         expect( uri.doi ).to eq('10.123/456')
       end
 
@@ -53,7 +144,7 @@ module RichCitationsProcessor
     describe '#prefix' do
 
       it "should return the doi prefix" do
-        uri = URI::DOI.new('10.123/456', source:'test')
+        uri = URI::DOI.new('10.123/456')
         expect( uri.prefix ).to eq('10.123')
       end
 
@@ -62,12 +153,12 @@ module RichCitationsProcessor
     describe '#provider' do
 
       it "should match based on a symbol" do
-        uri = URI::DOI.new('10.1371/456', source:'test')
+        uri = URI::DOI.new('10.1371/456')
         expect( uri.provider ).to eq(:plos)
       end
 
       it "should return nil if its not known" do
-        uri = URI::DOI.new('10.0000/456', source:'test')
+        uri = URI::DOI.new('10.0000/456')
         expect( uri.provider ).to be_nil
       end
 

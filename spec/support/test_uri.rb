@@ -18,18 +18,28 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-class TestURI < RichCitationsProcessor::URI::DOI
+class TestURI < RichCitationsProcessor::URI::Base
 
-  def initialize(identifier, source:'test', **extended)
-    super(identifier, source:source, **extended)
+  def self.types
+    []
+  end
+
+  def self.priority
+    999_999_999
   end
 
   def full_uri
     if identifier.include?('://')
       identifier
     else
-      super
+      "uri://namespace/#{identifier}"
     end
   end
+
+  def wrap(**metadata)
+    RichCitationsProcessor::URI.add_metadata(self, source:'test', **metadata)
+  end
+
+  public :identifier
 
 end

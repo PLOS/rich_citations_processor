@@ -19,6 +19,7 @@
 # THE SOFTWARE.
 
 require 'spec_helper'
+require_relative 'shared'
 
 module RichCitationsProcessor
   module URIResolvers
@@ -29,12 +30,14 @@ module RichCitationsProcessor
 
       let(:paper) do
         p = Models::CitingPaper.new
-        p.uri = URI::DOI.new('10.1371/journal.pone.0046843', source:'test')
+        p.uri = URI::DOI.new('10.1371/journal.pone.0046843')
         p.references.add(id:'pone.0032408-Fisher1')
         p.references.add(id:'pone.0032408-Hartter1')
         p
       end
       let(:references) do paper.references end
+
+      it_should_behave_like 'a resolver'
 
       def expect_request
         stub_request(:get, 'http://dx.doi.org/10.1371/journal.pone.0046843').
@@ -55,7 +58,7 @@ module RichCitationsProcessor
 
         subject.resolve!
 
-        expect( references.first.candidate_uris.first.source).to eq('plos_html')
+        expect( references.first.candidate_uris.first.source).to eq('plos-html')
       end
 
       it "should not add references that aren't found" do
@@ -64,7 +67,7 @@ module RichCitationsProcessor
 
         subject.resolve!
 
-        expect( references.first.candidate_uris).to eq([])
+        expect( references.first.candidate_uris).to be_empty
       end
 
       it "should not fetch references that exist but don't have a link" do
@@ -73,7 +76,7 @@ module RichCitationsProcessor
 
         subject.resolve!
 
-        expect( references.first.candidate_uris).to eq([])
+        expect( references.first.candidate_uris).to be_empty
       end
 
       it "should not add references that don't have a DOI" do
@@ -82,7 +85,7 @@ module RichCitationsProcessor
 
         subject.resolve!
 
-        expect( references.first.candidate_uris).to eq([])
+        expect( references.first.candidate_uris).to be_empty
       end
 
       it "should only fetch the HTML page once" do
@@ -92,12 +95,12 @@ module RichCitationsProcessor
       end
 
       it "should not do anything for non PLOS DOIs" do
-        paper.uri = URI::DOI.new('10.9999/journal.pone.0046843', source:'test')
+        paper.uri = URI::DOI.new('10.9999/journal.pone.0046843')
 
         subject.resolve!
 
-        expect( references.first.candidate_uris).to eq([])
-        expect( references.second.candidate_uris).to eq([])
+        expect( references.first.candidate_uris).to be_empty
+        expect( references.second.candidate_uris).to be_empty
       end
 
     end

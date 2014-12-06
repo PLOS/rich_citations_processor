@@ -20,24 +20,20 @@
 
 require 'spec_helper'
 
-module RichCitationsProcessor
+RSpec.shared_examples 'a parser' do
 
-  RSpec.describe Parsers do
+  it "should respond to a class interface" do
+    expect(described_class).to respond_to(:mime_types)
+  end
 
-    describe '#create' do
+  it "the class should return a list of mime types" do
+    expect(described_class.mime_types).to be_a(Array)
+    expect(described_class.mime_types.first).to match(/\w+\/\w+/)
+  end
 
-      let(:document) { '<root/>' }
-
-      it "should create a parser" do
-        expect( Parsers.create('application/jats+xml', document) ).to be_an_instance_of(Parsers::JATS)
-      end
-
-      it "should return nil if a parser could not be created" do
-        expect( Parsers.create('unknown/unknown', document) ).to be_nil
-      end
-
-    end
-
+  it "should respond to an interface" do
+    expect(subject).to respond_to(:parse!)
   end
 
 end
+

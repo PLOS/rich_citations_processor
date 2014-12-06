@@ -20,24 +20,8 @@
 
 require 'spec_helper'
 
-module RichCitationsProcessor
+RSpec.shared_examples 'a resolver' do
 
-  RSpec.describe Parsers do
-
-    describe '#create' do
-
-      let(:document) { '<root/>' }
-
-      it "should create a parser" do
-        expect( Parsers.create('application/jats+xml', document) ).to be_an_instance_of(Parsers::JATS)
-      end
-
-      it "should return nil if a parser could not be created" do
-        expect( Parsers.create('unknown/unknown', document) ).to be_nil
-      end
-
-    end
-
-  end
+  it { is_expected.to respond_to(:resolve!) }
 
 end

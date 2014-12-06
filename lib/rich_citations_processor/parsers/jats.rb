@@ -23,14 +23,16 @@ require 'nokogiri'
 module RichCitationsProcessor
   module Parsers
 
-    class NLM < Base
+    class JATS < Base
       attr_reader :paper
       attr_reader :document
 
       def self.mime_types
         [
+          'application/jats+xml',
           'application/nlm+xml',
-          'application/vnd.nlm+xml'
+          'application/vnd.jats+xml',
+          'application/vnd.nlm+xml',
         ]
       end
 
@@ -61,7 +63,8 @@ module RichCitationsProcessor
         paper.uri = identifier_nodes.lazy.map do |node|
           type  = node['pub-id-type']
           ident = node.text.strip
-          URI.create(ident, type:type, source:'document')
+          uri = URI.create(ident, type:type)
+          uri && URI.add_metadata(uri, source:'document')
         end.find(&:present?)
 
       end

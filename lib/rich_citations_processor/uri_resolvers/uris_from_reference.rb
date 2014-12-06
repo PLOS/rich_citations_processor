@@ -18,61 +18,54 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-module Spec
-  module Builders
 
-    module NLM
+# This resolver attempts to find any type of parseable URI
+# From a reference href attributes and text
 
-      def parts
-        @parts ||= {}
+# This could be split into two resolvers (from reference href and from reference text)
+
+module RichCitationsProcessor
+  module URIResolvers
+
+    class UrisFromReference < Base
+
+      def resolve!
+        filtered_references.each do |ref| resolve_reference(ref) end
       end
 
-      def article_id(id, type=:doi)
-        nodes = parts[:id_nodes] ||= ''
-        nodes <<  "<article-id pub-id-type='#{type}'>#{id}</article-id>"
+      protected
+
+      def self.priority
+        10000
       end
 
-      def id_nodes(nodes)
-        parts[:id_nodes] = nodes
+      def resolve_reference(ref)
+        fragment = Nokogiri::HTML::DocumentFragment.parse(ref.original_citation)
+
+        resolve_from_href(ref, fragment)
+        resolve_from_text(ref, fragment.text)
       end
 
-      def refs(*refs)
-        (parts[:refs] ||= []).concat(refs)
-      end
+      private
 
-      def meta (meta)
-        (parts[:meta] ||= '') << meta
-      end
+      # Find URIs in href attributes
+      def resolve_from_href(ref, fragment)
+        href_nodes = fragment.xpath('.//*[@href]')
 
-      def body (body)
-        (parts[:body] ||= '') << body
-      end
-
-      def cite(number)
-        "<xref ref-type='bibr' rid='ref-#{number}'>[#{number}]</xref>"
-      end
-
-      def ref_nodes
-        if parts[:refs]
-          parts[:refs].map.with_index{ |r,i| "<ref id='ref-#{i+1}'>#{r}</ref>" }.join
+        href_nodes.each do |node|
+          href_value = node['href'].to_s
+          uri = URI.from_uri(href_value)
+          ref.add_candidate_uri(uri, source:'reference-href')
         end
       end
 
-      def xml
-        xml = <<-EOS
-          <root>
-            <front>
-              #{parts[:id_nodes]}
-              <article-meta>#{parts[:meta]}</article-meta>
-            </front>
-            <body>#{parts[:body]}</body>
-            <back>
-              <ref-list>#{ref_nodes}</ref-list>
-            </back>
-          </root>
-        EOS
+      # Find URIs in the text
+      def resolve_from_text(ref, text)
+        uris = URI.from_text(text)
 
-        Nokogiri::XML::Document.parse(xml)
+        uris.each do |uri|
+          ref.add_candidate_uri(uri, source:'reference-text')
+        end
       end
 
     end

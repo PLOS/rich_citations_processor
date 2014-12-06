@@ -18,22 +18,19 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+# To be parseable a URI must implement ::from_uri and ::from_text
+
 module RichCitationsProcessor
   module URI
 
     class Base
-      attr_reader :source
-      attr_reader :extended
 
-      #@todo Not really happy with this. It would be good to find something more flexible
-      def self.matches?(identifier, type:)
+      def self.types
         method_not_implemented_error
       end
 
-      def initialize(identifier, source:, **extended)
+      def initialize(identifier)
         @identifier = identifier
-        @source     = source
-        @extended   = extended
       end
 
       def full_uri
@@ -41,15 +38,15 @@ module RichCitationsProcessor
       end
 
       def ==(other)
-        case other
-          when Base
+        case
+          when other.respond_to?(:full_uri)
             self.class == other.class && self.full_uri == other.full_uri
 
-          when String
+          when String === other
             full_uri == other
 
           else
-            raise "Unable to compare URI with #{other.class}"
+            # raise "Unable to compare URI with #{other.class}"
 
         end
       end
@@ -59,17 +56,22 @@ module RichCitationsProcessor
       end
 
       def inspect
-        suffix = ' [' + extended.map{ |k,v| "#{k}:#{v.nil? ? 'nil' : v}"}.join(';') + ']' if extended.present?
-        "[#{source}] #{full_uri}#{suffix}"
+        full_uri
       end
 
       def to_s
+        full_uri
+      end
+      def to_uri
         full_uri
       end
 
       protected
 
       attr_reader :identifier
+
+      PUNCT              = %q{[\]'"`.,:;?!)\-\/]}  # Posix [[:punct:]] regex is more liberal than we want
+      NOT_PUNCT_OR_SPACE = %q{[^\]'"`.,>[[:space:]]:;?!)\-\/]}
 
       private
 

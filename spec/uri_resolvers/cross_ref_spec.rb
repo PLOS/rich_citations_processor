@@ -19,6 +19,7 @@
 # THE SOFTWARE.
 
 require 'spec_helper'
+require_relative 'shared'
 
 module RichCitationsProcessor
   module URIResolvers
@@ -29,7 +30,7 @@ module RichCitationsProcessor
 
       let(:paper) do
         p = Models::CitingPaper.new
-        p.uri = URI::DOI.new('10.1371/journal.pone.0046843', source:'test')
+        p.uri = URI::DOI.new('10.1371/journal.pone.0046843')
         p.references.add(id:'red1', original_citation:'cite 1')
         p.references.add(id:'ref2', original_citation:'cite 2')
         p
@@ -39,6 +40,8 @@ module RichCitationsProcessor
       def expect_request(body = {'query_ok' => false})
         stub_request(:post, 'http://search.crossref.org/links').to_return(body: body.to_json)
       end
+
+      it_should_behave_like 'a resolver'
 
       it "should call the crossref API" do
         expect_request.with(body: '["cite 1","cite 2"]').times(1)
@@ -79,7 +82,7 @@ module RichCitationsProcessor
 
         subject.resolve!
 
-        expect( references.first.candidate_uris.first.extended).to eq(score:5.6733)
+        expect( references.first.candidate_uris.first.metadata).to eq(score:5.6733)
       end
 
       it "should do nothing if query_ok is false" do
@@ -130,7 +133,7 @@ module RichCitationsProcessor
       end
 
       it "should not attempt to fetch references that have already been fetched" do
-        references.first.candidate_uris.add( URI::DOI.new('10.1234/5678', source:'anywhere'))
+        references.first.candidate_uris.add( URI::DOI.new('10.1234/5678'), source:'test')
 
         expect_request.with(body: '["cite 2"]')
 

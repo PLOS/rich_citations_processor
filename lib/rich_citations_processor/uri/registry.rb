@@ -25,36 +25,66 @@ module RichCitationsProcessor
 
       class << self
 
-        def lookup(identifier, type:)
-          load_classes unless @@classes_loaded
+        def lookup(type)
           type = type.to_sym
-          @@classes.find do |klass| klass.matches?(identifier, type:type) end
+          classes.find do |klass| klass.types.include?(type) end
         end
 
-        def lookup!(identifier, type:)
-          lookup(identifier, type:type) || raise("Unable to locate URI type for #{type.inspect}:#{identifier.inspect}")
+        def lookup!(type)
+          lookup(type) || raise("Unable to locate URI type for #{type.inspect}:#{identifier.inspect}")
         end
 
         def add(id_class)
-          @@classes << id_class
+          @@loaded_classes << id_class
+        end
+
+        def classes_that_respond_to(method_name)
+          classes.select do |klass| klass.respond_to?(method_name) end
+        end
+
+        def classes
+          if !@@prioritized_classes
+            classes = load_classes
+            @@prioritized_classes = prioritize_classes(classes)
+          end
+
+          @@prioritized_classes
+        end
+
+        # for testing
+        def reset!
+          @@prioritized_classes = nil
         end
 
         private
 
         # Load all the files in this directory to populate the Registry
         def load_classes
-          return if @@classes_loaded
+          return @@loaded_classes if @@classes_loaded
+
           path = File.join( File.dirname(__FILE__), '*.rb')
           Dir[path].each do |file|
             ActiveSupport::Dependencies.require_or_load(file)
           end
           @@classes_loaded = true
+
+          @@loaded_classes
         end
 
         private
 
-        @@classes = []
+        def prioritize_classes(classes)
+          classes =  classes.sort! do |a,b|
+            v = a.priority <=> b.priority
+            v==0 ? a.name <=> b.name : v
+          end
+
+          classes
+        end
+
         @@classes_loaded = false
+        @@loaded_classes = []
+        @@prioritized_classes = nil
 
       end
 

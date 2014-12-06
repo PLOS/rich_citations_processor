@@ -20,24 +20,30 @@
 
 require 'spec_helper'
 
-module RichCitationsProcessor
+RSpec.shared_examples 'a uri' do
 
-  RSpec.describe Parsers do
+  it "should respond to a class interface" do
+    expect(described_class).to respond_to(:types, :priority)
+  end
 
-    describe '#create' do
 
-      let(:document) { '<root/>' }
+  it "the class should return a list of types" do
+    expect(described_class.types).to be_a(Array)
+    expect(described_class.types.first).to be_a(Symbol)
+  end
 
-      it "should create a parser" do
-        expect( Parsers.create('application/jats+xml', document) ).to be_an_instance_of(Parsers::JATS)
-      end
+  it "should respond to an interface" do
+    expect(subject).to respond_to(:full_uri)
+  end
 
-      it "should return nil if a parser could not be created" do
-        expect( Parsers.create('unknown/unknown', document) ).to be_nil
-      end
+end
 
-    end
+RSpec.shared_examples 'a parseable uri' do
 
+  it_should_behave_like 'a uri'
+
+  it "should respond to a class interface" do
+    expect(described_class).to respond_to(:from_uri, :from_text)
   end
 
 end

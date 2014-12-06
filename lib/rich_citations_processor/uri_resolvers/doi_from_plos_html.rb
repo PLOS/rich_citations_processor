@@ -26,7 +26,7 @@ module RichCitationsProcessor
       protected
 
       def self.priority
-        10
+        100
       end
 
       def attempt?
@@ -42,7 +42,13 @@ module RichCitationsProcessor
 
         doi = links_node.first['data-doi']
 
-        doi && URI::DOI.new(doi, source:'plos_html')
+        doi && URI::DOI.new(doi)
+      end
+
+      protected
+
+      def source
+        'plos-html'
       end
 
       private

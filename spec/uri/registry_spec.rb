@@ -20,27 +20,91 @@
 
 require 'spec_helper'
 
-module RichCitationsProcessor
+module RichCitationsProcessor::URI
 
-  RSpec.describe URI::Registry do
+  RSpec.describe Registry do
+
+    class Class1; def self.priority; 1; end; def self.foo; end end
+    class Class5; def self.priority; 2; end; def self.bar; end end
+    class Class9; def self.priority; 3; end; def self.foo; end end
+
+    class Class2; def self.priority; 3; end; def foo; end; end
+    class Class3; def self.priority; 3; end; def bar; end; end
 
     describe '#Lookup' do
 
       it 'can lookup the id class for a type' do
-        expect(URI::Registry.lookup('10.1234/5678',  type: :doi)).to eq( URI::DOI)
-        expect(URI::Registry.lookup!('10.1234/5678', type: :doi)).to eq( URI::DOI)
+        expect(Registry.lookup(:doi)).to eq( DOI)
+        expect(Registry.lookup!(:doi)).to eq( DOI)
       end
 
       it 'can lookup the id with a string' do
-        expect(URI::Registry.lookup('10.1234/5678',  type:'doi')).to eq( URI::DOI)
+        expect(Registry.lookup('doi')).to eq( DOI)
       end
 
       it 'returns nil if the id type is not found' do
-        expect( URI::Registry.lookup('unknown', type:'anything') ).to be_nil
+        expect( Registry.lookup('anything') ).to be_nil
       end
 
       it 'raises an exception if the id type is not found' do
-        expect{ URI::Registry.lookup!('unknown', type:'anything') }.to raise_exception
+        expect{ Registry.lookup!('anything') }.to raise_exception
+      end
+
+    end
+
+    describe "#classes" do
+
+      before do
+        Registry.reset!
+      end
+      after do
+        Registry.reset!
+      end
+
+      it "should return a list of URI classes" do
+        expect( Registry.classes ).to eq([
+                                              DOI,
+                                              ISBN,
+                                              Test,
+                                              TestURI,
+                                         ] )
+      end
+
+      it "should sort URIs by priority" do
+        allow(Registry).to receive(:load_classes).and_return( [Class1, Class5, Class9] )
+        expect(Registry.classes).to eq([Class1, Class5, Class9])
+
+        allow(Registry).to receive(:load_classes).and_return( [Class9, Class5, Class1] )
+        expect(Registry.classes).to eq([Class1, Class5, Class9])
+      end
+
+      it "should sort URIs by name" do
+        allow(Registry).to receive(:load_classes).and_return( [Class1, Class2, Class3] )
+        expect(Registry.classes).to eq([Class1, Class2, Class3])
+
+        allow(Registry).to receive(:load_classes).and_return( [Class3, Class2, Class1] )
+        expect(Registry.classes).to eq([Class1, Class2, Class3])
+      end
+
+      it "should sort by priority before name" do
+        allow(Registry).to receive(:load_classes).and_return( [Class9, Class5, Class3, Class2, Class1] )
+        expect(Registry.classes).to eq([Class1, Class5, Class2, Class3, Class9])
+      end
+
+    end
+
+    describe "#classes_that_respond_to" do
+
+      before do
+        Registry.reset!
+      end
+      after do
+        Registry.reset!
+      end
+
+      it "should sort URIs by priority" do
+        allow(Registry).to receive(:load_classes).and_return( [Class1, Class5, Class9, Class2, Class3] )
+        expect(Registry.classes_that_respond_to(:foo)).to eq([Class1, Class9])
       end
 
     end

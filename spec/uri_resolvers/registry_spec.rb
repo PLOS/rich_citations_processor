@@ -40,7 +40,8 @@ module RichCitationsProcessor::URIResolvers
       it "should return a list of URIResolver classes" do
         expect( Registry.resolver_classes ).to eq([
                                                      DoiFromPlosHtml,
-                                                     CrossRef
+                                                     CrossRef,
+                                                     UrisFromReference
                                                   ])
 
 

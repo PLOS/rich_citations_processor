@@ -19,35 +19,39 @@
 # THE SOFTWARE.
 
 require 'spec_helper'
-require 'support/builders/nlm'
+require_relative 'shared'
+require 'support/builders/jats'
 
 module RichCitationsProcessor
 
-  RSpec.describe Parsers::NLM do
-    include Spec::Builders::NLM
+  RSpec.describe Parsers::JATS do
+    include Spec::Builders::JATS
 
-    let (:parser) { Parsers::NLM.new(xml) }
+    let (:parser) { Parsers::JATS.new(xml) }
     let (:paper)  { parser.parse! }
+    subject { parser }
+
+    it_should_behave_like 'a parser'
 
     describe "Parsing" do
 
       it "should parse from a Nokogiri document" do
         expect(xml).to be_a_kind_of(Nokogiri::XML::Document)
-        parser = Parsers::NLM.new(xml)
+        parser = Parsers::JATS.new(xml)
         parser.parse!
       end
 
       it "should parse from a String document" do
         xmls = xml.to_s
-        parser = Parsers::NLM.new(xmls)
+        parser = Parsers::JATS.new(xmls)
         parser.parse!
       end
 
       it "should parse a real document" do
-        xml = get_fixture('journal.pone.0032408.nlm.xml')
+        xml = get_fixture('journal.pone.0032408.jats.xml')
         xml = Nokogiri::XML.parse(xml)
 
-        parser = RichCitationsProcessor::Parsers::NLM.new(xml)
+        parser = RichCitationsProcessor::Parsers::JATS.new(xml)
         paper = parser.parse!
         serializer = RichCitationsProcessor::Serializers::JSON.new(paper)
         result = serializer.as_structured_data
@@ -63,7 +67,7 @@ module RichCitationsProcessor
 
       it "Should parse out the identifier" do
         article_id '10.12345/1234.12345', :doi
-        expect(paper.uri).to eq(URI::DOI.new('10.12345/1234.12345', source:'document') )
+        expect(paper.uri).to eq(URI::DOI.new('10.12345/1234.12345') )
       end
 
       it "Should do nothing if there is no valid identifier" do
@@ -74,7 +78,7 @@ module RichCitationsProcessor
       it "Should take the first valid identifier" do
         article_id '10.12345/1234.12345', :unknown
         article_id '10.12345/1234.12345', :doi
-        expect(paper.uri).to eq(URI::DOI.new('10.12345/1234.12345', source:'document') )
+        expect(paper.uri).to eq(URI::DOI.new('10.12345/1234.12345') )
       end
 
       it "Should do nothing if there is no identifier to parse" do

@@ -31,8 +31,8 @@ module RichCitationsProcessor::Models
       end
 
       it "should accept uri and uri_source parameters" do
-        instance = described_class.new(uri: TestURI.new('http://example.com/a'))
-        expect(instance).to have_attributes(uri: TestURI.new('http://example.com/a'))
+        instance = described_class.new(uri: TestURI.new('http://example.com/a').wrap)
+        expect(instance).to have_attributes(uri: TestURI.new('http://example.com/a').wrap)
       end
 
     end
@@ -40,7 +40,7 @@ module RichCitationsProcessor::Models
     describe '#inspect' do
 
       it "should return a valid inspection" do
-        instance = described_class.new( uri: TestURI.new('http://example.com/a'))
+        instance = described_class.new( uri: TestURI.new('http://example.com/a').wrap)
         expect(instance.inspect).to eq('Paper: [test] http://example.com/a')
         expect(instance.inspect).to eq(instance.indented_inspect)
       end

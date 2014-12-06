@@ -26,6 +26,8 @@ module RichCitationsProcessor
       attr_accessor :number
       attr_accessor :original_citation
       attr_accessor :accessed_at
+      alias :text  :original_citation
+      alias :text= :original_citation=
 
       attr_reader :cited_paper
       attr_reader :citation_groups

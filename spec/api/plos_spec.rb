@@ -24,20 +24,20 @@ module RichCitationsProcessor
 
   RSpec.describe API::PLOS do
 
-    describe '::get_nlm_document' do
+    describe '::get_jats_document' do
 
       it "should call the api" do
         stub_request(:get, 'http://www.plosone.org/article/fetchObjectAttachment.action?uri=info:doi/10.1234/5678&representation=XML').
               with(headers:{'Accept'=>'application/xml'}).
               to_return(body:'<root/>')
-        result = API::PLOS.get_nlm_document('10.1234/5678')
+        result = API::PLOS.get_jats_document('10.1234/5678')
         expect(result).to be_a_kind_of(Nokogiri::XML::Node)
       end
 
       it "should eturn nil on a 500 error" do
         stub_request(:get, 'http://www.plosone.org/article/fetchObjectAttachment.action?uri=info:doi/10.1234/5678&representation=XML').
             to_return(status:500)
-        result = API::PLOS.get_nlm_document('10.1234/5678')
+        result = API::PLOS.get_jats_document('10.1234/5678')
         expect(result).to be_nil
       end
 
@@ -50,7 +50,17 @@ module RichCitationsProcessor
             with(headers:{'Accept'=>'text/html'}).
             to_return(body:'<html/>')
 
-        doi = URI::DOI.new('10.1234/5678', source:'test')
+        doi = URI::DOI.new('10.1234/5678')
+        result = API::PLOS.get_web_page(doi)
+        expect(result).to be_a_kind_of(Nokogiri::HTML::Document)
+      end
+
+      it "should call the api when passed a DOI with a url prefix" do
+        stub_request(:get, 'http://dx.doi.org/10.1234/5678').
+            with(headers:{'Accept'=>'text/html'}).
+            to_return(body:'<html/>')
+
+        doi = URI::DOI.new('http://dx.doi.org/10.1234/5678')
         result = API::PLOS.get_web_page(doi)
         expect(result).to be_a_kind_of(Nokogiri::HTML::Document)
       end

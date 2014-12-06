@@ -24,7 +24,8 @@ module RichCitationsProcessor
   module URI
 
     class Test < Base
-      def self.matches?(*); false; end
+      def self.types; [:foo]; end
+      def self.priority; 999_999_999; end
       def full_uri; "uri://#{identifier}"; end
       public :identifier
     end
@@ -33,18 +34,9 @@ module RichCitationsProcessor
 
         describe '::new' do
 
-          it "should accept an identifer and source" do
-            uri = URI::Test.new('some-identifier', source:'base')
-
+          it "should accept an identifer" do
+            uri = URI::Test.new('some-identifier')
             expect(uri.identifier).to eq('some-identifier')
-            expect(uri.source).to eq('base')
-            expect(uri.extended).to eq({})
-          end
-
-          it "should accept exteded data" do
-            uri = URI::Test.new('some-identifier', source:'base', more:'sample', score:2)
-
-            expect(uri.extended).to eq({more:'sample', score:2})
           end
 
         end
@@ -52,21 +44,8 @@ module RichCitationsProcessor
         describe "#inspect" do
 
           it "should inspect an instance with no extended data" do
-            uri = URI::Test.new('some-identifier', source:'base')
-
-            expect(uri.inspect).to eq('[base] uri://some-identifier')
-          end
-
-          it "should inspect an instance with extended data" do
-            uri = URI::Test.new('some-identifier', source:'base', more:'sample', score:2)
-
-            expect(uri.inspect).to eq('[base] uri://some-identifier [more:sample;score:2]')
-          end
-
-          it "should inspect extended data with nil values" do
-            uri = URI::Test.new('some-identifier', source:'base', more:nil)
-
-            expect(uri.inspect).to eq('[base] uri://some-identifier [more:nil]')
+            uri = URI::Test.new('some-identifier')
+            expect(uri.inspect).to eq('uri://some-identifier')
           end
 
         end

@@ -27,7 +27,7 @@ module RichCitationsProcessor
     describe '#Lookup' do
 
       it 'can lookup the parser class for a type' do
-        expect(Parsers::Registry.lookup('application/nlm+xml') ).to eq( Parsers::NLM)
+        expect(Parsers::Registry.lookup('application/jats+xml') ).to eq( Parsers::JATS)
       end
 
       it 'returns nil if a parser cannot found' do
