@@ -50,25 +50,6 @@ module RichCitationsProcessor
 
         end
 
-        describe "with_metadata" do
-
-          it "should return a wrapper" do
-            uri = URI::Test.new('some-identifier')
-            wrapper = uri.with_metadata(source:'foo')
-
-            expect(wrapper).to be_a_kind_of(Wrapper)
-            expect(wrapper.uri).to be(uri)
-          end
-
-          it "the wrapper should have a source and metadata" do
-            uri = URI::Test.new('some-identifier')
-            wrapper = uri.with_metadata(source:'foo', more:'sample')
-
-            expect(wrapper).to have_attributes(source:'foo', metadata:{more:'sample'})
-          end
-
-        end
-
       end
 
   end

@@ -36,8 +36,8 @@ class TestURI < RichCitationsProcessor::URI::Base
     end
   end
 
-  def wrap(**meta)
-    with_metadata(source:'test', **meta)
+  def wrap(**metadata)
+    RichCitationsProcessor::URI.add_metadata(self, source:'test', **metadata)
   end
 
   public :identifier

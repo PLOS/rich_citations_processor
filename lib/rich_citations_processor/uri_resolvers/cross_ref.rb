@@ -65,7 +65,8 @@ module RichCitationsProcessor
       end
 
       def uri_for_result(result)
-        URI::DOI.new(result['doi']).with_metadata(source:'crossref', score:result['score'])
+        doi = URI::DOI.new(result['doi'])
+        URI.add_metadata(doi, source:'crossref', score:result['score'])
       end
 
       def search_text_for(ref)

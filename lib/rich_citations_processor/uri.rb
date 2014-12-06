@@ -31,6 +31,10 @@ module RichCitationsProcessor
       klass && klass.new(identifier)
     end
 
+    def add_metadata(uri, **metadata)
+      Wrapper.add_metadata(uri, **metadata)
+    end
+
     def from_uri(uri)
       classes_that_can_parse_uris.each do |uri_class|
         instance = uri_class.from_uri(uri)

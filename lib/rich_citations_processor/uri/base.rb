@@ -38,28 +38,21 @@ module RichCitationsProcessor
       end
 
       def ==(other)
-        case other
-          when Base
+        case
+          when other.respond_to?(:full_uri)
             self.class == other.class && self.full_uri == other.full_uri
 
-          when Wrapper
-            other == self
-
-          when String
+          when String === other
             full_uri == other
 
           else
-            raise "Unable to compare URI with #{other.class}"
+            # raise "Unable to compare URI with #{other.class}"
 
         end
       end
 
       def as_json(options=nil)
         full_uri
-      end
-
-      def with_metadata(source:, **metadata)
-        Wrapper.new(self, source:source, **metadata)
       end
 
       def inspect

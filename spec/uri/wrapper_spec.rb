@@ -105,36 +105,6 @@ module RichCitationsProcessor
 
       end
 
-      describe '#with_metadata' do
-
-        it "should just return itself" do
-          uri = TestURI.new('1')
-          instance = URI::Wrapper.new( uri, source:'test', more:'sample')
-          new = instance.with_metadata
-
-          expect(new).to be(instance)
-        end
-
-        it "should take an optional source" do
-          uri = TestURI.new('1')
-          instance = URI::Wrapper.new( uri, source:'test', more:'sample')
-
-          new = instance.with_metadata(source:'bar')
-
-          expect(new.source).to eq('bar')
-        end
-
-        it "should merge metadata" do
-          uri = TestURI.new('1')
-          instance = URI::Wrapper.new( uri, source:'test', field1:'1-1', field2:'2-1')
-
-          new = instance.with_metadata( field2:'2-2', field3:'3-2')
-
-          expect(new.metadata).to eq(field1:'1-1', field2:'2-2', field3:'3-2')
-        end
-
-      end
-
       describe "#inspect" do
 
         it "should inspect an instance with no extended data" do

@@ -34,6 +34,26 @@ module RichCitationsProcessor
                :as_json,
            to: :uri
 
+      def self.add_metadata(uri, **attributes)
+        new(uri, **attributes)
+      end
+
+      def self.new(uri, source:nil, **metadata)
+
+        if uri.is_a?(Wrapper)
+          wrapper = uri
+          source ||= wrapper.source
+          raise ArgumentError.new('missing keyword: source') unless source
+          super(wrapper.uri, source:source, **wrapper.metadata.merge(metadata) )
+
+        else
+          raise ArgumentError.new('missing keyword: source') unless source
+          super
+
+        end
+
+      end
+
       def initialize(uri, source:, **metadata)
         @uri      = uri
         @source   = source
@@ -47,15 +67,6 @@ module RichCitationsProcessor
       def ==(other)
         other = other.uri if other.is_a?(Wrapper)
         uri.==(other)
-      end
-
-      def with_metadata(source:nil, **metadata)
-        source ||= @source
-        raise ArgumentError.new('missing keyword: source') unless source
-
-        @source = source
-        @metadata.merge!(metadata)
-        self
       end
 
       def inspect

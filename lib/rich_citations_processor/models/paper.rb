@@ -38,7 +38,7 @@ module RichCitationsProcessor
 
       def add_candidate_uri(uri, source:nil, **metadata)
         if uri
-          with_meta = uri.with_metadata(source:source, **metadata)
+          with_meta = URI.add_metadata(uri, source:source, **metadata)
           candidate_uris.add(with_meta)
         end
       end

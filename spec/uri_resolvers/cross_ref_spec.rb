@@ -133,7 +133,7 @@ module RichCitationsProcessor
       end
 
       it "should not attempt to fetch references that have already been fetched" do
-        references.first.candidate_uris.add( URI::DOI.new('10.1234/5678').with_metadata(source:'test'))
+        references.first.candidate_uris.add( URI::DOI.new('10.1234/5678'), source:'test')
 
         expect_request.with(body: '["cite 2"]')
 

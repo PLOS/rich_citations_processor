@@ -39,6 +39,62 @@ module RichCitationsProcessor
 
     end
 
+
+    describe '::add_metadata' do
+
+      describe "given a URI" do
+
+        it "should return a wrapper" do
+          uri = URI::Test.new('some-identifier')
+          wrapper = URI.add_metadata(uri, source:'foo')
+
+          expect(wrapper).to be_a_kind_of(URI::Wrapper)
+          expect(wrapper.uri).to be(uri)
+        end
+
+        it "the wrapper should have a source and metadata" do
+          uri = URI::Test.new('some-identifier')
+          wrapper = URI.add_metadata(uri, source:'foo', more:'sample')
+
+          expect(wrapper).to have_attributes(source:'foo', metadata:{more:'sample'})
+        end
+
+      end
+
+      describe "if it is given a wrapper" do
+
+        it "should keep the original uri" do
+          uri = TestURI.new('1')
+          instance = URI::Wrapper.new( uri, source:'test', more:'sample')
+          new = URI.add_metadata(instance)
+
+          expect(new.uri).to be(uri)
+        end
+
+        it "should take an optional source" do
+          uri = TestURI.new('1')
+          instance = URI::Wrapper.new( uri, source:'test', more:'sample')
+
+          new = URI.add_metadata(instance, source:'bar')
+          expect(new.source).to eq('bar')
+
+          new = URI.add_metadata(instance)
+          expect(new.source).to eq('test')
+        end
+
+        it "should merge metadata" do
+          uri = TestURI.new('1')
+          instance = URI::Wrapper.new( uri, source:'test', field1:'1-1', field2:'2-1')
+
+          new = new = URI.add_metadata(instance, field2:'2-2', field3:'3-2')
+
+          expect(new.metadata).to eq(field1:'1-1', field2:'2-2', field3:'3-2')
+        end
+
+      end
+
+    end
+
     describe '::Lookup' do
 
       it 'can lookup the id class for a type' do

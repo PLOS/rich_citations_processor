@@ -64,7 +64,7 @@ module RichCitationsProcessor
           type  = node['pub-id-type']
           ident = node.text.strip
           uri = URI.create(ident, type:type)
-          uri && uri.with_metadata(source:'document')
+          uri && URI.add_metadata(uri, source:'document')
         end.find(&:present?)
 
       end
