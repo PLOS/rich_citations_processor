@@ -33,8 +33,8 @@ module RichCitationsProcessor
         100
       end
 
-      def self.from_uri(url)
-        match = URL_REGEX.match(url)
+      def self.from_uri(uri)
+        match = URL_REGEX.match(uri)
         match && new(match['doi'])
       end
 

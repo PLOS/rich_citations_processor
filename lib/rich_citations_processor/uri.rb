@@ -31,12 +31,37 @@ module RichCitationsProcessor
       klass && klass.new(identifier)
     end
 
+    def from_uri(uri)
+      classes_that_can_parse_uris.each do |uri_class|
+        instance = uri_class.from_uri(uri)
+        return instance if instance
+      end
+
+      nil
+    end
+
+    def from_text(text)
+      classes_that_can_parse_text.flat_map do |uri_class|
+        uri_class.from_text(text) || []
+      end
+    end
+
     def lookup(type)
       Registry.lookup(type)
     end
 
     def lookup!(type)
       Registry.lookup!(type)
+    end
+
+    private
+
+    def classes_that_can_parse_uris
+      @uri_parsers ||= Registry.classes_that_respond_to(:from_uri)
+    end
+
+    def classes_that_can_parse_text
+      @text_parsers ||= Registry.classes_that_respond_to(:from_text)
     end
 
   end

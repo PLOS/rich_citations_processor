@@ -34,8 +34,8 @@ module RichCitationsProcessor
         200
       end
 
-      def self.from_uri(url)
-        match = URL_REGEX.match(url)
+      def self.from_uri(uri)
+        match = URL_REGEX.match(uri)
         match && new( match['isbn'])
       end
 

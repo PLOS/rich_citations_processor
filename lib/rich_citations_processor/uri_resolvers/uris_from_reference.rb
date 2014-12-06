@@ -22,6 +22,8 @@
 # This resolver attempts to find any type of parseable URI
 # From a reference href attributes and text
 
+# This could be split into two resolvers (from reference href and from reference text)
+
 module RichCitationsProcessor
   module URIResolvers
 
@@ -49,36 +51,21 @@ module RichCitationsProcessor
       # Find URIs in href attributes
       def resolve_from_href(ref, fragment)
         href_nodes = fragment.xpath('.//*[@href]')
-        uri_classes = uri_classes_that_can_parse_uris
 
-        uri_classes.each do |uri_class|
-          href_nodes.each do |node|
-            href_value = node['href'].to_s
-
-            uri = uri_class.from_uri(href_value)
-            ref.add_candidate_uri(uri, source:'reference-href')
-
-          end
+        href_nodes.each do |node|
+          href_value = node['href'].to_s
+          uri = URI.from_uri(href_value)
+          ref.add_candidate_uri(uri, source:'reference-href')
         end
       end
 
       # Find URIs in the text
       def resolve_from_text(ref, text)
-        uri_classes = uri_classes_that_can_parse_text
+        uris = URI.from_text(text)
 
-        uri_classes.each do |uri_class|
-          uris = uri_class.from_text(text)
-          uris && uris.each do |uri| ref.add_candidate_uri(uri, source:'reference-text') end
+        uris.each do |uri|
+          ref.add_candidate_uri(uri, source:'reference-text')
         end
-
-      end
-
-      def uri_classes_that_can_parse_text
-        URI::Registry.classes_that_respond_to(:from_text)
-      end
-
-      def uri_classes_that_can_parse_uris
-        URI::Registry.classes_that_respond_to(:from_uri)
       end
 
     end

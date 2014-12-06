@@ -47,6 +47,15 @@ module RichCitationsProcessor
         expect(ref.candidate_uris.first.source).to eq('reference-href')
       end
 
+      it "should extract a references from multiple href attributes" do
+        ref.text = '<span><a href="http://dx.doi.org/10.1/23">text</a><a href="http://dx.doi.org/10.1/45">text</a></span>'
+
+        subject.resolve!
+
+        expect( ref.candidate_uris).to eq(['http://dx.doi.org/10.1/23','http://dx.doi.org/10.1/45'])
+        expect(ref.candidate_uris.first.source).to eq('reference-href')
+      end
+
       it "should extract a reference from the text" do
         ref.text = 'some text containing a doi 10.1/23 ...">text</a></span>'
 
@@ -56,13 +65,23 @@ module RichCitationsProcessor
         expect(ref.candidate_uris.first.source).to eq('reference-text')
       end
 
+      it "should extract multiple references from text" do
+        ref.text = 'some text containing a dois 10.1/23, 10.1/34 ...">text</a></span>'
+
+        subject.resolve!
+
+        expect( ref.candidate_uris).to eq(['http://dx.doi.org/10.1/23', 'http://dx.doi.org/10.1/34'])
+        expect(ref.candidate_uris.first.source).to eq('reference-text')
+      end
+
       it "should extract multiple references with href's first" do
-        ref.text = '<span> some text 10.1/11 <a href="http://dx.doi.org/10.1/22">http://dx.doi.org/10.1/33</a> http://dx.doi.org/10.1/44 </span>'
+        ref.text = '<span> some text 10.1/11 <a href="http://dx.doi.org/10.1/22">http://dx.doi.org/10.1/33</a> http://dx.doi.org/10.1/44 <a href="http://dx.doi.org/10.1/55"></a></span>'
 
         subject.resolve!
 
         expect( ref.candidate_uris).to eq([
                                               'http://dx.doi.org/10.1/22',
+                                              'http://dx.doi.org/10.1/55',
                                               'http://dx.doi.org/10.1/11',
                                               'http://dx.doi.org/10.1/33',
                                               'http://dx.doi.org/10.1/44',
