@@ -33,15 +33,20 @@ module RichCitationsProcessor
         100
       end
 
-      def self.from_uri(url, **attributes)
+      def self.from_uri(url)
         match = URL_REGEX.match(url)
-        match && new(match['doi'], **attributes)
+        match && new(match['doi'])
       end
 
       # Returns an array of URIs
-      def self.from_text(text, **attributes)
+      def self.from_text(text)
         matches = TEXT_REGEX.all_matches(text)
-        matches && matches.map do |match| new( match['doi'], **attributes) end
+        matches && matches.map do |match| new( match['doi']) end
+      end
+
+      def initialize(identifier)
+        identifier = identifier.sub(URI_PREFIX,'')
+        super(identifier)
       end
 
       def doi
@@ -76,7 +81,7 @@ module RichCitationsProcessor
       end
 
       URI_PREFIX        = 'http://dx.doi.org/'
-      URI_PREFIX_REGEX  = 'https?:\/\/dx\.doi\.org\/'
+      URI_PREFIX_REGEX  = /https?:\/\/dx\.doi\.org\//
 
       DOI_PREFIX_CHAR  = %q{[^\/[[:space:]]]}
       DOI_CHAR         = %q{[^[[:space:]]'"]}

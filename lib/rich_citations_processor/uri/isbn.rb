@@ -34,15 +34,20 @@ module RichCitationsProcessor
         200
       end
 
-      def self.from_uri(url, **attributes)
+      def self.from_uri(url)
         match = URL_REGEX.match(url)
-        match && new( match['isbn'], **attributes)
+        match && new( match['isbn'])
       end
 
       # Returns an array of URIs
-      def self.from_text(text, **attributes)
+      def self.from_text(text)
         matches = TEXT_REGEX.all_matches(text)
-        matches && matches.map do |match| new( match['isbn'] , **attributes) end
+        matches && matches.map do |match| new( match['isbn']) end
+      end
+
+      def initialize(identifier)
+        identifier = identifier.sub(URI_PREFIX,'')
+        super(identifier)
       end
 
       def raw_isbn

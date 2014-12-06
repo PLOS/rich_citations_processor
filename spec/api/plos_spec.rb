@@ -50,7 +50,17 @@ module RichCitationsProcessor
             with(headers:{'Accept'=>'text/html'}).
             to_return(body:'<html/>')
 
-        doi = URI::DOI.new('10.1234/5678', source:'test')
+        doi = URI::DOI.new('10.1234/5678')
+        result = API::PLOS.get_web_page(doi)
+        expect(result).to be_a_kind_of(Nokogiri::HTML::Document)
+      end
+
+      it "should call the api when passed a DOI with a url prefix" do
+        stub_request(:get, 'http://dx.doi.org/10.1234/5678').
+            with(headers:{'Accept'=>'text/html'}).
+            to_return(body:'<html/>')
+
+        doi = URI::DOI.new('http://dx.doi.org/10.1234/5678')
         result = API::PLOS.get_web_page(doi)
         expect(result).to be_a_kind_of(Nokogiri::HTML::Document)
       end

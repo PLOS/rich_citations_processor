@@ -37,7 +37,7 @@ module RichCitationsProcessor
       end
 
       def self.get_web_page(doi)
-        doi = URI::DOI.new(doi, source:'internal') unless doi.is_a?(URI::Base)
+        doi = URI::DOI.new(doi) unless doi.respond_to?(:full_uri)
         HTTPUtilities.get(doi.full_uri, :html)
       end
 
