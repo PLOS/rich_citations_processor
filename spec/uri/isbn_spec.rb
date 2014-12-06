@@ -25,14 +25,30 @@ module RichCitationsProcessor
 
   RSpec.describe URI::ISBN do
 
-    subject { described_class.new('identifier', source:'test') }
+    subject { described_class.new('identifier') }
 
     it_should_behave_like 'a parseable uri'
+
+    describe '::new' do
+
+      it "create an ISBN from a plain identifier" do
+        uri = URI::ISBN.new('978-10-123-4567-X')
+        expect(uri.raw_isbn).to eq('978-10-123-4567-X')
+        expect(uri.full_uri).to eq('urn:isbn:978101234567X')
+      end
+
+      it "create an ISBN from a URL" do
+        uri = URI::ISBN.new('urn:isbn:978-10-123-4567-X')
+        expect(uri.raw_isbn).to eq('978-10-123-4567-X')
+        expect(uri.full_uri).to eq('urn:isbn:978101234567X')
+      end
+
+    end
 
     describe '::from_uri' do
 
       it "should parse an ISBN from a URL" do
-        uri = URI::ISBN.from_uri('urn:isbn:10-123-4567-X', source:'foo')
+        uri = URI::ISBN.from_uri('urn:isbn:10-123-4567-X')
         expect(uri.raw_isbn).to eq('10-123-4567-X')
       end
 
@@ -49,71 +65,71 @@ module RichCitationsProcessor
     describe '::from_text' do
 
       it "should parse a ISBN from text" do
-        uris = URI::ISBN.from_text('urn:isbn:978-10-123-4567-X', source:'foo')
+        uris = URI::ISBN.from_text('urn:isbn:978-10-123-4567-X')
         expect(uris).to eq( ['urn:isbn:978101234567X'] )
       end
 
       it "should parse multiple ISBNs from text" do
-        uris = URI::ISBN.from_text('urn:isbn:10-123-444-44 urn:isbn:10-123-555-55', source:'foo')
+        uris = URI::ISBN.from_text('urn:isbn:10-123-444-44 urn:isbn:10-123-555-55')
         expect(uris).to eq( ['urn:isbn:9781012344443', 'urn:isbn:9781012355555'] )
       end
 
       it "should parse a ISBN 10 in URI format" do
-        uris = URI::ISBN.from_text('somethingurn:isbn:10-123-4567-9', source:'foo')
+        uris = URI::ISBN.from_text('somethingurn:isbn:10-123-4567-9')
         expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
 
       it "should parse a ISBN 13 in URI format" do
-        uris = URI::ISBN.from_text('somethingurn:isbn:978-10-123-4567-9', source:'foo')
+        uris = URI::ISBN.from_text('somethingurn:isbn:978-10-123-4567-9')
         expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
 
       it "should parse a ISBN 10 in prefix format" do
-        uris = URI::ISBN.from_text('isbn: 10-123-4567-9', source:'foo')
+        uris = URI::ISBN.from_text('isbn: 10-123-4567-9')
         expect(uris).to eq( ['urn:isbn:9781012345679'] )
-        uris = URI::ISBN.from_text('isbn:10-123-4567-9', source:'foo')
+        uris = URI::ISBN.from_text('isbn:10-123-4567-9')
         expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
 
       it "should parse a ISBN 13 in prefix format" do
-        uris = URI::ISBN.from_text('isbn: 978-10-123-4567-9', source:'foo')
+        uris = URI::ISBN.from_text('isbn: 978-10-123-4567-9')
         expect(uris).to eq( ['urn:isbn:9781012345679'] )
-        uris = URI::ISBN.from_text('isbn:978-10-123-4567-9', source:'foo')
+        uris = URI::ISBN.from_text('isbn:978-10-123-4567-9')
         expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
 
       it "should parse a ISBN in prefix format at the start of a string" do
-        uris = URI::ISBN.from_text('isbn:10-123-4567-9', source:'foo')
+        uris = URI::ISBN.from_text('isbn:10-123-4567-9')
         expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
       
       it "should parse a ISBN in prefix format after white-space" do
-        uris = URI::ISBN.from_text(' isbn:10-123-4567-9', source:'foo')
+        uris = URI::ISBN.from_text(' isbn:10-123-4567-9')
         expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
       
       it "should parse a ISBN in prefix format after punctuation" do
-        uris = URI::ISBN.from_text('.isbn:10-123-4567-9', source:'foo')
+        uris = URI::ISBN.from_text('.isbn:10-123-4567-9')
         expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
       
       it "should parse a ISBN in prefix format at the end of a string" do
-        uris = URI::ISBN.from_text('isbn:10-123-4567-9', source:'foo')
+        uris = URI::ISBN.from_text('isbn:10-123-4567-9')
         expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
       
       it "should parse a ISBN in prefix format ended by white-space" do
-        uris = URI::ISBN.from_text('isbn:10-123-4567-9 ', source:'foo')
+        uris = URI::ISBN.from_text('isbn:10-123-4567-9 ')
         expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
       
       it "should parse a ISBN in prefix format ended by punctuation" do
-        uris = URI::ISBN.from_text('isbn:10-123-4567-9? But then there were', source:'foo')
+        uris = URI::ISBN.from_text('isbn:10-123-4567-9? But then there were')
         expect(uris).to eq( ['urn:isbn:9781012345679'] )
       end
       
       it "should return nil when a ISBN could not be parsed" do
-        expect( URI::ISBN.from_text('some text without an ISBN', source:'foo') ).to be_nil
+        expect( URI::ISBN.from_text('some text without an ISBN') ).to be_nil
       end
 
     end
@@ -121,7 +137,7 @@ module RichCitationsProcessor
     describe '#full_uri' do
 
       it "should return the full uri as an ISBN 13 without dashes" do
-        uri = URI::ISBN.new('123-456-789-X', source:'test')
+        uri = URI::ISBN.new('123-456-789-X')
         expect( uri.full_uri ).to eq('urn:isbn:9781234567897')
       end
 
@@ -130,45 +146,45 @@ module RichCitationsProcessor
     describe 'isbn' do
 
       it "should return the gathered (raw) isbn" do
-        uri = URI::ISBN.new('12-345-6789-0', source:'test')
+        uri = URI::ISBN.new('12-345-6789-0')
         expect( uri.raw_isbn ).to eq('12-345-6789-0')
       end
 
       it "should cleanup an existing isbn_13" do
-        uri = URI::ISBN.new('111-3-16-148410-7', source:'test')
+        uri = URI::ISBN.new('111-3-16-148410-7')
         expect( uri.isbn_13 ).to eq('1113161484107')
       end
 
       it "should calculate the isbn 13" do
-        uri = URI::ISBN.new('3-16-148410-X', source:'test')
+        uri = URI::ISBN.new('3-16-148410-X')
         expect( uri.isbn_13 ).to eq('9783161484100')
 
-        uri = URI::ISBN.new('0-306-40615-X', source:'test')
+        uri = URI::ISBN.new('0-306-40615-X')
         expect( uri.isbn_13 ).to eq('9780306406157')
       end
 
       it "should not change ISBNs that are already 13" do
-        uri = URI::ISBN.new('111-3-16-148410-1', source:'test')
+        uri = URI::ISBN.new('111-3-16-148410-1')
         expect( uri.isbn_13 ).to eq('1113161484101')
       end
 
       it "should cleanup an existing isbn_10" do
-        uri = URI::ISBN.new('3-16-148410-7', source:'test')
+        uri = URI::ISBN.new('3-16-148410-7')
         expect( uri.isbn_10 ).to eq('3161484107')
       end
 
       it "should convert an ISBN 10 to upperase" do
-        uri = URI::ISBN.new('3-16-148410-x', source:'test')
+        uri = URI::ISBN.new('3-16-148410-x')
         expect( uri.isbn_10 ).to eq('316148410X')
       end
 
       it "should calculate the isbn 10" do
-        uri = URI::ISBN.new('978-030640615-9', source:'test')
+        uri = URI::ISBN.new('978-030640615-9')
         expect( uri.isbn_10 ).to eq('0306406152')
       end
 
       it "should just return ISBNs that don't have the standard 978 prefix" do
-        uri = URI::ISBN.new('123-030640615-9', source:'test')
+        uri = URI::ISBN.new('123-030640615-9')
         expect( uri.isbn_10 ).to eq('1230306406159')
       end
 
@@ -177,32 +193,32 @@ module RichCitationsProcessor
     describe "comparison" do
 
       it "should compare isbn_10's" do
-        a = URI::ISBN.new('12-345-6787-0', source:'test')
-        b = URI::ISBN.new('12-345-6789-0', source:'test')
-        c = URI::ISBN.new('12-345-6789-0', source:'test')
+        a = URI::ISBN.new('12-345-6787-0')
+        b = URI::ISBN.new('12-345-6789-0')
+        c = URI::ISBN.new('12-345-6789-0')
 
         expect(a).not_to eq(c)
         expect(b).to     eq(c)
       end
 
       it "should compare isbn_13's" do
-        a = URI::ISBN.new('111-12-345-6787-0', source:'test')
-        b = URI::ISBN.new('111-12-345-6789-0', source:'test')
-        c = URI::ISBN.new('111-12-345-6789-0', source:'test')
+        a = URI::ISBN.new('111-12-345-6787-0')
+        b = URI::ISBN.new('111-12-345-6789-0')
+        c = URI::ISBN.new('111-12-345-6789-0')
 
         expect(a).not_to eq(c)
         expect(b).to     eq(c)
       end
 
       it "should compare an isbn_13 with an isbn_10" do
-        a = URI::ISBN.new('978-12-345-6789-7', source:'test')
-        b = URI::ISBN.new('12-345-6789-0', source:'test')
+        a = URI::ISBN.new('978-12-345-6789-7')
+        b = URI::ISBN.new('12-345-6789-0')
 
         expect(a).to eq(b)
         expect(b).to eq(a)
 
-        a = URI::ISBN.new('978-12-345-6789-0', source:'test')
-        b = URI::ISBN.new('12-345-6789-X', source:'test')
+        a = URI::ISBN.new('978-12-345-6789-0')
+        b = URI::ISBN.new('12-345-6789-X')
 
         expect(a).to eq(b)
         expect(b).to eq(a)

@@ -18,72 +18,69 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-# To be parseable a URI must implement ::from_uri and ::from_text
+# Implements a wrapper around URIs that adds metadata
+# It should look like a URI
 
 module RichCitationsProcessor
   module URI
 
-    class Base
+    class Wrapper
+      attr_reader :uri
+      attr_reader :source
+      attr_reader :metadata
 
-      def self.types
-        method_not_implemented_error
+      delegate :full_uri,
+               :to_uri,
+               :as_json,
+           to: :uri
+
+      def initialize(uri, source:, **metadata)
+        @uri      = uri
+        @source   = source
+        @metadata = metadata
       end
 
-      def initialize(identifier)
-        @identifier = identifier
-      end
-
-      def full_uri
-        method_not_implemented_error
+      def class
+        uri.class
       end
 
       def ==(other)
-        case other
-          when Base
-            self.class == other.class && self.full_uri == other.full_uri
-
-          when Wrapper
-            other == self
-
-          when String
-            full_uri == other
-
-          else
-            raise "Unable to compare URI with #{other.class}"
-
-        end
+        other = other.uri if other.is_a?(Wrapper)
+        uri.==(other)
       end
 
-      def as_json(options=nil)
-        full_uri
-      end
+      def with_metadata(source:nil, **metadata)
+        source ||= @source
+        raise ArgumentError.new('missing keyword: source') unless source
 
-      def with_metadata(source:, **metadata)
-        Wrapper.new(self, source:source, **metadata)
+        @source = source
+        @metadata.merge!(metadata)
+        self
       end
 
       def inspect
-        full_uri
+        suffix = " [#{metadata_string}]" if metadata.present?
+        "[#{source}] #{uri.inspect}#{suffix}"
       end
 
       def to_s
-        full_uri
-      end
-      def to_uri
-        full_uri
+        uri.full_uri
       end
 
-      protected
-
-      attr_reader :identifier
-
-      PUNCT              = %q{[\]'"`.,:;?!)\-\/]}  # Posix [[:punct:]] regex is more liberal than we want
-      NOT_PUNCT_OR_SPACE = %q{[^\]'"`.,>[[:space:]]:;?!)\-\/]}
+      def method_missing(method, *args)
+        if metadata && metadata.has_key?(method)
+          metadata[method]
+        elsif uri.respond_to?(method)
+          uri.send(method, *args)
+        else
+          super
+        end
+      end
 
       private
 
-      def self.inherited(subclass)
-        Registry.add(subclass)
+      def metadata_string
+        metadata.present? ? metadata.map{ |k,v| "#{k}:#{v.nil? ? 'nil' : v}"}.join(';') : nil
       end
 
     end

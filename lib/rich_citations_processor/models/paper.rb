@@ -32,10 +32,15 @@ module RichCitationsProcessor
         @bibliographic = {}
 
         super
+
+        # raise "URI error" unless uri.nil? || uri.is_a?(URI::Wrapper) # aid for debugging
       end
 
-      def add_candidate_uri(uri)
-        candidate_uris.add(uri) if uri
+      def add_candidate_uri(uri, source:nil, **metadata)
+        if uri
+          with_meta = uri.with_metadata(source:source, **metadata)
+          candidate_uris.add(with_meta)
+        end
       end
 
       def indented_inspect(indent='')

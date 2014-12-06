@@ -55,8 +55,8 @@ module RichCitationsProcessor
           href_nodes.each do |node|
             href_value = node['href'].to_s
 
-            uri = uri_class.from_uri(href_value, source:'reference')
-            ref.add_candidate_uri(uri)
+            uri = uri_class.from_uri(href_value)
+            ref.add_candidate_uri(uri, source:'reference-href')
 
           end
         end
@@ -67,8 +67,8 @@ module RichCitationsProcessor
         uri_classes = uri_classes_that_can_parse_text
 
         uri_classes.each do |uri_class|
-          uris = uri_class.from_text(text, source:'reference')
-          uris && uris.each do |uri| ref.add_candidate_uri(uri) end
+          uris = uri_class.from_text(text)
+          uris && uris.each do |uri| ref.add_candidate_uri(uri, source:'reference-text') end
         end
 
       end

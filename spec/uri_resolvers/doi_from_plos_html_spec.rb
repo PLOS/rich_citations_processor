@@ -30,7 +30,7 @@ module RichCitationsProcessor
 
       let(:paper) do
         p = Models::CitingPaper.new
-        p.uri = URI::DOI.new('10.1371/journal.pone.0046843', source:'test')
+        p.uri = URI::DOI.new('10.1371/journal.pone.0046843')
         p.references.add(id:'pone.0032408-Fisher1')
         p.references.add(id:'pone.0032408-Hartter1')
         p
@@ -58,7 +58,7 @@ module RichCitationsProcessor
 
         subject.resolve!
 
-        expect( references.first.candidate_uris.first.source).to eq('plos_html')
+        expect( references.first.candidate_uris.first.source).to eq('plos-html')
       end
 
       it "should not add references that aren't found" do
@@ -95,7 +95,7 @@ module RichCitationsProcessor
       end
 
       it "should not do anything for non PLOS DOIs" do
-        paper.uri = URI::DOI.new('10.9999/journal.pone.0046843', source:'test')
+        paper.uri = URI::DOI.new('10.9999/journal.pone.0046843')
 
         subject.resolve!
 

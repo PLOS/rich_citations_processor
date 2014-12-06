@@ -61,7 +61,7 @@ module RichCitationsProcessor
 
       def bibliographic_metadata(paper)
         metadata = paper.bibliographic.deep_dup
-        metadata.merge!(paper.uri.extended) if paper.uri
+        metadata.merge!(paper.uri.metadata) if paper.uri
 
         # Merge in the authors
         metadata['author'] = authors(paper.authors)

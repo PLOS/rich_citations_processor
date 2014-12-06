@@ -39,8 +39,8 @@ module RichCitationsProcessor
         response['results'].each_with_index do |result, i|
           next unless include_result?(result)
           ref = ref_collection[i]
-          doi = doi_for_result(result)
-          ref.add_candidate_uri(doi)
+          uri = uri_for_result(result)
+          ref.add_candidate_uri(uri)
         end
 
       end
@@ -64,8 +64,8 @@ module RichCitationsProcessor
         result && result['match'] && result['score'] && result['score'] >= MIN_CROSSREF_SCORE
       end
 
-      def doi_for_result(result)
-        URI::DOI.new(result['doi'], source:'crossref', score:result['score'])
+      def uri_for_result(result)
+        URI::DOI.new(result['doi']).with_metadata(source:'crossref', score:result['score'])
       end
 
       def search_text_for(ref)

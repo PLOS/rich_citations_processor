@@ -34,7 +34,7 @@ module RichCitationsProcessor
     describe "paper info" do
 
       it "should return the paper metadata" do
-        paper.uri           = TestURI.new('http://example.com/a', source:'test')
+        paper.uri           = TestURI.new('http://example.com/a').wrap
         paper.word_count    = 42
         paper.bibliographic = { 'metadata' => 1 }
 
@@ -42,7 +42,7 @@ module RichCitationsProcessor
       end
 
       it "should include extended URI data" do
-        paper.uri           = TestURI.new('http://example.com/a', source:'test', more:'sample')
+        paper.uri           = TestURI.new('http://example.com/a').wrap(more:'sample')
 
         expect(json).to eq( 'uri_source'=>'test', 'uri'=>'http://example.com/a', 'bibliographic'=>{ 'more' => 'sample'} )
       end
@@ -107,7 +107,7 @@ module RichCitationsProcessor
       end
 
       it "should have metadata for each reference" do
-        paper.references.add(id:'1', number:1, uri:TestURI.new('http://example.com/a'),
+        paper.references.add(id:'1', number:1, uri:TestURI.new('http://example.com/a').wrap,
                              original_citation:'Citation', accessed_at:DateTime.new(2014, 10, 15, 14, 02, 42),
                              bibliographic: { 'metadata' => 42}  )
 
@@ -117,7 +117,7 @@ module RichCitationsProcessor
       end
 
       it "should include extended URI metadata in each reference" do
-        paper.references.add(id:'1', number:1, uri:TestURI.new('http://example.com/a', more:'sample') )
+        paper.references.add(id:'1', number:1, uri:TestURI.new('http://example.com/a').wrap(more:'sample') )
 
         expect(references).to eq([{"id"=>"1", "number"=>1, "uri_source"=>"test", "uri"=>"http://example.com/a",
                                    "bibliographic"=>{"more"=>"sample"}}] )

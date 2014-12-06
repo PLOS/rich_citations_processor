@@ -28,16 +28,18 @@ class TestURI < RichCitationsProcessor::URI::Base
     999_999_999
   end
 
-  def initialize(identifier, source:'test', **extended)
-    super(identifier, source:source, **extended)
-  end
-
   def full_uri
     if identifier.include?('://')
       identifier
     else
-      "api://namespace/#{identifier}"
+      "uri://namespace/#{identifier}"
     end
   end
+
+  def wrap(**meta)
+    with_metadata(source:'test', **meta)
+  end
+
+  public :identifier
 
 end

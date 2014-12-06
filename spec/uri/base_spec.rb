@@ -34,18 +34,9 @@ module RichCitationsProcessor
 
         describe '::new' do
 
-          it "should accept an identifer and source" do
-            uri = URI::Test.new('some-identifier', source:'base')
-
+          it "should accept an identifer" do
+            uri = URI::Test.new('some-identifier')
             expect(uri.identifier).to eq('some-identifier')
-            expect(uri.source).to eq('base')
-            expect(uri.extended).to eq({})
-          end
-
-          it "should accept exteded data" do
-            uri = URI::Test.new('some-identifier', source:'base', more:'sample', score:2)
-
-            expect(uri.extended).to eq({more:'sample', score:2})
           end
 
         end
@@ -53,21 +44,27 @@ module RichCitationsProcessor
         describe "#inspect" do
 
           it "should inspect an instance with no extended data" do
-            uri = URI::Test.new('some-identifier', source:'base')
-
-            expect(uri.inspect).to eq('[base] uri://some-identifier')
+            uri = URI::Test.new('some-identifier')
+            expect(uri.inspect).to eq('uri://some-identifier')
           end
 
-          it "should inspect an instance with extended data" do
-            uri = URI::Test.new('some-identifier', source:'base', more:'sample', score:2)
+        end
 
-            expect(uri.inspect).to eq('[base] uri://some-identifier [more:sample;score:2]')
+        describe "with_metadata" do
+
+          it "should return a wrapper" do
+            uri = URI::Test.new('some-identifier')
+            wrapper = uri.with_metadata(source:'foo')
+
+            expect(wrapper).to be_a_kind_of(Wrapper)
+            expect(wrapper.uri).to be(uri)
           end
 
-          it "should inspect extended data with nil values" do
-            uri = URI::Test.new('some-identifier', source:'base', more:nil)
+          it "the wrapper should have a source and metadata" do
+            uri = URI::Test.new('some-identifier')
+            wrapper = uri.with_metadata(source:'foo', more:'sample')
 
-            expect(uri.inspect).to eq('[base] uri://some-identifier [more:nil]')
+            expect(wrapper).to have_attributes(source:'foo', metadata:{more:'sample'})
           end
 
         end

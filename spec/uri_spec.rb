@@ -27,19 +27,13 @@ module RichCitationsProcessor
     describe '#create' do
 
       it "should create an appropriate instance" do
-        instance = URI.create('10.123/456', type:'doi', source:'test' )
+        instance = URI.create('10.123/456', type:'doi' )
         expect( instance ).to be_a(URI::DOI)
-        expect( instance ).to have_attributes(full_uri:'http://dx.doi.org/10.123/456', source:'test' )
-      end
-
-      it "should create an appropriate instance with extended data" do
-        instance = URI.create('10.123/456', type:'doi', source:'test', more:'sample' )
-        expect( instance ).to be_a(URI::DOI)
-        expect( instance ).to have_attributes(full_uri:'http://dx.doi.org/10.123/456', source:'test', extended:{more:'sample'} )
+        expect( instance ).to have_attributes(full_uri:'http://dx.doi.org/10.123/456')
       end
 
       it "should return nil if it cannot create an appropriate instance" do
-        instance = URI.create('10.123/456', type:'unknown_type', source:'test' )
+        instance = URI.create('10.123/456', type:'unknown_type' )
         expect( instance ).to be_nil
       end
 

@@ -31,12 +31,16 @@ module RichCitationsProcessor
         filtered_references.each do |ref|
 
           uri = uri_for_reference(ref)
-          ref.add_candidate_uri(uri)
+          ref.add_candidate_uri(uri, source:source)
 
         end if attempt?
       end
 
       protected
+
+      def source
+        method_not_implemented_error
+      end
 
       def uri_for_reference(ref)
         method_not_implemented_error

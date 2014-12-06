@@ -26,9 +26,9 @@ module RichCitationsProcessor
     extend self
 
     # Create a URI based on an identifier
-    def create(identifier, type:, source:, **extended)
+    def create(identifier, type:)
       klass = lookup(type)
-      klass && klass.new(identifier, source:source, **extended)
+      klass && klass.new(identifier)
     end
 
     def lookup(type)

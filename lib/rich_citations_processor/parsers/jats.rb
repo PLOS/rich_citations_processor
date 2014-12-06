@@ -63,7 +63,8 @@ module RichCitationsProcessor
         paper.uri = identifier_nodes.lazy.map do |node|
           type  = node['pub-id-type']
           ident = node.text.strip
-          URI.create(ident, type:type, source:'document')
+          uri = URI.create(ident, type:type)
+          uri && uri.with_metadata(source:'document')
         end.find(&:present?)
 
       end

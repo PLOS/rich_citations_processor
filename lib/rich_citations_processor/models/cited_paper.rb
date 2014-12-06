@@ -26,7 +26,7 @@ module RichCitationsProcessor
       attr_reader :candidate_uris
 
       def initialize(**attributes)
-        @candidate_uris = Collection.new(URI::Base, ignore_duplicates:true)
+        @candidate_uris = Collection.new(URI::Wrapper, ignore_duplicates:true)
 
         super
       end

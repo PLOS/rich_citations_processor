@@ -50,9 +50,9 @@ module RichCitationsProcessor::Models
 
       it "should return an inspection string with a cited paper" do
         instance = described_class.new(number:2, id:'ref-id-2', original_citation:'Citation')
-        instance.cited_paper.uri = TestURI.new('10.1234/4567', source:'crossref')
+        instance.cited_paper.uri = TestURI.new('10.1234/4567').wrap
 
-        expect(instance.inspect).to eq('Reference: "ref-id-2" [2] Citation Groups:[] => Paper: [crossref] api://namespace/10.1234/4567')
+        expect(instance.inspect).to eq('Reference: "ref-id-2" [2] Citation Groups:[] => Paper: [test] uri://namespace/10.1234/4567')
         expect(instance.inspect).to eq(instance.indented_inspect)
       end
 

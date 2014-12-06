@@ -44,7 +44,7 @@ module RichCitationsProcessor
         subject.resolve!
 
         expect( ref.candidate_uris).to eq(['http://dx.doi.org/10.1/23'])
-        expect(ref.candidate_uris.first.source).to eq('reference')
+        expect(ref.candidate_uris.first.source).to eq('reference-href')
       end
 
       it "should extract a reference from the text" do
@@ -53,7 +53,7 @@ module RichCitationsProcessor
         subject.resolve!
 
         expect( ref.candidate_uris).to eq(['http://dx.doi.org/10.1/23'])
-        expect(ref.candidate_uris.first.source).to eq('reference')
+        expect(ref.candidate_uris.first.source).to eq('reference-text')
       end
 
       it "should extract multiple references with href's first" do
